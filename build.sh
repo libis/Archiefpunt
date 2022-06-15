@@ -59,6 +59,10 @@ function build {
     cd -
 
     docker buildx build --platform=$PLATFORM -f Dockerfile.service --tag $REGISTRY/$NAMESPACE/$SERVICE:$VERSION --push .
+
+    if [ -f "./service.tgz" ]; then
+      rm -f ./service.tgz
+    fi
   else
     echo "$SERVICE not found"
     exit 1

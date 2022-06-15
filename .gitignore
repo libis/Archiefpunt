@@ -5,3 +5,5 @@ config.tgz
 gems
 *.tgz
 *.ndjson
+*.lock
+*/config
