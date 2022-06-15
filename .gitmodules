@@ -1,11 +1,11 @@
 [submodule "logic"]
-	path = logic
+	path = services/logic
 	url = https://github.com/mehmetc/solis-logic
 [submodule "data"]
-	path = data
+	path = services/data
 	url = https://github.com/mehmetc/solis-data
 [submodule "search"]
-	path = search
+	path = services/search
 	url = https://github.com/mehmetc/solis-search
 [submodule "services/ping"]
 	path = services/ping

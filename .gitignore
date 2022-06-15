@@ -2,7 +2,7 @@ cache/*
 config/cache/*
 .idea
 config.tgz
-gems
+build/gems
 *.tgz
 *.ndjson
 *.lock

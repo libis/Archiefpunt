@@ -4,22 +4,24 @@ ARG SOLIS_VERSION=0.43.0
 RUN echo "Solis v$SOLIS_VERSION"
 
 RUN bundle config --global frozen 1
-RUN addgroup -S abv -g 10000 && adduser -S abv -u 10000 -G abv && apk --no-cache add g++ make bash libjemalloc2
+RUN addgroup -S abv -g 10000 && adduser -S abv -u 10000 -G abv && apk --no-cache add g++ make bash
 
-ENV LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.2
+#Not supported on arm64, yet
+#RUN apk --no-cache add jemalloc
+#ENV LD_PRELOAD=/usr/lib/libjemalloc.so.1
 
 WORKDIR /app
 COPY Gemfile.docker Gemfile
 
 COPY gems gems
 COPY run.sh run.sh
-COPY config config
+ADD config.tgz ./
 
 RUN mkdir cache && chmod a+x cache && chown -R abv:abv /app
 USER abv:abv
 RUN gem install gems/solis-$SOLIS_VERSION.gem
 RUN bundle install
-RUN gem cleanup minitest
+#RUN gem cleanup minitest
 
 EXPOSE 9292
 #DEBUG PORT

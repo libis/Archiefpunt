@@ -1,5 +1,7 @@
 #!/bin/bash
+PROJECT_ROOT=$(pwd)
 
+echo "Project ROOT: $PROJECT_ROOT"
 if [ ! -f ".env" ]; then
   echo "Please create an .env file with a SERVICE, REGISTRY, NAMESPACE, VERSION and PLATFORM parameter"
   echo "
@@ -47,22 +49,49 @@ else
   SOLIS_VERSION=$SOLIS
 fi
 
+function delete_service_package {
+    if [ -f "$PROJECT_ROOT/build/service.tgz" ]; then
+      echo "Removing ./build/service.tgz"
+      rm -f $PROJECT_ROOT/build/service.tgz
+    fi
+}
+
+function make_service_package {
+  if [ -d "$PROJECT_ROOT/services/$SERVICE" ]; then
+    echo "Making $SERVICE"
+    delete_service_package
+    cd $PROJECT_ROOT/services/$SERVICE
+    tar --exclude='./config' --exclude='./Gemfile' --exclude='./Gemfile.lock' -zcvf $PROJECT_ROOT/build/service.tgz ./*
+    cd $PROJECT_ROOT
+  else
+      echo "$SERVICE not found"
+      exit 1
+  fi
+}
+
+function delete_config_package {
+    if [ -f "$PROJECT_ROOT/build/config.tgz" ]; then
+      echo "Removing config.tgz"
+      rm -f $PROJECT_ROOT/build/config.tgz
+    fi
+}
+
+function make_config_package {
+  delete_config_package
+  tar -zcvf $PROJECT_ROOT/build/config.tgz ./config
+}
+
 function build {
   echo "Building $SERVICE for $PLATFORM"
-  if [ -f "./service.tgz" ]; then
-    rm -f ./service.tgz
-  fi
 
-  if [ -d "$SERVICE" ]; then
-    cd $SERVICE
-    tar --exclude='./config' --exclude='./Gemfile' --exclude='./Gemfile.lock' -zcvf ../service.tgz ./*
-    cd -
+  if [ -d "services/$SERVICE" ]; then
+    make_service_package
 
+    cd $PROJECT_ROOT/build
     docker buildx build --platform=$PLATFORM -f Dockerfile.service --tag $REGISTRY/$NAMESPACE/$SERVICE:$VERSION --push .
+    cd $PROJECT_ROOT
 
-    if [ -f "./service.tgz" ]; then
-      rm -f ./service.tgz
-    fi
+    delete_service_package
   else
     echo "$SERVICE not found"
     exit 1
@@ -72,20 +101,16 @@ function build {
 function build_base {
   echo "Building $SERVICE for $PLATFORM using SOLIS v$SOLIS_VERSION"
   echo "Will push to $REGISTRY/$NAMESPACE/$SERVICE:$VERSION"
-  docker buildx build --build-arg SOLIS_VERSION=$SOLIS --platform=$PLATFORM -f Dockerfile.base --tag $REGISTRY/$NAMESPACE/$SERVICE:$VERSION --push .
-}
+  make_config_package
 
-function push {
-  echo "Pushing $SERVICE"
-  docker tag $NAMESPACE/$SERVICE:$VERSION $REGISTRY/$NAMESPACE/$SERVICE:$VERSION
-  docker push $REGISTRY/$NAMESPACE/$SERVICE:$VERSION
+  cd $PROJECT_ROOT/build
+  docker buildx build --build-arg SOLIS_VERSION=$SOLIS --platform=$PLATFORM -f Dockerfile.base --tag $REGISTRY/$NAMESPACE/$SERVICE:$VERSION --push .
+  cd $PROJECT_ROOT
+
+  delete_config_package
 }
 
 case $1 in
-"push")
-  build
-  push
-  ;;
 "base")
   SERVICE=$1
   build_base
@@ -99,7 +124,7 @@ esac
 echo
 echo
 if [ -z "$DEBUG" ]; then
-  echo "docker run -p 9292:9292 $NAMESPACE/$SERVICE:$VERSION"
+  echo "docker run -p 9292:9292 $REGISTRY/$NAMESPACE/$SERVICE:$VERSION"
 else
-  echo "docker run -p 1234:1234 -p 9292:9292 -e DEBUG=1 $NAMESPACE/$SERVICE:$VERSION"
+  echo "docker run -p 1234:1234 -p 9292:9292 -e DEBUG=1 $REGISTRY/$NAMESPACE/$SERVICE:$VERSION"
 fi
