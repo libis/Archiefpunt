@@ -6,4 +6,4 @@ build/gems
 *.tgz
 *.ndjson
 *.lock
-*/config
+**/config
