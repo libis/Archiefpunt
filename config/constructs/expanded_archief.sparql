@@ -1,0 +1,357 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX abv: <https://abv.libis.be/>
+
+construct {
+    ?archief_id a abv:Archief ;
+        abv:id ?id;
+        abv:identificatienummer ?archief_identificatienummer ;
+        abv:titel ?archief_titel;
+        abv:datering_text ?archief_datering_text;
+        abv:datering_systematisch ?archief_datering_systematisch;
+        abv:beschrijvingsniveau ?archief_beschrijvingsniveau;
+        abv:is_onderdeel_van ?archief_is_onderdeel_van;
+        abv:omvang ?archief_omvang_id;
+        abv:samensteller ?archief_samensteller_id;
+        abv:beheerder ?archief_beheerder_id;
+        abv:geschiedenis_archief ?archief_geschiedenis_archief;
+        abv:verwerving ?archief_verwerving;
+        abv:inhoud_en_bereik ?archief_inhoud_en_bereik;
+        abv:selectie ?archief_selectie_id;
+        abv:aangroei ?archief_aangroei_label;
+        abv:aangroei_text ?archief_aangroei_text;
+        abv:ordening ?archief_ordening_label;
+        abv:ordening_text ?archief_ordening_text;
+        abv:juridische_beperking ?archief_juridische_beperking_id;
+        abv:raadplegingsvoorwaarde ?archief_raadplegingsvoorwaarde_id;
+        abv:taal ?archief_taal;
+        abv:taal_text ?archief_taal_text;
+        abv:toegang ?archief_toegang;
+        abv:bronnen_archief ?archief_bronnen_archief;
+        abv:bibliografie_archief ?archief_bibliografie_archief;
+        abv:aantekening_archivaris ?archief_aantekening_archivaris;
+        abv:associatie ?archief_associatie_id;
+        abv:rechtenstatus_metadata ?archief_rechtenstatus_metadata;
+        abv:bronverwijzing_record ?archief_bronverwijzing_record;
+        abv:bronverwijzing_archief ?archief_bronverwijzing_archief.
+
+    ?archief_identificatienummer a abv:Identificatienummer;
+        abv:waarde ?archief_identificatienummer_waarde ;
+        abv:type ?archief_identificatienummer_type;
+        abv:bron ?archief_identificatienummer_bron.
+
+    ?archief_identificatienummer_bron a abv:Agent ;
+        abv:identificatienummer ?bron_identificatienummer ;
+        abv:waarde ?bron_naam_waarde;
+        abv:type_naam ?bron_type_naam;
+        abv:datering_systematisch ?bron_datering_systematisch;
+        abv:datering_text ?bron_datering_text;
+        abv:geschiedenis_agent ?bron_geschiedenis_agent;
+        abv:taal ?bron_taal;
+        abv:associaties ?bron_associaties;
+        abv:bronnen_agent ?bron_bronnen_agent;
+        abv:bibliografie_agent ?bron_bibliografie_agent;
+        abv:opmerking ?bron_opmerking.
+
+    ?bron_associaties a abv:Associatie ;
+        abv:plaats ?associatie_plaats;
+        abv:agent ?associatie_agent;
+        abv:periode ?associatie_periode;
+        abv:onderwerp ?associcatie_onderwerp.
+
+    ?archief_omvang_id a abv:Omvang;
+        abv:waarde ?omvang_waarde;
+        abv:trefwoord ?omvang_tefwoord.
+
+    ?archief_samensteller_id a abv:Samensteller;
+        abv:agent ?samensteller_agent;
+        abv:naam ?samensteller_agent_naam;
+        abv:functie_beroep_activiteit ?samensteller_functie_beroep_activiteit;
+        abv:rol ?rol_samensteller.
+
+    ?archief_beheerder_id a abv:Beheerder;
+        abv:agent ?beheerder_agent;
+        abv:naam ?beheerder_agent_naam ;
+        abv:rol ?rol_beheerder;
+        abv:erkenning ?beheerder_erkenning;
+        abv:adres ?beheerder_adres_id;
+        abv:telefoon ?beheerder_telefoon;
+        abv:email ?beheerder_email;
+        abv:website ?beheerder_website;
+        abv:gebouw ?beheerder_gebouw;
+        abv:toegang ?beheerder_toegang;
+        abv:openingsuren ?beheerder_openingsuren;
+        abv:toegangsvoorwaarden ?beheerder_toegangsvoorwaarden;
+        abv:bereikbaarheid ?beheerder_bereikbaarheid.
+
+    ?beheerder_adres_id a abv:Adres;
+        abv:adres_straat_en_nummer ?beheerder_adres_straat_en_nummer ;
+        abv:gemeente ?beheerder_gemeente ;
+        abv:type_gemeente ?beheerder_gemeente_type .
+
+    ?archief_selectie_id a abv:Selectie;
+        abv:waardestelling ?selectie_waardestelling;
+        abv:waarde ?selectie_waarde;
+        abv:vergelijking ?selectie_vergelijking;
+        abv:datum_waardering ?selectie_datum_waardering;
+        abv:bron_waardering ?selectie_bron_waardering;
+        abv:bijdragers ?selectie_bijdragers;
+        abv:opmerkingen ?selectie_opmerkingen.
+
+    ?archief_juridische_beperking_id a abv:JuridischeBeperking;
+        abv:privacy_gevoelig ?archief_juridische_beperking_privacy_gevoelig ;
+        abv:contractuele_beperking ?archief_juridische_beperking_contractuele_beperking;
+        abv:gevoelig_voor_auteursrechtelijkebescherming ?archief_juridische_beperking_gevoelig_voor_auteursrechtelijkebescherming.
+
+    ?archief_raadplegingsvoorwaarde_id a abv:Raadplegingsvoorwaarde;
+        abv:tekst ?archief_raadplegingsvoorwaarde_tekst;
+        abv:taal ?archief_raadplegingsvoorwaarde_taal;
+        abv:raadplegingsstatus ?archief_raadplegingsvoorwaarde_status.
+
+    ?archief_associatie_id a abv:Associatie;
+        abv:plaatsnaam ?archief_associatie_plaats;
+        abv:agentnaam ?archief_associatie_agent;
+        abv:periode ?archief_associatie_periode;
+        abv:onderwerp ?archief_associatie_onderwerp.
+
+} WHERE {
+    {{VALUES}}
+    #values ?archief_id {<https://abv.libis.be/archieven/7C01-020E-96A7-1960-F9DC8946AE9A> <https://abv.libis.be/archieven/1256-C380-E299-A196-23CA15037AE9>}
+    #values ?archief_id {<https://abv.libis.be/archieven/7C01-020E-96A7-1960-F9DC8962AE9A>}
+    {
+        ?archief_id abv:id ?id;
+            abv:identificatienummer ?archief_identificatienummer;
+            abv:titel				  ?archief_titel ;
+            abv:beschrijvingsniveau/abv:label ?archief_beschrijvingsniveau ;
+            abv:omvang  ?archief_omvang_id;
+            abv:samensteller ?archief_samensteller_id;
+            abv:rol_samensteller/abv:label ?rol_samensteller;
+            abv:beheerder ?archief_beheerder_id;
+            abv:rol_beheerder/abv:label ?rol_beheerder;
+            a abv:Archief.
+        #identificatienummer
+        optional {
+            ?archief_identificatienummer abv:waarde ?archief_identificatienummer_waarde
+        }
+        optional {
+            ?archief_identificatienummer abv:type/abv:label ?archief_identificatienummer_type
+        }
+        optional {
+            ?archief_identificatienummer abv:bron ?archief_identificatienummer_bron .
+            ?archief_identificatienummer_bron abv:identificatienummer ?bron_identificatienummer ;
+                abv:naam/abv:waarde ?bron_naam_waarde;
+                abv:naam/abv:type_naam/abv:label ?bron_type_naam.
+            optional{
+                ?archief_identificatienummer_bron abv:datering_systematisch ?bron_datering_systematisch.
+            }
+            optional{
+                ?archief_identificatienummer_bron abv:datering_text ?bron_datering_text.
+            }
+            optional{
+                ?archief_identificatienummer_bron abv:geschiedenis_agent ?bron_geschiedenis_agent.
+            }
+            optional{
+                ?archief_identificatienummer_bron abv:taal/abv:label ?bron_taal.
+            }
+            optional{
+                ?archief_identificatienummer_bron abv:associaties ?bron_associaties.
+                optional{
+                    ?bron_associaties abv:plaats/abv:plaatsnaam ?associatie_plaats.
+                }
+                optional{
+                    ?bron_associaties abv:agent ?associatie_agent.
+                }
+                optional{
+                    ?bron_associaties abv:periode/abv:label ?associatie_periode.
+                }
+                optional{
+                    ?bron_associaties abv:onderwerp/abv:label ?associcatie_onderwerp.
+                }
+            }
+            optional{
+                ?archief_identificatienummer_bron abv:bronnen_agent ?bron_bronnen_agent.
+            }
+            optional{
+                ?archief_identificatienummer_bron abv:bibliografie_agent ?bron_bibliografie_agent.
+            }
+            optional{
+                ?archief_identificatienummer_bron abv:opmerking ?bron_opmerking.
+            }
+
+        }
+
+        optional {
+            ?archief_id abv:datering_text ?archief_datering_text .
+        }
+        optional {
+            ?archief_id abv:datering_systematisch ?archief_datering_systematisch.
+        }
+        optional {
+            ?archief_id abv:is_onderdeel_van ?archief_is_onderdeel_van.
+        }
+        optional {
+            ?archief_omvang_id abv:waarde ?omvang_waarde.
+            optional {
+                ?archief_omvang_id abv:trefwoord/abv:label ?omvang_trefwoord.
+            }
+        }
+        #samensteller
+        ?archief_samensteller_id abv:agent ?samensteller_agent ;
+            abv:agent/abv:naam/abv:waarde ?samensteller_agent_naam.
+        optional{
+            ?archief_samensteller_id abv:functie_beroep_activiteit/abv:label ?samensteller_functie_beroep_activiteit.
+        }
+        #beheerder
+        ?archief_beheerder_id abv:agent ?beheerder_agent;
+            abv:agent/abv:naam/abv:waarde ?beheerder_agent_naam.
+        ?archief_beheerder_id abv:erkenning/abv:label ?beheerder_erkenning.
+
+        optional {
+            ?archief_beheerder_id abv:adres ?beheerder_adres_id.
+            optional{
+                ?beheerder_adres_id abv:straat_en_nummer ?beheerder_adres_straat_en_nummer.
+            }
+            ?beheerder_adres_id abv:gemeente/abv:plaatsnaam/abv:waarde ?beheerder_gemeente.
+            ?beheerder_adres_id abv:gemeente/abv:plaatsnaam/abv:type_naam/abv:label ?beheerder_gemeente_type.
+        }
+        optional {
+            ?archief_beheerder_id abv:telefoon ?beheerder_telefoon.
+        }
+        optional {
+            ?archief_beheerder_id abv:email ?beheerder_email.
+        }
+        optional {
+            ?archief_beheerder_id abv:website ?beheerder_website.
+        }
+        optional {
+            ?archief_beheerder_id abv:gebouw ?beheerder_gebouw.
+        }
+        optional {
+            ?archief_beheerder_id abv:toegang ?beheerder_toegang.
+        }
+        optional {
+            ?archief_beheerder_id abv:openingsuren ?beheerder_openingsuren.
+        }
+        optional {
+            ?archief_beheerder_id abv:toegangsvoorwaarden ?beheerder_toegangsvoorwaarden.
+        }
+        optional {
+            ?archief_beheerder_id abv:bereikbaarheid ?beheerder_bereikbaarheid.
+        }
+    }
+    #geschiedenis_archief
+    optional {
+        ?archief_id abv:geschiedenis_archief ?archief_geschiedenis_archief.
+    }
+    #verwerving
+    optional {
+        ?archief_id abv:verwerving ?archief_verwerving.
+    }
+    #inhoud_en_bereik
+    optional {
+        ?archief_id abv:inhoud_en_bereik ?archief_inhoud_en_bereik.
+    }
+    #selectie
+    optional {
+        ?archief_id abv:selectie ?archief_selectie_id.
+        ?archief_selectie_id abv:waardestelling ?selectie_waardestelling.
+
+        optional{
+            ?archief_selectie_id abv:waarde ?selectie_waarde.
+        }
+        optional{
+            ?archief_selectie_id abv:vergelijking ?selectie_vergelijking.
+        }
+        optional{
+            ?archief_selectie_id abv:datum_waardering ?selectie_datum_waardering.
+        }
+        optional{
+            ?archief_selectie_id abv:bron_waardering ?selectie_bron_waardering.
+        }
+        optional{
+            ?archief_selectie_id abv:bijdragers ?selectie_bijdragers.
+        }
+        optional{
+            ?archief_selectie_id abv:opmerkingen ?selectie_opmerkingen.
+        }
+    }
+    #aangroei
+    optional {
+        ?archief_id abv:aangroei/abv:label ?archief_aangroei_label.
+    }
+    #aangroei_text
+    optional {
+        ?archief_id abv:aangroei_text ?archief_aangroei_text.
+    }
+    #ordening
+    optional {
+        ?archief_id abv:ordening/abv:label ?archief_ordening_label.
+    }
+    #ordening_text
+    optional {
+        ?archief_id abv:ordening_text ?archief_ordening_text.
+    }
+    #juridische_beperking
+    ?archief_id abv:juridische_beperking ?archief_juridische_beperking_id.
+
+    ?archief_juridische_beperking_id abv:privacy_gevoelig ?archief_juridische_beperking_privacy_gevoelig ;
+        abv:contractuele_beperking ?archief_juridische_beperking_contractuele_beperking;
+        abv:gevoelig_voor_auteursrechtelijkebescherming ?archief_juridische_beperking_gevoelig_voor_auteursrechtelijkebescherming.
+
+
+    #raadplegingsvoorwaarde
+    optional {
+        ?archief_id abv:raadplegingsvoorwaarde ?archief_raadplegingsvoorwaarde_id.
+
+        ?archief_raadplegingsvoorwaarde_id abv:tekst ?archief_raadplegingsvoorwaarde_tekst;
+            abv:taal/abv:label ?archief_raadplegingsvoorwaarde_taal;
+            abv:raadplegingsstatus/abv:label ?archief_raadplegingsvoorwaarde_status.
+    }
+    #taal
+    optional {
+        ?archief_id abv:taal/abv:label ?archief_taal.
+    }
+    #taal_text
+    optional {
+        ?archief_id abv:taal_text ?archief_taal_text.
+    }
+    #toegang
+    optional {
+        ?archief_id abv:toegang ?archief_toegang.
+    }
+    #bronnen_archief
+    optional {
+        ?archief_id abv:bronnen_archief ?archief_bronnen_archief.
+    }
+    #bibliografie_archief
+    optional {
+        ?archief_id abv:bibliografie_archief ?archief_bibliografie_archief.
+    }
+    #aantekening_archivaris
+    optional {
+        ?archief_id abv:aantekening_archivaris ?archief_aantekening_archivaris.
+    }
+    #associatie
+    optional {
+        ?archief_id abv:associatie ?archief_associatie_id.
+        optional {
+            ?archief_associatie_id abv:plaats/abv:plaatsnaam/abv:waarde ?archief_associatie_plaats.
+        }
+        optional {
+            ?archief_associatie_id abv:agent/abv:naam/abv:waarde ?archief_associatie_agent.
+        }
+        optional {
+            ?archief_associatie_id abv:periode/abv:label ?archief_associatie_periode.
+        }
+        optional {
+            ?archief_associatie_id abv:onderwerp/abv:label ?archief_associatie_onderwerp.
+        }
+    }
+    #rechtenstatus_metadata
+    ?archief_id abv:rechtenstatus_metadata/abv:label ?archief_rechtenstatus_metadata.
+    #bronverwijzing_record
+    ?archief_id abv:bronverwijzing_record ?archief_bronverwijzing_record.
+    #bronverwijzing_archief
+    ?archief_id abv:bronverwijzing_archief ?archief_bronverwijzing_archief.
+}
+order by ?archief_id

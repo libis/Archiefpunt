@@ -1,0 +1,1966 @@
+<https://abv.libis.be/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://abv.libis.be/> <dc11:creator> "Archiefpunt, Meemo, KADOC, LIBIS" .
+<https://abv.libis.be/> <dc11:date> "2022-03-22 10:59:02 +0100" .
+<https://abv.libis.be/> <dc11:description> "Archiefbank ontology" .
+<https://abv.libis.be/> <dc11:title> "Archiefbank ontology" .
+<https://abv.libis.be/> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# dc11:creator
+<dc11:creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# dc11:date
+<dc11:date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# dc11:description
+<dc11:description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# dc11:title
+<dc11:title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# http://www.w3.org/2001/XMLSchema#duration
+<http://www.w3.org/2001/XMLSchema#duration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://abv.libis.be/_meta
+<https://abv.libis.be/_meta> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/_meta> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/_meta> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/EntiteitMetadata> .
+<https://abv.libis.be/_meta> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/_meta> <http://www.w3.org/2000/01/rdf-schema#label> "_meta" .
+# 
+# https://abv.libis.be/aangroei
+<https://abv.libis.be/aangroei> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/aangroei> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/aangroei> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Aangroei> .
+<https://abv.libis.be/aangroei> <http://www.w3.org/2000/01/rdf-schema#comment> "Aangroei toont status van het archief aan: statisch, dynamisch of is de status onbekend." .
+<https://abv.libis.be/aangroei> <http://www.w3.org/2000/01/rdf-schema#label> "aangroei" .
+# 
+# https://abv.libis.be/adres
+<https://abv.libis.be/adres> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/adres> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Beheerder> .
+<https://abv.libis.be/adres> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Adres> .
+<https://abv.libis.be/adres> <http://www.w3.org/2000/01/rdf-schema#comment> "Adres van bewaarplaats." .
+<https://abv.libis.be/adres> <http://www.w3.org/2000/01/rdf-schema#label> "adres" .
+# 
+# https://abv.libis.be/agent
+<https://abv.libis.be/agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/agent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Associatie> .
+<https://abv.libis.be/agent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Beheerder> .
+<https://abv.libis.be/agent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Samensteller> .
+<https://abv.libis.be/agent> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Agent> .
+<https://abv.libis.be/agent> <http://www.w3.org/2000/01/rdf-schema#comment> "Link met 'agent'" .
+<https://abv.libis.be/agent> <http://www.w3.org/2000/01/rdf-schema#label> "agent" .
+# 
+# https://abv.libis.be/associatie
+<https://abv.libis.be/associatie> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/associatie> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/associatie> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Associatie> .
+<https://abv.libis.be/associatie> <http://www.w3.org/2000/01/rdf-schema#comment> "Trefwoordenveld. Kan gelinkt worden met een onderwerp, agent, plaats en een periode." .
+<https://abv.libis.be/associatie> <http://www.w3.org/2000/01/rdf-schema#label> "associatie" .
+# 
+# https://abv.libis.be/associaties
+<https://abv.libis.be/associaties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/associaties> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Agent> .
+<https://abv.libis.be/associaties> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Associatie> .
+<https://abv.libis.be/associaties> <http://www.w3.org/2000/01/rdf-schema#comment> "Plaats, Periode, Onderwerp of agent gelinkt aan de agent. " .
+<https://abv.libis.be/associaties> <http://www.w3.org/2000/01/rdf-schema#label> "associaties" .
+# 
+# https://abv.libis.be/auteur
+<https://abv.libis.be/auteur> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/auteur> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Publicatie> .
+<https://abv.libis.be/auteur> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Naam> .
+<https://abv.libis.be/auteur> <http://www.w3.org/2000/01/rdf-schema#comment> "auteur van de publicatie" .
+<https://abv.libis.be/auteur> <http://www.w3.org/2000/01/rdf-schema#label> "auteur" .
+# 
+# https://abv.libis.be/beheerder
+<https://abv.libis.be/beheerder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/beheerder> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/beheerder> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Beheerder> .
+<https://abv.libis.be/beheerder> <http://www.w3.org/2000/01/rdf-schema#comment> "persoon of organisatie die het archief of de collectie vandaag beheerd.\nlink naar wat voorheen de ‘bewaarplaats’ was. \nNu expliciet gemaakt als een Agent, die verbonden is aan een bepaalde Plaats. " .
+<https://abv.libis.be/beheerder> <http://www.w3.org/2000/01/rdf-schema#label> "beheerder" .
+# 
+# https://abv.libis.be/bereikbaarheid
+<https://abv.libis.be/bereikbaarheid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/bereikbaarheid> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Beheerder> .
+<https://abv.libis.be/bereikbaarheid> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Bereikbaarheid> .
+<https://abv.libis.be/bereikbaarheid> <http://www.w3.org/2000/01/rdf-schema#comment> "Indien list: Rolstoeltoegankelijk, Aangepast sanitair, Parkeergelegenheid" .
+<https://abv.libis.be/bereikbaarheid> <http://www.w3.org/2000/01/rdf-schema#label> "bereikbaarheid" .
+# 
+# https://abv.libis.be/beschrijvingsniveau
+<https://abv.libis.be/beschrijvingsniveau> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/beschrijvingsniveau> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/beschrijvingsniveau> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Beschrijvingsniveau> .
+<https://abv.libis.be/beschrijvingsniveau> <http://www.w3.org/2000/01/rdf-schema#comment> "Beschrijvingsniveau van het archief. Keuze uit archief, fonds, serie, collectie, virtuele collectie." .
+<https://abv.libis.be/beschrijvingsniveau> <http://www.w3.org/2000/01/rdf-schema#label> "beschrijvingsniveau" .
+# 
+# https://abv.libis.be/bron
+<https://abv.libis.be/bron> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/bron> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Identificatienummer> .
+<https://abv.libis.be/bron> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Agent> .
+<https://abv.libis.be/bron> <http://www.w3.org/2000/01/rdf-schema#comment> "Verwijzing naar agent die identificatie aanmaakt." .
+<https://abv.libis.be/bron> <http://www.w3.org/2000/01/rdf-schema#label> "bron" .
+# 
+# https://abv.libis.be/bron_waardering
+<https://abv.libis.be/bron_waardering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/bron_waardering> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Waardering> .
+<https://abv.libis.be/bron_waardering> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Publicatie> .
+<https://abv.libis.be/bron_waardering> <http://www.w3.org/2000/01/rdf-schema#comment> "Verwijzing naar een publicatie die als bron werd gebruikt voor deze waardering. " .
+<https://abv.libis.be/bron_waardering> <http://www.w3.org/2000/01/rdf-schema#label> "bron_waardering" .
+# 
+# https://abv.libis.be/erkenning
+<https://abv.libis.be/erkenning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/erkenning> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Beheerder> .
+<https://abv.libis.be/erkenning> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Erkenning> .
+<https://abv.libis.be/erkenning> <http://www.w3.org/2000/01/rdf-schema#comment> "Categorie enkel geldig wanneer agent een bewaarplaats is. Erkenningniveaus zijn: landelijk, regionaal, lokaal en [none]." .
+<https://abv.libis.be/erkenning> <http://www.w3.org/2000/01/rdf-schema#label> "erkenning" .
+# 
+# https://abv.libis.be/functie_beroep_activiteit
+<https://abv.libis.be/functie_beroep_activiteit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/functie_beroep_activiteit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Samensteller> .
+<https://abv.libis.be/functie_beroep_activiteit> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Functie> .
+<https://abv.libis.be/functie_beroep_activiteit> <http://www.w3.org/2000/01/rdf-schema#comment> "Functie, beroep of activiteiten waarin agent " .
+<https://abv.libis.be/functie_beroep_activiteit> <http://www.w3.org/2000/01/rdf-schema#label> "functie_beroep_activiteit" .
+# 
+# https://abv.libis.be/gemeente
+<https://abv.libis.be/gemeente> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/gemeente> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Adres> .
+<https://abv.libis.be/gemeente> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Plaats> .
+<https://abv.libis.be/gemeente> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/gemeente> <http://www.w3.org/2000/01/rdf-schema#label> "gemeente" .
+# 
+# https://abv.libis.be/identificatie
+<https://abv.libis.be/identificatie> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/identificatie> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Agent> .
+<https://abv.libis.be/identificatie> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Identificatienummer> .
+<https://abv.libis.be/identificatie> <http://www.w3.org/2000/01/rdf-schema#comment> "Herhaalbaar om verschillende IDs op te kunnen nemen.\nEigen persistente URI wordt door het systeem toegekend en is dus ‘verplicht’.\nAndere IDs enkel toevoegen als ze al buiten ABV bestaan." .
+<https://abv.libis.be/identificatie> <http://www.w3.org/2000/01/rdf-schema#label> "identificatie" .
+# 
+# https://abv.libis.be/identificatienummer
+<https://abv.libis.be/identificatienummer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/identificatienummer> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/identificatienummer> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Concept> .
+<https://abv.libis.be/identificatienummer> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Plaats> .
+<https://abv.libis.be/identificatienummer> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Publicatie> .
+<https://abv.libis.be/identificatienummer> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Identificatienummer> .
+<https://abv.libis.be/identificatienummer> <http://www.w3.org/2000/01/rdf-schema#comment> "Identificatienummer voor de publicatie" .
+<https://abv.libis.be/identificatienummer> <http://www.w3.org/2000/01/rdf-schema#label> "identificatienummer" .
+# 
+# https://abv.libis.be/is_onderdeel_van
+<https://abv.libis.be/is_onderdeel_van> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/is_onderdeel_van> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/is_onderdeel_van> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/is_onderdeel_van> <http://www.w3.org/2000/01/rdf-schema#comment> "Alleen gebruik maken wanneer een archiefbestanddeel deel uitmaakt van een groter archiefbestanddeel" .
+<https://abv.libis.be/is_onderdeel_van> <http://www.w3.org/2000/01/rdf-schema#label> "is_onderdeel_van" .
+# 
+# https://abv.libis.be/juridische_beperking
+<https://abv.libis.be/juridische_beperking> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/juridische_beperking> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/juridische_beperking> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/JuridischeBeperking> .
+<https://abv.libis.be/juridische_beperking> <http://www.w3.org/2000/01/rdf-schema#comment> "bevat het archief/collectie materiaal dat mogelijk veel persoonsgegevens bevat, bevat het archief/collectie materiaal dat mogelijk veel persoonsgegevens bevat, bevat het archief/collectie materiaal dat mogelijk auteursrechtelijk beschermd " .
+<https://abv.libis.be/juridische_beperking> <http://www.w3.org/2000/01/rdf-schema#label> "juridische_beperking" .
+# 
+# https://abv.libis.be/naam
+<https://abv.libis.be/naam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/naam> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Agent> .
+<https://abv.libis.be/naam> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Naam> .
+<https://abv.libis.be/naam> <http://www.w3.org/2000/01/rdf-schema#comment> "Herhaalbaar om naamsvarianten te documenteren." .
+<https://abv.libis.be/naam> <http://www.w3.org/2000/01/rdf-schema#label> "naam" .
+# 
+# https://abv.libis.be/omvang
+<https://abv.libis.be/omvang> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/omvang> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/omvang> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Omvang> .
+<https://abv.libis.be/omvang> <http://www.w3.org/2000/01/rdf-schema#comment> "vrije tekst beschrijving van de dimensies en materiaalsoorten waaruit het archiefbestand bestaat" .
+<https://abv.libis.be/omvang> <http://www.w3.org/2000/01/rdf-schema#label> "omvang" .
+# 
+# https://abv.libis.be/onderwerp
+<https://abv.libis.be/onderwerp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/onderwerp> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Associatie> .
+<https://abv.libis.be/onderwerp> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Onderwerp> .
+<https://abv.libis.be/onderwerp> <http://www.w3.org/2000/01/rdf-schema#comment> "Onderwerp trefwoorden die geassocieerd kunnen worden met archief." .
+<https://abv.libis.be/onderwerp> <http://www.w3.org/2000/01/rdf-schema#label> "onderwerp" .
+# 
+# https://abv.libis.be/ordening
+<https://abv.libis.be/ordening> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/ordening> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/ordening> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Ordening> .
+<https://abv.libis.be/ordening> <http://www.w3.org/2000/01/rdf-schema#comment> "Toont de ordeningsstatus aan van het archief:geordend, niet geordend of onbekend." .
+<https://abv.libis.be/ordening> <http://www.w3.org/2000/01/rdf-schema#label> "ordening" .
+# 
+# https://abv.libis.be/periode
+<https://abv.libis.be/periode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/periode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Associatie> .
+<https://abv.libis.be/periode> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Periode> .
+<https://abv.libis.be/periode> <http://www.w3.org/2000/01/rdf-schema#comment> "Tijdsperiode waarmee archief gelinkt kan worden." .
+<https://abv.libis.be/periode> <http://www.w3.org/2000/01/rdf-schema#label> "periode" .
+# 
+# https://abv.libis.be/plaats
+<https://abv.libis.be/plaats> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/plaats> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Associatie> .
+<https://abv.libis.be/plaats> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Plaats> .
+<https://abv.libis.be/plaats> <http://www.w3.org/2000/01/rdf-schema#comment> "Plaats geassocieerd met het archief." .
+<https://abv.libis.be/plaats> <http://www.w3.org/2000/01/rdf-schema#label> "plaats" .
+# 
+# https://abv.libis.be/plaatsnaam
+<https://abv.libis.be/plaatsnaam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/plaatsnaam> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Plaats> .
+<https://abv.libis.be/plaatsnaam> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Naam> .
+<https://abv.libis.be/plaatsnaam> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/plaatsnaam> <http://www.w3.org/2000/01/rdf-schema#label> "plaatsnaam" .
+# 
+# https://abv.libis.be/raadplegingsstatus
+<https://abv.libis.be/raadplegingsstatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/raadplegingsstatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Raadplegingsvoorwaarde> .
+<https://abv.libis.be/raadplegingsstatus> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Raadplegingsstatus> .
+<https://abv.libis.be/raadplegingsstatus> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/raadplegingsstatus> <http://www.w3.org/2000/01/rdf-schema#label> "raadplegingsstatus" .
+# 
+# https://abv.libis.be/raadplegingsvoorwaarde
+<https://abv.libis.be/raadplegingsvoorwaarde> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/raadplegingsvoorwaarde> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/raadplegingsvoorwaarde> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Raadplegingsvoorwaarde> .
+<https://abv.libis.be/raadplegingsvoorwaarde> <http://www.w3.org/2000/01/rdf-schema#comment> "vrije tekst omschrijving van de concrete voorwaarden die verbonden zijn aan de toegang tot het archief/collectie" .
+<https://abv.libis.be/raadplegingsvoorwaarde> <http://www.w3.org/2000/01/rdf-schema#label> "raadplegingsvoorwaarde" .
+# 
+# https://abv.libis.be/rechtenstatus_metadata
+<https://abv.libis.be/rechtenstatus_metadata> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/rechtenstatus_metadata> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/rechtenstatus_metadata> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Rechtenstatus> .
+<https://abv.libis.be/rechtenstatus_metadata> <http://www.w3.org/2000/01/rdf-schema#comment> "Geeft weer onder welke licentievoorwaarden de metadata gepubliceerd kunnen worden." .
+<https://abv.libis.be/rechtenstatus_metadata> <http://www.w3.org/2000/01/rdf-schema#label> "rechtenstatus_metadata" .
+# 
+# https://abv.libis.be/rol_beheerder
+<https://abv.libis.be/rol_beheerder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/rol_beheerder> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/rol_beheerder> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/RolBeheerder> .
+<https://abv.libis.be/rol_beheerder> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/rol_beheerder> <http://www.w3.org/2000/01/rdf-schema#label> "rol_beheerder" .
+# 
+# https://abv.libis.be/rol_samensteller
+<https://abv.libis.be/rol_samensteller> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/rol_samensteller> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/rol_samensteller> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/RolSamensteller> .
+<https://abv.libis.be/rol_samensteller> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/rol_samensteller> <http://www.w3.org/2000/01/rdf-schema#label> "rol_samensteller" .
+# 
+# https://abv.libis.be/samensteller
+<https://abv.libis.be/samensteller> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/samensteller> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/samensteller> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Samensteller> .
+<https://abv.libis.be/samensteller> <http://www.w3.org/2000/01/rdf-schema#comment> "nieuwe overkoepelende term voor zowel archiefvormers, verzamelaars als documentalisten. herhaalbaar om verschillende samenstellers en hun verschillende rollen te kunnen documenteren" .
+<https://abv.libis.be/samensteller> <http://www.w3.org/2000/01/rdf-schema#label> "samensteller" .
+# 
+# https://abv.libis.be/selectie
+<https://abv.libis.be/selectie> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/selectie> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/selectie> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Waardering> .
+<https://abv.libis.be/selectie> <http://www.w3.org/2000/01/rdf-schema#comment> "Verklaring over de erfgoedwaarde van het archiefbestand en de vergelijking met andere archiefbestanden." .
+<https://abv.libis.be/selectie> <http://www.w3.org/2000/01/rdf-schema#label> "selectie" .
+# 
+# https://abv.libis.be/taal
+<https://abv.libis.be/taal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/taal> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Agent> .
+<https://abv.libis.be/taal> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/taal> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Raadplegingsvoorwaarde> .
+<https://abv.libis.be/taal> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Taal> .
+<https://abv.libis.be/taal> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/taal> <http://www.w3.org/2000/01/rdf-schema#label> "taal" .
+# 
+# https://abv.libis.be/toegang
+<https://abv.libis.be/toegang> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/toegang> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/toegang> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Beheerder> .
+<https://abv.libis.be/toegang> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Publicatie> .
+<https://abv.libis.be/toegang> <http://www.w3.org/2000/01/rdf-schema#comment> "Verwijzing naar de toegang voor de archieven/collecties die de Agent bewaard." .
+<https://abv.libis.be/toegang> <http://www.w3.org/2000/01/rdf-schema#label> "toegang" .
+# 
+# https://abv.libis.be/trefwoord
+<https://abv.libis.be/trefwoord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/trefwoord> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Omvang> .
+<https://abv.libis.be/trefwoord> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Ordening> .
+<https://abv.libis.be/trefwoord> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Ordeningsstatus> .
+<https://abv.libis.be/trefwoord> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/trefwoord> <http://www.w3.org/2000/01/rdf-schema#label> "trefwoord" .
+# 
+# https://abv.libis.be/type
+<https://abv.libis.be/type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/type> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Agent> .
+<https://abv.libis.be/type> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Concept> .
+<https://abv.libis.be/type> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Identificatienummer> .
+<https://abv.libis.be/type> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/TypeIdentificatienummer> .
+<https://abv.libis.be/type> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/type> <http://www.w3.org/2000/01/rdf-schema#label> "type" .
+# 
+# https://abv.libis.be/type_naam
+<https://abv.libis.be/type_naam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/type_naam> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Naam> .
+<https://abv.libis.be/type_naam> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/TypeNaam> .
+<https://abv.libis.be/type_naam> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/type_naam> <http://www.w3.org/2000/01/rdf-schema#label> "type_naam" .
+# 
+# https://abv.libis.be/type_vergelijking
+<https://abv.libis.be/type_vergelijking> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/type_vergelijking> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Vergelijking> .
+<https://abv.libis.be/type_vergelijking> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/TypeVergelijking> .
+<https://abv.libis.be/type_vergelijking> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/type_vergelijking> <http://www.w3.org/2000/01/rdf-schema#label> "type_vergelijking" .
+# 
+# https://abv.libis.be/type_waarde
+<https://abv.libis.be/type_waarde> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/type_waarde> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Waarde> .
+<https://abv.libis.be/type_waarde> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/TypeWaarde> .
+<https://abv.libis.be/type_waarde> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/type_waarde> <http://www.w3.org/2000/01/rdf-schema#label> "type_waarde" .
+# 
+# https://abv.libis.be/vergelijking
+<https://abv.libis.be/vergelijking> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/vergelijking> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Waardering> .
+<https://abv.libis.be/vergelijking> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Vergelijking> .
+<https://abv.libis.be/vergelijking> <http://www.w3.org/2000/01/rdf-schema#comment> "Omschrijving hoe het archiefbestand zich voor een specifiek aspect verhoudt tot andere archiefbestanden." .
+<https://abv.libis.be/vergelijking> <http://www.w3.org/2000/01/rdf-schema#label> "vergelijking" .
+# 
+# https://abv.libis.be/waarde
+<https://abv.libis.be/waarde> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://abv.libis.be/waarde> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Identificatienummer> .
+<https://abv.libis.be/waarde> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Naam> .
+<https://abv.libis.be/waarde> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Omvang> .
+<https://abv.libis.be/waarde> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Ordening> .
+<https://abv.libis.be/waarde> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Vergelijking> .
+<https://abv.libis.be/waarde> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Waarde> .
+<https://abv.libis.be/waarde> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Waardering> .
+<https://abv.libis.be/waarde> <http://www.w3.org/2000/01/rdf-schema#range> <https://abv.libis.be/Waarde> .
+<https://abv.libis.be/waarde> <http://www.w3.org/2000/01/rdf-schema#comment> "Omschrijving van een specifieke erfgoedwaarde die aan het archiefbestand wordt toegekend" .
+<https://abv.libis.be/waarde> <http://www.w3.org/2000/01/rdf-schema#label> "waarde" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://abv.libis.be/aangemaakt_op
+<https://abv.libis.be/aangemaakt_op> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/aangemaakt_op> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/EntiteitMetadata> .
+<https://abv.libis.be/aangemaakt_op> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<https://abv.libis.be/aangemaakt_op> <http://www.w3.org/2000/01/rdf-schema#comment> "datum waarop record werd aangemaakt" .
+<https://abv.libis.be/aangemaakt_op> <http://www.w3.org/2000/01/rdf-schema#label> "aangemaakt_op" .
+# 
+# https://abv.libis.be/aangepast_op
+<https://abv.libis.be/aangepast_op> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/aangepast_op> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/EntiteitMetadata> .
+<https://abv.libis.be/aangepast_op> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<https://abv.libis.be/aangepast_op> <http://www.w3.org/2000/01/rdf-schema#comment> "datum waarop record is aangepast" .
+<https://abv.libis.be/aangepast_op> <http://www.w3.org/2000/01/rdf-schema#label> "aangepast_op" .
+# 
+# https://abv.libis.be/aangroei_text
+<https://abv.libis.be/aangroei_text> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/aangroei_text> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/aangroei_text> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/aangroei_text> <http://www.w3.org/2000/01/rdf-schema#comment> "oud aangroei veld" .
+<https://abv.libis.be/aangroei_text> <http://www.w3.org/2000/01/rdf-schema#label> "aangroei_text" .
+# 
+# https://abv.libis.be/aantekening_archivaris
+<https://abv.libis.be/aantekening_archivaris> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/aantekening_archivaris> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/aantekening_archivaris> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/aantekening_archivaris> <http://www.w3.org/2000/01/rdf-schema#comment> "Dit veld zal alle aantekeningen bundelen die voordien in de velden “aantekening”, “werknotities” en “aantekening archivaris” stonden." .
+<https://abv.libis.be/aantekening_archivaris> <http://www.w3.org/2000/01/rdf-schema#label> "aantekening_archivaris" .
+# 
+# https://abv.libis.be/bibliografie_agent
+<https://abv.libis.be/bibliografie_agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/bibliografie_agent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Agent> .
+<https://abv.libis.be/bibliografie_agent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/bibliografie_agent> <http://www.w3.org/2000/01/rdf-schema#comment> "Bronnen over de agent." .
+<https://abv.libis.be/bibliografie_agent> <http://www.w3.org/2000/01/rdf-schema#label> "bibliografie_agent" .
+# 
+# https://abv.libis.be/bibliografie_archief
+<https://abv.libis.be/bibliografie_archief> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/bibliografie_archief> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/bibliografie_archief> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/bibliografie_archief> <http://www.w3.org/2000/01/rdf-schema#comment> "bibliografie werken gebaseerd op of gerelateerd aan het archief/de collectie" .
+<https://abv.libis.be/bibliografie_archief> <http://www.w3.org/2000/01/rdf-schema#label> "bibliografie_archief" .
+# 
+# https://abv.libis.be/bibliografische_verwijzing
+<https://abv.libis.be/bibliografische_verwijzing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/bibliografische_verwijzing> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Publicatie> .
+<https://abv.libis.be/bibliografische_verwijzing> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/bibliografische_verwijzing> <http://www.w3.org/2000/01/rdf-schema#comment> "volledige bibliografische verwijzing naar de publicatie" .
+<https://abv.libis.be/bibliografische_verwijzing> <http://www.w3.org/2000/01/rdf-schema#label> "bibliografische_verwijzing" .
+# 
+# https://abv.libis.be/bijdragers
+<https://abv.libis.be/bijdragers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/bijdragers> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Waardering> .
+<https://abv.libis.be/bijdragers> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/bijdragers> <http://www.w3.org/2000/01/rdf-schema#comment> "De namen van personen en organisaties die een bijdrage leverden aan deze waardering" .
+<https://abv.libis.be/bijdragers> <http://www.w3.org/2000/01/rdf-schema#label> "bijdragers" .
+# 
+# https://abv.libis.be/bronnen_agent
+<https://abv.libis.be/bronnen_agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/bronnen_agent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Agent> .
+<https://abv.libis.be/bronnen_agent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/bronnen_agent> <http://www.w3.org/2000/01/rdf-schema#comment> "Bronnen gebruikt om agentbeschrijving op te stellen." .
+<https://abv.libis.be/bronnen_agent> <http://www.w3.org/2000/01/rdf-schema#label> "bronnen_agent" .
+# 
+# https://abv.libis.be/bronnen_archief
+<https://abv.libis.be/bronnen_archief> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/bronnen_archief> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/bronnen_archief> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/bronnen_archief> <http://www.w3.org/2000/01/rdf-schema#comment> "bibliografie werken gebruikt voor het opstellen van de beschrijving" .
+<https://abv.libis.be/bronnen_archief> <http://www.w3.org/2000/01/rdf-schema#label> "bronnen_archief" .
+# 
+# https://abv.libis.be/bronverwijzing_archief
+<https://abv.libis.be/bronverwijzing_archief> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/bronverwijzing_archief> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/bronverwijzing_archief> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/bronverwijzing_archief> <http://www.w3.org/2000/01/rdf-schema#comment> "Correcte verwijzing naar het record en naar het archief in de Chicagostijl." .
+<https://abv.libis.be/bronverwijzing_archief> <http://www.w3.org/2000/01/rdf-schema#label> "bronverwijzing_archief" .
+# 
+# https://abv.libis.be/bronverwijzing_record
+<https://abv.libis.be/bronverwijzing_record> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/bronverwijzing_record> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/bronverwijzing_record> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/bronverwijzing_record> <http://www.w3.org/2000/01/rdf-schema#comment> "Correcte verwijzing naar het record en naar het archief in de Chicagostijl." .
+<https://abv.libis.be/bronverwijzing_record> <http://www.w3.org/2000/01/rdf-schema#label> "bronverwijzing_record" .
+# 
+# https://abv.libis.be/contractuele_beperking
+<https://abv.libis.be/contractuele_beperking> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/contractuele_beperking> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/JuridischeBeperking> .
+<https://abv.libis.be/contractuele_beperking> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://abv.libis.be/contractuele_beperking> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/contractuele_beperking> <http://www.w3.org/2000/01/rdf-schema#label> "contractuele_beperking" .
+# 
+# https://abv.libis.be/datering_systematisch
+<https://abv.libis.be/datering_systematisch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/datering_systematisch> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Agent> .
+<https://abv.libis.be/datering_systematisch> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/datering_systematisch> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#duration> .
+<https://abv.libis.be/datering_systematisch> <http://www.w3.org/2000/01/rdf-schema#comment> "Jaartallen van bereik van het archief: uit welke periode stammen de documenten." .
+<https://abv.libis.be/datering_systematisch> <http://www.w3.org/2000/01/rdf-schema#label> "datering_systematisch" .
+# 
+# https://abv.libis.be/datering_text
+<https://abv.libis.be/datering_text> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/datering_text> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Agent> .
+<https://abv.libis.be/datering_text> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/datering_text> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/datering_text> <http://www.w3.org/2000/01/rdf-schema#comment> "Woordelijke uitleg bij datering_systematisch, initiëel ook voor legacy data." .
+<https://abv.libis.be/datering_text> <http://www.w3.org/2000/01/rdf-schema#label> "datering_text" .
+# 
+# https://abv.libis.be/datum_uitgave
+<https://abv.libis.be/datum_uitgave> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/datum_uitgave> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Publicatie> .
+<https://abv.libis.be/datum_uitgave> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<https://abv.libis.be/datum_uitgave> <http://www.w3.org/2000/01/rdf-schema#comment> "datum van uitgave" .
+<https://abv.libis.be/datum_uitgave> <http://www.w3.org/2000/01/rdf-schema#label> "datum_uitgave" .
+# 
+# https://abv.libis.be/datum_waardering
+<https://abv.libis.be/datum_waardering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/datum_waardering> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Waardering> .
+<https://abv.libis.be/datum_waardering> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<https://abv.libis.be/datum_waardering> <http://www.w3.org/2000/01/rdf-schema#comment> "datum waarop de waardering gemaakt werd" .
+<https://abv.libis.be/datum_waardering> <http://www.w3.org/2000/01/rdf-schema#label> "datum_waardering" .
+# 
+# https://abv.libis.be/definitie
+<https://abv.libis.be/definitie> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/definitie> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Concept> .
+<https://abv.libis.be/definitie> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<https://abv.libis.be/definitie> <http://www.w3.org/2000/01/rdf-schema#comment> "Definitie van het Concept" .
+<https://abv.libis.be/definitie> <http://www.w3.org/2000/01/rdf-schema#label> "definitie" .
+# 
+# https://abv.libis.be/email
+<https://abv.libis.be/email> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/email> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Beheerder> .
+<https://abv.libis.be/email> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/email> <http://www.w3.org/2000/01/rdf-schema#comment> "Emailadres van bewaarplaats." .
+<https://abv.libis.be/email> <http://www.w3.org/2000/01/rdf-schema#label> "email" .
+# 
+# https://abv.libis.be/gebouw
+<https://abv.libis.be/gebouw> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/gebouw> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Beheerder> .
+<https://abv.libis.be/gebouw> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/gebouw> <http://www.w3.org/2000/01/rdf-schema#comment> "Verwijzing naar de bewaarplaatsen die verbonden zijn aan de Agent" .
+<https://abv.libis.be/gebouw> <http://www.w3.org/2000/01/rdf-schema#label> "gebouw" .
+# 
+# https://abv.libis.be/geschiedenis_agent
+<https://abv.libis.be/geschiedenis_agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/geschiedenis_agent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Agent> .
+<https://abv.libis.be/geschiedenis_agent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<https://abv.libis.be/geschiedenis_agent> <http://www.w3.org/2000/01/rdf-schema#comment> "Biografische geschiedenis van de agent." .
+<https://abv.libis.be/geschiedenis_agent> <http://www.w3.org/2000/01/rdf-schema#label> "geschiedenis_agent" .
+# 
+# https://abv.libis.be/geschiedenis_archief
+<https://abv.libis.be/geschiedenis_archief> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/geschiedenis_archief> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/geschiedenis_archief> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<https://abv.libis.be/geschiedenis_archief> <http://www.w3.org/2000/01/rdf-schema#comment> "Geschiedenis van het archief." .
+<https://abv.libis.be/geschiedenis_archief> <http://www.w3.org/2000/01/rdf-schema#label> "geschiedenis_archief" .
+# 
+# https://abv.libis.be/gevoelig_voor_auteursrechtelijkebescherming
+<https://abv.libis.be/gevoelig_voor_auteursrechtelijkebescherming> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/gevoelig_voor_auteursrechtelijkebescherming> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/JuridischeBeperking> .
+<https://abv.libis.be/gevoelig_voor_auteursrechtelijkebescherming> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://abv.libis.be/gevoelig_voor_auteursrechtelijkebescherming> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/gevoelig_voor_auteursrechtelijkebescherming> <http://www.w3.org/2000/01/rdf-schema#label> "gevoelig_voor_auteursrechtelijkebescherming" .
+# 
+# https://abv.libis.be/id
+<https://abv.libis.be/id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Aangroei> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Bereikbaarheid> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Beschrijvingsniveau> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/BibliografieArchief> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Bronbeschrijving> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Bronverwijzing> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Datering> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Erkenning> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Functie> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/FunctieBeroepActiviteit> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Gebruiksgroep> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Materiaalsoort> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Onderwerp> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Ordeningsstatus> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Periode> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Raadplegingsstatus> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Rechtenstatus> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Rol> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/RolBeheerder> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/RolSamensteller> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Soort> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Taal> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Term> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Toegang> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/TypeAgent> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/TypeConcept> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/TypeIdentificatienummer> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/TypeNaam> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/TypeVergelijking> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/TypeWaarde> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Waarde> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#comment> "systeem UUID" .
+<https://abv.libis.be/id> <http://www.w3.org/2000/01/rdf-schema#label> "id" .
+# 
+# https://abv.libis.be/inhoud_en_bereik
+<https://abv.libis.be/inhoud_en_bereik> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/inhoud_en_bereik> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/inhoud_en_bereik> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<https://abv.libis.be/inhoud_en_bereik> <http://www.w3.org/2000/01/rdf-schema#comment> "Inhoud van archief." .
+<https://abv.libis.be/inhoud_en_bereik> <http://www.w3.org/2000/01/rdf-schema#label> "inhoud_en_bereik" .
+# 
+# https://abv.libis.be/label
+<https://abv.libis.be/label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/label> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Concept> .
+<https://abv.libis.be/label> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<https://abv.libis.be/label> <http://www.w3.org/2000/01/rdf-schema#comment> "Naam voor het Concept" .
+<https://abv.libis.be/label> <http://www.w3.org/2000/01/rdf-schema#label> "label" .
+# 
+# https://abv.libis.be/openingsuren
+<https://abv.libis.be/openingsuren> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/openingsuren> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Beheerder> .
+<https://abv.libis.be/openingsuren> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/openingsuren> <http://www.w3.org/2000/01/rdf-schema#comment> "Openingsuren waarop de Agent bereikbaar/toegankelijk is" .
+<https://abv.libis.be/openingsuren> <http://www.w3.org/2000/01/rdf-schema#label> "openingsuren" .
+# 
+# https://abv.libis.be/opmerking
+<https://abv.libis.be/opmerking> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/opmerking> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Agent> .
+<https://abv.libis.be/opmerking> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/opmerking> <http://www.w3.org/2000/01/rdf-schema#comment> "Vrij opmerkingen veld." .
+<https://abv.libis.be/opmerking> <http://www.w3.org/2000/01/rdf-schema#label> "opmerking" .
+# 
+# https://abv.libis.be/opmerkingen
+<https://abv.libis.be/opmerkingen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/opmerkingen> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Waardering> .
+<https://abv.libis.be/opmerkingen> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/opmerkingen> <http://www.w3.org/2000/01/rdf-schema#comment> "Vrij notitieveld bij deze waardering" .
+<https://abv.libis.be/opmerkingen> <http://www.w3.org/2000/01/rdf-schema#label> "opmerkingen" .
+# 
+# https://abv.libis.be/ordening_text
+<https://abv.libis.be/ordening_text> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/ordening_text> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/ordening_text> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/ordening_text> <http://www.w3.org/2000/01/rdf-schema#comment> "oud ordening veld" .
+<https://abv.libis.be/ordening_text> <http://www.w3.org/2000/01/rdf-schema#label> "ordening_text" .
+# 
+# https://abv.libis.be/plaats_van_uitgave
+<https://abv.libis.be/plaats_van_uitgave> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/plaats_van_uitgave> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Publicatie> .
+<https://abv.libis.be/plaats_van_uitgave> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/plaats_van_uitgave> <http://www.w3.org/2000/01/rdf-schema#comment> "naam van de plaats van uitgave" .
+<https://abv.libis.be/plaats_van_uitgave> <http://www.w3.org/2000/01/rdf-schema#label> "plaats_van_uitgave" .
+# 
+# https://abv.libis.be/privacy_gevoelig
+<https://abv.libis.be/privacy_gevoelig> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/privacy_gevoelig> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/JuridischeBeperking> .
+<https://abv.libis.be/privacy_gevoelig> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://abv.libis.be/privacy_gevoelig> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/privacy_gevoelig> <http://www.w3.org/2000/01/rdf-schema#label> "privacy_gevoelig" .
+# 
+# https://abv.libis.be/reeks
+<https://abv.libis.be/reeks> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/reeks> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Publicatie> .
+<https://abv.libis.be/reeks> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/reeks> <http://www.w3.org/2000/01/rdf-schema#comment> "titel van de reeks waarin de publicatie verschijnt" .
+<https://abv.libis.be/reeks> <http://www.w3.org/2000/01/rdf-schema#label> "reeks" .
+# 
+# https://abv.libis.be/reeksnummer
+<https://abv.libis.be/reeksnummer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/reeksnummer> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Publicatie> .
+<https://abv.libis.be/reeksnummer> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/reeksnummer> <http://www.w3.org/2000/01/rdf-schema#comment> "rangnummer van de publicatie binnen de reeks" .
+<https://abv.libis.be/reeksnummer> <http://www.w3.org/2000/01/rdf-schema#label> "reeksnummer" .
+# 
+# https://abv.libis.be/straat_en_nummer
+<https://abv.libis.be/straat_en_nummer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/straat_en_nummer> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Adres> .
+<https://abv.libis.be/straat_en_nummer> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/straat_en_nummer> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/straat_en_nummer> <http://www.w3.org/2000/01/rdf-schema#label> "straat_en_nummer" .
+# 
+# https://abv.libis.be/taal_text
+<https://abv.libis.be/taal_text> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/taal_text> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/taal_text> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/taal_text> <http://www.w3.org/2000/01/rdf-schema#comment> "oude taal veld" .
+<https://abv.libis.be/taal_text> <http://www.w3.org/2000/01/rdf-schema#label> "taal_text" .
+# 
+# https://abv.libis.be/tekst
+<https://abv.libis.be/tekst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/tekst> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Raadplegingsvoorwaarde> .
+<https://abv.libis.be/tekst> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/tekst> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/tekst> <http://www.w3.org/2000/01/rdf-schema#label> "tekst" .
+# 
+# https://abv.libis.be/telefoon
+<https://abv.libis.be/telefoon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/telefoon> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Beheerder> .
+<https://abv.libis.be/telefoon> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/telefoon> <http://www.w3.org/2000/01/rdf-schema#comment> "Telefoonnummer van bewaarplaats." .
+<https://abv.libis.be/telefoon> <http://www.w3.org/2000/01/rdf-schema#label> "telefoon" .
+# 
+# https://abv.libis.be/titel
+<https://abv.libis.be/titel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/titel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/titel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Publicatie> .
+<https://abv.libis.be/titel> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<https://abv.libis.be/titel> <http://www.w3.org/2000/01/rdf-schema#comment> "titel van de publicatie" .
+<https://abv.libis.be/titel> <http://www.w3.org/2000/01/rdf-schema#label> "titel" .
+# 
+# https://abv.libis.be/toegangsvoorwaarden
+<https://abv.libis.be/toegangsvoorwaarden> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/toegangsvoorwaarden> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Beheerder> .
+<https://abv.libis.be/toegangsvoorwaarden> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/toegangsvoorwaarden> <http://www.w3.org/2000/01/rdf-schema#comment> "Voorwaarden om toegang te krijgen tot archieven/collecties die door de Agent worden bewaard." .
+<https://abv.libis.be/toegangsvoorwaarden> <http://www.w3.org/2000/01/rdf-schema#label> "toegangsvoorwaarden" .
+# 
+# https://abv.libis.be/uitgever
+<https://abv.libis.be/uitgever> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/uitgever> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Publicatie> .
+<https://abv.libis.be/uitgever> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/uitgever> <http://www.w3.org/2000/01/rdf-schema#comment> "naam van de uitgever van de publicatie" .
+<https://abv.libis.be/uitgever> <http://www.w3.org/2000/01/rdf-schema#label> "uitgever" .
+# 
+# https://abv.libis.be/url
+<https://abv.libis.be/url> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/url> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Publicatie> .
+<https://abv.libis.be/url> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://abv.libis.be/url> <http://www.w3.org/2000/01/rdf-schema#comment> "URL die verwijst naar een digitale versie van de publicatie" .
+<https://abv.libis.be/url> <http://www.w3.org/2000/01/rdf-schema#label> "url" .
+# 
+# https://abv.libis.be/verwerving
+<https://abv.libis.be/verwerving> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/verwerving> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Archief> .
+<https://abv.libis.be/verwerving> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<https://abv.libis.be/verwerving> <http://www.w3.org/2000/01/rdf-schema#comment> "Uitleg hoe archief verworven werd door bewaarinstelling." .
+<https://abv.libis.be/verwerving> <http://www.w3.org/2000/01/rdf-schema#label> "verwerving" .
+# 
+# https://abv.libis.be/verwijderd_op
+<https://abv.libis.be/verwijderd_op> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/verwijderd_op> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/EntiteitMetadata> .
+<https://abv.libis.be/verwijderd_op> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<https://abv.libis.be/verwijderd_op> <http://www.w3.org/2000/01/rdf-schema#comment> "datum waarop record is verwijderd" .
+<https://abv.libis.be/verwijderd_op> <http://www.w3.org/2000/01/rdf-schema#label> "verwijderd_op" .
+# 
+# https://abv.libis.be/waardestelling
+<https://abv.libis.be/waardestelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/waardestelling> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Waardering> .
+<https://abv.libis.be/waardestelling> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<https://abv.libis.be/waardestelling> <http://www.w3.org/2000/01/rdf-schema#comment> "Omvattende verklaring van de erfgoedwaarde die een archiefbestand vertegenwoordigt." .
+<https://abv.libis.be/waardestelling> <http://www.w3.org/2000/01/rdf-schema#label> "waardestelling" .
+# 
+# https://abv.libis.be/website
+<https://abv.libis.be/website> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://abv.libis.be/website> <http://www.w3.org/2000/01/rdf-schema#domain> <https://abv.libis.be/Beheerder> .
+<https://abv.libis.be/website> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://abv.libis.be/website> <http://www.w3.org/2000/01/rdf-schema#comment> "Website bewaarinstelling." .
+<https://abv.libis.be/website> <http://www.w3.org/2000/01/rdf-schema#label> "website" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://abv.libis.be/Aangroei
+<https://abv.libis.be/Aangroei> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Aangroei> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/Aangroei> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Aangroei> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Aangroei> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Aangroei> <http://www.w3.org/2000/01/rdf-schema#label> "Aangroei" .
+# 
+# https://abv.libis.be/Adres
+<https://abv.libis.be/Adres> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Adres> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Adres> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/gemeente> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Adres> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/gemeente> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Adres> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/straat_en_nummer> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Adres> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/straat_en_nummer> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Adres> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Adres> <http://www.w3.org/2000/01/rdf-schema#label> "Adres" .
+# 
+# https://abv.libis.be/Agent
+<https://abv.libis.be/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/associaties> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/identificatie> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/naam> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/taal> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/type> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/associaties> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/type> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/bibliografie_agent> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/bronnen_agent> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/datering_systematisch> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/datering_text> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/geschiedenis_agent> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/opmerking> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/datering_text> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "beperkt beschrijvingsmodel. doel: enkel relateren van agents aan archieven en waarderingen. geen afzonderlijke biografische databank (dus geen familierelaties bvb) Gebruik daarvoor een externe bron." .
+<https://abv.libis.be/Agent> <http://www.w3.org/2000/01/rdf-schema#label> "Agent" .
+# 
+# https://abv.libis.be/Archief
+<https://abv.libis.be/Archief> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/aangroei> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/associatie> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/beheerder> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/beschrijvingsniveau> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
+_:genid25 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/identificatienummer> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
+_:genid26 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/is_onderdeel_van> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid27 .
+_:genid27 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/juridische_beperking> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid28 .
+_:genid28 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/omvang> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid29 .
+_:genid29 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/ordening> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid30 .
+_:genid30 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid30 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/raadplegingsvoorwaarde> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid31 .
+_:genid31 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/rechtenstatus_metadata> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid32 .
+_:genid32 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid32 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/rol_beheerder> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid33 .
+_:genid33 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid33 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/rol_samensteller> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid34 .
+_:genid34 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid34 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/samensteller> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid35 .
+_:genid35 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid35 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/selectie> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid36 .
+_:genid36 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid36 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/taal> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid37 .
+_:genid37 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid37 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/toegang> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid38 .
+_:genid38 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid38 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/aangroei> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid39 .
+_:genid39 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid39 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/associatie> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid40 .
+_:genid40 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid40 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/beschrijvingsniveau> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid41 .
+_:genid41 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid41 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/is_onderdeel_van> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid42 .
+_:genid42 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid42 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/juridische_beperking> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid43 .
+_:genid43 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid43 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/ordening> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid44 .
+_:genid44 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid44 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/rechtenstatus_metadata> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid45 .
+_:genid45 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid45 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/rol_beheerder> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid46 .
+_:genid46 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid46 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/rol_samensteller> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid47 .
+_:genid47 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid47 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/aangroei_text> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid48 .
+_:genid48 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid48 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/aantekening_archivaris> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid49 .
+_:genid49 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid49 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/bibliografie_archief> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid50 .
+_:genid50 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid50 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/bronnen_archief> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid51 .
+_:genid51 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid51 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/bronverwijzing_archief> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid52 .
+_:genid52 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid52 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/bronverwijzing_record> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid53 .
+_:genid53 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid53 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/datering_systematisch> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid54 .
+_:genid54 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid54 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/datering_text> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid55 .
+_:genid55 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid55 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/geschiedenis_archief> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid56 .
+_:genid56 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid56 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/inhoud_en_bereik> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid57 .
+_:genid57 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid57 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/ordening_text> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid58 .
+_:genid58 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid58 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/taal_text> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid59 .
+_:genid59 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid59 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/titel> .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid60 .
+_:genid60 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid60 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/verwerving> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid61 .
+_:genid61 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid61 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/aangroei_text> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid62 .
+_:genid62 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid62 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/bronverwijzing_archief> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid63 .
+_:genid63 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid63 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/bronverwijzing_record> .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid64 .
+_:genid64 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid64 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/datering_text> .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid65 .
+_:genid65 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid65 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/ordening_text> .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Archief> <http://www.w3.org/2000/01/rdf-schema#label> "Archief" .
+# 
+# https://abv.libis.be/Associatie
+<https://abv.libis.be/Associatie> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Associatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Associatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid66 .
+_:genid66 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid66 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/agent> .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Associatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid67 .
+_:genid67 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid67 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/onderwerp> .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Associatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid68 .
+_:genid68 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid68 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/periode> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Associatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid69 .
+_:genid69 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid69 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/plaats> .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Associatie> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Associatie> <http://www.w3.org/2000/01/rdf-schema#label> "Associatie" .
+# 
+# https://abv.libis.be/Beheerder
+<https://abv.libis.be/Beheerder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid70 .
+_:genid70 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid70 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/adres> .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid71 .
+_:genid71 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid71 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/agent> .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid72 .
+_:genid72 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid72 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/bereikbaarheid> .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid73 .
+_:genid73 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid73 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/erkenning> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid74 .
+_:genid74 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid74 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/toegang> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid75 .
+_:genid75 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid75 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/agent> .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid76 .
+_:genid76 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid76 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/erkenning> .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid77 .
+_:genid77 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid77 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/email> .
+_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid78 .
+_:genid78 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid78 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/gebouw> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid79 .
+_:genid79 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid79 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/openingsuren> .
+_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid80 .
+_:genid80 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid80 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/telefoon> .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid81 .
+_:genid81 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid81 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/toegangsvoorwaarden> .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid82 .
+_:genid82 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid82 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/website> .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid83 .
+_:genid83 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid83 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/openingsuren> .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid84 .
+_:genid84 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid84 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/toegangsvoorwaarden> .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Beheerder> <http://www.w3.org/2000/01/rdf-schema#label> "Beheerder" .
+# 
+# https://abv.libis.be/Bereikbaarheid
+<https://abv.libis.be/Bereikbaarheid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Bereikbaarheid> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/Bereikbaarheid> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid85 .
+_:genid85 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid85 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Bereikbaarheid> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid86 .
+_:genid86 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid86 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Bereikbaarheid> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Bereikbaarheid> <http://www.w3.org/2000/01/rdf-schema#label> "Bereikbaarheid" .
+# 
+# https://abv.libis.be/Beschrijvingsniveau
+<https://abv.libis.be/Beschrijvingsniveau> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Beschrijvingsniveau> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/Beschrijvingsniveau> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid87 .
+_:genid87 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid87 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beschrijvingsniveau> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid88 .
+_:genid88 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid88 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Beschrijvingsniveau> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Beschrijvingsniveau> <http://www.w3.org/2000/01/rdf-schema#label> "Beschrijvingsniveau" .
+# 
+# https://abv.libis.be/BibliografieArchief
+<https://abv.libis.be/BibliografieArchief> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/BibliografieArchief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Concept> .
+<https://abv.libis.be/BibliografieArchief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid89 .
+_:genid89 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid89 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/BibliografieArchief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid90 .
+_:genid90 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid90 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/BibliografieArchief> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/BibliografieArchief> <http://www.w3.org/2000/01/rdf-schema#label> "BibliografieArchief" .
+# 
+# https://abv.libis.be/Bronbeschrijving
+<https://abv.libis.be/Bronbeschrijving> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Bronbeschrijving> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Concept> .
+<https://abv.libis.be/Bronbeschrijving> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid91 .
+_:genid91 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid91 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Bronbeschrijving> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid92 .
+_:genid92 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid92 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Bronbeschrijving> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Bronbeschrijving> <http://www.w3.org/2000/01/rdf-schema#label> "Bronbeschrijving" .
+# 
+# https://abv.libis.be/Bronverwijzing
+<https://abv.libis.be/Bronverwijzing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Bronverwijzing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Bronverwijzing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid93 .
+_:genid93 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid93 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Bronverwijzing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid94 .
+_:genid94 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid94 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Bronverwijzing> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Bronverwijzing> <http://www.w3.org/2000/01/rdf-schema#label> "Bronverwijzing" .
+# 
+# https://abv.libis.be/Codetabel
+<https://abv.libis.be/Codetabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Codetabel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Concept> .
+<https://abv.libis.be/Codetabel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid95 .
+_:genid95 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid95 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Codetabel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid96 .
+_:genid96 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid96 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Codetabel> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Codetabel> <http://www.w3.org/2000/01/rdf-schema#label> "Codetabel" .
+# 
+# https://abv.libis.be/Concept
+<https://abv.libis.be/Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Concept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Concept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid97 .
+_:genid97 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid97 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/identificatienummer> .
+_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Concept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid98 .
+_:genid98 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid98 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/type> .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Concept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid99 .
+_:genid99 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid99 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/definitie> .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Concept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid100 .
+_:genid100 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid100 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/label> .
+_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://abv.libis.be/Datering
+<https://abv.libis.be/Datering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Datering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Datering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid101 .
+_:genid101 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid101 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Datering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid102 .
+_:genid102 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid102 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Datering> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Datering> <http://www.w3.org/2000/01/rdf-schema#label> "Datering" .
+# 
+# https://abv.libis.be/EntiteitBasis
+<https://abv.libis.be/EntiteitBasis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/EntiteitBasis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid103 .
+_:genid103 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid103 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/_meta> .
+_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/EntiteitBasis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid104 .
+_:genid104 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid104 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/_meta> .
+_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/EntiteitBasis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid105 .
+_:genid105 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid105 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/EntiteitBasis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid106 .
+_:genid106 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid106 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/EntiteitBasis> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/EntiteitBasis> <http://www.w3.org/2000/01/rdf-schema#label> "EntiteitBasis" .
+# 
+# https://abv.libis.be/EntiteitMetadata
+<https://abv.libis.be/EntiteitMetadata> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/EntiteitMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/EntiteitMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid107 .
+_:genid107 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid107 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/aangemaakt_op> .
+_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/EntiteitMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid108 .
+_:genid108 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid108 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/aangepast_op> .
+_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/EntiteitMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid109 .
+_:genid109 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid109 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/verwijderd_op> .
+_:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/EntiteitMetadata> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/EntiteitMetadata> <http://www.w3.org/2000/01/rdf-schema#label> "EntiteitMetadata" .
+# 
+# https://abv.libis.be/Erkenning
+<https://abv.libis.be/Erkenning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Erkenning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Concept> .
+<https://abv.libis.be/Erkenning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid110 .
+_:genid110 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid110 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Erkenning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid111 .
+_:genid111 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid111 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Erkenning> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Erkenning> <http://www.w3.org/2000/01/rdf-schema#label> "Erkenning" .
+# 
+# https://abv.libis.be/Functie
+<https://abv.libis.be/Functie> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Functie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/Functie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid112 .
+_:genid112 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid112 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Functie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid113 .
+_:genid113 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid113 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Functie> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Functie> <http://www.w3.org/2000/01/rdf-schema#label> "Functie" .
+# 
+# https://abv.libis.be/FunctieBeroepActiviteit
+<https://abv.libis.be/FunctieBeroepActiviteit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/FunctieBeroepActiviteit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Concept> .
+<https://abv.libis.be/FunctieBeroepActiviteit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid114 .
+_:genid114 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid114 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/FunctieBeroepActiviteit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid115 .
+_:genid115 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid115 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/FunctieBeroepActiviteit> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/FunctieBeroepActiviteit> <http://www.w3.org/2000/01/rdf-schema#label> "FunctieBeroepActiviteit" .
+# 
+# https://abv.libis.be/Gebruiksgroep
+<https://abv.libis.be/Gebruiksgroep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Gebruiksgroep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/Gebruiksgroep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid116 .
+_:genid116 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid116 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Gebruiksgroep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid117 .
+_:genid117 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid117 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Gebruiksgroep> <http://www.w3.org/2000/01/rdf-schema#comment> "Lijst van groepen waartoe een gebruiker kan toe behoren" .
+<https://abv.libis.be/Gebruiksgroep> <http://www.w3.org/2000/01/rdf-schema#label> "Gebruiksgroep" .
+# 
+# https://abv.libis.be/Identificatienummer
+<https://abv.libis.be/Identificatienummer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Identificatienummer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Identificatienummer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid118 .
+_:genid118 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid118 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/bron> .
+_:genid118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Identificatienummer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid119 .
+_:genid119 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid119 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/type> .
+_:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Identificatienummer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid120 .
+_:genid120 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid120 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/waarde> .
+_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Identificatienummer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid121 .
+_:genid121 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid121 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/bron> .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Identificatienummer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid122 .
+_:genid122 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid122 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/type> .
+_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Identificatienummer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid123 .
+_:genid123 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid123 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/waarde> .
+_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Identificatienummer> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Identificatienummer> <http://www.w3.org/2000/01/rdf-schema#label> "Identificatienummer" .
+# 
+# https://abv.libis.be/JuridischeBeperking
+<https://abv.libis.be/JuridischeBeperking> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/JuridischeBeperking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/JuridischeBeperking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid124 .
+_:genid124 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid124 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/contractuele_beperking> .
+_:genid124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/JuridischeBeperking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid125 .
+_:genid125 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid125 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/gevoelig_voor_auteursrechtelijkebescherming> .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/JuridischeBeperking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid126 .
+_:genid126 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid126 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/privacy_gevoelig> .
+_:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/JuridischeBeperking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid127 .
+_:genid127 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid127 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/contractuele_beperking> .
+_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/JuridischeBeperking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid128 .
+_:genid128 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid128 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/gevoelig_voor_auteursrechtelijkebescherming> .
+_:genid128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/JuridischeBeperking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid129 .
+_:genid129 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid129 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/privacy_gevoelig> .
+_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/JuridischeBeperking> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/JuridischeBeperking> <http://www.w3.org/2000/01/rdf-schema#label> "JuridischeBeperking" .
+# 
+# https://abv.libis.be/Materiaalsoort
+<https://abv.libis.be/Materiaalsoort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Materiaalsoort> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/Materiaalsoort> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid130 .
+_:genid130 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid130 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid130 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Materiaalsoort> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid131 .
+_:genid131 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid131 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid131 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Materiaalsoort> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Materiaalsoort> <http://www.w3.org/2000/01/rdf-schema#label> "Materiaalsoort" .
+# 
+# https://abv.libis.be/Naam
+<https://abv.libis.be/Naam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Naam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Naam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid132 .
+_:genid132 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid132 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/type_naam> .
+_:genid132 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Naam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid133 .
+_:genid133 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid133 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/waarde> .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Naam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid134 .
+_:genid134 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid134 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/type_naam> .
+_:genid134 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Naam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid135 .
+_:genid135 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid135 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/waarde> .
+_:genid135 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Naam> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Naam> <http://www.w3.org/2000/01/rdf-schema#label> "Naam" .
+# 
+# https://abv.libis.be/Omvang
+<https://abv.libis.be/Omvang> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Omvang> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Omvang> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid136 .
+_:genid136 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid136 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/trefwoord> .
+_:genid136 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Omvang> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid137 .
+_:genid137 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid137 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/waarde> .
+_:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Omvang> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid138 .
+_:genid138 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid138 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/waarde> .
+_:genid138 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Omvang> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Omvang> <http://www.w3.org/2000/01/rdf-schema#label> "Omvang" .
+# 
+# https://abv.libis.be/Onderwerp
+<https://abv.libis.be/Onderwerp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Onderwerp> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/Onderwerp> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid139 .
+_:genid139 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid139 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Onderwerp> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid140 .
+_:genid140 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid140 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid140 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Onderwerp> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Onderwerp> <http://www.w3.org/2000/01/rdf-schema#label> "Onderwerp" .
+# 
+# https://abv.libis.be/Ordening
+<https://abv.libis.be/Ordening> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Ordening> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/Ordening> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid141 .
+_:genid141 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid141 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/trefwoord> .
+_:genid141 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Ordening> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid142 .
+_:genid142 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid142 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/waarde> .
+_:genid142 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Ordening> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid143 .
+_:genid143 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid143 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/trefwoord> .
+_:genid143 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Ordening> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid144 .
+_:genid144 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid144 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/waarde> .
+_:genid144 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Ordening> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Ordening> <http://www.w3.org/2000/01/rdf-schema#label> "Ordening" .
+# 
+# https://abv.libis.be/Ordeningsstatus
+<https://abv.libis.be/Ordeningsstatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Ordeningsstatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/Ordeningsstatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid145 .
+_:genid145 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid145 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid145 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Ordeningsstatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid146 .
+_:genid146 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid146 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid146 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Ordeningsstatus> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Ordeningsstatus> <http://www.w3.org/2000/01/rdf-schema#label> "Ordeningsstatus" .
+# 
+# https://abv.libis.be/Periode
+<https://abv.libis.be/Periode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Periode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/Periode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid147 .
+_:genid147 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid147 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid147 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Periode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid148 .
+_:genid148 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid148 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid148 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Periode> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Periode> <http://www.w3.org/2000/01/rdf-schema#label> "Periode" .
+# 
+# https://abv.libis.be/Plaats
+<https://abv.libis.be/Plaats> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Plaats> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Plaats> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid149 .
+_:genid149 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid149 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/identificatienummer> .
+_:genid149 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Plaats> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid150 .
+_:genid150 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid150 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/plaatsnaam> .
+_:genid150 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Plaats> <http://www.w3.org/2000/01/rdf-schema#comment> "capteert informatie over geografische locaties. Verwijzingen naar externe geografische thesauri is sterk aanbevolen. De beschrijving is uiterst beperkt gehouden, in de veronderstelling dat rijkere metadata, zoals historische namen, taalvarianten, maar ook coördinaten eenvoudig aan externe geografische thesauri ontleend kunnen worden. " .
+<https://abv.libis.be/Plaats> <http://www.w3.org/2000/01/rdf-schema#label> "Plaats" .
+# 
+# https://abv.libis.be/Publicatie
+<https://abv.libis.be/Publicatie> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid151 .
+_:genid151 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid151 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/auteur> .
+_:genid151 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid152 .
+_:genid152 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid152 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/identificatienummer> .
+_:genid152 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid153 .
+_:genid153 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid153 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/bibliografische_verwijzing> .
+_:genid153 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid154 .
+_:genid154 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid154 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/datum_uitgave> .
+_:genid154 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid155 .
+_:genid155 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid155 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/plaats_van_uitgave> .
+_:genid155 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid156 .
+_:genid156 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid156 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/reeks> .
+_:genid156 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid157 .
+_:genid157 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid157 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/reeksnummer> .
+_:genid157 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid158 .
+_:genid158 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid158 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/titel> .
+_:genid158 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid159 .
+_:genid159 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid159 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/uitgever> .
+_:genid159 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid160 .
+_:genid160 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid160 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/url> .
+_:genid160 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid161 .
+_:genid161 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid161 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/bibliografische_verwijzing> .
+_:genid161 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid162 .
+_:genid162 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid162 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/datum_uitgave> .
+_:genid162 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid163 .
+_:genid163 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid163 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/reeks> .
+_:genid163 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid164 .
+_:genid164 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid164 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/reeksnummer> .
+_:genid164 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid165 .
+_:genid165 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid165 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/titel> .
+_:genid165 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#comment> "bibliografische informatie voor publicaties die een toegang op een archiefbestand vormen, over het archiefbestand gaan of de directe informatiebron zijn voor de archiefbeschrijving. sterk aanbevolen om zoveel mogelijk externe identificatienummers voor de publicatie op te nemen. mogelijkheid om ofwel een tekststring met een volledige bibliografische referentie op te nemen, ofwel een gestructureerde beschrijving van de publicatie. de gestructureerde beschrijving maakt publicaties beter doorzoekbaar binnen archiefbank." .
+<https://abv.libis.be/Publicatie> <http://www.w3.org/2000/01/rdf-schema#label> "Publicatie" .
+# 
+# https://abv.libis.be/Raadplegingsstatus
+<https://abv.libis.be/Raadplegingsstatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Raadplegingsstatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/Raadplegingsstatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid166 .
+_:genid166 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid166 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid166 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Raadplegingsstatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid167 .
+_:genid167 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid167 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid167 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Raadplegingsstatus> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Raadplegingsstatus> <http://www.w3.org/2000/01/rdf-schema#label> "Raadplegingsstatus" .
+# 
+# https://abv.libis.be/Raadplegingsvoorwaarde
+<https://abv.libis.be/Raadplegingsvoorwaarde> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Raadplegingsvoorwaarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Raadplegingsvoorwaarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid168 .
+_:genid168 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid168 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/raadplegingsstatus> .
+_:genid168 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Raadplegingsvoorwaarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid169 .
+_:genid169 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid169 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/taal> .
+_:genid169 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Raadplegingsvoorwaarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid170 .
+_:genid170 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid170 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/raadplegingsstatus> .
+_:genid170 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Raadplegingsvoorwaarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid171 .
+_:genid171 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid171 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/taal> .
+_:genid171 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Raadplegingsvoorwaarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid172 .
+_:genid172 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid172 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/tekst> .
+_:genid172 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Raadplegingsvoorwaarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid173 .
+_:genid173 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid173 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/tekst> .
+_:genid173 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Raadplegingsvoorwaarde> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Raadplegingsvoorwaarde> <http://www.w3.org/2000/01/rdf-schema#label> "Raadplegingsvoorwaarde" .
+# 
+# https://abv.libis.be/Rechtenstatus
+<https://abv.libis.be/Rechtenstatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Rechtenstatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/Rechtenstatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid174 .
+_:genid174 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid174 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid174 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Rechtenstatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid175 .
+_:genid175 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid175 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid175 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Rechtenstatus> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Rechtenstatus> <http://www.w3.org/2000/01/rdf-schema#label> "Rechtenstatus" .
+# 
+# https://abv.libis.be/Rol
+<https://abv.libis.be/Rol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Rol> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Concept> .
+<https://abv.libis.be/Rol> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid176 .
+_:genid176 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid176 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid176 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Rol> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid177 .
+_:genid177 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid177 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid177 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Rol> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Rol> <http://www.w3.org/2000/01/rdf-schema#label> "Rol" .
+# 
+# https://abv.libis.be/RolBeheerder
+<https://abv.libis.be/RolBeheerder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/RolBeheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/RolBeheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid178 .
+_:genid178 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid178 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid178 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/RolBeheerder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid179 .
+_:genid179 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid179 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid179 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/RolBeheerder> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/RolBeheerder> <http://www.w3.org/2000/01/rdf-schema#label> "RolBeheerder" .
+# 
+# https://abv.libis.be/RolSamensteller
+<https://abv.libis.be/RolSamensteller> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/RolSamensteller> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/RolSamensteller> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid180 .
+_:genid180 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid180 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid180 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/RolSamensteller> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid181 .
+_:genid181 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid181 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid181 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/RolSamensteller> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/RolSamensteller> <http://www.w3.org/2000/01/rdf-schema#label> "RolSamensteller" .
+# 
+# https://abv.libis.be/Samensteller
+<https://abv.libis.be/Samensteller> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Samensteller> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Samensteller> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid182 .
+_:genid182 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid182 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/agent> .
+_:genid182 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Samensteller> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid183 .
+_:genid183 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid183 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/functie_beroep_activiteit> .
+_:genid183 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Samensteller> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid184 .
+_:genid184 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid184 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/agent> .
+_:genid184 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Samensteller> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Samensteller> <http://www.w3.org/2000/01/rdf-schema#label> "Samensteller" .
+# 
+# https://abv.libis.be/Soort
+<https://abv.libis.be/Soort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Soort> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Concept> .
+<https://abv.libis.be/Soort> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid185 .
+_:genid185 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid185 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid185 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Soort> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid186 .
+_:genid186 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid186 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid186 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Soort> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Soort> <http://www.w3.org/2000/01/rdf-schema#label> "Soort" .
+# 
+# https://abv.libis.be/Taal
+<https://abv.libis.be/Taal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Taal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/Taal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid187 .
+_:genid187 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid187 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid187 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Taal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid188 .
+_:genid188 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid188 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid188 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Taal> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Taal> <http://www.w3.org/2000/01/rdf-schema#label> "Taal" .
+# 
+# https://abv.libis.be/Term
+<https://abv.libis.be/Term> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Term> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Term> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid189 .
+_:genid189 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid189 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid189 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Term> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid190 .
+_:genid190 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid190 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid190 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Term> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Term> <http://www.w3.org/2000/01/rdf-schema#label> "Term" .
+# 
+# https://abv.libis.be/Toegang
+<https://abv.libis.be/Toegang> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Toegang> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Toegang> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid191 .
+_:genid191 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid191 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid191 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Toegang> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid192 .
+_:genid192 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid192 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid192 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Toegang> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Toegang> <http://www.w3.org/2000/01/rdf-schema#label> "Toegang" .
+# 
+# https://abv.libis.be/TypeAgent
+<https://abv.libis.be/TypeAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/TypeAgent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/TypeAgent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid193 .
+_:genid193 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid193 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid193 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/TypeAgent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid194 .
+_:genid194 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid194 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid194 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/TypeAgent> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/TypeAgent> <http://www.w3.org/2000/01/rdf-schema#label> "TypeAgent" .
+# 
+# https://abv.libis.be/TypeConcept
+<https://abv.libis.be/TypeConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/TypeConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/TypeConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid195 .
+_:genid195 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid195 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid195 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/TypeConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid196 .
+_:genid196 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid196 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid196 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/TypeConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/TypeConcept> <http://www.w3.org/2000/01/rdf-schema#label> "TypeConcept" .
+# 
+# https://abv.libis.be/TypeIdentificatienummer
+<https://abv.libis.be/TypeIdentificatienummer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/TypeIdentificatienummer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/TypeIdentificatienummer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid197 .
+_:genid197 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid197 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid197 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/TypeIdentificatienummer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid198 .
+_:genid198 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid198 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid198 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/TypeIdentificatienummer> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/TypeIdentificatienummer> <http://www.w3.org/2000/01/rdf-schema#label> "TypeIdentificatienummer" .
+# 
+# https://abv.libis.be/TypeNaam
+<https://abv.libis.be/TypeNaam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/TypeNaam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/TypeNaam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid199 .
+_:genid199 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid199 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid199 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/TypeNaam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid200 .
+_:genid200 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid200 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid200 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/TypeNaam> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/TypeNaam> <http://www.w3.org/2000/01/rdf-schema#label> "TypeNaam" .
+# 
+# https://abv.libis.be/TypeVergelijking
+<https://abv.libis.be/TypeVergelijking> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/TypeVergelijking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/TypeVergelijking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid201 .
+_:genid201 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid201 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid201 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/TypeVergelijking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid202 .
+_:genid202 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid202 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid202 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/TypeVergelijking> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/TypeVergelijking> <http://www.w3.org/2000/01/rdf-schema#label> "TypeVergelijking" .
+# 
+# https://abv.libis.be/TypeWaarde
+<https://abv.libis.be/TypeWaarde> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/TypeWaarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/Codetabel> .
+<https://abv.libis.be/TypeWaarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid203 .
+_:genid203 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid203 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid203 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/TypeWaarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid204 .
+_:genid204 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid204 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid204 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/TypeWaarde> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/TypeWaarde> <http://www.w3.org/2000/01/rdf-schema#label> "TypeWaarde" .
+# 
+# https://abv.libis.be/Vergelijking
+<https://abv.libis.be/Vergelijking> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Vergelijking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Vergelijking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid205 .
+_:genid205 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid205 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/type_vergelijking> .
+_:genid205 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Vergelijking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid206 .
+_:genid206 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid206 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/waarde> .
+_:genid206 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Vergelijking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid207 .
+_:genid207 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid207 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/type_vergelijking> .
+_:genid207 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Vergelijking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid208 .
+_:genid208 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid208 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/waarde> .
+_:genid208 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Vergelijking> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Vergelijking> <http://www.w3.org/2000/01/rdf-schema#label> "Vergelijking" .
+# 
+# https://abv.libis.be/Waarde
+<https://abv.libis.be/Waarde> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Waarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Waarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid209 .
+_:genid209 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid209 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/type_waarde> .
+_:genid209 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Waarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid210 .
+_:genid210 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid210 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/waarde> .
+_:genid210 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Waarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid211 .
+_:genid211 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid211 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/type_waarde> .
+_:genid211 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Waarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid212 .
+_:genid212 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid212 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/waarde> .
+_:genid212 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Waarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid213 .
+_:genid213 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid213 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid213 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Waarde> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid214 .
+_:genid214 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid214 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/id> .
+_:genid214 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Waarde> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Waarde> <http://www.w3.org/2000/01/rdf-schema#label> "Waarde" .
+# 
+# https://abv.libis.be/Waardering
+<https://abv.libis.be/Waardering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://abv.libis.be/Waardering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://abv.libis.be/EntiteitBasis> .
+<https://abv.libis.be/Waardering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid215 .
+_:genid215 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid215 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/bron_waardering> .
+_:genid215 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Waardering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid216 .
+_:genid216 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid216 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/vergelijking> .
+_:genid216 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Waardering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid217 .
+_:genid217 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid217 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/waarde> .
+_:genid217 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Waardering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid218 .
+_:genid218 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid218 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/bijdragers> .
+_:genid218 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Waardering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid219 .
+_:genid219 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid219 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/datum_waardering> .
+_:genid219 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Waardering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid220 .
+_:genid220 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid220 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/opmerkingen> .
+_:genid220 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Waardering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid221 .
+_:genid221 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid221 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/waardestelling> .
+_:genid221 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Waardering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid222 .
+_:genid222 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid222 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/datum_waardering> .
+_:genid222 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Waardering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid223 .
+_:genid223 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid223 <http://www.w3.org/2002/07/owl#onProperty> <https://abv.libis.be/waardestelling> .
+_:genid223 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://abv.libis.be/Waardering> <http://www.w3.org/2000/01/rdf-schema#comment> "capteert informatie over de intrinsieke en comparatieve erfgoedwaarde van het archiefbestand" .
+<https://abv.libis.be/Waardering> <http://www.w3.org/2000/01/rdf-schema#label> "Waardering" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/2002/07/owl#sameAs> <https://abv.libis.be/Concept> .
+<https://abv.libis.be/Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://abv.libis.be/Concept
+# 
+# https://abv.libis.be/Concept
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<https://abv.libis.be/Concept> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<https://abv.libis.be/Concept> <http://www.w3.org/2000/01/rdf-schema#label> "Concept" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

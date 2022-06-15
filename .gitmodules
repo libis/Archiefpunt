@@ -1,0 +1,9 @@
+[submodule "logic"]
+	path = logic
+	url = https://github.com/mehmetc/solis-logic
+[submodule "data"]
+	path = data
+	url = https://github.com/mehmetc/solis-data
+[submodule "search"]
+	path = search
+	url = https://github.com/mehmetc/solis-search

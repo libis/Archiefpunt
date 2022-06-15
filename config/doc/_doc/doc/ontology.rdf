@@ -1,0 +1,3191 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://abv.libis.be/"
+     xml:base="https://abv.libis.be/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dc11="dc11:"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://abv.libis.be/">
+        <dc11:creator>Archiefpunt, Meemo, KADOC, LIBIS</dc11:creator>
+        <dc11:date>2022-03-22 10:59:02 +0100</dc11:date>
+        <dc11:description>Archiefbank ontology</dc11:description>
+        <dc11:title>Archiefbank ontology</dc11:title>
+        <owl:versionInfo>1.0.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- dc11:creator -->
+
+
+    <owl:AnnotationProperty rdf:about="dc11:creator"/>
+    
+
+
+    <!-- dc11:date -->
+
+
+    <owl:AnnotationProperty rdf:about="dc11:date"/>
+    
+
+
+    <!-- dc11:description -->
+
+
+    <owl:AnnotationProperty rdf:about="dc11:description"/>
+    
+
+
+    <!-- dc11:title -->
+
+
+    <owl:AnnotationProperty rdf:about="dc11:title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#duration -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#duration"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://abv.libis.be/_meta -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/_meta">
+        <rdfs:domain rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/EntiteitMetadata"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>_meta</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/aangroei -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/aangroei">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Aangroei"/>
+        <rdfs:comment>Aangroei toont status van het archief aan: statisch, dynamisch of is de status onbekend.</rdfs:comment>
+        <rdfs:label>aangroei</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/adres -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/adres">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Beheerder"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Adres"/>
+        <rdfs:comment>Adres van bewaarplaats.</rdfs:comment>
+        <rdfs:label>adres</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/agent -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/agent">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Associatie"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Beheerder"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Samensteller"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Agent"/>
+        <rdfs:comment>Link met &apos;agent&apos;</rdfs:comment>
+        <rdfs:label>agent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/associatie -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/associatie">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Associatie"/>
+        <rdfs:comment>Trefwoordenveld. Kan gelinkt worden met een onderwerp, agent, plaats en een periode.</rdfs:comment>
+        <rdfs:label>associatie</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/associaties -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/associaties">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Agent"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Associatie"/>
+        <rdfs:comment>Plaats, Periode, Onderwerp of agent gelinkt aan de agent. </rdfs:comment>
+        <rdfs:label>associaties</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/auteur -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/auteur">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Publicatie"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Naam"/>
+        <rdfs:comment>auteur van de publicatie</rdfs:comment>
+        <rdfs:label>auteur</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/beheerder -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/beheerder">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Beheerder"/>
+        <rdfs:comment>persoon of organisatie die het archief of de collectie vandaag beheerd.
+link naar wat voorheen de ‘bewaarplaats’ was. 
+Nu expliciet gemaakt als een Agent, die verbonden is aan een bepaalde Plaats. </rdfs:comment>
+        <rdfs:label>beheerder</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/bereikbaarheid -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/bereikbaarheid">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Beheerder"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Bereikbaarheid"/>
+        <rdfs:comment>Indien list: Rolstoeltoegankelijk, Aangepast sanitair, Parkeergelegenheid</rdfs:comment>
+        <rdfs:label>bereikbaarheid</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/beschrijvingsniveau -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/beschrijvingsniveau">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Beschrijvingsniveau"/>
+        <rdfs:comment>Beschrijvingsniveau van het archief. Keuze uit archief, fonds, serie, collectie, virtuele collectie.</rdfs:comment>
+        <rdfs:label>beschrijvingsniveau</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/bron -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/bron">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Identificatienummer"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Agent"/>
+        <rdfs:comment>Verwijzing naar agent die identificatie aanmaakt.</rdfs:comment>
+        <rdfs:label>bron</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/bron_waardering -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/bron_waardering">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Waardering"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Publicatie"/>
+        <rdfs:comment>Verwijzing naar een publicatie die als bron werd gebruikt voor deze waardering. </rdfs:comment>
+        <rdfs:label>bron_waardering</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/erkenning -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/erkenning">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Beheerder"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Erkenning"/>
+        <rdfs:comment>Categorie enkel geldig wanneer agent een bewaarplaats is. Erkenningniveaus zijn: landelijk, regionaal, lokaal en [none].</rdfs:comment>
+        <rdfs:label>erkenning</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/functie_beroep_activiteit -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/functie_beroep_activiteit">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Samensteller"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Functie"/>
+        <rdfs:comment>Functie, beroep of activiteiten waarin agent </rdfs:comment>
+        <rdfs:label>functie_beroep_activiteit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/gemeente -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/gemeente">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Adres"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Plaats"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>gemeente</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/identificatie -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/identificatie">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Agent"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Identificatienummer"/>
+        <rdfs:comment>Herhaalbaar om verschillende IDs op te kunnen nemen.
+Eigen persistente URI wordt door het systeem toegekend en is dus ‘verplicht’.
+Andere IDs enkel toevoegen als ze al buiten ABV bestaan.</rdfs:comment>
+        <rdfs:label>identificatie</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/identificatienummer -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/identificatienummer">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Concept"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Plaats"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Publicatie"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Identificatienummer"/>
+        <rdfs:comment>Identificatienummer voor de publicatie</rdfs:comment>
+        <rdfs:label>identificatienummer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/is_onderdeel_van -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/is_onderdeel_van">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:comment>Alleen gebruik maken wanneer een archiefbestanddeel deel uitmaakt van een groter archiefbestanddeel</rdfs:comment>
+        <rdfs:label>is_onderdeel_van</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/juridische_beperking -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/juridische_beperking">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/JuridischeBeperking"/>
+        <rdfs:comment>bevat het archief/collectie materiaal dat mogelijk veel persoonsgegevens bevat, bevat het archief/collectie materiaal dat mogelijk veel persoonsgegevens bevat, bevat het archief/collectie materiaal dat mogelijk auteursrechtelijk beschermd </rdfs:comment>
+        <rdfs:label>juridische_beperking</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/naam -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/naam">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Agent"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Naam"/>
+        <rdfs:comment>Herhaalbaar om naamsvarianten te documenteren.</rdfs:comment>
+        <rdfs:label>naam</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/omvang -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/omvang">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Omvang"/>
+        <rdfs:comment>vrije tekst beschrijving van de dimensies en materiaalsoorten waaruit het archiefbestand bestaat</rdfs:comment>
+        <rdfs:label>omvang</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/onderwerp -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/onderwerp">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Associatie"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Onderwerp"/>
+        <rdfs:comment>Onderwerp trefwoorden die geassocieerd kunnen worden met archief.</rdfs:comment>
+        <rdfs:label>onderwerp</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/ordening -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/ordening">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Ordening"/>
+        <rdfs:comment>Toont de ordeningsstatus aan van het archief:geordend, niet geordend of onbekend.</rdfs:comment>
+        <rdfs:label>ordening</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/periode -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/periode">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Associatie"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Periode"/>
+        <rdfs:comment>Tijdsperiode waarmee archief gelinkt kan worden.</rdfs:comment>
+        <rdfs:label>periode</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/plaats -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/plaats">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Associatie"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Plaats"/>
+        <rdfs:comment>Plaats geassocieerd met het archief.</rdfs:comment>
+        <rdfs:label>plaats</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/plaatsnaam -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/plaatsnaam">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Plaats"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Naam"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>plaatsnaam</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/raadplegingsstatus -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/raadplegingsstatus">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Raadplegingsvoorwaarde"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Raadplegingsstatus"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>raadplegingsstatus</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/raadplegingsvoorwaarde -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/raadplegingsvoorwaarde">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Raadplegingsvoorwaarde"/>
+        <rdfs:comment>vrije tekst omschrijving van de concrete voorwaarden die verbonden zijn aan de toegang tot het archief/collectie</rdfs:comment>
+        <rdfs:label>raadplegingsvoorwaarde</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/rechtenstatus_metadata -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/rechtenstatus_metadata">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Rechtenstatus"/>
+        <rdfs:comment>Geeft weer onder welke licentievoorwaarden de metadata gepubliceerd kunnen worden.</rdfs:comment>
+        <rdfs:label>rechtenstatus_metadata</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/rol_beheerder -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/rol_beheerder">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/RolBeheerder"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>rol_beheerder</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/rol_samensteller -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/rol_samensteller">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/RolSamensteller"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>rol_samensteller</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/samensteller -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/samensteller">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Samensteller"/>
+        <rdfs:comment>nieuwe overkoepelende term voor zowel archiefvormers, verzamelaars als documentalisten. herhaalbaar om verschillende samenstellers en hun verschillende rollen te kunnen documenteren</rdfs:comment>
+        <rdfs:label>samensteller</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/selectie -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/selectie">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Waardering"/>
+        <rdfs:comment>Verklaring over de erfgoedwaarde van het archiefbestand en de vergelijking met andere archiefbestanden.</rdfs:comment>
+        <rdfs:label>selectie</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/taal -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/taal">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Agent"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Raadplegingsvoorwaarde"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Taal"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>taal</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/toegang -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/toegang">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Beheerder"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Publicatie"/>
+        <rdfs:comment>Verwijzing naar de toegang voor de archieven/collecties die de Agent bewaard.</rdfs:comment>
+        <rdfs:label>toegang</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/trefwoord -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/trefwoord">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Omvang"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Ordening"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Ordeningsstatus"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>trefwoord</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/type -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/type">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Agent"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Concept"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Identificatienummer"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/TypeIdentificatienummer"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/type_naam -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/type_naam">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Naam"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/TypeNaam"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>type_naam</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/type_vergelijking -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/type_vergelijking">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Vergelijking"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/TypeVergelijking"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>type_vergelijking</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/type_waarde -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/type_waarde">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Waarde"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/TypeWaarde"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>type_waarde</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/vergelijking -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/vergelijking">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Waardering"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Vergelijking"/>
+        <rdfs:comment>Omschrijving hoe het archiefbestand zich voor een specifiek aspect verhoudt tot andere archiefbestanden.</rdfs:comment>
+        <rdfs:label>vergelijking</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://abv.libis.be/waarde -->
+
+
+    <owl:ObjectProperty rdf:about="https://abv.libis.be/waarde">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Identificatienummer"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Naam"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Omvang"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Ordening"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Vergelijking"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Waarde"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Waardering"/>
+        <rdfs:range rdf:resource="https://abv.libis.be/Waarde"/>
+        <rdfs:comment>Omschrijving van een specifieke erfgoedwaarde die aan het archiefbestand wordt toegekend</rdfs:comment>
+        <rdfs:label>waarde</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://abv.libis.be/aangemaakt_op -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/aangemaakt_op">
+        <rdfs:domain rdf:resource="https://abv.libis.be/EntiteitMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment>datum waarop record werd aangemaakt</rdfs:comment>
+        <rdfs:label>aangemaakt_op</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/aangepast_op -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/aangepast_op">
+        <rdfs:domain rdf:resource="https://abv.libis.be/EntiteitMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment>datum waarop record is aangepast</rdfs:comment>
+        <rdfs:label>aangepast_op</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/aangroei_text -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/aangroei_text">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>oud aangroei veld</rdfs:comment>
+        <rdfs:label>aangroei_text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/aantekening_archivaris -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/aantekening_archivaris">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Dit veld zal alle aantekeningen bundelen die voordien in de velden “aantekening”, “werknotities” en “aantekening archivaris” stonden.</rdfs:comment>
+        <rdfs:label>aantekening_archivaris</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/bibliografie_agent -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/bibliografie_agent">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Bronnen over de agent.</rdfs:comment>
+        <rdfs:label>bibliografie_agent</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/bibliografie_archief -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/bibliografie_archief">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>bibliografie werken gebaseerd op of gerelateerd aan het archief/de collectie</rdfs:comment>
+        <rdfs:label>bibliografie_archief</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/bibliografische_verwijzing -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/bibliografische_verwijzing">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Publicatie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>volledige bibliografische verwijzing naar de publicatie</rdfs:comment>
+        <rdfs:label>bibliografische_verwijzing</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/bijdragers -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/bijdragers">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Waardering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>De namen van personen en organisaties die een bijdrage leverden aan deze waardering</rdfs:comment>
+        <rdfs:label>bijdragers</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/bronnen_agent -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/bronnen_agent">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Bronnen gebruikt om agentbeschrijving op te stellen.</rdfs:comment>
+        <rdfs:label>bronnen_agent</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/bronnen_archief -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/bronnen_archief">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>bibliografie werken gebruikt voor het opstellen van de beschrijving</rdfs:comment>
+        <rdfs:label>bronnen_archief</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/bronverwijzing_archief -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/bronverwijzing_archief">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Correcte verwijzing naar het record en naar het archief in de Chicagostijl.</rdfs:comment>
+        <rdfs:label>bronverwijzing_archief</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/bronverwijzing_record -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/bronverwijzing_record">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Correcte verwijzing naar het record en naar het archief in de Chicagostijl.</rdfs:comment>
+        <rdfs:label>bronverwijzing_record</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/contractuele_beperking -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/contractuele_beperking">
+        <rdfs:domain rdf:resource="https://abv.libis.be/JuridischeBeperking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>contractuele_beperking</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/datering_systematisch -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/datering_systematisch">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Agent"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+        <rdfs:comment>Jaartallen van bereik van het archief: uit welke periode stammen de documenten.</rdfs:comment>
+        <rdfs:label>datering_systematisch</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/datering_text -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/datering_text">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Agent"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Woordelijke uitleg bij datering_systematisch, initiëel ook voor legacy data.</rdfs:comment>
+        <rdfs:label>datering_text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/datum_uitgave -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/datum_uitgave">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Publicatie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment>datum van uitgave</rdfs:comment>
+        <rdfs:label>datum_uitgave</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/datum_waardering -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/datum_waardering">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Waardering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment>datum waarop de waardering gemaakt werd</rdfs:comment>
+        <rdfs:label>datum_waardering</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/definitie -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/definitie">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+        <rdfs:comment>Definitie van het Concept</rdfs:comment>
+        <rdfs:label>definitie</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/email -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/email">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Beheerder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Emailadres van bewaarplaats.</rdfs:comment>
+        <rdfs:label>email</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/gebouw -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/gebouw">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Beheerder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Verwijzing naar de bewaarplaatsen die verbonden zijn aan de Agent</rdfs:comment>
+        <rdfs:label>gebouw</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/geschiedenis_agent -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/geschiedenis_agent">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+        <rdfs:comment>Biografische geschiedenis van de agent.</rdfs:comment>
+        <rdfs:label>geschiedenis_agent</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/geschiedenis_archief -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/geschiedenis_archief">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+        <rdfs:comment>Geschiedenis van het archief.</rdfs:comment>
+        <rdfs:label>geschiedenis_archief</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/gevoelig_voor_auteursrechtelijkebescherming -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/gevoelig_voor_auteursrechtelijkebescherming">
+        <rdfs:domain rdf:resource="https://abv.libis.be/JuridischeBeperking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>gevoelig_voor_auteursrechtelijkebescherming</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/id -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/id">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Aangroei"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Bereikbaarheid"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Beschrijvingsniveau"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/BibliografieArchief"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Bronbeschrijving"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Bronverwijzing"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Datering"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Erkenning"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Functie"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/FunctieBeroepActiviteit"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Gebruiksgroep"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Materiaalsoort"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Onderwerp"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Ordeningsstatus"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Periode"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Raadplegingsstatus"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Rechtenstatus"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Rol"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/RolBeheerder"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/RolSamensteller"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Soort"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Taal"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Term"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Toegang"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/TypeAgent"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/TypeConcept"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/TypeIdentificatienummer"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/TypeNaam"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/TypeVergelijking"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/TypeWaarde"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Waarde"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>systeem UUID</rdfs:comment>
+        <rdfs:label>id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/inhoud_en_bereik -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/inhoud_en_bereik">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+        <rdfs:comment>Inhoud van archief.</rdfs:comment>
+        <rdfs:label>inhoud_en_bereik</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/label -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/label">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+        <rdfs:comment>Naam voor het Concept</rdfs:comment>
+        <rdfs:label>label</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/openingsuren -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/openingsuren">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Beheerder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Openingsuren waarop de Agent bereikbaar/toegankelijk is</rdfs:comment>
+        <rdfs:label>openingsuren</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/opmerking -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/opmerking">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Vrij opmerkingen veld.</rdfs:comment>
+        <rdfs:label>opmerking</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/opmerkingen -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/opmerkingen">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Waardering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Vrij notitieveld bij deze waardering</rdfs:comment>
+        <rdfs:label>opmerkingen</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/ordening_text -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/ordening_text">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>oud ordening veld</rdfs:comment>
+        <rdfs:label>ordening_text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/plaats_van_uitgave -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/plaats_van_uitgave">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Publicatie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>naam van de plaats van uitgave</rdfs:comment>
+        <rdfs:label>plaats_van_uitgave</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/privacy_gevoelig -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/privacy_gevoelig">
+        <rdfs:domain rdf:resource="https://abv.libis.be/JuridischeBeperking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>privacy_gevoelig</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/reeks -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/reeks">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Publicatie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>titel van de reeks waarin de publicatie verschijnt</rdfs:comment>
+        <rdfs:label>reeks</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/reeksnummer -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/reeksnummer">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Publicatie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>rangnummer van de publicatie binnen de reeks</rdfs:comment>
+        <rdfs:label>reeksnummer</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/straat_en_nummer -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/straat_en_nummer">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Adres"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>straat_en_nummer</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/taal_text -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/taal_text">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>oude taal veld</rdfs:comment>
+        <rdfs:label>taal_text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/tekst -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/tekst">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Raadplegingsvoorwaarde"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>tekst</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/telefoon -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/telefoon">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Beheerder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Telefoonnummer van bewaarplaats.</rdfs:comment>
+        <rdfs:label>telefoon</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/titel -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/titel">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:domain rdf:resource="https://abv.libis.be/Publicatie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+        <rdfs:comment>titel van de publicatie</rdfs:comment>
+        <rdfs:label>titel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/toegangsvoorwaarden -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/toegangsvoorwaarden">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Beheerder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Voorwaarden om toegang te krijgen tot archieven/collecties die door de Agent worden bewaard.</rdfs:comment>
+        <rdfs:label>toegangsvoorwaarden</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/uitgever -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/uitgever">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Publicatie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>naam van de uitgever van de publicatie</rdfs:comment>
+        <rdfs:label>uitgever</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/url -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/url">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Publicatie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>URL die verwijst naar een digitale versie van de publicatie</rdfs:comment>
+        <rdfs:label>url</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/verwerving -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/verwerving">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Archief"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+        <rdfs:comment>Uitleg hoe archief verworven werd door bewaarinstelling.</rdfs:comment>
+        <rdfs:label>verwerving</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/verwijderd_op -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/verwijderd_op">
+        <rdfs:domain rdf:resource="https://abv.libis.be/EntiteitMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment>datum waarop record is verwijderd</rdfs:comment>
+        <rdfs:label>verwijderd_op</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/waardestelling -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/waardestelling">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Waardering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+        <rdfs:comment>Omvattende verklaring van de erfgoedwaarde die een archiefbestand vertegenwoordigt.</rdfs:comment>
+        <rdfs:label>waardestelling</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://abv.libis.be/website -->
+
+
+    <owl:DatatypeProperty rdf:about="https://abv.libis.be/website">
+        <rdfs:domain rdf:resource="https://abv.libis.be/Beheerder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Website bewaarinstelling.</rdfs:comment>
+        <rdfs:label>website</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    
+
+
+    <!-- https://abv.libis.be/Aangroei -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Aangroei">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Aangroei</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Adres -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Adres">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/gemeente"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/gemeente"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/straat_en_nummer"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/straat_en_nummer"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Adres</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Agent -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Agent">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/associaties"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/identificatie"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/naam"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/taal"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/type"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/associaties"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/type"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/bibliografie_agent"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/bronnen_agent"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/datering_systematisch"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/datering_text"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/geschiedenis_agent"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/opmerking"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/datering_text"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>beperkt beschrijvingsmodel. doel: enkel relateren van agents aan archieven en waarderingen. geen afzonderlijke biografische databank (dus geen familierelaties bvb) Gebruik daarvoor een externe bron.</rdfs:comment>
+        <rdfs:label>Agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Archief -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Archief">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/aangroei"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/associatie"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/beheerder"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/beschrijvingsniveau"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/identificatienummer"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/is_onderdeel_van"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/juridische_beperking"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/omvang"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/ordening"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/raadplegingsvoorwaarde"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/rechtenstatus_metadata"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/rol_beheerder"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/rol_samensteller"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/samensteller"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/selectie"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/taal"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/toegang"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/aangroei"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/associatie"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/beschrijvingsniveau"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/is_onderdeel_van"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/juridische_beperking"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/ordening"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/rechtenstatus_metadata"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/rol_beheerder"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/rol_samensteller"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/aangroei_text"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/aantekening_archivaris"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/bibliografie_archief"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/bronnen_archief"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/bronverwijzing_archief"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/bronverwijzing_record"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/datering_systematisch"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/datering_text"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/geschiedenis_archief"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/inhoud_en_bereik"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/ordening_text"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/taal_text"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/titel"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/verwerving"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/aangroei_text"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/bronverwijzing_archief"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/bronverwijzing_record"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/datering_text"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/ordening_text"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Archief</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Associatie -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Associatie">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/agent"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/onderwerp"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/periode"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/plaats"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Associatie</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Beheerder -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Beheerder">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/adres"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/agent"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/bereikbaarheid"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/erkenning"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/toegang"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/agent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/erkenning"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/email"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/gebouw"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/openingsuren"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/telefoon"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/toegangsvoorwaarden"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/website"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/openingsuren"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/toegangsvoorwaarden"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Beheerder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Bereikbaarheid -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Bereikbaarheid">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Bereikbaarheid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Beschrijvingsniveau -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Beschrijvingsniveau">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Beschrijvingsniveau</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/BibliografieArchief -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/BibliografieArchief">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>BibliografieArchief</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Bronbeschrijving -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Bronbeschrijving">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Bronbeschrijving</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Bronverwijzing -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Bronverwijzing">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Bronverwijzing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Codetabel -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Codetabel">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Codetabel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Concept -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Concept">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/identificatienummer"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/type"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/definitie"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/label"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Datering -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Datering">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Datering</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/EntiteitBasis -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/EntiteitBasis">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/_meta"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/_meta"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>EntiteitBasis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/EntiteitMetadata -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/EntiteitMetadata">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/aangemaakt_op"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/aangepast_op"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/verwijderd_op"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>EntiteitMetadata</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Erkenning -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Erkenning">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Erkenning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Functie -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Functie">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Functie</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/FunctieBeroepActiviteit -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/FunctieBeroepActiviteit">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>FunctieBeroepActiviteit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Gebruiksgroep -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Gebruiksgroep">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Lijst van groepen waartoe een gebruiker kan toe behoren</rdfs:comment>
+        <rdfs:label>Gebruiksgroep</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Identificatienummer -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Identificatienummer">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/bron"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/type"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/waarde"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/bron"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/type"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/waarde"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Identificatienummer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/JuridischeBeperking -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/JuridischeBeperking">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/contractuele_beperking"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/gevoelig_voor_auteursrechtelijkebescherming"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/privacy_gevoelig"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/contractuele_beperking"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/gevoelig_voor_auteursrechtelijkebescherming"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/privacy_gevoelig"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>JuridischeBeperking</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Materiaalsoort -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Materiaalsoort">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Materiaalsoort</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Naam -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Naam">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/type_naam"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/waarde"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/type_naam"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/waarde"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Naam</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Omvang -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Omvang">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/trefwoord"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/waarde"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/waarde"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Omvang</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Onderwerp -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Onderwerp">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Onderwerp</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Ordening -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Ordening">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/trefwoord"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/waarde"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/trefwoord"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/waarde"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Ordening</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Ordeningsstatus -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Ordeningsstatus">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Ordeningsstatus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Periode -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Periode">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Periode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Plaats -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Plaats">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/identificatienummer"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/plaatsnaam"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>capteert informatie over geografische locaties. Verwijzingen naar externe geografische thesauri is sterk aanbevolen. De beschrijving is uiterst beperkt gehouden, in de veronderstelling dat rijkere metadata, zoals historische namen, taalvarianten, maar ook coördinaten eenvoudig aan externe geografische thesauri ontleend kunnen worden. </rdfs:comment>
+        <rdfs:label>Plaats</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Publicatie -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Publicatie">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/auteur"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/identificatienummer"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/bibliografische_verwijzing"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/datum_uitgave"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/plaats_van_uitgave"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/reeks"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/reeksnummer"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/titel"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/uitgever"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/url"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/bibliografische_verwijzing"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/datum_uitgave"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/reeks"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/reeksnummer"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/titel"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>bibliografische informatie voor publicaties die een toegang op een archiefbestand vormen, over het archiefbestand gaan of de directe informatiebron zijn voor de archiefbeschrijving. sterk aanbevolen om zoveel mogelijk externe identificatienummers voor de publicatie op te nemen. mogelijkheid om ofwel een tekststring met een volledige bibliografische referentie op te nemen, ofwel een gestructureerde beschrijving van de publicatie. de gestructureerde beschrijving maakt publicaties beter doorzoekbaar binnen archiefbank.</rdfs:comment>
+        <rdfs:label>Publicatie</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Raadplegingsstatus -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Raadplegingsstatus">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Raadplegingsstatus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Raadplegingsvoorwaarde -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Raadplegingsvoorwaarde">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/raadplegingsstatus"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/taal"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/raadplegingsstatus"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/taal"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/tekst"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/tekst"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Raadplegingsvoorwaarde</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Rechtenstatus -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Rechtenstatus">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Rechtenstatus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Rol -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Rol">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Rol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/RolBeheerder -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/RolBeheerder">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>RolBeheerder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/RolSamensteller -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/RolSamensteller">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>RolSamensteller</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Samensteller -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Samensteller">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/agent"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/functie_beroep_activiteit"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/agent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Samensteller</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Soort -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Soort">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Soort</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Taal -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Taal">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Taal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Term -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Term">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Term</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Toegang -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Toegang">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Toegang</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/TypeAgent -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/TypeAgent">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>TypeAgent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/TypeConcept -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/TypeConcept">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>TypeConcept</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/TypeIdentificatienummer -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/TypeIdentificatienummer">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>TypeIdentificatienummer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/TypeNaam -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/TypeNaam">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>TypeNaam</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/TypeVergelijking -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/TypeVergelijking">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>TypeVergelijking</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/TypeWaarde -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/TypeWaarde">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/Codetabel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>TypeWaarde</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Vergelijking -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Vergelijking">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/type_vergelijking"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/waarde"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/type_vergelijking"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/waarde"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Vergelijking</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Waarde -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Waarde">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/type_waarde"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/waarde"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/type_waarde"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/waarde"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Waarde</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://abv.libis.be/Waardering -->
+
+
+    <owl:Class rdf:about="https://abv.libis.be/Waardering">
+        <rdfs:subClassOf rdf:resource="https://abv.libis.be/EntiteitBasis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/bron_waardering"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/vergelijking"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/waarde"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/bijdragers"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/datum_waardering"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/opmerkingen"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/waardestelling"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/datum_waardering"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://abv.libis.be/waardestelling"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>capteert informatie over de intrinsieke en comparatieve erfgoedwaarde van het archiefbestand</rdfs:comment>
+        <rdfs:label>Waardering</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+        <owl:sameAs rdf:resource="https://abv.libis.be/Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://abv.libis.be/Concept -->
+
+
+    <owl:NamedIndividual rdf:about="https://abv.libis.be/Concept"/>
+    
+
+
+    <!-- https://abv.libis.be/Concept -->
+
+
+    <owl:NamedIndividual rdf:about="https://abv.libis.be/Concept"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="https://abv.libis.be/Concept">
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Concept</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

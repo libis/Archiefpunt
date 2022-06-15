@@ -1,0 +1,24 @@
+---
+:key: YOUR-GOOGLE-API-KEY
+:debug: false
+:audit_base_path: '/_audit'
+:search_base_path: '/_search'
+:data_base_path: '/'
+:solis:
+  :cache: ./cache
+  :graph_name: https://abv.libis.be/
+  :graph_prefix: abv
+  :sparql_endpoint: http://127.0.0.1:8891/sparql
+  :inflections: ./config/solis/abv.json
+:shape: ./config/solis/abv_shacl.ttl
+:cache: ../cache
+:sheets:
+  :abv: 1xhvOCfiSIOtHjIJUtRrxvJ54OoDosNJ_JsA1B7FfpsI
+  :audit: 1uaQmU9gcCCRI57VKNEobT5pZvBoSGAyeGApdypspX_g
+:redis:
+  url: "redis://127.0.0.1:6379/3"
+  queue: 'archiefbank'
+:elastic:
+  :mapping: "./config/search_elastic.json"
+  :host: "http://127.0.0.1:9200"
+  :index: "archiefpunt"

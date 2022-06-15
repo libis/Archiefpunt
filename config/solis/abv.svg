@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="2314px" preserveAspectRatio="none" style="width:5651px;height:2314px;background:#FFFFFF;" version="1.1" viewBox="0 0 5651 2314" width="5651px" zoomAndPan="magnify"><defs><filter height="300%" id="f1qjy0vx8mgza7" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacing" textLength="531" x="2555.6958" y="17.4023">Archiefbank ontology - 1.0.0 - 2022-03-17 14:01:56 +0100</text><polygon fill="#FFFFFF" filter="url(#f1qjy0vx8mgza7)" points="12,33.1992,43,33.1992,50,55.6875,5634.3917,55.6875,5634.3917,2307.5137,12,2307.5137,12,33.1992" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="12" x2="50" y1="55.6875" y2="55.6875"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="25" x="16" y="48.7344">abv</text><!--MD5=[5b103381b36d121821fb76c91f0c065f]
+class Aangroei--><rect codeLine="13" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Aangroei" style="stroke:#A80036;stroke-width:1.5;" width="86" x="2339.725" y="771.543"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="2351.225" y="790.0781">Aangroei</text><line style="stroke:#A80036;stroke-width:1.5;" x1="2340.725" x2="2424.725" y1="798.0313" y2="798.0313"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="2345.725" y="812.666">xsd:string : id</text><!--MD5=[08b5e0d04726af190959a9b5006b4cd0]
+class Codetabel--><rect codeLine="157" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Codetabel" style="stroke:#A80036;stroke-width:1.5;" width="86" x="4440.725" y="1126.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="4448.725" y="1144.832">Codetabel</text><line style="stroke:#A80036;stroke-width:1.5;" x1="4441.725" x2="4525.725" y1="1152.7852" y2="1152.7852"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="4446.725" y="1167.4199">xsd:string : id</text><!--MD5=[c52fd5cf34cd9002525488b551bfe83d]
+class Adres--><rect codeLine="19" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="60.3984" id="Adres" style="stroke:#A80036;stroke-width:1.5;" width="177" x="5270.3917" y="729.8112"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="5338.8917" y="748.3464">Adres</text><line style="stroke:#A80036;stroke-width:1.5;" x1="5271.3917" x2="5446.3917" y1="756.2995" y2="756.2995"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="165" x="5276.3917" y="770.9342">xsd:string : straat_en_nummer</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="114" x="5276.3917" y="783.8893">abv:Plaats : gemeente</text><!--MD5=[1b42f60a238ad538c91f80ec7c6ae02c]
+class Plaats--><rect codeLine="243" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="60.3984" id="Plaats" style="stroke:#A80036;stroke-width:1.5;" width="257" x="951.475" y="429.2383"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="1059.975" y="447.7734">Plaats</text><line style="stroke:#A80036;stroke-width:1.5;" x1="952.475" x2="1207.475" y1="455.7266" y2="455.7266"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="245" x="957.475" y="470.3613">abv:Identificatienummer : identificatienummer</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="122" x="957.475" y="483.3164">abv:Naam : plaatsnaam</text><!--MD5=[e4e1037e45a2613430d6b116aa06d42a]
+class EntiteitBasis--><rect codeLine="417" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="60.3984" id="EntiteitBasis" style="stroke:#A80036;stroke-width:1.5;" width="160" x="4002.3917" y="2232.1152"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="4041.3917" y="2250.6504">EntiteitBasis</text><line style="stroke:#A80036;stroke-width:1.5;" x1="4003.3917" x2="4161.3917" y1="2258.6035" y2="2258.6035"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="4008.3917" y="2273.2383">xsd:string : id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="148" x="4008.3917" y="2286.1934">abv:EntiteitMetadata : _meta</text><!--MD5=[9d44916250b776386006c440668bcfbb]
+class Agent--><rect codeLine="26" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="164.0391" id="Agent" style="stroke:#A80036;stroke-width:1.5;" width="212" x="382.5417" y="654.9473"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="468.0417" y="673.4824">Agent</text><line style="stroke:#A80036;stroke-width:1.5;" x1="383.5417" x2="593.5417" y1="681.4355" y2="681.4355"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="200" x="388.5417" y="696.0703">abv:Identificatienummer : identificatie</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="90" x="388.5417" y="709.0254">abv:Naam : naam</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="199" x="388.5417" y="721.9805">xsd:duration : datering_systematisch</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="136" x="388.5417" y="734.9355">xsd:string : datering_text</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="189" x="388.5417" y="747.8906">rdf:langString : geschiedenis_agent</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="388.5417" y="760.8457">abv:Taal : taal</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="145" x="388.5417" y="773.8008">abv:Associatie : associaties</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="146" x="388.5417" y="786.7559">xsd:string : bronnen_agent</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="161" x="388.5417" y="799.7109">xsd:string : bibliografie_agent</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="122" x="388.5417" y="812.666">xsd:string : opmerking</text><!--MD5=[a5d74f3b7ac8d9e9d668dc55915fa69a]
+class Identificatienummer--><rect codeLine="191" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="73.3535" id="Identificatienummer" style="stroke:#A80036;stroke-width:1.5;" width="199" x="27" y="203.2637"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="57.5" y="221.7988">Identificatienummer</text><line style="stroke:#A80036;stroke-width:1.5;" x1="28" x2="225" y1="229.752" y2="229.752"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="102" x="33" y="244.3867">xsd:string : waarde</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="187" x="33" y="257.3418">abv:TypeIdentificatienummer : type</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="89" x="33" y="270.2969">abv:Agent : bron</text><!--MD5=[78ac98e471a38fe35bf0ab52c92c93fd]
+class Naam--><rect codeLine="208" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="60.3984" id="Naam" style="stroke:#A80036;stroke-width:1.5;" width="157" x="520.7417" y="213.6277"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="579.7417" y="232.1629">Naam</text><line style="stroke:#A80036;stroke-width:1.5;" x1="521.7417" x2="676.7417" y1="240.116" y2="240.116"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="121" x="526.7417" y="254.7508">rdf:langString : waarde</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="145" x="526.7417" y="267.7059">abv:TypeNaam : type_naam</text><!--MD5=[466a8fa5a5046771059486c7fe928735]
+class Taal--><rect codeLine="316" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Taal" style="stroke:#A80036;stroke-width:1.5;" width="86" x="342.875" y="442.1934"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="371.375" y="460.7285">Taal</text><line style="stroke:#A80036;stroke-width:1.5;" x1="343.875" x2="427.875" y1="468.6816" y2="468.6816"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="348.875" y="483.3164">xsd:string : id</text><!--MD5=[10f2c3d682ada4e33881f1bcdbc79162]
+class Associatie--><rect codeLine="95" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="86.3086" id="Associatie" style="stroke:#A80036;stroke-width:1.5;" width="161" x="1930.225" y="1262.0151"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="1976.225" y="1280.5502">Associatie</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1931.225" x2="2090.225" y1="1288.5033" y2="1288.5033"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="94" x="1936.225" y="1303.1381">abv:Plaats : plaats</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="1936.225" y="1316.0932">abv:Agent : agent</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="1936.225" y="1329.0483">abv:Periode : periode</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="149" x="1936.225" y="1342.0033">abv:Onderwerp : onderwerp</text><!--MD5=[adf2a7f0b95f0301f49a962e7dc04703]
+class Archief--><rect codeLine="44" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="436.0957" id="Archief" style="stroke:#A80036;stroke-width:1.5;" width="311" x="2288.8917" y="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="2419.8917" y="1677.2441">Archief</text><line style="stroke:#A80036;stroke-width:1.5;" x1="2289.8917" x2="2598.8917" y1="1685.1973" y2="1685.1973"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="245" x="2294.8917" y="1699.832">abv:Identificatienummer : identificatienummer</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="103" x="2294.8917" y="1712.7871">rdf:langString : titel</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="199" x="2294.8917" y="1725.7422">xsd:duration : datering_systematisch</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="136" x="2294.8917" y="1738.6973">xsd:string : datering_text</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="244" x="2294.8917" y="1751.6523">abv:Beschrijvingsniveau : beschrijvingsniveau</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="164" x="2294.8917" y="1764.6074">abv:Archief : is_onderdeel_van</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="119" x="2294.8917" y="1777.5625">abv:Omvang : omvang</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="167" x="2294.8917" y="1790.5176">abv:Samensteller : samensteller</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="205" x="2294.8917" y="1803.4727">abv:RolSamensteller : rol_samensteller</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="140" x="2294.8917" y="1816.4277">abv:Beheerder : beheerder</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="178" x="2294.8917" y="1829.3828">abv:RolBeheerder : rol_beheerder</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="196" x="2294.8917" y="1842.3379">rdf:langString : geschiedenis_archief</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="142" x="2294.8917" y="1855.293">rdf:langString : verwerving</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="179" x="2294.8917" y="1868.248">rdf:langString : inhoud_en_bereik</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="132" x="2294.8917" y="1881.2031">abv:Waardering : selectie</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="127" x="2294.8917" y="1894.1582">abv:Aangroei : aangroei</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="138" x="2294.8917" y="1907.1133">xsd:string : aangroei_text</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="131" x="2294.8917" y="1920.0684">abv:Ordening : ordening</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="140" x="2294.8917" y="1933.0234">xsd:string : ordening_text</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="250" x="2294.8917" y="1945.9785">abv:JuridischeBeperking : juridische_beperking</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="299" x="2294.8917" y="1958.9336">abv:Raadplegingsvoorwaarde : raadplegingsvoorwaarde</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="2294.8917" y="1971.8887">abv:Taal : taal</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="110" x="2294.8917" y="1984.8438">xsd:string : taal_text</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="108" x="2294.8917" y="1997.7988">xsd:string : toegang</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="153" x="2294.8917" y="2010.7539">xsd:string : bronnen_archief</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="168" x="2294.8917" y="2023.709">xsd:string : bibliografie_archief</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="188" x="2294.8917" y="2036.6641">xsd:string : aantekening_archivaris</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="139" x="2294.8917" y="2049.6191">abv:Associatie : associatie</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="236" x="2294.8917" y="2062.5742">abv:Rechtenstatus : rechtenstatus_metadata</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="186" x="2294.8917" y="2075.5293">xsd:string : bronverwijzing_record</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="187" x="2294.8917" y="2088.4844">xsd:string : bronverwijzing_archief</text><!--MD5=[c324b2cb4215f79daae952b0e2806b12]
+class Beschrijvingsniveau--><rect codeLine="133" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Beschrijvingsniveau" style="stroke:#A80036;stroke-width:1.5;" width="140" x="4390.3917" y="771.543"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="4393.3917" y="790.0781">Beschrijvingsniveau</text><line style="stroke:#A80036;stroke-width:1.5;" x1="4391.3917" x2="4529.3917" y1="798.0313" y2="798.0313"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="4396.3917" y="812.666">xsd:string : id</text><!--MD5=[4d61f1767748da8a50838fa6e56a42da]
+class Omvang--><rect codeLine="215" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="73.3535" id="Omvang" style="stroke:#A80036;stroke-width:1.5;" width="173" x="1456.3917" y="1284.2158"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="1514.3917" y="1302.751">Omvang</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1457.3917" x2="1628.3917" y1="1310.7041" y2="1310.7041"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="121" x="1462.3917" y="1325.3389">rdf:langString : waarde</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="1462.3917" y="1338.2939">abv:Taal : taal</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="161" x="1462.3917" y="1351.249">abv:Materiaalsoort : trefwoord</text><!--MD5=[b1ba7c698c422c13fbd6544a2e13edaf]
+class Samensteller--><rect codeLine="300" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="73.3535" id="Samensteller" style="stroke:#A80036;stroke-width:1.5;" width="214" x="994.3917" y="1275.5828"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="1057.3917" y="1294.118">Samensteller</text><line style="stroke:#A80036;stroke-width:1.5;" x1="995.3917" x2="1207.3917" y1="1302.0711" y2="1302.0711"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="1000.3917" y="1316.7059">abv:Agent : agent</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="1000.3917" y="1329.6609">abv:TypeAgent : type</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="202" x="1000.3917" y="1342.616">abv:Functie : functie_beroep_activiteit</text><!--MD5=[c900715bf8f1a51791047cd7f5bc1fe1]
+class RolSamensteller--><rect codeLine="294" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="RolSamensteller" style="stroke:#A80036;stroke-width:1.5;" width="116" x="5028.3917" y="771.543"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="5031.3917" y="790.0781">RolSamensteller</text><line style="stroke:#A80036;stroke-width:1.5;" x1="5029.3917" x2="5143.3917" y1="798.0313" y2="798.0313"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="5034.3917" y="812.666">xsd:string : id</text><!--MD5=[3d91acb5262d58f65e741290465f8c0c]
+class Beheerder--><rect codeLine="107" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="176.9941" id="Beheerder" style="stroke:#A80036;stroke-width:1.5;" width="202" x="3512.725" y="1241.0508"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="3578.725" y="1259.5859">Beheerder</text><line style="stroke:#A80036;stroke-width:1.5;" x1="3513.725" x2="3713.725" y1="1267.5391" y2="1267.5391"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="3518.725" y="1282.1738">abv:Agent : agent</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="139" x="3518.725" y="1295.1289">abv:Erkenning : erkenning</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="3518.725" y="1308.084">abv:Adres : adres</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="108" x="3518.725" y="1321.0391">xsd:string : telefoon</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="92" x="3518.725" y="1333.9941">xsd:string : email</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="104" x="3518.725" y="1346.9492">xsd:string : website</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="106" x="3518.725" y="1359.9043">xsd:string : gebouw</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="126" x="3518.725" y="1372.8594">abv:Publicatie : toegang</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="139" x="3518.725" y="1385.8145">xsd:string : openingsuren</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="184" x="3518.725" y="1398.7695">xsd:string : toegangsvoorwaarden</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="190" x="3518.725" y="1411.7246">abv:Bereikbaarheid : bereikbaarheid</text><!--MD5=[e830b87b3eb7241a3d11b333624aa090]
+class RolBeheerder--><rect codeLine="288" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="RolBeheerder" style="stroke:#A80036;stroke-width:1.5;" width="98" x="1178.725" y="771.543"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="1181.725" y="790.0781">RolBeheerder</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1179.725" x2="1275.725" y1="798.0313" y2="798.0313"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="1184.725" y="812.666">xsd:string : id</text><!--MD5=[de1cf39c7c8590fb2e53d7712c53b57e]
+class Waardering--><rect codeLine="379" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="125.1738" id="Waardering" style="stroke:#A80036;stroke-width:1.5;" width="186" x="3036.725" y="1254.8547"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="3090.225" y="1273.3898">Waardering</text><line style="stroke:#A80036;stroke-width:1.5;" x1="3037.725" x2="3221.725" y1="1281.343" y2="1281.343"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="141" x="3042.725" y="1295.9777">xsd:string : waardestelling</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="108" x="3042.725" y="1308.9328">abv:Waarde : waarde</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="156" x="3042.725" y="1321.8879">abv:Vergelijking : vergelijking</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="155" x="3042.725" y="1334.843">xsd:date : datum_waardering</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="174" x="3042.725" y="1347.798">abv:Publicatie : bron_waardering</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="119" x="3042.725" y="1360.7531">xsd:string : bijdragers</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="135" x="3042.725" y="1373.7082">xsd:string : opmerkingen</text><!--MD5=[c6eb5f7af42b4046063606e5700885e3]
+class Ordening--><rect codeLine="230" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="60.3984" id="Ordening" style="stroke:#A80036;stroke-width:1.5;" width="147" x="1475.725" y="758.5879"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="1516.725" y="777.123">Ordening</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1476.725" x2="1621.725" y1="785.0762" y2="785.0762"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="121" x="1481.725" y="799.7109">rdf:langString : waarde</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="135" x="1481.725" y="812.666">abv:Ordening : trefwoord</text><!--MD5=[0f9fee16c42c81c98bc71a464f1e8a81]
+class JuridischeBeperking--><rect codeLine="200" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="73.3535" id="JuridischeBeperking" style="stroke:#A80036;stroke-width:1.5;" width="335" x="3861.725" y="1344.6914"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="3961.225" y="1363.2266">JuridischeBeperking</text><line style="stroke:#A80036;stroke-width:1.5;" x1="3862.725" x2="4195.725" y1="1371.1797" y2="1371.1797"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="165" x="3867.725" y="1385.8145">xsd:boolean : privacy_gevoelig</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="202" x="3867.725" y="1398.7695">xsd:boolean : contractuele_beperking</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="323" x="3867.725" y="1411.7246">xsd:boolean : gevoelig_voor_auteursrechtelijkebescherming</text><!--MD5=[2c6aa192b60e322b10c9beecfd4ed8f9]
+class Raadplegingsvoorwaarde--><rect codeLine="267" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="73.3535" id="Raadplegingsvoorwaarde" style="stroke:#A80036;stroke-width:1.5;" width="251" x="2526.725" y="1284.2158"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="2565.225" y="1302.751">Raadplegingsvoorwaarde</text><line style="stroke:#A80036;stroke-width:1.5;" x1="2527.725" x2="2776.725" y1="1310.7041" y2="1310.7041"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="90" x="2532.725" y="1325.3389">xsd:string : tekst</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="2532.725" y="1338.2939">abv:Taal : taal</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="239" x="2532.725" y="1351.249">abv:Raadplegingsstatus : raadplegingsstatus</text><!--MD5=[4fb04d5fc96cc5793976ff7d3986f80d]
+class Rechtenstatus--><rect codeLine="276" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Rechtenstatus" style="stroke:#A80036;stroke-width:1.5;" width="102" x="4710.3917" y="771.543"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="4713.3917" y="790.0781">Rechtenstatus</text><line style="stroke:#A80036;stroke-width:1.5;" x1="4711.3917" x2="4811.3917" y1="798.0313" y2="798.0313"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="4716.3917" y="812.666">xsd:string : id</text><!--MD5=[42c6a356828d1d7b447b0868d0645fb2]
+class Periode--><rect codeLine="237" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Periode" style="stroke:#A80036;stroke-width:1.5;" width="86" x="1642.725" y="771.543"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="1659.725" y="790.0781">Periode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1643.725" x2="1727.725" y1="798.0313" y2="798.0313"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="1648.725" y="812.666">xsd:string : id</text><!--MD5=[d0d79b15ae81df56db943457675f2a66]
+class Onderwerp--><rect codeLine="224" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Onderwerp" style="stroke:#A80036;stroke-width:1.5;" width="86" x="2150.725" y="771.543"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77" x="2155.225" y="790.0781">Onderwerp</text><line style="stroke:#A80036;stroke-width:1.5;" x1="2151.725" x2="2235.725" y1="798.0313" y2="798.0313"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="2156.725" y="812.666">xsd:string : id</text><!--MD5=[02f17654a47ce33776502a9d26641fe4]
+class Erkenning--><rect codeLine="173" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Erkenning" style="stroke:#A80036;stroke-width:1.5;" width="86" x="5164.3917" y="771.543"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="5172.3917" y="790.0781">Erkenning</text><line style="stroke:#A80036;stroke-width:1.5;" x1="5165.3917" x2="5249.3917" y1="798.0313" y2="798.0313"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="5170.3917" y="812.666">xsd:string : id</text><!--MD5=[6da0d6322ea41eaf863daa007f09ff4d]
+class Publicatie--><rect codeLine="251" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="164.0391" id="Publicatie" style="stroke:#A80036;stroke-width:1.5;" width="257" x="1873.725" y="661.8715"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="1969.225" y="680.4066">Publicatie</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1874.725" x2="2129.725" y1="688.3598" y2="688.3598"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="245" x="1879.725" y="702.9945">abv:Identificatienummer : identificatienummer</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="204" x="1879.725" y="715.9496">xsd:string : bibliografische_verwijzing</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="96" x="1879.725" y="728.9047">abv:Naam : auteur</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="103" x="1879.725" y="741.8598">rdf:langString : titel</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="1879.725" y="754.8148">xsd:string : reeks</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="138" x="1879.725" y="767.7699">xsd:string : reeksnummer</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="108" x="1879.725" y="780.725">xsd:string : uitgever</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="166" x="1879.725" y="793.6801">xsd:string : plaats_van_uitgave</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="134" x="1879.725" y="806.6352">xsd:date : datum_uitgave</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="1879.725" y="819.5902">xsd:anyURI : url</text><!--MD5=[45aef46ddc2d509a3da4876f02987c91]
+class Bereikbaarheid--><rect codeLine="127" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Bereikbaarheid" style="stroke:#A80036;stroke-width:1.5;" width="109" x="3513.3917" y="771.543"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="3516.3917" y="790.0781">Bereikbaarheid</text><line style="stroke:#A80036;stroke-width:1.5;" x1="3514.3917" x2="3621.3917" y1="798.0313" y2="798.0313"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="3519.3917" y="812.666">xsd:string : id</text><!--MD5=[e32e4fcbb05cf70b7ae02b7bc05fc9a2]
+class BibliografieArchief--><rect codeLine="139" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="BibliografieArchief" style="stroke:#A80036;stroke-width:1.5;" width="133" x="4729.725" y="1126.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="4732.725" y="1144.832">BibliografieArchief</text><line style="stroke:#A80036;stroke-width:1.5;" x1="4730.725" x2="4861.725" y1="1152.7852" y2="1152.7852"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="4735.725" y="1167.4199">xsd:string : id</text><!--MD5=[9d451b2f92d848a8e2d1a4dab2b1c6bf]
+class Concept--><rect codeLine="163" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="86.3086" id="Concept" style="stroke:#A80036;stroke-width:1.5;" width="257" x="4499.725" y="1248.3883"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="4599.725" y="1266.9234">Concept</text><line style="stroke:#A80036;stroke-width:1.5;" x1="4500.725" x2="4755.725" y1="1274.8766" y2="1274.8766"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="245" x="4505.725" y="1289.5113">abv:Identificatienummer : identificatienummer</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="108" x="4505.725" y="1302.4664">rdf:langString : label</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="125" x="4505.725" y="1315.4215">abv:TypeConcept : type</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="126" x="4505.725" y="1328.3766">rdf:langString : definitie</text><!--MD5=[4bb5952741f7f0c28a51689107d0839c]
+class Bronbeschrijving--><rect codeLine="145" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Bronbeschrijving" style="stroke:#A80036;stroke-width:1.5;" width="121" x="5232.725" y="1126.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="5235.725" y="1144.832">Bronbeschrijving</text><line style="stroke:#A80036;stroke-width:1.5;" x1="5233.725" x2="5352.725" y1="1152.7852" y2="1152.7852"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="5238.725" y="1167.4199">xsd:string : id</text><!--MD5=[f116f3a8e526f3eebf683a9dde2abe51]
+class Bronverwijzing--><rect codeLine="151" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Bronverwijzing" style="stroke:#A80036;stroke-width:1.5;" width="108" x="4028.3917" y="2047.3613"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="4031.3917" y="2065.8965">Bronverwijzing</text><line style="stroke:#A80036;stroke-width:1.5;" x1="4029.3917" x2="4135.3917" y1="2073.8496" y2="2073.8496"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="4034.3917" y="2088.4844">xsd:string : id</text><!--MD5=[b32580230eb3c14820297de9bf33a0b4]
+class TypeConcept--><rect codeLine="411" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="TypeConcept" style="stroke:#A80036;stroke-width:1.5;" width="96" x="5501.3917" y="771.543"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="5504.3917" y="790.0781">TypeConcept</text><line style="stroke:#A80036;stroke-width:1.5;" x1="5502.3917" x2="5596.3917" y1="798.0313" y2="798.0313"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="5507.3917" y="812.666">xsd:string : id</text><!--MD5=[bb76ecb607dfde3abfba66ef93872d92]
+class Functie--><rect codeLine="179" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Functie" style="stroke:#A80036;stroke-width:1.5;" width="86" x="1072.725" y="771.543"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="1090.725" y="790.0781">Functie</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1073.725" x2="1157.725" y1="798.0313" y2="798.0313"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="1078.725" y="812.666">xsd:string : id</text><!--MD5=[ff8c22e7125cf2de5ac6c21b950784b9]
+class FunctieBeroepActiviteit--><rect codeLine="185" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="FunctieBeroepActiviteit" style="stroke:#A80036;stroke-width:1.5;" width="163" x="4546.725" y="1126.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="4549.725" y="1144.832">FunctieBeroepActiviteit</text><line style="stroke:#A80036;stroke-width:1.5;" x1="4547.725" x2="4708.725" y1="1152.7852" y2="1152.7852"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="4552.725" y="1167.4199">xsd:string : id</text><!--MD5=[a044fe897d9f15c088095575da5ec0ba]
+class TypeIdentificatienummer--><rect codeLine="340" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="TypeIdentificatienummer" style="stroke:#A80036;stroke-width:1.5;" width="177" x="67.5" y="73.1992"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="70.5" y="91.7344">TypeIdentificatienummer</text><line style="stroke:#A80036;stroke-width:1.5;" x1="68.5" x2="243.5" y1="99.6875" y2="99.6875"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="73.5" y="114.3223">xsd:string : id</text><!--MD5=[827e766b04f899db2cca1acded8f257b]
+class TypeNaam--><rect codeLine="346" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="TypeNaam" style="stroke:#A80036;stroke-width:1.5;" width="86" x="570.575" y="73.1992"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="577.575" y="91.7344">TypeNaam</text><line style="stroke:#A80036;stroke-width:1.5;" x1="571.575" x2="655.575" y1="99.6875" y2="99.6875"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="576.575" y="114.3223">xsd:string : id</text><!--MD5=[50f921d835174fa1e7ed472fc1067ee8]
+class Materiaalsoort--><rect codeLine="393" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Materiaalsoort" style="stroke:#A80036;stroke-width:1.5;" width="105" x="1748.725" y="771.543"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="1751.725" y="790.0781">Materiaalsoort</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1749.725" x2="1852.725" y1="798.0313" y2="798.0313"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="1754.725" y="812.666">xsd:string : id</text><!--MD5=[e032b7c0217a79eacdbe87ef63bda957]
+class Raadplegingsstatus--><rect codeLine="405" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Raadplegingsstatus" style="stroke:#A80036;stroke-width:1.5;" width="140" x="4550.3917" y="771.543"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="4553.3917" y="790.0781">Raadplegingsstatus</text><line style="stroke:#A80036;stroke-width:1.5;" x1="4551.3917" x2="4689.3917" y1="798.0313" y2="798.0313"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="4556.3917" y="812.666">xsd:string : id</text><!--MD5=[54736e807c59b9b647b6e830d606a429]
+class Rol--><rect codeLine="282" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Rol" style="stroke:#A80036;stroke-width:1.5;" width="86" x="4334.725" y="1126.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="4366.725" y="1144.832">Rol</text><line style="stroke:#A80036;stroke-width:1.5;" x1="4335.725" x2="4419.725" y1="1152.7852" y2="1152.7852"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="4340.725" y="1167.4199">xsd:string : id</text><!--MD5=[886c78a05223a674f892b17b2519b999]
+class TypeAgent--><rect codeLine="334" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="TypeAgent" style="stroke:#A80036;stroke-width:1.5;" width="86" x="1296.725" y="771.543"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="1302.725" y="790.0781">TypeAgent</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1297.725" x2="1381.725" y1="798.0313" y2="798.0313"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="1302.725" y="812.666">xsd:string : id</text><!--MD5=[b09083d79f5897070484a567d291215c]
+class Soort--><rect codeLine="310" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Soort" style="stroke:#A80036;stroke-width:1.5;" width="86" x="4228.725" y="1126.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="4253.225" y="1144.832">Soort</text><line style="stroke:#A80036;stroke-width:1.5;" x1="4229.725" x2="4313.725" y1="1152.7852" y2="1152.7852"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="4234.725" y="1167.4199">xsd:string : id</text><!--MD5=[9d35236b92952560f647498cf8a29acb]
+class Term--><rect codeLine="322" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Term" style="stroke:#A80036;stroke-width:1.5;" width="86" x="566.3083" y="2047.3613"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="591.3083" y="2065.8965">Term</text><line style="stroke:#A80036;stroke-width:1.5;" x1="567.3083" x2="651.3083" y1="2073.8496" y2="2073.8496"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="572.3083" y="2088.4844">xsd:string : id</text><!--MD5=[c637b2139ccbf03b6cb79e0df7091254]
+class Toegang--><rect codeLine="328" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Toegang" style="stroke:#A80036;stroke-width:1.5;" width="86" x="673.3083" y="2047.3613"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="685.8083" y="2065.8965">Toegang</text><line style="stroke:#A80036;stroke-width:1.5;" x1="674.3083" x2="758.3083" y1="2073.8496" y2="2073.8496"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="679.3083" y="2088.4844">xsd:string : id</text><!--MD5=[d1bd5e0484a9664087ec0ef5e878af1f]
+class TypeVergelijking--><rect codeLine="352" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="TypeVergelijking" style="stroke:#A80036;stroke-width:1.5;" width="121" x="766.1417" y="442.1934"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="769.1417" y="460.7285">TypeVergelijking</text><line style="stroke:#A80036;stroke-width:1.5;" x1="767.1417" x2="886.1417" y1="468.6816" y2="468.6816"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="772.1417" y="483.3164">xsd:string : id</text><!--MD5=[e48ca00cf096f3ae8383a89b9ab73062]
+class TypeWaarde--><rect codeLine="358" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="TypeWaarde" style="stroke:#A80036;stroke-width:1.5;" width="90" x="4890.8917" y="442.1934"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="4893.8917" y="460.7285">TypeWaarde</text><line style="stroke:#A80036;stroke-width:1.5;" x1="4891.8917" x2="4979.8917" y1="468.6816" y2="468.6816"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="4896.8917" y="483.3164">xsd:string : id</text><!--MD5=[d2b9282f956ce89c6a9b4748c382c54a]
+class Vergelijking--><rect codeLine="364" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="60.3984" id="Vergelijking" style="stroke:#A80036;stroke-width:1.5;" width="223" x="694.975" y="729.8112"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="765.475" y="748.3464">Vergelijking</text><line style="stroke:#A80036;stroke-width:1.5;" x1="695.975" x2="916.975" y1="756.2995" y2="756.2995"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="121" x="700.975" y="770.9342">rdf:langString : waarde</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="211" x="700.975" y="783.8893">abv:TypeVergelijking : type_vergelijking</text><!--MD5=[e9dc5dbaf007e6058eb56cd8b8602ea8]
+class Waarde--><rect codeLine="371" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="73.3535" id="Waarde" style="stroke:#A80036;stroke-width:1.5;" width="175" x="4833.3917" y="721.1745"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="4895.3917" y="739.7096">Waarde</text><line style="stroke:#A80036;stroke-width:1.5;" x1="4834.3917" x2="5007.3917" y1="747.6628" y2="747.6628"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="4839.3917" y="762.2975">xsd:string : id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="121" x="4839.3917" y="775.2526">rdf:langString : waarde</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="163" x="4839.3917" y="788.2077">abv:TypeWaarde : type_waarde</text><!--MD5=[1b94603acfa8e88a4f952e66b3cb9675]
+class Datering--><rect codeLine="399" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="47.4434" id="Datering" style="stroke:#A80036;stroke-width:1.5;" width="86" x="428.875" y="2047.3613"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="442.375" y="2065.8965">Datering</text><line style="stroke:#A80036;stroke-width:1.5;" x1="429.875" x2="513.875" y1="2073.8496" y2="2073.8496"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="434.875" y="2088.4844">xsd:string : id</text><!--MD5=[15e1dea1384f424262775a6d85f7c310]
+class EntiteitMetadata--><rect codeLine="423" fill="#FEFECE" filter="url(#f1qjy0vx8mgza7)" height="73.3535" id="EntiteitMetadata" style="stroke:#A80036;stroke-width:1.5;" width="151" x="4217.725" y="1488.0449"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="4237.725" y="1506.5801">EntiteitMetadata</text><line style="stroke:#A80036;stroke-width:1.5;" x1="4218.725" x2="4367.725" y1="1514.5332" y2="1514.5332"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="139" x="4223.725" y="1529.168">xsd:date : aangemaakt_op</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="130" x="4223.725" y="1542.123">xsd:date : aangepast_op</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="131" x="4223.725" y="1555.0781">xsd:date : verwijderd_op</text><line style="stroke:#800000;stroke-width:1.0;" x1="2397.0583" x2="2397.0583" y1="818.9863" y2="876.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="2397.0583" x2="4475.125" y1="876.2969" y2="876.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4475.125" x2="4475.125" y1="876.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4475.125,1126.2969,4482.125,1107.2969,4468.125,1107.2969,4475.125,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="1079.975" x2="1079.975" y1="489.6367" y2="519.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="1079.975" x2="5358.8917" y1="519.6367" y2="519.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="5358.8917" x2="5358.8917" y1="519.6367" y2="729.8112"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="5295.8917" y="632.2051">gemeente</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="5361.8917" y="725.069">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="5388.3917" x2="5388.3917" y1="790.2096" y2="846.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="5388.3917" x2="5587.3917" y1="846.2969" y2="846.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="5587.3917" x2="5587.3917" y1="846.2969" y2="2184.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="5587.3917" x2="4142.3917" y1="2184.8047" y2="2184.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4142.3917" x2="4142.3917" y1="2184.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4142.3917,2232.1152,4149.3917,2213.1152,4135.3917,2213.1152,4142.3917,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="126.5" x2="126.5" y1="276.6172" y2="363.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="126.5" x2="244.875" y1="363.9277" y2="363.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="244.875" x2="244.875" y1="363.9277" y2="599.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="244.875" x2="467.3417" y1="599.6367" y2="599.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="467.3417" x2="467.3417" y1="599.6367" y2="654.9473"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="75" x="247.875" y="464.3506">identificatie</text><line style="stroke:#800000;stroke-width:1.0;" x1="552.1417" x2="552.1417" y1="274.0262" y2="654.9473"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="516.1417" y="464.3506">naam</text><line style="stroke:#800000;stroke-width:1.0;" x1="385.875" x2="385.875" y1="489.6367" y2="589.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="385.875" x2="503.3417" y1="589.6367" y2="589.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="503.3417" x2="503.3417" y1="589.6367" y2="644.9473"/><line style="stroke:#800000;stroke-width:1.0;" x1="503.3417" x2="509.7417" y1="644.9473" y2="644.9473"/><line style="stroke:#800000;stroke-width:1.0;" x1="509.7417" x2="509.7417" y1="644.9473" y2="654.9473"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="478.3417" y="632.2051">taal</text><line style="stroke:#800000;stroke-width:1.0;" x1="1957.0583" x2="1957.0583" y1="1262.0151" y2="1193.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="1957.0583" x2="1902.725" y1="1193.7402" y2="1193.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="1902.725" x2="1902.725" y1="1193.7402" y2="1066.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1902.725" x2="488.5417" y1="1066.2969" y2="1066.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="488.5417" x2="488.5417" y1="1066.2969" y2="818.9863"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="70" x="1830.725" y="1154.9316">associaties</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="491.5417" y="833.5547">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="417.875" x2="417.875" y1="818.9863" y2="2194.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="417.875" x2="4015.725" y1="2194.8047" y2="2194.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4015.725" x2="4015.725" y1="2194.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4015.725,2232.1152,4022.725,2213.1152,4008.725,2213.1152,4015.725,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="76.75" x2="76.75" y1="276.6172" y2="383.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="76.75" x2="191.875" y1="383.9277" y2="383.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="191.875" x2="191.875" y1="383.9277" y2="1116.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="191.875" x2="1336.3917" y1="1116.2969" y2="1116.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1336.3917" x2="1336.3917" y1="1116.2969" y2="1631.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="1336.3917" x2="2308.3292" y1="1631.3984" y2="1631.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2308.3292" x2="2308.3292" y1="1631.3984" y2="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="127" x="62.875" y="750.5352">identificatienummer</text><line style="stroke:#800000;stroke-width:1.0;" x1="4437.0583" x2="4437.0583" y1="818.9863" y2="856.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4437.0583" x2="2924.725" y1="856.2969" y2="856.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="2924.725" x2="2924.725" y1="856.2969" y2="1468.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="2924.725" x2="3984.3917" y1="1468.0449" y2="1468.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="3984.3917" x2="3984.3917" y1="1468.0449" y2="1611.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="3984.3917" x2="2541.5792" y1="1611.3984" y2="1611.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2541.5792" x2="2541.5792" y1="1611.3984" y2="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="125" x="2797.725" y="1325.8057">beschrijvingsniveau</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="2544.5792" y="1653.9668">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="2288.8917" x2="2278.8917" y1="1804.0742" y2="1804.0742"/><line style="stroke:#800000;stroke-width:1.0;" x1="2278.8917" x2="2278.8917" y1="1804.0742" y2="1949.4395"/><line style="stroke:#800000;stroke-width:1.0;" x1="2278.8917" x2="2288.8917" y1="1949.4395" y2="1949.4395"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="109" x="2167.8917" y="1874.0146">is_onderdeel_van</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="2268.8917" y="1889.3252">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="1571.725" x2="1571.725" y1="1357.5693" y2="1438.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="1571.725" x2="2357.3917" y1="1438.0449" y2="1438.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="2357.3917" x2="2357.3917" y1="1438.0449" y2="1581.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2357.3917" x2="2405.5167" y1="1581.3984" y2="1581.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2405.5167" x2="2405.5167" y1="1581.3984" y2="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="50" x="2305.3917" y="1529.6348">omvang</text><line style="stroke:#800000;stroke-width:1.0;" x1="1137.0583" x2="1137.0583" y1="1348.9363" y2="1458.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="1137.0583" x2="2294.3917" y1="1458.0449" y2="1458.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="2294.3917" x2="2294.3917" y1="1458.0449" y2="1591.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2294.3917" x2="2386.0792" y1="1591.3984" y2="1591.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2386.0792" x2="2386.0792" y1="1591.3984" y2="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="80" x="2212.3917" y="1529.6348">samensteller</text><line style="stroke:#800000;stroke-width:1.0;" x1="5067.0583" x2="5067.0583" y1="818.9863" y2="1006.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="5067.0583" x2="3840.725" y1="1006.2969" y2="1006.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="3840.725" x2="3840.725" y1="1006.2969" y2="1428.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="3840.725" x2="4006.3917" y1="1428.0449" y2="1428.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="4006.3917" x2="4006.3917" y1="1428.0449" y2="1631.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="4006.3917" x2="2580.4542" y1="1631.3984" y2="1631.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2580.4542" x2="2580.4542" y1="1631.3984" y2="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="104" x="3734.725" y="1325.8057">rol_samensteller</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="2583.4542" y="1653.9668">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="3580.0583" x2="3580.0583" y1="1418.0449" y2="1591.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="3580.0583" x2="2502.7042" y1="1591.3984" y2="1591.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2502.7042" x2="2502.7042" y1="1591.3984" y2="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="3516.0583" y="1529.6348">beheerder</text><line style="stroke:#800000;stroke-width:1.0;" x1="1211.3917" x2="1211.3917" y1="818.9863" y2="1086.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1211.3917" x2="1347.3917" y1="1086.2969" y2="1086.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1347.3917" x2="1347.3917" y1="1086.2969" y2="1621.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="1347.3917" x2="2327.7667" y1="1621.3984" y2="1621.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2327.7667" x2="2327.7667" y1="1621.3984" y2="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="86" x="1350.3917" y="1325.8057">rol_beheerder</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="2330.7667" y="1653.9668">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="3098.725" x2="3098.725" y1="1380.0285" y2="1581.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="3098.725" x2="2483.2667" y1="1581.3984" y2="1581.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2483.2667" x2="2483.2667" y1="1581.3984" y2="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="48" x="3048.725" y="1529.6348">selectie</text><line style="stroke:#800000;stroke-width:1.0;" x1="2368.3917" x2="2368.3917" y1="818.9863" y2="1571.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2368.3917" x2="2424.9542" y1="1571.3984" y2="1571.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2424.9542" x2="2424.9542" y1="1571.3984" y2="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="54" x="2371.3917" y="1325.8057">aangroei</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="2427.9542" y="1653.9668">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="1524.725" x2="1524.725" y1="818.9863" y2="996.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1524.725" x2="2201.3917" y1="996.2969" y2="996.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="2201.3917" x2="2201.3917" y1="996.2969" y2="1601.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2201.3917" x2="2366.6417" y1="1601.3984" y2="1601.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2366.6417" x2="2366.6417" y1="1601.3984" y2="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="56" x="2143.3917" y="1325.8057">ordening</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="2369.6417" y="1653.9668">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="3973.3917" x2="3973.3917" y1="1418.0449" y2="1601.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="3973.3917" x2="2522.1417" y1="1601.3984" y2="1601.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2522.1417" x2="2522.1417" y1="1601.3984" y2="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="132" x="3839.3917" y="1529.6348">juridische_beperking</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="2525.1417" y="1653.9668">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="2610.3917" x2="2610.3917" y1="1357.5693" y2="1571.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2610.3917" x2="2463.8292" y1="1571.3984" y2="1571.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2463.8292" x2="2463.8292" y1="1571.3984" y2="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="153" x="2455.3917" y="1529.6348">raadplegingsvoorwaarde</text><line style="stroke:#800000;stroke-width:1.0;" x1="371.5417" x2="371.5417" y1="489.6367" y2="1076.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="371.5417" x2="1819.725" y1="1076.2969" y2="1076.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1819.725" x2="1819.725" y1="1076.2969" y2="1611.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="1819.725" x2="2347.2042" y1="1611.3984" y2="1611.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2347.2042" x2="2347.2042" y1="1611.3984" y2="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="1794.725" y="1154.9316">taal</text><line style="stroke:#800000;stroke-width:1.0;" x1="2037.5583" x2="2037.5583" y1="1348.3237" y2="1428.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="2037.5583" x2="2444.3917" y1="1428.0449" y2="1428.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="2444.3917" x2="2444.3917" y1="1428.0449" y2="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63" x="2379.3917" y="1529.6348">associatie</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="2447.3917" y="1653.9668">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="4744.3917" x2="4744.3917" y1="818.9863" y2="946.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4744.3917" x2="3395.725" y1="946.2969" y2="946.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="3395.725" x2="3395.725" y1="946.2969" y2="1448.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="3395.725" x2="3995.3917" y1="1448.0449" y2="1448.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="3995.3917" x2="3995.3917" y1="1448.0449" y2="1621.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="3995.3917" x2="2561.0167" y1="1621.3984" y2="1621.3984"/><line style="stroke:#800000;stroke-width:1.0;" x1="2561.0167" x2="2561.0167" y1="1621.3984" y2="1658.709"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="3242.725" y="1325.8057">rechtenstatus_metadata</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="2564.0167" y="1653.9668">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="2444.3917" x2="2444.3917" y1="2094.8047" y2="2114.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="2444.3917" x2="4069.0583" y1="2114.8047" y2="2114.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4069.0583" x2="4069.0583" y1="2114.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4069.0583,2232.1152,4076.0583,2213.1152,4062.0583,2213.1152,4069.0583,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="1015.725" x2="1015.725" y1="489.6367" y2="1026.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1015.725" x2="2190.3917" y1="1026.2969" y2="1026.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="2190.3917" x2="2190.3917" y1="1026.2969" y2="1193.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="2190.3917" x2="2064.3917" y1="1193.7402" y2="1193.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="2064.3917" x2="2064.3917" y1="1193.7402" y2="1262.0151"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="38" x="975.725" y="750.5352">plaats</text><line style="stroke:#800000;stroke-width:1.0;" x1="523.875" x2="523.875" y1="818.9863" y2="1056.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="523.875" x2="1913.725" y1="1056.2969" y2="1056.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1913.725" x2="1913.725" y1="1056.2969" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="1913.725" x2="1983.8917" y1="1183.7402" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="1983.8917" x2="1983.8917" y1="1183.7402" y2="1262.0151"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="35" x="1916.725" y="1154.9316">agent</text><line style="stroke:#800000;stroke-width:1.0;" x1="1671.3917" x2="1671.3917" y1="818.9863" y2="1016.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1671.3917" x2="2010.725" y1="1016.2969" y2="1016.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="2010.725" x2="2010.725" y1="1016.2969" y2="1262.0151"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47" x="1961.725" y="1154.9316">periode</text><line style="stroke:#800000;stroke-width:1.0;" x1="2179.3917" x2="2179.3917" y1="818.9863" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="2179.3917" x2="2037.5583" y1="1183.7402" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="2037.5583" x2="2037.5583" y1="1183.7402" y2="1262.0151"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="66" x="2111.3917" y="1154.9316">onderwerp</text><line style="stroke:#800000;stroke-width:1.0;" x1="1983.8917" x2="1983.8917" y1="1348.3237" y2="1448.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="1983.8917" x2="1325.3917" y1="1448.0449" y2="1448.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="1325.3917" x2="1325.3917" y1="1448.0449" y2="2124.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="1325.3917" x2="4062.3917" y1="2124.8047" y2="2124.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4062.3917" x2="4062.3917" y1="2124.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4062.3917,2232.1152,4069.3917,2213.1152,4055.3917,2213.1152,4062.3917,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="559.2083" x2="559.2083" y1="818.9863" y2="1046.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="559.2083" x2="3443.725" y1="1046.2969" y2="1046.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="3443.725" x2="3443.725" y1="1046.2969" y2="1193.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="3443.725" x2="3546.3917" y1="1193.7402" y2="1193.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="3546.3917" x2="3546.3917" y1="1193.7402" y2="1241.0508"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="35" x="3406.725" y="1154.9316">agent</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="3549.3917" y="1236.3086">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="5193.0583" x2="5193.0583" y1="818.9863" y2="996.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="5193.0583" x2="3689.725" y1="996.2969" y2="996.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="3689.725" x2="3689.725" y1="996.2969" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="3689.725" x2="3647.3917" y1="1183.7402" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="3647.3917" x2="3647.3917" y1="1183.7402" y2="1241.0508"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63" x="3624.725" y="1154.9316">erkenning</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="3650.3917" y="1236.3086">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="5329.3917" x2="5329.3917" y1="790.2096" y2="1026.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="5329.3917" x2="3736.725" y1="1026.2969" y2="1026.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="3736.725" x2="3736.725" y1="1026.2969" y2="1193.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="3736.725" x2="3681.0583" y1="1193.7402" y2="1193.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="3681.0583" x2="3681.0583" y1="1193.7402" y2="1241.0508"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="3700.725" y="1154.9316">adres</text><line style="stroke:#800000;stroke-width:1.0;" x1="2002.225" x2="2002.225" y1="825.9105" y2="956.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="2002.225" x2="3613.725" y1="956.2969" y2="956.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="3613.725" x2="3613.725" y1="956.2969" y2="1241.0508"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="51" x="3560.725" y="1154.9316">toegang</text><line style="stroke:#800000;stroke-width:1.0;" x1="3549.725" x2="3549.725" y1="818.9863" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="3549.725" x2="3580.0583" y1="1183.7402" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="3580.0583" x2="3580.0583" y1="1183.7402" y2="1241.0508"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="93" x="3454.725" y="1154.9316">bereikbaarheid</text><line style="stroke:#800000;stroke-width:1.0;" x1="3647.3917" x2="3647.3917" y1="1418.0449" y2="1438.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="3647.3917" x2="4157.3917" y1="1438.0449" y2="1438.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="4157.3917" x2="4157.3917" y1="1438.0449" y2="2114.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4157.3917" x2="4095.725" y1="2114.8047" y2="2114.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4095.725" x2="4095.725" y1="2114.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4095.725,2232.1152,4102.725,2213.1152,4088.725,2213.1152,4095.725,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="3586.0583" x2="3586.0583" y1="818.9863" y2="846.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="3586.0583" x2="4479.425" y1="846.2969" y2="846.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4479.425" x2="4479.425" y1="846.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4479.425,1126.2969,4486.425,1107.2969,4472.425,1107.2969,4479.425,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="4483.725" x2="4483.725" y1="818.9863" y2="1126.2969"/><polygon fill="#FFFFFF" points="4483.725,1126.2969,4490.725,1107.2969,4476.725,1107.2969,4483.725,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="4796.225" x2="4796.225" y1="1173.7402" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="4796.225" x2="4653.925" y1="1183.7402" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="4653.925" x2="4653.925" y1="1183.7402" y2="1248.3883"/><polygon fill="#FFFFFF" points="4653.925,1248.3883,4660.925,1229.3883,4646.925,1229.3883,4653.925,1248.3883" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="5293.225" x2="5293.225" y1="1173.7402" y2="1203.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="5293.225" x2="4705.325" y1="1203.7402" y2="1203.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="4705.325" x2="4705.325" y1="1203.7402" y2="1248.3883"/><polygon fill="#FFFFFF" points="4705.325,1248.3883,4712.325,1229.3883,4698.325,1229.3883,4705.325,1248.3883" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="4082.3917" x2="4082.3917" y1="2094.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4082.3917,2232.1152,4089.3917,2213.1152,4075.3917,2213.1152,4082.3917,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="4483.725" x2="4483.725" y1="1173.7402" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="4483.725" x2="4602.525" y1="1183.7402" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="4602.525" x2="4602.525" y1="1183.7402" y2="1248.3883"/><polygon fill="#FFFFFF" points="4602.525,1248.3883,4609.525,1229.3883,4595.525,1229.3883,4602.525,1248.3883" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="176.25" x2="176.25" y1="276.6172" y2="343.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="176.25" x2="897.1417" y1="343.9277" y2="343.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="897.1417" x2="897.1417" y1="343.9277" y2="529.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="897.1417" x2="4217.725" y1="529.6367" y2="529.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="4217.725" x2="4217.725" y1="529.6367" y2="1213.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="4217.725" x2="4525.425" y1="1213.7402" y2="1213.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="4525.425" x2="4525.425" y1="1213.7402" y2="1248.3883"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="127" x="4088.725" y="632.2051">identificatienummer</text><line style="stroke:#800000;stroke-width:1.0;" x1="5565.3917" x2="5565.3917" y1="818.9863" y2="1213.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="5565.3917" x2="4731.025" y1="1213.7402" y2="1213.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="4731.025" x2="4731.025" y1="1213.7402" y2="1248.3883"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27" x="5536.3917" y="1154.9316">type</text><line style="stroke:#800000;stroke-width:1.0;" x1="4628.225" x2="4628.225" y1="1334.6969" y2="2164.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4628.225" x2="4129.0583" y1="2164.8047" y2="2164.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4129.0583" x2="4129.0583" y1="2164.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4129.0583,2232.1152,4136.0583,2213.1152,4122.0583,2213.1152,4129.0583,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="5221.725" x2="5221.725" y1="818.9863" y2="1193.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="5221.725" x2="4679.625" y1="1193.7402" y2="1193.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="4679.625" x2="4679.625" y1="1193.7402" y2="1248.3883"/><polygon fill="#FFFFFF" points="4679.625,1248.3883,4686.625,1229.3883,4672.625,1229.3883,4679.625,1248.3883" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="1130.0583" x2="1130.0583" y1="818.9863" y2="986.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1130.0583" x2="4445.025" y1="986.2969" y2="986.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4445.025" x2="4445.025" y1="986.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4445.025,1126.2969,4452.025,1107.2969,4438.025,1107.2969,4445.025,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="4628.225" x2="4628.225" y1="1173.7402" y2="1248.3883"/><polygon fill="#FFFFFF" points="4628.225,1248.3883,4635.225,1229.3883,4621.225,1229.3883,4628.225,1248.3883" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="126.5" x2="126.5" y1="120.6426" y2="203.2637"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27" x="97.5" y="163.2109">type</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="129.5" y="198.5215">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="424.9417" x2="424.9417" y1="654.9473" y2="644.9473"/><line style="stroke:#800000;stroke-width:1.0;" x1="424.9417" x2="382.5417" y1="644.9473" y2="644.9473"/><line style="stroke:#800000;stroke-width:1.0;" x1="382.5417" x2="382.5417" y1="644.9473" y2="609.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="382.5417" x2="233.875" y1="609.6367" y2="609.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="233.875" x2="233.875" y1="609.6367" y2="373.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="233.875" x2="101.625" y1="373.9277" y2="373.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="101.625" x2="101.625" y1="373.9277" y2="276.6172"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="29" x="202.875" y="464.3506">bron</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="104.625" y="291.1855">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="51.875" x2="51.875" y1="276.6172" y2="2204.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="51.875" x2="4009.0583" y1="2204.8047" y2="2204.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4009.0583" x2="4009.0583" y1="2204.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4009.0583,2232.1152,4016.0583,2213.1152,4002.0583,2213.1152,4009.0583,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="4085.0583" x2="4085.0583" y1="1418.0449" y2="1428.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="4085.0583" x2="4378.725" y1="1428.0449" y2="1428.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="4378.725" x2="4378.725" y1="1428.0449" y2="2154.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4378.725" x2="4122.3917" y1="2154.8047" y2="2154.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4122.3917" x2="4122.3917" y1="2154.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4122.3917,2232.1152,4129.3917,2213.1152,4115.3917,2213.1152,4122.3917,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="599.2417" x2="599.2417" y1="120.6426" y2="213.6277"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="68" x="529.2417" y="163.2109">type_naam</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="602.2417" y="208.8855">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="646.3417" x2="646.3417" y1="274.0262" y2="303.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="646.3417" x2="5618.3917" y1="303.9277" y2="303.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="5618.3917" x2="5618.3917" y1="303.9277" y2="2204.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="5618.3917" x2="4155.725" y1="2204.8047" y2="2204.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4155.725" x2="4155.725" y1="2204.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4155.725,2232.1152,4162.725,2213.1152,4148.725,2213.1152,4155.725,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="357.2083" x2="357.2083" y1="489.6367" y2="1096.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="357.2083" x2="1514.0583" y1="1096.2969" y2="1096.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1514.0583" x2="1514.0583" y1="1096.2969" y2="1284.2158"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="332.2083" y="750.5352">taal</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1517.0583" y="1279.4736">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="1783.725" x2="1783.725" y1="818.9863" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="1783.725" x2="1571.725" y1="1183.7402" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="1571.725" x2="1571.725" y1="1183.7402" y2="1284.2158"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="1720.725" y="1154.9316">trefwoord</text><line style="stroke:#800000;stroke-width:1.0;" x1="1514.0583" x2="1514.0583" y1="1357.5693" y2="1438.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="1514.0583" x2="662.3083" y1="1438.0449" y2="1438.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="662.3083" x2="662.3083" y1="1438.0449" y2="2154.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="662.3083" x2="4042.3917" y1="2154.8047" y2="2154.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4042.3917" x2="4042.3917" y1="2154.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4042.3917,2232.1152,4049.3917,2213.1152,4035.3917,2213.1152,4042.3917,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="2208.0583" x2="2208.0583" y1="818.9863" y2="886.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="2208.0583" x2="4470.825" y1="886.2969" y2="886.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4470.825" x2="4470.825" y1="886.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4470.825,1126.2969,4477.825,1107.2969,4463.825,1107.2969,4470.825,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="1475.725" x2="1465.725" y1="778.7207" y2="778.7207"/><line style="stroke:#800000;stroke-width:1.0;" x1="1465.725" x2="1465.725" y1="778.7207" y2="798.8535"/><line style="stroke:#800000;stroke-width:1.0;" x1="1465.725" x2="1475.725" y1="798.8535" y2="798.8535"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="1402.725" y="786.0449">trefwoord</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1455.725" y="801.3555">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="1573.725" x2="1573.725" y1="818.9863" y2="916.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1573.725" x2="4457.925" y1="916.2969" y2="916.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4457.925" x2="4457.925" y1="916.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4457.925,1126.2969,4464.925,1107.2969,4450.925,1107.2969,4457.925,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="1700.0583" x2="1700.0583" y1="818.9863" y2="906.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1700.0583" x2="4462.225" y1="906.2969" y2="906.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4462.225" x2="4462.225" y1="906.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4462.225,1126.2969,4469.225,1107.2969,4455.225,1107.2969,4462.225,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="201.125" x2="201.125" y1="276.6172" y2="323.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="201.125" x2="1037.1417" y1="323.9277" y2="323.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="1037.1417" x2="1037.1417" y1="323.9277" y2="429.2383"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="127" x="908.1417" y="406.4961">identificatienummer</text><line style="stroke:#800000;stroke-width:1.0;" x1="614.9417" x2="614.9417" y1="274.0262" y2="313.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="614.9417" x2="1122.1417" y1="313.9277" y2="313.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="1122.1417" x2="1122.1417" y1="313.9277" y2="419.2383"/><line style="stroke:#800000;stroke-width:1.0;" x1="1122.1417" x2="1122.8083" y1="419.2383" y2="419.2383"/><line style="stroke:#800000;stroke-width:1.0;" x1="1122.8083" x2="1122.8083" y1="419.2383" y2="429.2383"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="72" x="1048.1417" y="406.4961">plaatsnaam</text><line style="stroke:#800000;stroke-width:1.0;" x1="1144.225" x2="1144.225" y1="489.6367" y2="499.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="1144.225" x2="5607.3917" y1="499.6367" y2="499.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="5607.3917" x2="5607.3917" y1="499.6367" y2="2194.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="5607.3917" x2="4149.0583" y1="2194.8047" y2="2194.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4149.0583" x2="4149.0583" y1="2194.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4149.0583,2232.1152,4156.0583,2213.1152,4142.0583,2213.1152,4149.0583,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="151.375" x2="151.375" y1="276.6172" y2="353.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="151.375" x2="692.1417" y1="353.9277" y2="353.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="692.1417" x2="692.1417" y1="353.9277" y2="559.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="692.1417" x2="1959.3917" y1="559.6367" y2="559.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="1959.3917" x2="1959.3917" y1="559.6367" y2="661.8715"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="127" x="563.1417" y="464.3506">identificatienummer</text><line style="stroke:#800000;stroke-width:1.0;" x1="583.5417" x2="583.5417" y1="274.0262" y2="333.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="583.5417" x2="745.1417" y1="333.9277" y2="333.9277"/><line style="stroke:#800000;stroke-width:1.0;" x1="745.1417" x2="745.1417" y1="333.9277" y2="549.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="745.1417" x2="1970.3917" y1="549.6367" y2="549.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="1970.3917" x2="1970.3917" y1="549.6367" y2="644.9473"/><line style="stroke:#800000;stroke-width:1.0;" x1="1970.3917" x2="2045.0583" y1="644.9473" y2="644.9473"/><line style="stroke:#800000;stroke-width:1.0;" x1="2045.0583" x2="2045.0583" y1="644.9473" y2="661.8715"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="40" x="703.1417" y="464.3506">auteur</text><line style="stroke:#800000;stroke-width:1.0;" x1="2066.475" x2="2066.475" y1="825.9105" y2="926.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="2066.475" x2="4206.725" y1="926.2969" y2="926.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4206.725" x2="4206.725" y1="926.2969" y2="2124.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4206.725" x2="4102.3917" y1="2124.8047" y2="2124.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4102.3917" x2="4102.3917" y1="2124.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4102.3917,2232.1152,4109.3917,2213.1152,4095.3917,2213.1152,4102.3917,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="400.2083" x2="400.2083" y1="489.6367" y2="579.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="400.2083" x2="1026.725" y1="579.6367" y2="579.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="1026.725" x2="1026.725" y1="579.6367" y2="1006.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1026.725" x2="2610.3917" y1="1006.2969" y2="1006.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="2610.3917" x2="2610.3917" y1="1006.2969" y2="1284.2158"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="1029.725" y="750.5352">taal</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="2613.3917" y="1279.4736">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="4597.0583" x2="4597.0583" y1="818.9863" y2="866.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4597.0583" x2="2743.3917" y1="866.2969" y2="866.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="2743.3917" x2="2743.3917" y1="866.2969" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="2743.3917" x2="2694.0583" y1="1183.7402" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="2694.0583" x2="2694.0583" y1="1183.7402" y2="1284.2158"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="120" x="2621.3917" y="1154.9316">raadplegingsstatus</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="2697.0583" y="1279.4736">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="2694.0583" x2="2694.0583" y1="1357.5693" y2="1478.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="2694.0583" x2="4017.3917" y1="1478.0449" y2="1478.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="4017.3917" x2="4017.3917" y1="1478.0449" y2="2104.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4017.3917" x2="4075.725" y1="2104.8047" y2="2104.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4075.725" x2="4075.725" y1="2104.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4075.725,2232.1152,4082.725,2213.1152,4068.725,2213.1152,4075.725,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="4778.3917" x2="4778.3917" y1="818.9863" y2="986.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4778.3917" x2="4492.325" y1="986.2969" y2="986.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4492.325" x2="4492.325" y1="986.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4492.325,1126.2969,4499.325,1107.2969,4485.325,1107.2969,4492.325,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="4377.725" x2="4377.725" y1="1173.7402" y2="1193.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="4377.725" x2="4576.825" y1="1193.7402" y2="1193.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="4576.825" x2="4576.825" y1="1193.7402" y2="1248.3883"/><polygon fill="#FFFFFF" points="4576.825,1248.3883,4583.825,1229.3883,4569.825,1229.3883,4576.825,1248.3883" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="1244.0583" x2="1244.0583" y1="818.9863" y2="966.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1244.0583" x2="4449.325" y1="966.2969" y2="966.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4449.325" x2="4449.325" y1="966.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4449.325,1126.2969,4456.325,1107.2969,4442.325,1107.2969,4449.325,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="5105.725" x2="5105.725" y1="818.9863" y2="1036.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="5105.725" x2="4500.925" y1="1036.2969" y2="1036.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4500.925" x2="4500.925" y1="1036.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4500.925,1126.2969,4507.925,1107.2969,4493.925,1107.2969,4500.925,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="453.2083" x2="453.2083" y1="818.9863" y2="1106.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="453.2083" x2="817.3083" y1="1106.2969" y2="1106.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="817.3083" x2="817.3083" y1="1106.2969" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="817.3083" x2="1047.8917" y1="1183.7402" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="1047.8917" x2="1047.8917" y1="1183.7402" y2="1275.5828"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="35" x="780.3083" y="1154.9316">agent</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1050.8917" y="1270.8406">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="1325.3917" x2="1325.3917" y1="818.9863" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="1325.3917" x2="1154.8917" y1="1183.7402" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="1154.8917" x2="1154.8917" y1="1183.7402" y2="1275.5828"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27" x="1296.3917" y="1154.9316">type</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1157.8917" y="1270.8406">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="1101.3917" x2="1101.3917" y1="818.9863" y2="1275.5828"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="156" x="943.3917" y="1154.9316">functie_beroep_activiteit</text><line style="stroke:#800000;stroke-width:1.0;" x1="1065.725" x2="1065.725" y1="1348.9363" y2="1428.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="1065.725" x2="524.875" y1="1428.0449" y2="1428.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="524.875" x2="524.875" y1="1428.0449" y2="2174.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="524.875" x2="4029.0583" y1="2174.8047" y2="2174.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4029.0583" x2="4029.0583" y1="2174.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4029.0583,2232.1152,4036.0583,2213.1152,4022.0583,2213.1152,4029.0583,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="4271.725" x2="4271.725" y1="1173.7402" y2="1203.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="4271.725" x2="4551.125" y1="1203.7402" y2="1203.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="4551.125" x2="4551.125" y1="1203.7402" y2="1248.3883"/><polygon fill="#FFFFFF" points="4551.125,1248.3883,4558.125,1229.3883,4544.125,1229.3883,4551.125,1248.3883" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="414.5417" x2="414.5417" y1="489.6367" y2="569.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="414.5417" x2="4822.3917" y1="569.6367" y2="569.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="4822.3917" x2="4822.3917" y1="569.6367" y2="1016.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4822.3917" x2="4496.625" y1="1016.2969" y2="1016.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4496.625" x2="4496.625" y1="1016.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4496.625,1126.2969,4503.625,1107.2969,4489.625,1107.2969,4496.625,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="609.3083" x2="609.3083" y1="2094.8047" y2="2164.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="609.3083" x2="4035.725" y1="2164.8047" y2="2164.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4035.725" x2="4035.725" y1="2164.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4035.725,2232.1152,4042.725,2213.1152,4028.725,2213.1152,4035.725,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="716.3083" x2="716.3083" y1="2094.8047" y2="2144.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="716.3083" x2="4049.0583" y1="2144.8047" y2="2144.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4049.0583" x2="4049.0583" y1="2144.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4049.0583,2232.1152,4056.0583,2213.1152,4042.0583,2213.1152,4049.0583,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="1354.0583" x2="1354.0583" y1="818.9863" y2="936.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1354.0583" x2="4453.625" y1="936.2969" y2="936.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4453.625" x2="4453.625" y1="936.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4453.625,1126.2969,4460.625,1107.2969,4446.625,1107.2969,4453.625,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="185.5" x2="185.5" y1="120.6426" y2="140.6426"/><line style="stroke:#800000;stroke-width:1.0;" x1="185.5" x2="5468.3917" y1="140.6426" y2="140.6426"/><line style="stroke:#800000;stroke-width:1.0;" x1="5468.3917" x2="5468.3917" y1="140.6426" y2="1056.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="5468.3917" x2="4509.525" y1="1056.2969" y2="1056.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4509.525" x2="4509.525" y1="1056.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4509.525,1126.2969,4516.525,1107.2969,4502.525,1107.2969,4509.525,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="627.9083" x2="627.9083" y1="120.6426" y2="130.6426"/><line style="stroke:#800000;stroke-width:1.0;" x1="627.9083" x2="5490.3917" y1="130.6426" y2="130.6426"/><line style="stroke:#800000;stroke-width:1.0;" x1="5490.3917" x2="5490.3917" y1="130.6426" y2="1076.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="5490.3917" x2="4518.125" y1="1076.2969" y2="1076.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4518.125" x2="4518.125" y1="1076.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4518.125,1126.2969,4525.125,1107.2969,4511.125,1107.2969,4518.125,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="846.8083" x2="846.8083" y1="489.6367" y2="539.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="846.8083" x2="5457.3917" y1="539.6367" y2="539.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="5457.3917" x2="5457.3917" y1="539.6367" y2="1046.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="5457.3917" x2="4505.225" y1="1046.2969" y2="1046.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4505.225" x2="4505.225" y1="1046.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4505.225,1126.2969,4512.225,1107.2969,4498.225,1107.2969,4505.225,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="4950.8917" x2="4950.8917" y1="489.6367" y2="509.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="4950.8917" x2="5479.3917" y1="509.6367" y2="509.6367"/><line style="stroke:#800000;stroke-width:1.0;" x1="5479.3917" x2="5479.3917" y1="509.6367" y2="1066.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="5479.3917" x2="4513.825" y1="1066.2969" y2="1066.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4513.825" x2="4513.825" y1="1066.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4513.825,1126.2969,4520.825,1107.2969,4506.825,1107.2969,4513.825,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="806.475" x2="806.475" y1="489.6367" y2="729.8112"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="108" x="696.475" y="632.2051">type_vergelijking</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="809.475" y="725.069">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="769.3083" x2="769.3083" y1="790.2096" y2="2134.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="769.3083" x2="4055.725" y1="2134.8047" y2="2134.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4055.725" x2="4055.725" y1="2134.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4055.725,2232.1152,4062.725,2213.1152,4048.725,2213.1152,4055.725,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="4920.8917" x2="4920.8917" y1="489.6367" y2="721.1745"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="78" x="4840.8917" y="632.2051">type_waarde</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="4923.8917" y="716.4323">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="4950.0583" x2="4950.0583" y1="794.528" y2="1096.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4950.0583" x2="5576.3917" y1="1096.2969" y2="1096.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="5576.3917" x2="5576.3917" y1="1096.2969" y2="2174.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="5576.3917" x2="4135.725" y1="2174.8047" y2="2174.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4135.725" x2="4135.725" y1="2174.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4135.725,2232.1152,4142.725,2213.1152,4128.725,2213.1152,4135.725,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="4891.725" x2="4891.725" y1="794.528" y2="976.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4891.725" x2="3186.725" y1="976.2969" y2="976.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="3186.725" x2="3186.725" y1="976.2969" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="3186.725" x2="3176.225" y1="1183.7402" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="3176.225" x2="3176.225" y1="1183.7402" y2="1254.8547"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44" x="3140.725" y="1154.9316">waarde</text><line style="stroke:#800000;stroke-width:1.0;" x1="843.6417" x2="843.6417" y1="790.2096" y2="1036.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="843.6417" x2="3011.725" y1="1036.2969" y2="1036.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="3011.725" x2="3011.725" y1="1036.2969" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="3011.725" x2="3083.225" y1="1183.7402" y2="1183.7402"/><line style="stroke:#800000;stroke-width:1.0;" x1="3083.225" x2="3083.225" y1="1183.7402" y2="1254.8547"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="74" x="2935.725" y="1154.9316">vergelijking</text><line style="stroke:#800000;stroke-width:1.0;" x1="1937.975" x2="1937.975" y1="825.9105" y2="976.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1937.975" x2="3129.725" y1="976.2969" y2="976.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="3129.725" x2="3129.725" y1="976.2969" y2="1254.8547"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="105" x="3022.725" y="1154.9316">bron_waardering</text><line style="stroke:#800000;stroke-width:1.0;" x1="3160.725" x2="3160.725" y1="1380.0285" y2="1458.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="3160.725" x2="4146.3917" y1="1458.0449" y2="1458.0449"/><line style="stroke:#800000;stroke-width:1.0;" x1="4146.3917" x2="4146.3917" y1="1458.0449" y2="2104.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4146.3917" x2="4089.0583" y1="2104.8047" y2="2104.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4089.0583" x2="4089.0583" y1="2104.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4089.0583,2232.1152,4096.0583,2213.1152,4082.0583,2213.1152,4089.0583,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="1818.725" x2="1818.725" y1="818.9863" y2="896.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="1818.725" x2="4466.525" y1="896.2969" y2="896.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4466.525" x2="4466.525" y1="896.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4466.525,1126.2969,4473.525,1107.2969,4459.525,1107.2969,4466.525,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="471.875" x2="471.875" y1="2094.8047" y2="2184.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="471.875" x2="4022.3917" y1="2184.8047" y2="2184.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4022.3917" x2="4022.3917" y1="2184.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4022.3917,2232.1152,4029.3917,2213.1152,4015.3917,2213.1152,4022.3917,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="4643.725" x2="4643.725" y1="818.9863" y2="956.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4643.725" x2="4488.025" y1="956.2969" y2="956.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4488.025" x2="4488.025" y1="956.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4488.025,1126.2969,4495.025,1107.2969,4481.025,1107.2969,4488.025,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="5533.3917" x2="5533.3917" y1="818.9863" y2="1086.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="5533.3917" x2="4522.425" y1="1086.2969" y2="1086.2969"/><line style="stroke:#800000;stroke-width:1.0;" x1="4522.425" x2="4522.425" y1="1086.2969" y2="1126.2969"/><polygon fill="#FFFFFF" points="4522.425,1126.2969,4529.425,1107.2969,4515.425,1107.2969,4522.425,1126.2969" style="stroke:#800000;stroke-width:1.0;"/><line style="stroke:#800000;stroke-width:1.0;" x1="4318.3917" x2="4318.3917" y1="1561.3984" y2="2144.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4318.3917" x2="4115.725" y1="2144.8047" y2="2144.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4115.725" x2="4115.725" y1="2144.8047" y2="2232.1152"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="38" x="4321.3917" y="1873.0146">_meta</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="4118.725" y="2227.373">1</text><line style="stroke:#800000;stroke-width:1.0;" x1="4268.0583" x2="4268.0583" y1="1561.3984" y2="2134.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4268.0583" x2="4109.0583" y1="2134.8047" y2="2134.8047"/><line style="stroke:#800000;stroke-width:1.0;" x1="4109.0583" x2="4109.0583" y1="2134.8047" y2="2232.1152"/><polygon fill="#FFFFFF" points="4109.0583,2232.1152,4116.0583,2213.1152,4102.0583,2213.1152,4109.0583,2232.1152" style="stroke:#800000;stroke-width:1.0;"/><!--MD5=[10cfc7b048082e6719e623620ca4be62]
+@startuml
+!pragma layout elk
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam groupInheritance 1
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+skinparam ArrowColor #Maroon
+
+title Archiefbank ontology - 1.0.0 - 2022-03-17 14:01:56 +0100
+              
+package abv {
+
+class Aangroei{
+	{field} xsd:string : id 
+}
+
+Aangroei - -|> Codetabel
+
+class Adres{
+	{field} xsd:string : straat_en_nummer 
+	{field} abv:Plaats : gemeente 
+}
+Plaats - "1" Adres : gemeente >
+Adres - -|> EntiteitBasis
+
+class Agent{
+	{field} abv:Identificatienummer : identificatie 
+	{field} abv:Naam : naam 
+	{field} xsd:duration : datering_systematisch 
+	{field} xsd:string : datering_text 
+	{field} rdf:langString : geschiedenis_agent 
+	{field} abv:Taal : taal 
+	{field} abv:Associatie : associaties 
+	{field} xsd:string : bronnen_agent 
+	{field} xsd:string : bibliografie_agent 
+	{field} xsd:string : opmerking 
+}
+Identificatienummer -  Agent : identificatie >
+Naam -  Agent : naam >
+Taal -  Agent : taal >
+Associatie - "1" Agent : associaties >
+Agent - -|> EntiteitBasis
+
+class Archief{
+	{field} abv:Identificatienummer : identificatienummer 
+	{field} rdf:langString : titel 
+	{field} xsd:duration : datering_systematisch 
+	{field} xsd:string : datering_text 
+	{field} abv:Beschrijvingsniveau : beschrijvingsniveau 
+	{field} abv:Archief : is_onderdeel_van 
+	{field} abv:Omvang : omvang 
+	{field} abv:Samensteller : samensteller 
+	{field} abv:RolSamensteller : rol_samensteller 
+	{field} abv:Beheerder : beheerder 
+	{field} abv:RolBeheerder : rol_beheerder 
+	{field} rdf:langString : geschiedenis_archief 
+	{field} rdf:langString : verwerving 
+	{field} rdf:langString : inhoud_en_bereik 
+	{field} abv:Waardering : selectie 
+	{field} abv:Aangroei : aangroei 
+	{field} xsd:string : aangroei_text 
+	{field} abv:Ordening : ordening 
+	{field} xsd:string : ordening_text 
+	{field} abv:JuridischeBeperking : juridische_beperking 
+	{field} abv:Raadplegingsvoorwaarde : raadplegingsvoorwaarde 
+	{field} abv:Taal : taal 
+	{field} xsd:string : taal_text 
+	{field} xsd:string : toegang 
+	{field} xsd:string : bronnen_archief 
+	{field} xsd:string : bibliografie_archief 
+	{field} xsd:string : aantekening_archivaris 
+	{field} abv:Associatie : associatie 
+	{field} abv:Rechtenstatus : rechtenstatus_metadata 
+	{field} xsd:string : bronverwijzing_record 
+	{field} xsd:string : bronverwijzing_archief 
+}
+Identificatienummer -  Archief : identificatienummer >
+Beschrijvingsniveau - "1" Archief : beschrijvingsniveau >
+Archief - "1" Archief : is_onderdeel_van >
+Omvang -  Archief : omvang >
+Samensteller -  Archief : samensteller >
+RolSamensteller - "1" Archief : rol_samensteller >
+Beheerder -  Archief : beheerder >
+RolBeheerder - "1" Archief : rol_beheerder >
+Waardering -  Archief : selectie >
+Aangroei - "1" Archief : aangroei >
+Ordening - "1" Archief : ordening >
+JuridischeBeperking - "1" Archief : juridische_beperking >
+Raadplegingsvoorwaarde -  Archief : raadplegingsvoorwaarde >
+Taal -  Archief : taal >
+Associatie - "1" Archief : associatie >
+Rechtenstatus - "1" Archief : rechtenstatus_metadata >
+Archief - -|> EntiteitBasis
+
+class Associatie{
+	{field} abv:Plaats : plaats 
+	{field} abv:Agent : agent 
+	{field} abv:Periode : periode 
+	{field} abv:Onderwerp : onderwerp 
+}
+Plaats -  Associatie : plaats >
+Agent -  Associatie : agent >
+Periode -  Associatie : periode >
+Onderwerp -  Associatie : onderwerp >
+Associatie - -|> EntiteitBasis
+
+class Beheerder{
+	{field} abv:Agent : agent 
+	{field} abv:Erkenning : erkenning 
+	{field} abv:Adres : adres 
+	{field} xsd:string : telefoon 
+	{field} xsd:string : email 
+	{field} xsd:string : website 
+	{field} xsd:string : gebouw 
+	{field} abv:Publicatie : toegang 
+	{field} xsd:string : openingsuren 
+	{field} xsd:string : toegangsvoorwaarden 
+	{field} abv:Bereikbaarheid : bereikbaarheid 
+}
+Agent - "1" Beheerder : agent >
+Erkenning - "1" Beheerder : erkenning >
+Adres -  Beheerder : adres >
+Publicatie -  Beheerder : toegang >
+Bereikbaarheid -  Beheerder : bereikbaarheid >
+Beheerder - -|> EntiteitBasis
+
+class Bereikbaarheid{
+	{field} xsd:string : id 
+}
+
+Bereikbaarheid - -|> Codetabel
+
+class Beschrijvingsniveau{
+	{field} xsd:string : id 
+}
+
+Beschrijvingsniveau - -|> Codetabel
+
+class BibliografieArchief{
+	{field} xsd:string : id 
+}
+
+BibliografieArchief - -|> Concept
+
+class Bronbeschrijving{
+	{field} xsd:string : id 
+}
+
+Bronbeschrijving - -|> Concept
+
+class Bronverwijzing{
+	{field} xsd:string : id 
+}
+
+Bronverwijzing - -|> EntiteitBasis
+
+class Codetabel{
+	{field} xsd:string : id 
+}
+
+Codetabel - -|> Concept
+
+class Concept{
+	{field} abv:Identificatienummer : identificatienummer 
+	{field} rdf:langString : label 
+	{field} abv:TypeConcept : type 
+	{field} rdf:langString : definitie 
+}
+Identificatienummer -  Concept : identificatienummer >
+TypeConcept -  Concept : type >
+Concept - -|> EntiteitBasis
+
+class Erkenning{
+	{field} xsd:string : id 
+}
+
+Erkenning - -|> Concept
+
+class Functie{
+	{field} xsd:string : id 
+}
+
+Functie - -|> Codetabel
+
+class FunctieBeroepActiviteit{
+	{field} xsd:string : id 
+}
+
+FunctieBeroepActiviteit - -|> Concept
+
+class Identificatienummer{
+	{field} xsd:string : waarde 
+	{field} abv:TypeIdentificatienummer : type 
+	{field} abv:Agent : bron 
+}
+TypeIdentificatienummer - "1" Identificatienummer : type >
+Agent - "1" Identificatienummer : bron >
+Identificatienummer - -|> EntiteitBasis
+
+class JuridischeBeperking{
+	{field} xsd:boolean : privacy_gevoelig 
+	{field} xsd:boolean : contractuele_beperking 
+	{field} xsd:boolean : gevoelig_voor_auteursrechtelijkebescherming 
+}
+
+JuridischeBeperking - -|> EntiteitBasis
+
+class Naam{
+	{field} rdf:langString : waarde 
+	{field} abv:TypeNaam : type_naam 
+}
+TypeNaam - "1" Naam : type_naam >
+Naam - -|> EntiteitBasis
+
+class Omvang{
+	{field} rdf:langString : waarde 
+	{field} abv:Taal : taal 
+	{field} abv:Materiaalsoort : trefwoord 
+}
+Taal - "1" Omvang : taal >
+Materiaalsoort -  Omvang : trefwoord >
+Omvang - -|> EntiteitBasis
+
+class Onderwerp{
+	{field} xsd:string : id 
+}
+
+Onderwerp - -|> Codetabel
+
+class Ordening{
+	{field} rdf:langString : waarde 
+	{field} abv:Ordening : trefwoord 
+}
+Ordening - "1" Ordening : trefwoord >
+Ordening - -|> Codetabel
+
+class Periode{
+	{field} xsd:string : id 
+}
+
+Periode - -|> Codetabel
+
+class Plaats{
+	{field} abv:Identificatienummer : identificatienummer 
+	{field} abv:Naam : plaatsnaam 
+}
+Identificatienummer -  Plaats : identificatienummer >
+Naam -  Plaats : plaatsnaam >
+Plaats - -|> EntiteitBasis
+
+class Publicatie{
+	{field} abv:Identificatienummer : identificatienummer 
+	{field} xsd:string : bibliografische_verwijzing 
+	{field} abv:Naam : auteur 
+	{field} rdf:langString : titel 
+	{field} xsd:string : reeks 
+	{field} xsd:string : reeksnummer 
+	{field} xsd:string : uitgever 
+	{field} xsd:string : plaats_van_uitgave 
+	{field} xsd:date : datum_uitgave 
+	{field} xsd:anyURI : url 
+}
+Identificatienummer -  Publicatie : identificatienummer >
+Naam -  Publicatie : auteur >
+Publicatie - -|> EntiteitBasis
+
+class Raadplegingsvoorwaarde{
+	{field} xsd:string : tekst 
+	{field} abv:Taal : taal 
+	{field} abv:Raadplegingsstatus : raadplegingsstatus 
+}
+Taal - "1" Raadplegingsvoorwaarde : taal >
+Raadplegingsstatus - "1" Raadplegingsvoorwaarde : raadplegingsstatus >
+Raadplegingsvoorwaarde - -|> EntiteitBasis
+
+class Rechtenstatus{
+	{field} xsd:string : id 
+}
+
+Rechtenstatus - -|> Codetabel
+
+class Rol{
+	{field} xsd:string : id 
+}
+
+Rol - -|> Concept
+
+class RolBeheerder{
+	{field} xsd:string : id 
+}
+
+RolBeheerder - -|> Codetabel
+
+class RolSamensteller{
+	{field} xsd:string : id 
+}
+
+RolSamensteller - -|> Codetabel
+
+class Samensteller{
+	{field} abv:Agent : agent 
+	{field} abv:TypeAgent : type 
+	{field} abv:Functie : functie_beroep_activiteit 
+}
+Agent - "1" Samensteller : agent >
+TypeAgent - "1" Samensteller : type >
+Functie -  Samensteller : functie_beroep_activiteit >
+Samensteller - -|> EntiteitBasis
+
+class Soort{
+	{field} xsd:string : id 
+}
+
+Soort - -|> Concept
+
+class Taal{
+	{field} xsd:string : id 
+}
+
+Taal - -|> Codetabel
+
+class Term{
+	{field} xsd:string : id 
+}
+
+Term - -|> EntiteitBasis
+
+class Toegang{
+	{field} xsd:string : id 
+}
+
+Toegang - -|> EntiteitBasis
+
+class TypeAgent{
+	{field} xsd:string : id 
+}
+
+TypeAgent - -|> Codetabel
+
+class TypeIdentificatienummer{
+	{field} xsd:string : id 
+}
+
+TypeIdentificatienummer - -|> Codetabel
+
+class TypeNaam{
+	{field} xsd:string : id 
+}
+
+TypeNaam - -|> Codetabel
+
+class TypeVergelijking{
+	{field} xsd:string : id 
+}
+
+TypeVergelijking - -|> Codetabel
+
+class TypeWaarde{
+	{field} xsd:string : id 
+}
+
+TypeWaarde - -|> Codetabel
+
+class Vergelijking{
+	{field} rdf:langString : waarde 
+	{field} abv:TypeVergelijking : type_vergelijking 
+}
+TypeVergelijking - "1" Vergelijking : type_vergelijking >
+Vergelijking - -|> EntiteitBasis
+
+class Waarde{
+	{field} xsd:string : id 
+	{field} rdf:langString : waarde 
+	{field} abv:TypeWaarde : type_waarde 
+}
+TypeWaarde - "1" Waarde : type_waarde >
+Waarde - -|> EntiteitBasis
+
+class Waardering{
+	{field} xsd:string : waardestelling 
+	{field} abv:Waarde : waarde 
+	{field} abv:Vergelijking : vergelijking 
+	{field} xsd:date : datum_waardering 
+	{field} abv:Publicatie : bron_waardering 
+	{field} xsd:string : bijdragers 
+	{field} xsd:string : opmerkingen 
+}
+Waarde -  Waardering : waarde >
+Vergelijking -  Waardering : vergelijking >
+Publicatie -  Waardering : bron_waardering >
+Waardering - -|> EntiteitBasis
+
+class Materiaalsoort{
+	{field} xsd:string : id 
+}
+
+Materiaalsoort - -|> Codetabel
+
+class Datering{
+	{field} xsd:string : id 
+}
+
+Datering - -|> EntiteitBasis
+
+class Raadplegingsstatus{
+	{field} xsd:string : id 
+}
+
+Raadplegingsstatus - -|> Codetabel
+
+class TypeConcept{
+	{field} xsd:string : id 
+}
+
+TypeConcept - -|> Codetabel
+
+class EntiteitBasis{
+	{field} xsd:string : id 
+	{field} abv:EntiteitMetadata : _meta 
+}
+EntiteitMetadata - "1" EntiteitBasis : _meta >
+
+class EntiteitMetadata{
+	{field} xsd:date : aangemaakt_op 
+	{field} xsd:date : aangepast_op 
+	{field} xsd:date : verwijderd_op 
+}
+
+EntiteitMetadata - -|> EntiteitBasis
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+@startuml
+!pragma layout elk
+skinparam classFontSize 14
+skinparam groupInheritance 1
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+skinparam ArrowColor #Maroon
+
+title Archiefbank ontology - 1.0.0 - 2022-03-17 14:01:56 +0100
+              
+package abv {
+
+class Aangroei{
+	{field} xsd:string : id 
+}
+
+Aangroei - -|> Codetabel
+
+class Adres{
+	{field} xsd:string : straat_en_nummer 
+	{field} abv:Plaats : gemeente 
+}
+Plaats - "1" Adres : gemeente >
+Adres - -|> EntiteitBasis
+
+class Agent{
+	{field} abv:Identificatienummer : identificatie 
+	{field} abv:Naam : naam 
+	{field} xsd:duration : datering_systematisch 
+	{field} xsd:string : datering_text 
+	{field} rdf:langString : geschiedenis_agent 
+	{field} abv:Taal : taal 
+	{field} abv:Associatie : associaties 
+	{field} xsd:string : bronnen_agent 
+	{field} xsd:string : bibliografie_agent 
+	{field} xsd:string : opmerking 
+}
+Identificatienummer -  Agent : identificatie >
+Naam -  Agent : naam >
+Taal -  Agent : taal >
+Associatie - "1" Agent : associaties >
+Agent - -|> EntiteitBasis
+
+class Archief{
+	{field} abv:Identificatienummer : identificatienummer 
+	{field} rdf:langString : titel 
+	{field} xsd:duration : datering_systematisch 
+	{field} xsd:string : datering_text 
+	{field} abv:Beschrijvingsniveau : beschrijvingsniveau 
+	{field} abv:Archief : is_onderdeel_van 
+	{field} abv:Omvang : omvang 
+	{field} abv:Samensteller : samensteller 
+	{field} abv:RolSamensteller : rol_samensteller 
+	{field} abv:Beheerder : beheerder 
+	{field} abv:RolBeheerder : rol_beheerder 
+	{field} rdf:langString : geschiedenis_archief 
+	{field} rdf:langString : verwerving 
+	{field} rdf:langString : inhoud_en_bereik 
+	{field} abv:Waardering : selectie 
+	{field} abv:Aangroei : aangroei 
+	{field} xsd:string : aangroei_text 
+	{field} abv:Ordening : ordening 
+	{field} xsd:string : ordening_text 
+	{field} abv:JuridischeBeperking : juridische_beperking 
+	{field} abv:Raadplegingsvoorwaarde : raadplegingsvoorwaarde 
+	{field} abv:Taal : taal 
+	{field} xsd:string : taal_text 
+	{field} xsd:string : toegang 
+	{field} xsd:string : bronnen_archief 
+	{field} xsd:string : bibliografie_archief 
+	{field} xsd:string : aantekening_archivaris 
+	{field} abv:Associatie : associatie 
+	{field} abv:Rechtenstatus : rechtenstatus_metadata 
+	{field} xsd:string : bronverwijzing_record 
+	{field} xsd:string : bronverwijzing_archief 
+}
+Identificatienummer -  Archief : identificatienummer >
+Beschrijvingsniveau - "1" Archief : beschrijvingsniveau >
+Archief - "1" Archief : is_onderdeel_van >
+Omvang -  Archief : omvang >
+Samensteller -  Archief : samensteller >
+RolSamensteller - "1" Archief : rol_samensteller >
+Beheerder -  Archief : beheerder >
+RolBeheerder - "1" Archief : rol_beheerder >
+Waardering -  Archief : selectie >
+Aangroei - "1" Archief : aangroei >
+Ordening - "1" Archief : ordening >
+JuridischeBeperking - "1" Archief : juridische_beperking >
+Raadplegingsvoorwaarde -  Archief : raadplegingsvoorwaarde >
+Taal -  Archief : taal >
+Associatie - "1" Archief : associatie >
+Rechtenstatus - "1" Archief : rechtenstatus_metadata >
+Archief - -|> EntiteitBasis
+
+class Associatie{
+	{field} abv:Plaats : plaats 
+	{field} abv:Agent : agent 
+	{field} abv:Periode : periode 
+	{field} abv:Onderwerp : onderwerp 
+}
+Plaats -  Associatie : plaats >
+Agent -  Associatie : agent >
+Periode -  Associatie : periode >
+Onderwerp -  Associatie : onderwerp >
+Associatie - -|> EntiteitBasis
+
+class Beheerder{
+	{field} abv:Agent : agent 
+	{field} abv:Erkenning : erkenning 
+	{field} abv:Adres : adres 
+	{field} xsd:string : telefoon 
+	{field} xsd:string : email 
+	{field} xsd:string : website 
+	{field} xsd:string : gebouw 
+	{field} abv:Publicatie : toegang 
+	{field} xsd:string : openingsuren 
+	{field} xsd:string : toegangsvoorwaarden 
+	{field} abv:Bereikbaarheid : bereikbaarheid 
+}
+Agent - "1" Beheerder : agent >
+Erkenning - "1" Beheerder : erkenning >
+Adres -  Beheerder : adres >
+Publicatie -  Beheerder : toegang >
+Bereikbaarheid -  Beheerder : bereikbaarheid >
+Beheerder - -|> EntiteitBasis
+
+class Bereikbaarheid{
+	{field} xsd:string : id 
+}
+
+Bereikbaarheid - -|> Codetabel
+
+class Beschrijvingsniveau{
+	{field} xsd:string : id 
+}
+
+Beschrijvingsniveau - -|> Codetabel
+
+class BibliografieArchief{
+	{field} xsd:string : id 
+}
+
+BibliografieArchief - -|> Concept
+
+class Bronbeschrijving{
+	{field} xsd:string : id 
+}
+
+Bronbeschrijving - -|> Concept
+
+class Bronverwijzing{
+	{field} xsd:string : id 
+}
+
+Bronverwijzing - -|> EntiteitBasis
+
+class Codetabel{
+	{field} xsd:string : id 
+}
+
+Codetabel - -|> Concept
+
+class Concept{
+	{field} abv:Identificatienummer : identificatienummer 
+	{field} rdf:langString : label 
+	{field} abv:TypeConcept : type 
+	{field} rdf:langString : definitie 
+}
+Identificatienummer -  Concept : identificatienummer >
+TypeConcept -  Concept : type >
+Concept - -|> EntiteitBasis
+
+class Erkenning{
+	{field} xsd:string : id 
+}
+
+Erkenning - -|> Concept
+
+class Functie{
+	{field} xsd:string : id 
+}
+
+Functie - -|> Codetabel
+
+class FunctieBeroepActiviteit{
+	{field} xsd:string : id 
+}
+
+FunctieBeroepActiviteit - -|> Concept
+
+class Identificatienummer{
+	{field} xsd:string : waarde 
+	{field} abv:TypeIdentificatienummer : type 
+	{field} abv:Agent : bron 
+}
+TypeIdentificatienummer - "1" Identificatienummer : type >
+Agent - "1" Identificatienummer : bron >
+Identificatienummer - -|> EntiteitBasis
+
+class JuridischeBeperking{
+	{field} xsd:boolean : privacy_gevoelig 
+	{field} xsd:boolean : contractuele_beperking 
+	{field} xsd:boolean : gevoelig_voor_auteursrechtelijkebescherming 
+}
+
+JuridischeBeperking - -|> EntiteitBasis
+
+class Naam{
+	{field} rdf:langString : waarde 
+	{field} abv:TypeNaam : type_naam 
+}
+TypeNaam - "1" Naam : type_naam >
+Naam - -|> EntiteitBasis
+
+class Omvang{
+	{field} rdf:langString : waarde 
+	{field} abv:Taal : taal 
+	{field} abv:Materiaalsoort : trefwoord 
+}
+Taal - "1" Omvang : taal >
+Materiaalsoort -  Omvang : trefwoord >
+Omvang - -|> EntiteitBasis
+
+class Onderwerp{
+	{field} xsd:string : id 
+}
+
+Onderwerp - -|> Codetabel
+
+class Ordening{
+	{field} rdf:langString : waarde 
+	{field} abv:Ordening : trefwoord 
+}
+Ordening - "1" Ordening : trefwoord >
+Ordening - -|> Codetabel
+
+class Periode{
+	{field} xsd:string : id 
+}
+
+Periode - -|> Codetabel
+
+class Plaats{
+	{field} abv:Identificatienummer : identificatienummer 
+	{field} abv:Naam : plaatsnaam 
+}
+Identificatienummer -  Plaats : identificatienummer >
+Naam -  Plaats : plaatsnaam >
+Plaats - -|> EntiteitBasis
+
+class Publicatie{
+	{field} abv:Identificatienummer : identificatienummer 
+	{field} xsd:string : bibliografische_verwijzing 
+	{field} abv:Naam : auteur 
+	{field} rdf:langString : titel 
+	{field} xsd:string : reeks 
+	{field} xsd:string : reeksnummer 
+	{field} xsd:string : uitgever 
+	{field} xsd:string : plaats_van_uitgave 
+	{field} xsd:date : datum_uitgave 
+	{field} xsd:anyURI : url 
+}
+Identificatienummer -  Publicatie : identificatienummer >
+Naam -  Publicatie : auteur >
+Publicatie - -|> EntiteitBasis
+
+class Raadplegingsvoorwaarde{
+	{field} xsd:string : tekst 
+	{field} abv:Taal : taal 
+	{field} abv:Raadplegingsstatus : raadplegingsstatus 
+}
+Taal - "1" Raadplegingsvoorwaarde : taal >
+Raadplegingsstatus - "1" Raadplegingsvoorwaarde : raadplegingsstatus >
+Raadplegingsvoorwaarde - -|> EntiteitBasis
+
+class Rechtenstatus{
+	{field} xsd:string : id 
+}
+
+Rechtenstatus - -|> Codetabel
+
+class Rol{
+	{field} xsd:string : id 
+}
+
+Rol - -|> Concept
+
+class RolBeheerder{
+	{field} xsd:string : id 
+}
+
+RolBeheerder - -|> Codetabel
+
+class RolSamensteller{
+	{field} xsd:string : id 
+}
+
+RolSamensteller - -|> Codetabel
+
+class Samensteller{
+	{field} abv:Agent : agent 
+	{field} abv:TypeAgent : type 
+	{field} abv:Functie : functie_beroep_activiteit 
+}
+Agent - "1" Samensteller : agent >
+TypeAgent - "1" Samensteller : type >
+Functie -  Samensteller : functie_beroep_activiteit >
+Samensteller - -|> EntiteitBasis
+
+class Soort{
+	{field} xsd:string : id 
+}
+
+Soort - -|> Concept
+
+class Taal{
+	{field} xsd:string : id 
+}
+
+Taal - -|> Codetabel
+
+class Term{
+	{field} xsd:string : id 
+}
+
+Term - -|> EntiteitBasis
+
+class Toegang{
+	{field} xsd:string : id 
+}
+
+Toegang - -|> EntiteitBasis
+
+class TypeAgent{
+	{field} xsd:string : id 
+}
+
+TypeAgent - -|> Codetabel
+
+class TypeIdentificatienummer{
+	{field} xsd:string : id 
+}
+
+TypeIdentificatienummer - -|> Codetabel
+
+class TypeNaam{
+	{field} xsd:string : id 
+}
+
+TypeNaam - -|> Codetabel
+
+class TypeVergelijking{
+	{field} xsd:string : id 
+}
+
+TypeVergelijking - -|> Codetabel
+
+class TypeWaarde{
+	{field} xsd:string : id 
+}
+
+TypeWaarde - -|> Codetabel
+
+class Vergelijking{
+	{field} rdf:langString : waarde 
+	{field} abv:TypeVergelijking : type_vergelijking 
+}
+TypeVergelijking - "1" Vergelijking : type_vergelijking >
+Vergelijking - -|> EntiteitBasis
+
+class Waarde{
+	{field} xsd:string : id 
+	{field} rdf:langString : waarde 
+	{field} abv:TypeWaarde : type_waarde 
+}
+TypeWaarde - "1" Waarde : type_waarde >
+Waarde - -|> EntiteitBasis
+
+class Waardering{
+	{field} xsd:string : waardestelling 
+	{field} abv:Waarde : waarde 
+	{field} abv:Vergelijking : vergelijking 
+	{field} xsd:date : datum_waardering 
+	{field} abv:Publicatie : bron_waardering 
+	{field} xsd:string : bijdragers 
+	{field} xsd:string : opmerkingen 
+}
+Waarde -  Waardering : waarde >
+Vergelijking -  Waardering : vergelijking >
+Publicatie -  Waardering : bron_waardering >
+Waardering - -|> EntiteitBasis
+
+class Materiaalsoort{
+	{field} xsd:string : id 
+}
+
+Materiaalsoort - -|> Codetabel
+
+class Datering{
+	{field} xsd:string : id 
+}
+
+Datering - -|> EntiteitBasis
+
+class Raadplegingsstatus{
+	{field} xsd:string : id 
+}
+
+Raadplegingsstatus - -|> Codetabel
+
+class TypeConcept{
+	{field} xsd:string : id 
+}
+
+TypeConcept - -|> Codetabel
+
+class EntiteitBasis{
+	{field} xsd:string : id 
+	{field} abv:EntiteitMetadata : _meta 
+}
+EntiteitMetadata - "1" EntiteitBasis : _meta >
+
+class EntiteitMetadata{
+	{field} xsd:date : aangemaakt_op 
+	{field} xsd:date : aangepast_op 
+	{field} xsd:date : verwijderd_op 
+}
+
+EntiteitMetadata - -|> EntiteitBasis
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+PlantUML version 1.2022.1(Tue Feb 01 19:19:58 CET 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

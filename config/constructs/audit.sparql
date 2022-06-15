@@ -1,0 +1,21 @@
+PREFIX audit: <https://abv.libis.be/_audit/>
+PREFIX abv: <https://abv.libis.be/>
+
+construct {
+         ?change_set a abv:Audit ;
+         abv:id ?id ;
+         abv:subject_of_change ?subject_of_change;
+         abv:change_set ?change_set .
+}
+WHERE {
+      graph <https://abv.libis.be/_audit/> {
+                                           select ?change_set ?id ?subject_of_change where {
+                                                                               ?change_set ?p ?o ;
+                                                                               audit:created_date ?created_date;
+                                                                               audit:subject_of_change ?subject_of_change ;
+                                                                               a audit:ChangeSet .
+
+                                                                               bind(substr(str(?change_set), strlen(str(audit:change_sets))+2 ) as ?id)
+                                                                               }  order by ?created_date
+                                           }
+      }

@@ -1,0 +1,458 @@
+@startuml
+!pragma layout elk
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam groupInheritance 1
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+skinparam ArrowColor #Maroon
+
+title Archiefbank ontology - 1.0.0 - 2022-05-20 11:30:11 +0200
+              
+package abv {
+
+class Aangroei{
+	{field} xsd:string : id 
+}
+
+Aangroei --|> Codetabel
+
+class Adres{
+	{field} xsd:string : straat_en_nummer 
+	{field} abv:Plaats : gemeente 
+}
+Plaats - "1" Adres : gemeente >
+Adres --|> EntiteitBasis
+
+class Agent{
+	{field} abv:Identificatienummer : identificatienummer 
+	{field} abv:Naam : naam 
+	{field} abv:TypeAgent : type 
+	{field} xsd:duration : datering_systematisch 
+	{field} xsd:string : datering_text 
+	{field} rdf:langString : geschiedenis_agent 
+	{field} abv:Taal : taal 
+	{field} abv:Associatie : associaties 
+	{field} xsd:string : bronnen_agent 
+	{field} xsd:string : bibliografie_agent 
+	{field} xsd:string : bronverwijzing_record 
+	{field} xsd:string : opmerking 
+}
+Identificatienummer -  Agent : identificatienummer >
+Naam -  Agent : naam >
+TypeAgent - "1" Agent : type >
+Taal -  Agent : taal >
+Associatie - "1" Agent : associaties >
+Agent --|> EntiteitBasis
+
+class Archief{
+	{field} abv:Identificatienummer : identificatienummer 
+	{field} rdf:langString : titel 
+	{field} time:DateTimeInterval : datering_systematisch 
+	{field} xsd:string : datering_text 
+	{field} abv:Beschrijvingsniveau : beschrijvingsniveau 
+	{field} abv:Archief : is_onderdeel_van 
+	{field} abv:Omvang : omvang 
+	{field} abv:Samensteller : samensteller 
+	{field} abv:RolSamensteller : rol_samensteller 
+	{field} abv:Beheerder : beheerder 
+	{field} abv:RolBeheerder : rol_beheerder 
+	{field} rdf:langString : geschiedenis_archief 
+	{field} rdf:langString : verwerving 
+	{field} rdf:langString : inhoud_en_bereik 
+	{field} abv:Waardering : selectie 
+	{field} abv:Aangroei : aangroei 
+	{field} xsd:string : aangroei_text 
+	{field} abv:Ordening : ordening 
+	{field} xsd:string : ordening_text 
+	{field} abv:JuridischeBeperking : juridische_beperking 
+	{field} abv:Raadplegingsvoorwaarde : raadplegingsvoorwaarde 
+	{field} abv:Taal : taal 
+	{field} xsd:string : taal_text 
+	{field} xsd:string : toegang 
+	{field} xsd:string : bronnen_archief 
+	{field} xsd:string : bibliografie_archief 
+	{field} xsd:string : aantekening_archivaris 
+	{field} abv:Associatie : associatie 
+	{field} abv:Rechtenstatus : rechtenstatus_metadata 
+	{field} xsd:string : bronverwijzing_record 
+	{field} xsd:string : bronverwijzing_archief 
+}
+Identificatienummer -  Archief : identificatienummer >
+Beschrijvingsniveau - "1" Archief : beschrijvingsniveau >
+Archief - "1" Archief : is_onderdeel_van >
+Omvang -  Archief : omvang >
+Samensteller -  Archief : samensteller >
+RolSamensteller - "1" Archief : rol_samensteller >
+Beheerder -  Archief : beheerder >
+RolBeheerder - "1" Archief : rol_beheerder >
+Waardering -  Archief : selectie >
+Aangroei - "1" Archief : aangroei >
+Ordening - "1" Archief : ordening >
+JuridischeBeperking - "1" Archief : juridische_beperking >
+Raadplegingsvoorwaarde -  Archief : raadplegingsvoorwaarde >
+Taal -  Archief : taal >
+Associatie - "1" Archief : associatie >
+Rechtenstatus - "1" Archief : rechtenstatus_metadata >
+Archief --|> EntiteitBasis
+
+class Associatie{
+	{field} abv:Plaats : plaats 
+	{field} abv:Agent : agent 
+	{field} abv:Periode : periode 
+	{field} abv:Onderwerp : onderwerp 
+}
+Plaats -  Associatie : plaats >
+Agent -  Associatie : agent >
+Periode -  Associatie : periode >
+Onderwerp -  Associatie : onderwerp >
+Associatie --|> EntiteitBasis
+
+class Beheerder{
+	{field} abv:Agent : agent 
+	{field} abv:Erkenning : erkenning 
+	{field} abv:Adres : adres 
+	{field} xsd:string : telefoon 
+	{field} xsd:string : email 
+	{field} xsd:string : website 
+	{field} xsd:string : gebouw 
+	{field} xsd:string : toegang 
+	{field} xsd:string : openingsuren 
+	{field} xsd:string : toegangsvoorwaarden 
+	{field} abv:Bereikbaarheid : bereikbaarheid 
+}
+Agent - "1" Beheerder : agent >
+Erkenning - "1" Beheerder : erkenning >
+Adres -  Beheerder : adres >
+Bereikbaarheid -  Beheerder : bereikbaarheid >
+Beheerder --|> EntiteitBasis
+
+class Bereikbaarheid{
+	{field} xsd:string : id 
+}
+
+Bereikbaarheid --|> Codetabel
+
+class Beschrijvingsniveau{
+	{field} xsd:string : id 
+}
+
+Beschrijvingsniveau --|> Codetabel
+
+class BibliografieArchief{
+	{field} xsd:string : id 
+}
+
+BibliografieArchief --|> Concept
+
+class Bronbeschrijving{
+	{field} xsd:string : id 
+}
+
+Bronbeschrijving --|> Concept
+
+class Bronverwijzing{
+	{field} xsd:string : id 
+}
+
+Bronverwijzing --|> EntiteitBasis
+
+class Codetabel{
+	{field} xsd:string : id 
+}
+
+Codetabel --|> Concept
+
+class Concept{
+	{field} abv:Identificatienummer : identificatienummer 
+	{field} rdf:langString : label 
+	{field} abv:TypeConcept : type 
+	{field} rdf:langString : definitie 
+}
+Identificatienummer -  Concept : identificatienummer >
+TypeConcept -  Concept : type >
+Concept --|> EntiteitBasis
+
+class Erkenning{
+	{field} xsd:string : id 
+}
+
+Erkenning --|> Concept
+
+class Functie{
+	{field} xsd:string : id 
+}
+
+Functie --|> Codetabel
+
+class FunctieBeroepActiviteit{
+	{field} xsd:string : id 
+}
+
+FunctieBeroepActiviteit --|> Concept
+
+class Identificatienummer{
+	{field} rdf:langString : waarde 
+	{field} abv:TypeIdentificatienummer : type 
+	{field} abv:Agent : bron 
+}
+TypeIdentificatienummer - "1" Identificatienummer : type >
+Agent - "1" Identificatienummer : bron >
+Identificatienummer --|> EntiteitBasis
+
+class JuridischeBeperking{
+	{field} xsd:boolean : privacy_gevoelig 
+	{field} xsd:boolean : contractuele_beperking 
+	{field} xsd:boolean : gevoelig_voor_auteursrechtelijkebescherming 
+}
+
+JuridischeBeperking --|> EntiteitBasis
+
+class Naam{
+	{field} rdf:langString : waarde 
+	{field} abv:TypeNaam : type_naam 
+}
+TypeNaam - "1" Naam : type_naam >
+Naam --|> EntiteitBasis
+
+class Omvang{
+	{field} rdf:langString : waarde 
+	{field} abv:Materiaalsoort : trefwoord 
+}
+Materiaalsoort -  Omvang : trefwoord >
+Omvang --|> EntiteitBasis
+
+class Onderwerp{
+	{field} xsd:string : id 
+}
+
+Onderwerp --|> Codetabel
+
+class Ordening{
+	{field} rdf:langString : waarde 
+	{field} abv:Ordeningsstatus : trefwoord 
+}
+Ordeningsstatus - "1" Ordening : trefwoord >
+Ordening --|> EntiteitBasis
+
+class Periode{
+	{field} xsd:string : id 
+}
+
+Periode --|> Codetabel
+
+class Plaats{
+	{field} abv:Identificatienummer : identificatienummer 
+	{field} abv:Naam : plaatsnaam 
+}
+Identificatienummer -  Plaats : identificatienummer >
+Naam -  Plaats : plaatsnaam >
+Plaats --|> EntiteitBasis
+
+class Publicatie{
+	{field} abv:Identificatienummer : identificatienummer 
+	{field} xsd:string : bibliografische_verwijzing 
+	{field} abv:Naam : auteur 
+	{field} rdf:langString : titel 
+	{field} xsd:string : reeks 
+	{field} xsd:string : reeksnummer 
+	{field} xsd:string : uitgever 
+	{field} xsd:string : plaats_van_uitgave 
+	{field} xsd:date : datum_uitgave 
+	{field} xsd:anyURI : url 
+}
+Identificatienummer -  Publicatie : identificatienummer >
+Naam -  Publicatie : auteur >
+Publicatie --|> EntiteitBasis
+
+class Raadplegingsvoorwaarde{
+	{field} xsd:string : tekst 
+	{field} abv:Taal : taal 
+	{field} abv:Raadplegingsstatus : raadplegingsstatus 
+}
+Taal - "1" Raadplegingsvoorwaarde : taal >
+Raadplegingsstatus - "1" Raadplegingsvoorwaarde : raadplegingsstatus >
+Raadplegingsvoorwaarde --|> EntiteitBasis
+
+class Rechtenstatus{
+	{field} xsd:string : id 
+}
+
+Rechtenstatus --|> Codetabel
+
+class Rol{
+	{field} xsd:string : id 
+}
+
+Rol --|> Concept
+
+class RolBeheerder{
+	{field} xsd:string : id 
+}
+
+RolBeheerder --|> Codetabel
+
+class RolSamensteller{
+	{field} xsd:string : id 
+}
+
+RolSamensteller --|> Codetabel
+
+class Samensteller{
+	{field} abv:Agent : agent 
+	{field} abv:Functie : functie_beroep_activiteit 
+}
+Agent - "1" Samensteller : agent >
+Functie -  Samensteller : functie_beroep_activiteit >
+Samensteller --|> EntiteitBasis
+
+class Soort{
+	{field} xsd:string : id 
+}
+
+Soort --|> Concept
+
+class Taal{
+	{field} xsd:string : id 
+}
+
+Taal --|> Codetabel
+
+class Term{
+	{field} xsd:string : id 
+}
+
+Term --|> EntiteitBasis
+
+class Toegang{
+	{field} xsd:string : id 
+}
+
+Toegang --|> EntiteitBasis
+
+class TypeAgent{
+	{field} xsd:string : id 
+}
+
+TypeAgent --|> Codetabel
+
+class TypeIdentificatienummer{
+	{field} xsd:string : id 
+}
+
+TypeIdentificatienummer --|> Codetabel
+
+class TypeNaam{
+	{field} xsd:string : id 
+}
+
+TypeNaam --|> Codetabel
+
+class TypeVergelijking{
+	{field} xsd:string : id 
+}
+
+TypeVergelijking --|> Codetabel
+
+class TypeWaarde{
+	{field} xsd:string : id 
+}
+
+TypeWaarde --|> Codetabel
+
+class Vergelijking{
+	{field} rdf:langString : waarde 
+	{field} abv:TypeVergelijking : type_vergelijking 
+}
+TypeVergelijking - "1" Vergelijking : type_vergelijking >
+Vergelijking --|> EntiteitBasis
+
+class Waarde{
+	{field} xsd:string : id 
+	{field} rdf:langString : waarde 
+	{field} abv:TypeWaarde : type_waarde 
+}
+TypeWaarde - "1" Waarde : type_waarde >
+Waarde --|> EntiteitBasis
+
+class Waardering{
+	{field} rdf:langString : waardestelling 
+	{field} abv:Waarde : waarde 
+	{field} abv:Vergelijking : vergelijking 
+	{field} xsd:date : datum_waardering 
+	{field} xsd:string : bron_waardering 
+	{field} xsd:string : bijdragers 
+	{field} xsd:string : opmerkingen 
+}
+Waarde -  Waardering : waarde >
+Vergelijking -  Waardering : vergelijking >
+Waardering --|> EntiteitBasis
+
+class Materiaalsoort{
+	{field} xsd:string : id 
+}
+
+Materiaalsoort --|> Codetabel
+
+class Datering{
+	{field} xsd:string : id 
+}
+
+Datering --|> EntiteitBasis
+
+class Raadplegingsstatus{
+	{field} xsd:string : id 
+}
+
+Raadplegingsstatus --|> Codetabel
+
+class TypeConcept{
+	{field} xsd:string : id 
+}
+
+TypeConcept --|> Codetabel
+
+class EntiteitBasis{
+	{field} xsd:string : id 
+	{field} abv:Audit : _audit 
+}
+Audit -  EntiteitBasis : _audit >
+
+class Ordeningsstatus{
+	{field} xsd:string : id 
+}
+
+Ordeningsstatus --|> Codetabel
+
+class Gebruiksgroep{
+	{field} xsd:string : id 
+}
+
+Gebruiksgroep --|> Codetabel
+
+class Audit{
+	{field} xsd:string : id 
+	{field} xsd:anyURI : change_set 
+	{field} xsd:anyURI : subject_of_change 
+}
+
+
+class UiArchiefvormerLijst{
+	{field} xsd:string : id 
+	{field} rdf:langString : naam 
+	{field} xsd:string : az 
+}
+
+
+class UiBewaarplaatsLijst{
+	{field} xsd:string : id 
+	{field} rdf:langString : naam 
+	{field} xsd:string : az 
+}
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+          

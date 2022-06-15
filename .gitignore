@@ -1,0 +1,6 @@
+cache/*
+config/cache/*
+.idea
+config.tgz
+gems
+*.tgz
