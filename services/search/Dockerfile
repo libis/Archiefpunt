@@ -1,21 +1,24 @@
 FROM ruby:2.7.6-alpine
 
-ARG SOLIS_VERSION=0.43.0
-RUN echo "Solis v$SOLIS_VERSION"
-
 RUN bundle config --global frozen 1
+#RUN useradd abv -u 10000 -m -d /app
 RUN addgroup -S abv -g 10000 && adduser -S abv -u 10000 -G abv && apk --no-cache add g++ make bash
 
 WORKDIR /app
 COPY Gemfile.docker Gemfile
 
+COPY app app
+COPY lib lib
+COPY public public
+COPY cache cache
 COPY gems gems
+COPY config.ru config.ru
 COPY run.sh run.sh
-COPY config config
+ADD config.tgz ./
 
-RUN mkdir cache && chmod a+x cache && chown -R abv:abv /app
+RUN chmod a+x cache && chown -R abv:abv /app
 USER abv:abv
-RUN gem install gems/solis-$SOLIS_VERSION.gem
+RUN gem install gems/solis-0.36.0.gem
 RUN bundle install
 RUN gem cleanup minitest
 

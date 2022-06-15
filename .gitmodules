@@ -7,3 +7,6 @@
 [submodule "search"]
 	path = search
 	url = https://github.com/mehmetc/solis-search
+[submodule "services/ping"]
+	path = services/ping
+	url = https://github.com/mehmetc/solis-ping

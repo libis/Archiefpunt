@@ -1,0 +1,16 @@
+<style>
+  .link {
+      margin-left:40px;
+  }
+</style>
+<h1>usage:</h1>
+<p><%= locals[:base_path] %>?query=index:terms</p>
+<h2>Available indexes</h2>
+<div>
+  <% locals[:indexes].each do |index| %>
+    <h3><%= index.keys[0] %></h3>
+    <% query = "#{locals[:base_path]}?query=#{index.keys[0]}:#{index.values[0].empty? ? locals[:words].sample : index.values[0]}" %>
+    <a class="link" href="<%= query %>"><%= query %></a>
+  <% end %>
+</div>
+

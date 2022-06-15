@@ -1,7 +1,5 @@
 FROM registry.docker.libis.be/archiefpunt/base:latest
 
-
-
 WORKDIR /app
 USER root
 ADD service.tgz ./
