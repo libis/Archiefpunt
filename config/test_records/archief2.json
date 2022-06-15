@@ -1,0 +1,85 @@
+{
+  "type": "archieven",
+  "attributes": {
+    "id": "dummy-2",
+    "titel": "Full dummy archief of \"De Grote Archiefbank\" test",
+    "datering_systematisch": "2002 - 9999",
+    "datering_text": "Opgericht rond 2002 en zal tot in de eeuwigheid blijven bestaan.",
+    "beschrijvingsniveau": {
+      "id": "144E-D85B-CBA6-1996-976543CTBN9A"
+    },
+    "omvang": {
+      "waarde": "Super veel dozen en schijven, wel 10293 m lang!",
+      "trefwoord": {"id":"9492c7a8-8be1-5e04-9cb3-28a438bd9607"}
+    },
+    "samensteller": {
+      "id": "SSAC-C6D3-B9D4-DD96-B79A93747AR9"
+    },
+    "rol_samensteller": {
+      "id": "13FD-53B2-FDB6-1996-976524CTRS9A"
+    },
+    "beheerder": {
+      "id": "BHAE-A934-4E69-9600-ED564249BW9A"
+    },
+    "rol_beheerder": {
+      "id": "144E-D85B-CBA6-1996-976528CTRB9A"
+    },
+    "geschiedenis_archief": "Het archief is gestart vanuit de processen die bestaan binnen de organisatie van e archiefbank.",
+    "verwerving": "Het archief is overgedragen van Archiefbank Vlaanderen naar Archiefpunt",
+    "inhoud_en_bereik": "Verslagen, tekeningen en andere documenten.",
+    "selectie": {
+      "waardestelling": "Het archiefbankarchief is een topvoorbeeld van hoe je simpele processen complex kan weergeven.",
+      "waarde": {
+        "waarde": "Vanalles en nog wat. Zeker ook over het weer. En JSON.",
+        "type_waarde": {
+          "id": "13FD-53B2-FDB6-1996-976522CTTW9A"
+        }
+      },
+      "vergelijking": [
+        {
+          "waarde": "Ons mama zegt dat er veel ontwikkelingspotentieel is voor Archiefbank en haar archief.",
+          "type_vergelijking": {
+            "id": "13FD-53B2-FDB6-1996-976519CTTV9A"
+          }
+        },
+        {
+          "waarde": "Het is een redelijk doorsnee archief. Wel uniek in opzet.",
+          "type_vergelijking": {
+            "id": "13FD-53B2-FDB6-1996-976517CTTV9A"
+          }
+        }
+      ],
+      "datum_waardering": "2022-05-12",
+      "bron_waardering": "McKenzie, Brett. Vluchten van Concordes en andere geinigheden. Leuven: Leuven University Press, 2016.",
+      "bijdragers": "Bert Aernouts",
+      "opmerkingen": "Niets op te merken."
+    },
+    "aangroei": {
+      "id": "144E-D85B-CBA6-1996-976548CTAG9A"
+    },
+    "aangroei_text": "Er komt iedere dag nog iets bij! Hoera.",
+    "ordening": {
+      "id": "02c1dc15-34cb-4359-be99-22f21e7eb846"
+    },
+    "ordening_text": "Het is thematich en chronologisch geordend.",
+    "juridische_beperking": {
+      "privacy_gevoelig": "true",
+      "contractuele_beperking": "true",
+      "gevoelig_voor_auteursrechtelijkebescherming": "true"
+    },
+    "raadplegingsvoorwaarde": {
+      "id": "05590413-30f6-40d3-acae-de77fb243c39"
+    },
+    "taal": {
+      "id": "930B-EC48-D466-1560-7DA950CTTL9A"
+    },
+    "taal_text": "Het gros van de documenten zijn in het Nederlands opgesteld.",
+    "toegang": "Een haast onleesbare inventaris",
+    "bronnen_archief": "Aernouts, Bert. Het leven zoals het is: Arhiefbank. Leuven: Pretpers, 2019.",
+    "bibliografie_archief": "Lemaitre, Georges. De oerknal was makkeijker te beschrijven: de geschiedenis van het datamodel van Archiefbank. Leuven: Leuven University Press, 1932.",
+    "aantekening_archivaris": "Aantekening, en nog een aantekening.",
+    "rechtenstatus_metadata": {
+      "id": "144E-D85B-CBA6-1996-976531CTRE9A"
+    }
+  }
+}

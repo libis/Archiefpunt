@@ -1,0 +1,165 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX abv: <https://abv.libis.be/>
+
+CONSTRUCT {
+    ?beheerder_id a abv:Beheerder;
+        abv:agent ?agent_id;
+        abv:erkenning ?erkenning_label;
+        abv:adres ?beheerder_adres_id;
+        abv:telefoon ?telefoon ;
+        abv:email ?email ;
+        abv:website ?website ;
+        abv:gebouw ?gebouw ;
+        abv:toegang ?toegang ;
+        abv:openingsuren ?openingsuren ;
+        abv:toegangsvoorwaarden ?toegangsvoorwaarden ;
+        abv:bereikbaarheid ?bereikbaarheid .
+
+    ?agent_id a abv:Agent ;
+        abv:identificatienummer ?agent_identificatienummer_id ;
+        abv:naam ?agent_naam_id;
+        abv:type ?agent_type;
+        abv:datering_systematisch ?agent_datering_systematisch ;
+        abv:datering_text ?agent_datering_text ;
+        abv:geschiedenis_agent ?agent_geschiedenis_agent ;
+        abv:taal ?agent_taal ;
+        abv:associaties ?agent_associaties ;
+        abv:bronnen_agent ?agent_bronnen_agent ;
+        abv:bibliografie_agent ?agent_bibliografie_agent ;
+        abv:bronverwijzing_record ?agent_bronverwijzing_record;
+        abv:opmerking ?agent_opmerking .
+
+    ?agent_identificatienummer_id a abv:Identificatie;
+        abv:bron ?agent_identificatienummer_bron_id;
+        abv:type ?agent_identificatienummer_type;
+        abv:waarde ?agent_identificatienummer_waarde.
+
+    ?agent_naam_id a abv:Naam;
+        abv:waarde ?agent_naam_waarde;
+        abv:type ?agent_naam_type.
+
+    ?beheerder_adres_id a abv:Adres ;
+        abv:adres_straat_en_nummer ?beheerder_adres_straat_en_nummer ;
+        abv:gemeente ?beheerder_gemeente ;
+        abv:type_gemeente ?beheerder_gemeente_type .
+}
+WHERE {
+    {{VALUES}}
+    #VALUES ?beheerder_id {<https://abv.libis.be/beheerders/BH01-9BE7-0CF3-9960-1F11277BW9A4>}
+
+    ?beheerder_id a abv:Beheerder ;
+        abv:agent ?agent_id;
+        abv:erkenning ?erkenning_id.
+
+    optional {
+        ?beheerder_id abv:adres ?beheerder_adres_id.
+        optional {
+            ?beheerder_adres_id abv:straat_en_nummer ?beheerder_adres_straat_en_nummer .
+        }
+        ?beheerder_adres_id abv:gemeente/abv:plaatsnaam/abv:waarde ?beheerder_gemeente .
+        ?beheerder_adres_id abv:gemeente/abv:plaatsnaam/abv:type_naam/abv:label ?beheerder_gemeente_type .
+    }
+
+    optional {
+        ?beheerder_id abv:telefoon ?telefoon.
+    }
+
+    optional {
+        ?beheerder_id abv:email ?email.
+    }
+
+    optional {
+        ?beheerder_id abv:website ?website.
+    }
+
+    optional {
+        ?beheerder_id abv:gebouw ?gebouw.
+    }
+
+    optional {
+        ?beheerder_id abv:toegang ?toegang.
+    }
+
+    optional {
+        ?beheerder_id abv:openingsuren ?openingsuren.
+    }
+
+    optional {
+        ?beheerder_id abv:toegangsvoorwaarden ?toegangsvoorwaarden.
+    }
+
+    optional {
+        ?beheerder_id abv:bereikbaarheid/abv:label ?bereikbaarheid.
+    }
+
+    ?erkenning_id abv:label ?erkenning_label.
+    optional {
+        ?erkenning_id abv:type ?erkenning_type.
+        ?erkenning_id abv:definitie ?erkenning_definitie.
+    }
+
+    # ####### AGENT
+    #identificatienummer
+
+    ?agent_id abv:identificatienummer ?agent_identificatienummer_id.
+
+    optional {
+        ?agent_identificatienummer_id abv:waarde ?agent_identificatienummer_waarde.
+    }
+    optional {
+        ?agent_identificatienummer_id abv:type/abv:label ?agent_identificatienummer_type.
+    }
+    optional {
+        ?agent_identificatienummer_id abv:bron ?agent_identificatienummer_bron_id.
+    }
+
+    #naam
+    ?agent_id abv:naam ?agent_naam_id;
+        abv:type/abv:label ?agent_type.
+
+    optional {
+        ?agent_id  abv:bronverwijzing_record ?agent_bronverwijzing_record.
+    }
+
+    ?agent_naam_id abv:waarde ?agent_naam_waarde.
+    ?agent_naam_id abv:type_naam/abv:label ?agent_naam_type.
+
+    optional {
+        ?agent_id abv:datering_text ?agent_datering_text .
+    }
+    optional {
+        ?agent_id abv:datering_systematisch ?agent_datering_systematisch .
+    }
+
+    optional {
+        ?agent_id abv:geschiedenis_agent ?agent_geschiedenis_agent .
+    }
+    optional {
+        ?agent_id abv:taal/abv:label ?agent_taal .
+    }
+    optional {
+        ?agent_id abv:associaties ?agent_associaties .
+        optional {
+            ?agent_associaties abv:plaats/abv:plaatsnaam ?agent_associatie_plaats .
+        }
+        optional {
+            ?agent_associaties abv:agent ?agent_associatie_agent .
+        }
+        optional {
+            ?agent_associaties abv:periode/abv:label ?agent_associatie_periode .
+        }
+        optional {
+            ?agent_associaties abv:onderwerp/abv:label ?agent_associcatie_onderwerp .
+        }
+    }
+    optional {
+        ?agent_id abv:bronnen_agent ?agent_bronnen_agent .
+    }
+    optional {
+        ?agent_id abv:bibliografie_agent ?agent_bibliografie_agent .
+    }
+    optional {
+        ?agent_id abv:opmerking ?agent_opmerking .
+    }
+}

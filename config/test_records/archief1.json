@@ -1,0 +1,53 @@
+{
+  "type": "archieven",
+  "attributes": {
+    "id": "dummy-1",
+    "titel": ["Full dummy archief of \"Habijten\" test"],
+    "datering_systematisch": "1921/1999",
+    "datering_text": "1921-1999",
+    "geschiedenis_archief": ["Een complexe geschiedenis van verhuis na verhuis."],
+    "verwerving": ["Habijten werden overgedragen door de zusters."],
+    "inhoud_en_bereik": ["Habijten in alle vormen en maten. \n\nDeel 1: \n- zwart\n- wit\n\nDeel 2: \n- speciale stukken"],
+    "aangroei_text": "Er komen er steeds bij.",
+    "ordening_text": "Per maat",
+    "taal_text": ["In het West-Vlaams gesteld"],
+    "toegang": ["Inventaris van habijten"],
+    "bronnen_archief": ["Er is al veel geschreven"],
+    "bibliografie_archief": ["Peeters, Theodore. Kleren maken de Clerus. Leuven: Peeters, 2022."],
+    "aantekening_archivaris": [
+      "update gerealiseerd - 12 dec 2011",
+      "Er zijn geen aantekeningen",
+      "werknotities zijn leeg"
+    ],
+    "bronverwijzing_record": "undefined",
+    "bronverwijzing_archief": "undefined",
+    "identificatienummer": {"id": "C0C8-E1E7-71A7-1960-F9DC9277AE9A"},
+    "beschrijvingsniveau": {"id": "144E-D85B-CBA6-1996-976543CTBN9A"},
+    "omvang": {
+      "id": "OMC8-E1E7-71A7-1960-F9DC9277AE9A",
+      "trefwoord": {"id":"fbde77ab-7095-5f03-a9ab-471b7b2b2d05"}
+    },
+    "samensteller": {"id": "SSAC-C6D3-B9D4-DD96-B79A93747AR9"},
+    "rol_samensteller": {"id": "13FD-53B2-FDB6-1996-976524CTRS9A"},
+    "beheerder": {"id": "BHAE-A934-4E69-9600-ED564249BW9A"},
+    "rol_beheerder": {"id": "144E-D85B-CBA6-1996-976528CTRB9A"},
+    "selectie": {"id": "7287fcd2-3c1d-4e9e-8569-6e05f6ec0ada"},
+    "aangroei": {"id": "144E-D85B-CBA6-1996-976548CTAG9A"},
+    "ordening": {
+      "trefwoord": {"id": "2393-C8CB-F2EB-E960-33FA54CTOR9A"}
+    },
+    "juridische_beperking": {
+      "privacy_gevoelig": false,
+      "contractuele_beperking": true,
+      "gevoelig_voor_auteursrechtelijkebescherming": false
+    },
+    "raadplegingsvoorwaarde": {
+      "tekst": "voorbeeld tekst",
+      "taal": {"id": "930B-EC48-D466-1560-7DA950CTTL9A"},
+      "raadplegingsstatus": { "id":"cf58ce5c-6265-5a0a-9557-7eb1c0dd1609"}
+    },
+    "taal": {"id": "930B-EC48-D466-1560-7DA950CTTL9A"},
+    "associatie": {"id": "ASC8-E1E7-71A7-1960-F9DC9277AE9A"},
+    "rechtenstatus_metadata": {"id": "144E-D85B-CBA6-1996-976531CTRE9A"}
+  }
+}
