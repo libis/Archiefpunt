@@ -1,0 +1,96 @@
+http:
+  routers:
+    ping-api:
+      rule: "PathPrefix(`/ping`)"
+      tls: {}
+      entryPoints:
+      - "https"
+      - "http"
+      service: ping-api-svc
+      priority: 50
+
+    data-api:
+      rule: "PathPrefix(`/`)"
+      tls: {}
+      entryPoints:
+      - "https"
+      - "http"
+      service: data-api-svc
+      priority: 30
+      middlewares:
+      - "default-https"
+
+    audit-api:
+      rule: "PathPrefix(`/_audit`)"
+      tls: {}
+      entryPoints:
+      - "https"
+      - "http"
+      service: audit-api-svc
+      priority: 35
+      middlewares:
+      - "default-https"
+
+    search-api:
+      rule: "PathPrefix(`/_search`)"
+      tls: {}
+      entryPoints:
+      - "https"
+      - "http"
+      service: search-api-svc
+      priority: 35
+      middlewares:
+      - "default-https"      
+
+    browse-api:
+      rule: "PathPrefix(`/_browse`)"
+      tls: {}
+      entryPoints:
+      - "https"
+      - "http"
+      service: browse-api-svc
+      priority: 35
+      middlewares:
+      - "default-https"      
+
+    logic-api:
+      rule: "PathPrefix(`/_logic`)"
+      tls: {}
+      entryPoints:
+      - "https"
+      - "http"
+      service: logic-api-svc
+      priority: 35
+      middlewares:
+      - "default-https"      
+
+  services:
+    ping-api-svc:
+      loadBalancer:
+        servers:
+        - url: http://ping.api:9292
+
+    data-api-svc:
+      loadBalancer:
+        servers:
+        - url: http://data.api:9292
+
+    audit-api-svc:
+      loadBalancer:
+        servers:
+        - url: http://audit.api:9292
+
+    search-api-svc:
+      loadBalancer:
+        servers:
+        - url: http://search.api:9292
+
+    browse-api-svc:
+      loadBalancer:
+        servers:
+        - url: http://browse.api:9292
+
+    logic-api-svc:
+      loadBalancer:
+        servers:
+        - url: http://logic.api:9292

@@ -1,0 +1,32 @@
+http:
+  middlewares:
+    default-compress:
+      compress: {}
+    default-http:
+      redirectScheme:
+        scheme: https
+        permanent: true
+    default-https:
+      chain:
+        middlewares: 
+        - default-compress 
+
+  routers:
+    default-redirect:
+      rule: "HostRegexp(`{any:.*}`)"
+      entryPoints:
+      - "http"
+      - "https"
+      middlewares:
+      - "default-http"
+      service: noop@internal
+
+    traefik:
+      rule: "PathPrefix(`/api`,`/dashboard`,`/metrics`)"
+      tls: {}
+      entryPoints:
+      - "https"
+      - "http"
+      service: api@internal
+      priority: 45
+#  services:

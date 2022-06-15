@@ -1,0 +1,48 @@
+api:
+  insecure: true
+  dashboard: true
+
+serverTransport:
+  insecureSkipVerify: true
+
+metrics:
+  prometheus:
+    entryPoint: "https"
+    buckets:
+      - 0.1
+      - 0.3
+      - 1.2
+      - 5.0
+
+pilot:
+  dashboard: false
+
+accessLog:
+  filePath: "/logs/traefik.log"
+  bufferingSize: 100
+
+log:
+  level: ERROR
+  filePath: /logs/debug.log
+  format: json
+
+providers:
+  file:
+    directory: /traefik/services
+    watch: true
+
+entrypoints:
+  https:
+    address: ":443"
+  http:
+    address: ":80"
+  virtuoso:
+    address: ":8890"
+  virtuoso-tcp:
+    address: ":1111"
+  elastic:
+    address: ":9200"
+  kibana:
+    address: ":5601"
+  kafka:
+    address: ":9092"

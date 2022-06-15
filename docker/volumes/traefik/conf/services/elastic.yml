@@ -1,0 +1,12 @@
+http:
+  routers:
+    elastic:
+      rule: "PathPrefix(`/`)"
+      entryPoints:
+      - "elastic"
+      service: elastic-svc
+  services:
+    elastic-svc:
+      loadBalancer:
+        servers:
+        - url: http://elastic:9200

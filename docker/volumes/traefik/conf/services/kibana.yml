@@ -1,0 +1,12 @@
+http:
+  routers:
+    kibana:
+      rule: "PathPrefix(`/`)"
+      entryPoints:
+      - "kibana"
+      service: kibana-svc
+  services:
+    kibana-svc:
+      loadBalancer:
+        servers:
+        - url: http://kibana:5601

@@ -1,0 +1,10 @@
+http:
+  routers:
+    dashboard:
+      tls: {}
+      entryPoints:
+      - "https"
+      - "http"
+      service: api@internal
+      rule: "PathPrefix(`/dashboard`)"
+      priority: 45

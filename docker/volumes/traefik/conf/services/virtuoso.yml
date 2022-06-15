@@ -1,0 +1,24 @@
+tcp:
+  routers:
+    virtuoso:
+      rule: "HostSNI(`*`)"
+      entryPoints: 
+      - "virtuoso-tcp"
+      service: virtuoso-svc
+      
+    virtuoso-web:
+      rule: "HostSNI(`*`)"
+      entryPoints: 
+      - "virtuoso"
+      service: virtuoso-web-svc
+
+  services:
+    virtuoso-svc:
+      loadBalancer:
+         servers:
+           - address: "virtuoso:1111"
+
+    virtuoso-web-svc:
+      loadBalancer:
+         servers:
+           - address: "virtuoso:8890"
