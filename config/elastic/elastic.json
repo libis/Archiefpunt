@@ -1,0 +1,72 @@
+{
+  "settings": {
+    "number_of_shards": 2,
+    "number_of_replicas": 4,
+    "highlight": {
+      "max_analyzed_offset": "10000000"
+    },
+    "analysis": {
+      "analyzer": {
+        "startswith_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "dynamic_templates": [
+      {
+        "fulltext": {
+          "match_mapping_type": "string",
+          "match": "fulltext",
+          "mapping": {
+            "type": "text"
+          }
+        }
+      },
+      {
+        "any_fields": {
+          "match_mapping_type": "string",
+          "mapping": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      }
+    ],
+    "properties": {
+      "duration": {
+        "type": "date_range",
+        "format": "yyyy||yyyyMMdd||yyyy-MM-dd||epoch_millis"
+      },
+      "archief.auto": {
+        "properties": {
+          "archiefvormer.waarde": {
+            "type": "search_as_you_type"
+          },
+          "bewaarplaats.waarde": {
+            "type": "search_as_you_type"
+          },
+          "trefwoord": {
+            "type": "search_as_you_type"
+          },
+          "geografie": {
+            "type": "search_as_you_type"
+          },
+          "archief.waarde": {
+            "type": "search_as_you_type"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "_source": {"excludes": ["archief.auto", "*.@type"]},
+  "size": 10,
+  "query": {},
+  "from": 0,
+  "track_total_hits": true,
+  "aggs": {
+    "facet_jaartal": {
+      "terms": {
+        "field": "datering_text.keyword",
+        "size": 10
+      }
+    },
+    "facet_bewaarplaats": {
+      "terms": {
+        "field": "beheerder.naam.keyword",
+        "size": 10
+      }
+    },
+    "facet_archiefvormer": {
+      "terms": {
+        "field": "samensteller.naam.keyword",
+        "size": 10,
+        "order": {
+          "_key": "asc"
+        }
+      }
+    },
+    "facet_topologie": {
+      "terms": {
+        "field": "meta.topologie.keyword",
+        "size": 10,
+        "order": {
+          "_key": "asc"
+        }
+      }
+    },
+    "facet_geografie": {
+      "terms": {
+        "field": "meta.geografie.keyword",
+        "size": 10,
+        "order": {
+          "_key": "asc"
+        }
+      }
+    },
+    "facet_trefwoord": {
+      "terms": {
+        "field": "meta.trefwoord.keyword",
+        "size": 10
+      }
+    },
+    "facet_archiefvormer_az": {
+      "terms": {
+        "field": "meta.archiefvormer_az.keyword",
+        "size": 26,
+        "order": {
+          "_key": "asc"
+        }
+      },
+      "aggs": {
+        "archiefvormers": {
+          "terms": {
+            "field": "samensteller.naam.keyword",
+            "size": 10,
+            "order": {
+              "_key": "asc"
+            }
+          }
+        }
+      }
+    },
+    "facet_bewaarplaats_az": {
+      "terms": {
+        "field": "meta.bewaarplaats_az.keyword",
+        "size": 26,
+        "order": {
+          "_key": "asc"
+        }
+      },
+      "aggs": {
+        "bewaarplaats": {
+          "terms": {
+            "field": "beheerder.naam.keyword",
+            "size": 10,
+            "order": {
+              "_key": "asc"
+            }
+          }
+        }
+      }
+    }
+  }
+}

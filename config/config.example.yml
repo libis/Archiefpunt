@@ -4,19 +4,19 @@
 
 :services:
   :ping:
-    :host: "http://127.0.0.1:9291"
+    :host: "http://ping.api:9292"
     :base_path: "/ping"
   :data:
-    :host: "http://127.0.0.1:9292"
+    :host: "http://data.api:9292"
     :base_path: "/"
   :search:
-    :host: "http://127.0.0.1:9293"
+    :host: "http://search.api:9292"
     :base_path: "/_search"
     :rules: "./config/elastic/search/search_rules.rb"
     :elastic:
       :mapping: "./config/elastic/elastic.json"
-      :host: "http://127.0.0.1:9201"
-      :index: "archiefpunt"
+      :host: "http://elastic:9200"
+      :index: "q_archiefpunt"
       :templates:
         :query: config/elastic/search/query.json
         :mapping:
@@ -26,13 +26,13 @@
           :query_string: config/elastic/search/mappings/query_string.json
           :query_mapping: config/elastic/search/mappings/query_mapping.json
   :browse:
-    :host: "http://127.0.0.1:9294"
+    :host: "http://browse.api:9292"
     :base_path: "/_browse"
     :rules: "./config/elastic/browse/browse_rules.rb"
     :elastic:
       :mapping: "./config/elastic/elastic.json"
-      :host: "http://127.0.0.1:9201"
-      :index: "archiefpunt"
+      :host: "http://elastic:9200"
+      :index: "q_archiefpunt"
       :templates:
         :query: config/elastic/browse/query.json
         :mapping:
@@ -42,10 +42,10 @@
           :query_string: config/elastic/browse/mappings/query_string.json
           :query_mapping: config/elastic/browse/mappings/query_mapping.json
   :audit:
-    :host: "http://127.0.0.1:9295"
+    :host: "http://audit.api:9292"
     :base_path: "/_audit"
   :logic:
-    :host: "http://127.0.0.1:9296"
+    :host: "http://logic.api:9292"
     :base_path: "/_logic"
     :logics: ./config/logics
 
@@ -55,7 +55,7 @@
   :cache_expire: 86400
   :graph_name: https://abv.libis.be/
   :graph_prefix: abv
-  :sparql_endpoint: http://127.0.0.1:8892/sparql
+  :sparql_endpoint: http://virtuoso:8890/sparql
   :inflections: ./config/solis/abv.json
   :language: nl
 
@@ -66,9 +66,9 @@
   :abv: 1xhvOCfiSIOtHjIJUtRrxvJ54OoDosNJ_JsA1B7FfpsI
   :audit: 1uaQmU9gcCCRI57VKNEobT5pZvBoSGAyeGApdypspX_g
 :redis:
-  url: "redis://127.0.0.1:6379/3"
+  url: "redis://redis:6379/3"
   queue: 'archiefpunt'
 :kafka:
   name: 'archiefpunt'
   config:
-    :bootstrap.servers: "127.0.0.1:9092"
+    :bootstrap.servers: "kafka:9092"

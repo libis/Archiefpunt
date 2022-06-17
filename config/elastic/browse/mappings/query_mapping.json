@@ -1,0 +1,83 @@
+{
+  "any": {
+    "*": {
+      "match_all": {}
+    }
+  },
+  "trefwoord": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "archief.auto.trefwoord",
+          "archief.auto.trefwoord._2gram",
+          "archief.auto.trefwoord._3gram"
+        ]
+      }
+    }
+  },
+  "geografie": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "archief.auto.geografie",
+          "archief.auto.geografie._2gram",
+          "archief.auto.geografie._3gram"
+        ]
+      }
+    }
+  },
+  "archiefvormer": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "archief.auto.archiefvormer.waarde",
+          "archief.auto.archiefvormer.waarde._2gram",
+          "archief.auto.archiefvormer.waarde._3gram"
+        ]
+      }
+    }
+  },
+  "bewaarplaats": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "archief.auto.bewaarplaats.waarde",
+          "archief.auto.bewaarplaats.waarde._2gram",
+          "archief.auto.bewaarplaats.waarde._3gram"
+        ]
+      }
+    }
+  },
+  "archief_titel": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "archief.auto.archief_titel.waarde",
+          "archief.auto.archief_titel.waarde._2gram",
+          "archief.auto.archief_titel.waarde._3gram"
+        ]
+      }
+    }
+  },
+  "parchiefvormer": {
+    "{{}}": {
+      "query": {
+        "prefix": {
+          "archief.meta.archiefvormer": {
+            "value": "{{}}"
+          }
+        }
+      }
+    }
+  }
+}

@@ -16,7 +16,7 @@
     :elastic:
       :mapping: "./config/elastic/elastic.json"
       :host: "http://127.0.0.1:9201"
-      :index: "q_archiefpunt"
+      :index: "archiefpunt"
       :templates:
         :query: config/elastic/search/query.json
         :mapping:
@@ -32,7 +32,7 @@
     :elastic:
       :mapping: "./config/elastic/elastic.json"
       :host: "http://127.0.0.1:9201"
-      :index: "q_archiefpunt"
+      :index: "archiefpunt"
       :templates:
         :query: config/elastic/browse/query.json
         :mapping:

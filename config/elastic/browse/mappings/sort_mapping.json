@@ -1,0 +1,6 @@
+{
+  "aTitel" : { "titel.keyword" : {"order" : "asc"}},
+  "dTitel" : { "titel.keyword" : {"order" : "desc"}},
+  "aDatering" : { "datering_text.keyword" : {"order" : "asc"}},
+  "dDatering" : { "datering_text.keyword" : {"order" : "desc"}}
+}

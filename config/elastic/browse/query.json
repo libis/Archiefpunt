@@ -1,0 +1,6 @@
+{
+  "_source": {"includes": ["archief.id","archief.auto.*"]},
+  "size": 100000,
+  "query": {},
+  "from": 0
+}
