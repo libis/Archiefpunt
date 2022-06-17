@@ -1,8 +1,0 @@
-{
-  "query_string": {
-    "query": "",
-    "fields": [],
-    "lenient": true,
-    "default_operator": "OR"
-  }
-}

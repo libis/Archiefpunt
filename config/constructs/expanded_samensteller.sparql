@@ -2,6 +2,8 @@ PREFIX abv: <https://abv.libis.be/>
 
 CONSTRUCT {
     ?samensteller_id a abv:Samensteller ;
+        abv:id ?id;
+        abv:record_type "samensteller";
         abv:agent ?agent_id ;
         abv:functie_beroep_activiteit ?functie .
 
@@ -32,6 +34,7 @@ WHERE {
     {{VALUES}}
 
     ?samensteller_id a abv:Samensteller ;
+        abv:id ?id;
         abv:agent ?agent_id .
 
     OPTIONAL {

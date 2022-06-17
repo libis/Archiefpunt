@@ -4,6 +4,7 @@ PREFIX abv: <https://abv.libis.be/>
 
 construct {
     ?archief_id a abv:Archief ;
+        abv:record_type "archief";
         abv:id ?id ;
         abv:rid ?rid ;
         abv:identificatienummer ?archief_identificatienummer ;
@@ -53,11 +54,20 @@ construct {
         abv:topologie ?archief_beschrijvingsniveau, ?rol_beheerder, ?rol_samensteller ;
         abv:geografie ?beheerder_gemeente, ?archief_associatie_plaats ;
         abv:trefwoord ?archief_associatie_periode, ?archief_associatie_agent, ?archief_associatie_onderwerp ;
-        abv:archiefvormer ?samensteller_agent_naam;
-        abv:bewaarplaats ?beheerder_agent_naam;
+        abv:archiefvormer ?samensteller_agent;
+        abv:bewaarplaats ?beheerder_agent;
         abv:sanitized_archiefvormer ?archiefvormer;
-        abv:sanitized_bewaarplaats ?bewaarplaats.
+        abv:sanitized_bewaarplaats ?bewaarplaats;
+        abv:archief_titel ?archief_titel_id.
 
+    ?samensteller_agent a abv:Archiefvormer;
+        abv:waarde ?samensteller_agent_naam.
+
+    ?beheerder_agent a abv:Bewaarplaats;
+        abv:waarde ?beheerder_agent_naam.
+
+    ?archief_titel_id a abv:ArchiefTitel;
+        abv:waarde ?archief_titel.
 
     ?archief_identificatienummer a abv:Identificatienummer ;
         abv:waarde ?archief_identificatienummer_waarde ;
@@ -390,5 +400,6 @@ construct {
     bind(lcase(?samensteller_agent_naam) as ?archiefvormer) .
     bind(lcase(?beheerder_agent_naam) as ?bewaarplaats) .
     bind(str(?id) as ?rid) .
+    bind(uri(concat(str(?archief_id),'?')) as ?archief_titel_id).
 }
 order by ?archief_id

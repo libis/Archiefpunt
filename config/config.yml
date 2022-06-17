@@ -3,46 +3,49 @@
 :debug: true
 
 :services:
+  :ping:
+    :host: "http://127.0.0.1:9291"
+    :base_path: "/ping"
   :data:
     :host: "http://127.0.0.1:9292"
     :base_path: "/"
   :search:
-    :host: "http://127.0.0.1:9494"
+    :host: "http://127.0.0.1:9293"
     :base_path: "/_search"
-    :rules: "./config/search_rules.rb"
+    :rules: "./config/elastic/search/search_rules.rb"
     :elastic:
-      :mapping: "./config/elastic.json"
+      :mapping: "./config/elastic/elastic.json"
       :host: "http://127.0.0.1:9201"
-      :index: "archiefpunt"
+      :index: "q_archiefpunt"
       :templates:
-        :query: config/search_elastic/query.json
+        :query: config/elastic/search/query.json
         :mapping:
-          :sort: config/search_elastic/mappings/sort_mapping.json
-          :facet: config/search_elastic/mappings/facet_mapping.json
-          :index: config/search_elastic/mappings/index_mapping.json
-          :query_string: config/search_elastic/mappings/query_string.json
-          :query_mapping: config/search_elastic/mappings/query_mapping.json
+          :sort: config/elastic/search/mappings/sort_mapping.json
+          :facet: config/elastic/search/mappings/facet_mapping.json
+          :index: config/elastic/search/mappings/index_mapping.json
+          :query_string: config/elastic/search/mappings/query_string.json
+          :query_mapping: config/elastic/search/mappings/query_mapping.json
   :browse:
-    :host: "http://127.0.0.1:9595"
+    :host: "http://127.0.0.1:9294"
     :base_path: "/_browse"
-    :rules: "./config/browse_rules.rb"
+    :rules: "./config/elastic/browse/browse_rules.rb"
     :elastic:
-      :mapping: "./config/elastic.json"
+      :mapping: "./config/elastic/elastic.json"
       :host: "http://127.0.0.1:9201"
-      :index: "archiefpunt"
+      :index: "q_archiefpunt"
       :templates:
-        :query: config/browse_elastic/query.json
+        :query: config/elastic/browse/query.json
         :mapping:
-          :sort: config/browse_elastic/mappings/sort_mapping.json
-          :facet: config/browse_elastic/mappings/facet_mapping.json
-          :index: config/browse_elastic/mappings/index_mapping.json
-          :query_string: config/browse_elastic/mappings/query_string.json
-          :query_mapping: config/browse_elastic/mappings/query_mapping.json
+          :sort: config/elastic/browse/mappings/sort_mapping.json
+          :facet: config/elastic/browse/mappings/facet_mapping.json
+          :index: config/elastic/browse/mappings/index_mapping.json
+          :query_string: config/elastic/browse/mappings/query_string.json
+          :query_mapping: config/elastic/browse/mappings/query_mapping.json
   :audit:
-    :host: "http://127.0.0.1:9393"
+    :host: "http://127.0.0.1:9295"
     :base_path: "/_audit"
   :logic:
-    :host: "http://127.0.0.1:9393"
+    :host: "http://127.0.0.1:9296"
     :base_path: "/_logic"
     :logics: ./config/logics
 
@@ -68,4 +71,4 @@
 :kafka:
   name: 'archiefpunt'
   config:
-    :bootstrap.servers: 127.0.0.1:9092
+    :bootstrap.servers: "127.0.0.1:9092"

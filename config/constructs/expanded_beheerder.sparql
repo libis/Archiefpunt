@@ -4,6 +4,8 @@ PREFIX abv: <https://abv.libis.be/>
 
 CONSTRUCT {
     ?beheerder_id a abv:Beheerder;
+        abv:id ?id;
+        abv:record_type "beheerder";
         abv:agent ?agent_id;
         abv:erkenning ?erkenning_label;
         abv:adres ?beheerder_adres_id;
@@ -49,6 +51,7 @@ WHERE {
     #VALUES ?beheerder_id {<https://abv.libis.be/beheerders/BH01-9BE7-0CF3-9960-1F11277BW9A4>}
 
     ?beheerder_id a abv:Beheerder ;
+        abv:id ?id;
         abv:agent ?agent_id;
         abv:erkenning ?erkenning_id.
 

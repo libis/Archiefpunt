@@ -2,7 +2,6 @@ $LOAD_PATH << '.' << 'lib'
 require 'solis'
 require 'lib/elastic'
 
-
 $SERVICE_ROLE = :search
 
 def elastic_config

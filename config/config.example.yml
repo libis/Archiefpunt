@@ -1,24 +1,74 @@
 ---
-:key: YOUR-GOOGLE-API-KEY
-:debug: false
-:audit_base_path: '/_audit'
-:search_base_path: '/_search'
-:data_base_path: '/'
+:key: YOUR_GOOGLE_API_KEY
+:debug: true
+
+:services:
+  :ping:
+    :host: "http://127.0.0.1:9291"
+    :base_path: "/ping"
+  :data:
+    :host: "http://127.0.0.1:9292"
+    :base_path: "/"
+  :search:
+    :host: "http://127.0.0.1:9293"
+    :base_path: "/_search"
+    :rules: "./config/elastic/search/search_rules.rb"
+    :elastic:
+      :mapping: "./config/elastic/elastic.json"
+      :host: "http://127.0.0.1:9201"
+      :index: "archiefpunt"
+      :templates:
+        :query: config/elastic/search/query.json
+        :mapping:
+          :sort: config/elastic/search/mappings/sort_mapping.json
+          :facet: config/elastic/search/mappings/facet_mapping.json
+          :index: config/elastic/search/mappings/index_mapping.json
+          :query_string: config/elastic/search/mappings/query_string.json
+          :query_mapping: config/elastic/search/mappings/query_mapping.json
+  :browse:
+    :host: "http://127.0.0.1:9294"
+    :base_path: "/_browse"
+    :rules: "./config/elastic/browse/browse_rules.rb"
+    :elastic:
+      :mapping: "./config/elastic/elastic.json"
+      :host: "http://127.0.0.1:9201"
+      :index: "archiefpunt"
+      :templates:
+        :query: config/elastic/browse/query.json
+        :mapping:
+          :sort: config/elastic/browse/mappings/sort_mapping.json
+          :facet: config/elastic/browse/mappings/facet_mapping.json
+          :index: config/elastic/browse/mappings/index_mapping.json
+          :query_string: config/elastic/browse/mappings/query_string.json
+          :query_mapping: config/elastic/browse/mappings/query_mapping.json
+  :audit:
+    :host: "http://127.0.0.1:9295"
+    :base_path: "/_audit"
+  :logic:
+    :host: "http://127.0.0.1:9296"
+    :base_path: "/_logic"
+    :logics: ./config/logics
+
+
 :solis:
   :cache: ./cache
+  :cache_expire: 86400
   :graph_name: https://abv.libis.be/
   :graph_prefix: abv
-  :sparql_endpoint: http://127.0.0.1:8891/sparql
+  :sparql_endpoint: http://127.0.0.1:8892/sparql
   :inflections: ./config/solis/abv.json
+  :language: nl
+
 :shape: ./config/solis/abv_shacl.ttl
-:cache: ../cache
+:cache: ./cache
+:cache_expire: 86400
 :sheets:
   :abv: 1xhvOCfiSIOtHjIJUtRrxvJ54OoDosNJ_JsA1B7FfpsI
   :audit: 1uaQmU9gcCCRI57VKNEobT5pZvBoSGAyeGApdypspX_g
 :redis:
   url: "redis://127.0.0.1:6379/3"
-  queue: 'archiefbank'
-:elastic:
-  :mapping: "./config/search_elastic.json"
-  :host: "http://127.0.0.1:9200"
-  :index: "archiefpunt"
+  queue: 'archiefpunt'
+:kafka:
+  name: 'archiefpunt'
+  config:
+    :bootstrap.servers: "127.0.0.1:9092"

@@ -83,10 +83,11 @@ class Index
                          headers: {'Content-Type' => 'application/x-ndjson'},
                          body: data.to_ndjson(@name, id, "index"))
 
+    response_body = JSON.parse(response.body.to_s)
+    raise "Failed to insert record into #{@name}, #{response.code}, #{response.body.to_s}" if response.code != 200
+    raise "Failed to insert record into #{@name}, #{response.code}, #{response_body.to_s}" if response_body["errors"]
 
-    return response.body.to_s if response.code == 200
-
-    raise "Failed to insert record into #{@name}, #{response.code}, #{response.body.to_s}"
+    response_body.to_s
   end
 
   def get_by_id(id)
