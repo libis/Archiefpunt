@@ -1,5 +1,5 @@
 {
-  "id": ["archief.id"],
+  "id": ["archief.id", "samensteller.id", "beheerder.id"],
   "beheerder": ["archief.beheerder.naam"],
   "samensteller": ["archief.samensteller.naam"],
   "onderwerp": ["archief.associatie.onderwerp", "archief.associatie.periode", "archief.associatie.agentnaam", "archief.associatie.plaatsnaam"],
@@ -18,7 +18,9 @@
     "archief.associatie.onderwerp",
     "archief.associatie.periode",
     "archief.associatie.agentnaam",
-    "archief.associatie.plaatsnaam"
+    "archief.associatie.plaatsnaam",
+    "samensteller.agent.naam.waarde",
+    "beheerder.agent.naam.waarde"
   ],
   "topologie": ["archief.topology"],
   "geografie": ["archief.geografie"],

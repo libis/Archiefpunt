@@ -1,4 +1,5 @@
 require 'solis/query'
+require 'solis/options'
 require 'active_support/all'
 
 module Logic
@@ -48,7 +49,7 @@ a abv:#{naam}.
   private
   def codetable?(naam)
     ct = Object.const_get(naam.to_sym)
-    ct ? ct.metadata[:target_node].value.eql?("#{Solis::ConfigFile[:solis][:graph_name]}CodetabelShape") : false
+    ct ? ct.metadata[:target_node].value.eql?("#{Solis::Options.get[:graph_name]}CodetabelShape") : false
   rescue StandardError => e
     false
   end
