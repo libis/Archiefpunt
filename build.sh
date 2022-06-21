@@ -88,7 +88,7 @@ function build {
     make_service_package
 
     cd $PROJECT_ROOT/build
-    docker buildx build --platform=$PLATFORM -f Dockerfile.service --tag $REGISTRY/$NAMESPACE/$SERVICE:$VERSION --push .
+    docker buildx build --platform=$PLATFORM --build-arg SERVICE=$SERVICE --build-arg VERSION=$VERSION -f Dockerfile.service --tag $REGISTRY/$NAMESPACE/$SERVICE:$VERSION --push .
     cd $PROJECT_ROOT
 
     delete_service_package

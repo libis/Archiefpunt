@@ -6,6 +6,8 @@ RUN echo "Solis v$SOLIS_VERSION"
 RUN bundle config --global frozen 1
 RUN addgroup -S abv -g 10000 && adduser -S abv -u 10000 -G abv && apk --no-cache add g++ make bash
 
+#RUN apkArch="$(apk --print-arch)"; \
+#    if [ $apkArch = 'x86_64' ]; then apk --no-cache add jemalloc; fi
 #Not supported on arm64, yet
 #RUN apk --no-cache add jemalloc
 #ENV LD_PRELOAD=/usr/lib/libjemalloc.so.1
@@ -30,3 +32,11 @@ EXPOSE 26162:26162
 
 ENV LANG C.UTF-8
 CMD /app/run.sh
+
+# Metadata
+LABEL org.opencontainers.image.vendor="KULeuven/LIBIS" \
+	org.opencontainers.image.url="https://www.libis.be" \
+	org.opencontainers.image.title="Archiefpunt base image" \
+	org.opencontainers.image.description="A base image to build upon"
+	org.opencontainers.image.version="v0.1" \
+	org.opencontainers.image.documentation="https://data.archiefpunt.be/_doc"
