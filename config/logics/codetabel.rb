@@ -15,7 +15,7 @@ module Logic
     if result.nil? || result.empty? || (params.key?(:from_cache) && params[:from_cache].eql?('0'))
 
       query = %(
-prefix abv: <#{Solis::ConfigFile[:solis][:graph_name]}>
+prefix abv: <#{Solis::Options.instance.get[:graph_name]}>
 construct {
  ?s a abv:#{naam};
     abv:label ?o.
@@ -49,7 +49,7 @@ a abv:#{naam}.
   private
   def codetable?(naam)
     ct = Object.const_get(naam.to_sym)
-    ct ? ct.metadata[:target_node].value.eql?("#{Solis::Options.get[:graph_name]}CodetabelShape") : false
+    ct ? ct.metadata[:target_node].value.eql?("#{Solis::Options.instance.get[:graph_name]}CodetabelShape") : false
   rescue StandardError => e
     false
   end

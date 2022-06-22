@@ -1,10 +1,10 @@
 FROM ruby:2.7.6-alpine
 
-ARG SOLIS_VERSION=0.43.0
+ARG SOLIS_VERSION=0.47.0
 RUN echo "Solis v$SOLIS_VERSION"
 
 RUN bundle config --global frozen 1
-RUN addgroup -S abv -g 10000 && adduser -S abv -u 10000 -G abv && apk --no-cache add g++ make bash
+RUN addgroup -S abv -g 212 && adduser -S abv -u 212 -G abv && apk --no-cache add g++ make bash
 
 #RUN apkArch="$(apk --print-arch)"; \
 #    if [ $apkArch = 'x86_64' ]; then apk --no-cache add jemalloc; fi

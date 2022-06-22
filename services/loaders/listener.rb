@@ -6,7 +6,13 @@ require 'solis'
 require 'http'
 require 'lib/elastic'
 
-require '../data/lib/file_queue'
+require 'lib/file_queue'
+
+$running = true
+Signal.trap(0, proc do
+  $running = false
+end )
+
 
 def elastic_config
   @elastic_config ||= Solis::ConfigFile[:services][:search][:elastic]
@@ -18,9 +24,9 @@ def add_to_elastic(data)
   entity_id = "#{entity.underscore}_id"
   id = data['entity']['id']
 
-  constructs = {'Archief' => '/Users/mehmetc/Dropbox/AllSources/Archiefpunt/config/constructs/expanded_archief2.sparql',
-                'Beheerder' => '/Users/mehmetc/Dropbox/AllSources/Archiefpunt/config/constructs/expanded_beheerder.sparql',
-                'Samensteller' => '/Users/mehmetc/Dropbox/AllSources/Archiefpunt/config/constructs/expanded_samensteller.sparql'}
+  constructs = {'Archief' => './config/constructs/expanded_archief2.sparql',
+                'Beheerder' => './config/constructs/expanded_beheerder.sparql',
+                'Samensteller' => './config/constructs/expanded_samensteller.sparql'}
 
 
   filename = constructs[entity]
@@ -69,9 +75,9 @@ def add_to_audit(data)
     change_reason: change_reason,
     other_data: other_data
   }
-  audit_url = "#{Solis::ConfigFile[:services][:audit][:host]}#{Solis::ConfigFile[:services][:audit][:base_path]}"
-
-  response = HTTP.post("#{audit_url}/change_sets", :json => change_set )
+  audit_url = "#{Solis::ConfigFile[:services][:audit][:host]}#{Solis::ConfigFile[:services][:audit][:base_path]}/change_sets"
+  LOGGER.info(audit_url)
+  response = HTTP.post(audit_url, :json => change_set )
 
   if response.code == 200
     result = response.body
@@ -104,7 +110,10 @@ ELASTIC = Elastic.new(elastic_config[:index], elastic_config[:mapping], elastic_
 SOLIS_CONF = Solis::ConfigFile[:services][:data][:solis]
 SOLIS = Solis::Graph.new(Solis::Shape::Reader::File.read(SOLIS_CONF[:shape]), SOLIS_CONF)
 
-fqueue = FileQueue.new(Solis::ConfigFile[:kafka][:name], base_dir: '/Users/mehmetc/Dropbox/AllSources/Archiefpunt/data')
+fqueue = FileQueue.new(Solis::ConfigFile[:kafka][:name], base_dir: Solis::ConfigFile[:events])
+
+LOGGER.info("Starting listener on #{fqueue.base_dir}\n\n")
+
 listener = Listen.to(fqueue.in_dir, only: /\.f$/) do |modified, added, _|
   files =  added | modified
 
@@ -115,6 +124,9 @@ listener = Listen.to(fqueue.in_dir, only: /\.f$/) do |modified, added, _|
       add_to_elastic(data)
     rescue StandardError => e
       LOGGER.error(e.message)
+      filename = File.basename(in_filename)
+      fail_filename = "#{fqueue.fail_dir}/#{filename}"
+      FileUtils.move(in_filename, fail_filename) unless fail_filename.empty?
     else
       filename = File.basename(in_filename)
       out_filename = "#{fqueue.out_dir}/#{filename}"
@@ -123,7 +135,13 @@ listener = Listen.to(fqueue.in_dir, only: /\.f$/) do |modified, added, _|
   end
 end
 listener.start
+
 sleep 2
+LOGGER.info("Triggering existing files in #{fqueue.in_dir}")
 FileUtils.touch(Dir.glob("#{fqueue.in_dir}/*.f"))
 
-sleep
+while $running
+  sleep 30
+  LOGGER.info("Listening")
+end
+listener.stop

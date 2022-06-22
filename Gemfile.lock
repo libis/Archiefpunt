@@ -1,7 +1,7 @@
 PATH
   remote: ../ego/solis
   specs:
-    solis (0.45.0)
+    solis (0.47.0)
       activesupport (~> 7.0)
       connection_pool (~> 2.2.5)
       dry-struct (~> 1.2)
@@ -222,7 +222,7 @@ GEM
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
     minitar (0.9)
-    minitest (5.16.0)
+    minitest (5.16.1)
     moneta (1.5.1)
     multi_json (1.15.0)
     multipart-post (2.2.3)

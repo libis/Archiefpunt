@@ -1,6 +1,7 @@
 require 'linkeddata'
 require 'date'
 
+require 'solis/options'
 require 'solis/query'
 require 'lib/logic_helper'
 

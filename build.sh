@@ -61,7 +61,7 @@ function make_service_package {
     echo "Making $SERVICE"
     delete_service_package
     cd $PROJECT_ROOT/services/$SERVICE
-    tar --exclude='./config' --exclude='./Gemfile' --exclude='./Gemfile.lock' -zcvf $PROJECT_ROOT/build/service.tgz ./*
+    tar --exclude="./*.iml" --exclude='./config' --exclude='./Gemfile' --exclude='./Gemfile.lock' -zcvf $PROJECT_ROOT/build/service.tgz ./*
     cd $PROJECT_ROOT
   else
       echo "$SERVICE not found"
@@ -88,10 +88,10 @@ function build {
     make_service_package
 
     cd $PROJECT_ROOT/build
-    docker buildx build --platform=$PLATFORM --build-arg SERVICE=$SERVICE --build-arg VERSION=$VERSION -f Dockerfile.service --tag $REGISTRY/$NAMESPACE/$SERVICE:$VERSION --push .
+    docker buildx build --platform=$PLATFORM --build-arg SERVICE=$SERVICE --build-arg VERSION=$VERSION -f Dockerfile.service --tag $REGISTRY/$NAMESPACE/$SERVICE:$VERSION --tag $REGISTRY/$NAMESPACE/$SERVICE:latest --push .
     cd $PROJECT_ROOT
 
-    delete_service_package
+    #delete_service_package
   else
     echo "$SERVICE not found"
     exit 1
@@ -104,7 +104,7 @@ function build_base {
   make_config_package
 
   cd $PROJECT_ROOT/build
-  docker buildx build --build-arg SOLIS_VERSION=$SOLIS --platform=$PLATFORM -f Dockerfile.base --tag $REGISTRY/$NAMESPACE/$SERVICE:$VERSION --push .
+  docker buildx build --build-arg SOLIS_VERSION=$SOLIS --platform=$PLATFORM -f Dockerfile.base --tag $REGISTRY/$NAMESPACE/$SERVICE:$VERSION --tag $REGISTRY/$NAMESPACE/$SERVICE:latest --push .
   cd $PROJECT_ROOT
 
   delete_config_package

@@ -81,6 +81,8 @@ services:
     image: registry.docker.libis.be/archiefpunt/data
     container_name: data.api
     hostname: data.api
+    environment:
+      SERVICE_ROLE: data
     volumes:
       - "./volumes/api/config:/app/config"
       - "./volumes/api/cache:/app/cache"
@@ -95,6 +97,8 @@ services:
     image: registry.docker.libis.be/archiefpunt/audit
     container_name: audit.api
     hostname: audit.api
+    environment:
+      SERVICE_ROLE: audit
     volumes:
       - "./volumes/api/config:/app/config"
       - "./volumes/api/cache:/app/cache"
@@ -142,6 +146,8 @@ services:
     image: registry.docker.libis.be/archiefpunt/logic
     container_name: logic.api
     hostname: logic.api
+    environment:
+      SERVICE_ROLE: logic
     volumes:
       - "./volumes/api/config:/app/config"
       - "./volumes/api/cache:/app/cache"
@@ -156,9 +162,27 @@ services:
     image: registry.docker.libis.be/archiefpunt/ping
     container_name: ping.api
     hostname: ping.api
+    environment:
+      SERVICE_ROLE: ping
     volumes:
       - "./volumes/api/config:/app/config"
       - "./volumes/api/cache:/app/cache"
     networks:
       - private
     restart: unless-stopped
+
+  event-listener:
+    image: registry.docker.libis.be/archiefpunt/loaders
+    container_name: listener.event
+    hostname: listener.event
+    tty: true
+    environment:
+      SERVICE_ROLE: listener
+    volumes:
+      - "./volumes/api/config:/app/config"
+      - "./volumes/api/cache:/app/cache"
+    networks:
+      - private
+    restart: unless-stopped
+    links:
+      - elastic:elastic
