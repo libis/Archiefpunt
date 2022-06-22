@@ -2,6 +2,25 @@
 :key: YOUR_GOOGLE_API_KEY
 :debug: true
 
+:solis_data: &SOLIS_DATA
+  :cache: ./cache
+  :cache_expire: 86400
+  :graph_name: https://abv.libis.be/
+  :graph_prefix: abv
+  :sparql_endpoint: http://virtuoso:8890/sparql
+  :inflections: ./config/solis/abv.json
+  :language: nl
+  :shape: ./config/solis/abv_shacl.ttl
+  :hooks: ./config/data_hooks.rb
+
+:solis_audit: &SOLIS_AUDIT
+  :cache: ./cache
+  :graph_name: https://abv.libis.be/_audit/
+  :graph_prefix: audit
+  :sparql_endpoint: http://virtuoso:8890/sparql
+  :inflections: ./config/solis/audit.json
+  :shape: ./config/solis/audit_shacl.ttl
+
 :services:
   :ping:
     :host: "http://ping.api:9292"
@@ -9,6 +28,7 @@
   :data:
     :host: "http://data.api:9292"
     :base_path: "/"
+    :solis: *SOLIS_DATA
   :search:
     :host: "http://search.api:9292"
     :base_path: "/_search"
@@ -16,7 +36,7 @@
     :elastic:
       :mapping: "./config/elastic/elastic.json"
       :host: "http://elastic:9200"
-      :index: "q_archiefpunt"
+      :index: "archiefpunt"
       :templates:
         :query: config/elastic/search/query.json
         :mapping:
@@ -32,7 +52,7 @@
     :elastic:
       :mapping: "./config/elastic/elastic.json"
       :host: "http://elastic:9200"
-      :index: "q_archiefpunt"
+      :index: "archiefpunt"
       :templates:
         :query: config/elastic/browse/query.json
         :mapping:
@@ -44,22 +64,14 @@
   :audit:
     :host: "http://audit.api:9292"
     :base_path: "/_audit"
+    :solis: *SOLIS_AUDIT
   :logic:
     :host: "http://logic.api:9292"
     :base_path: "/_logic"
     :logics: ./config/logics
+    :solis: *SOLIS_DATA
 
 
-:solis:
-  :cache: ./cache
-  :cache_expire: 86400
-  :graph_name: https://abv.libis.be/
-  :graph_prefix: abv
-  :sparql_endpoint: http://virtuoso:8890/sparql
-  :inflections: ./config/solis/abv.json
-  :language: nl
-
-:shape: ./config/solis/abv_shacl.ttl
 :cache: ./cache
 :cache_expire: 86400
 :sheets:

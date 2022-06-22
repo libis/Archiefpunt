@@ -12,6 +12,6 @@ USER abv:abv
 LABEL org.opencontainers.image.vendor="KULeuven/LIBIS" \
 	org.opencontainers.image.url="https://www.libis.be" \
 	org.opencontainers.image.title="Archiefpunt $SERVICE image" \
-	org.opencontainers.image.description="Archiefpunt $SERVICE image"
+	org.opencontainers.image.description="Archiefpunt $SERVICE image" \
 	org.opencontainers.image.version="v$VERSION" \
 	org.opencontainers.image.documentation="https://data.archiefpunt.be/_doc"

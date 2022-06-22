@@ -26,3 +26,23 @@ Is build using ```Dockerfile.service```
 ```shell
 ./build data|logic|search|...
 ```
+
+# Stack
+## CONFIG
+## DATA API
+### https://data.archiefpunt.be/
+### https://data.archiefpunt.be/_vandal
+### https://data.archiefpunt.be/_yas
+### https://data.archiefpunt.be/_sparql
+### https://data.archiefpunt.be/_doc
+## LOGIC API
+### https://data.archiefpunt.be/_logic
+## AUDIT API
+### https://data.archiefpunt.be/_audit
+## SEARCH API
+### https://data.archiefpunt.be/_search
+## BROWSE API
+### https://data.archiefpunt.be/_browse
+## PING API
+### https://data.archiefpunt.be/ping
+## EVENT LISTENER

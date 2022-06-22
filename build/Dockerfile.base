@@ -37,6 +37,6 @@ CMD /app/run.sh
 LABEL org.opencontainers.image.vendor="KULeuven/LIBIS" \
 	org.opencontainers.image.url="https://www.libis.be" \
 	org.opencontainers.image.title="Archiefpunt base image" \
-	org.opencontainers.image.description="A base image to build upon"
+	org.opencontainers.image.description="A base image to build upon" \
 	org.opencontainers.image.version="v0.1" \
 	org.opencontainers.image.documentation="https://data.archiefpunt.be/_doc"
