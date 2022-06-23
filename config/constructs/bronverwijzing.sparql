@@ -1,0 +1,44 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX abv: <https://abv.libis.be/>
+
+construct {
+    ?archief_id a abv:Archief ;
+        abv:archiefbestand ?bronverwijzing_archief ;
+        abv:archiefbankrecord ?bronverwijzing_record .
+} where {
+    {{VALUES}}
+    #VALUES ?archief_id { <https://abv.libis.be/archieven/1007-A944-E024-9196-98AE13348AE9>}
+
+    ?archief_id abv:titel ?titel ;
+        abv:datering_text ?datering ;
+        abv:beheerder ?beheerder_id ;
+        abv:identificatienummer ?identificatienummer_id .
+
+    ?beheerder_id a abv:Beheerder ;
+        abv:id ?id ;
+        abv:agent ?agent_id .
+
+    optional {
+        ?beheerder_id abv:adres ?beheerder_adres_id .
+        ?beheerder_adres_id abv:gemeente/abv:plaatsnaam/abv:waarde ?beheerder_adres_plaatsnaam .
+    }
+
+    ?agent_id abv:naam ?agent_naam_id .
+    ?agent_naam_id abv:waarde ?beheerder_naam .
+
+    ?identificatienummer_id abv:identificatienummer/abv:type/abv:label "persistente URI"@nl
+
+    bind (CONCAT(STR(DAY(NOW())), "/", STR(MONTH(NOW())), "/", STR(YEAR(NOW()))) as ?displayDate) .
+
+    bind(concat(str(?beheerder_naam),", ",?beheerder_adres_plaatsnaam,": ", ?titel,". ", ?datering, "\n",
+                   ?identificatienummer_id )
+        as ?bronverwijzing_archief
+    ) .
+
+    bind(concat("Archiefbank Vlaanderen:", str(?titel),". ", str(?datering)," In: ",
+                   ?identificatienummer_id, "\n", "(Geraadpleegd op ",?displayDate,")" )
+        as ?bronverwijzing_record
+    ) .
+
+}

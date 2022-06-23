@@ -11,9 +11,16 @@ module Solis
             after: lambda do |data|
               puts "-----------after - #{Graphiti.context[:object].query_user}"
 
-              audit_ids = data.map{|m| "<#{m.class.graph_name}#{m.name.tableize}/#{m.id}>"}
+              audit_ids = data.map{|m| m.id}
+              #audit_ids = data.map{|m| "<#{m.class.graph_name}#{m.name.tableize}/#{m.id}>"}
 
-              pp audit_ids
+              bronverwijzingen = Solis::Query.run_construct_with_file('./config/constructs/bronverwijzing.sparql','archief_id', 'Archief', audit_ids)
+
+              if data && bronverwijzingen && !bronverwijzingen.empty?
+                data.first.bronverwijzing_archief =bronverwijzingen.first['archiefbestand'].join('; ')
+                data.first.bronverwijzing_record =bronverwijzingen.first['archiefbankrecord'].join('; ')
+              end
+              data
             end
           },
           create: {
@@ -22,6 +29,22 @@ module Solis
               if model.class.metadata[:attributes].keys.include?('identificatienummer') && model.identificatienummer.nil?
                 model.identificatienummer = Identificatienummer.new(id: model.id, waarde: 'Archiefpunt', type: {id: '13A6-70DC-CCB6-1996-97651CTTI9A4'})
                 #model.identificatienummer = Identificatienummer.new(id: model.id)
+              end
+
+              model.class.metadata[:attributes].select{|k,v| v[:node_kind].is_a?(RDF::URI)}.keys.each do |k|
+                inner_model = model.instance_variable_get(:"@#{k}")
+                if inner_model
+                  if inner_model.is_a?(Hash)
+                    unless inner_model.key?('id')
+                      inner_model['id'] = model.id
+                    end
+                    inner_model.identificatienummer = Identificatienummer.new(id: model.id, waarde: 'Archiefpunt', type: {id: '13A6-70DC-CCB6-1996-97651CTTI9A4'})
+                  else
+                    if inner_model.instance_variable_get(:'@identificatienummer').nil?
+                      inner_model.identificatienummer = Identificatienummer.new(id: inner_model.id, waarde: 'Archiefpunt', type: {id: '13A6-70DC-CCB6-1996-97651CTTI9A4'})
+                    end
+                  end
+                end
               end
 
               n = properties_to_hash(model)
