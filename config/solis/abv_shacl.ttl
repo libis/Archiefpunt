@@ -76,7 +76,7 @@ abv:AgentShape
                      sh:name     "datering_systematisch" ;
                      sh:description
                                  "Geboorte- en sterftejaar, periode van activiteit familie, oprichtings- en opheffingsdatum." ;
-                     sh:datatype xsd:duration ;
+                     sh:datatype time:DateTimeInterval ;
                      sh:minCount 0 ; ] ;
     sh:property    [ sh:path        abv:datering_text ;
                      sh:name        "datering_text" ;

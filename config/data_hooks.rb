@@ -17,8 +17,8 @@ module Solis
               bronverwijzingen = Solis::Query.run_construct_with_file('./config/constructs/bronverwijzing.sparql','archief_id', 'Archief', audit_ids)
 
               if data && bronverwijzingen && !bronverwijzingen.empty?
-                data.first.bronverwijzing_archief =bronverwijzingen.first['archiefbestand'].join('; ')
-                data.first.bronverwijzing_record =bronverwijzingen.first['archiefbankrecord'].join('; ')
+                data.first.bronverwijzing_archief =bronverwijzingen.first['archiefbestand'].first
+                data.first.bronverwijzing_record =bronverwijzingen.first['archiefbankrecord'].first
               end
               data
             end
@@ -40,7 +40,7 @@ module Solis
                     end
                     inner_model.identificatienummer = Identificatienummer.new(id: model.id, waarde: 'Archiefpunt', type: {id: '13A6-70DC-CCB6-1996-97651CTTI9A4'})
                   else
-                    if inner_model.instance_variable_get(:'@identificatienummer').nil?
+                    if inner_model.instance_variable_get(:'@identificatienummer').nil? && inner_model.class.metadata[:attributes].key?('identificatienummer')
                       inner_model.identificatienummer = Identificatienummer.new(id: inner_model.id, waarde: 'Archiefpunt', type: {id: '13A6-70DC-CCB6-1996-97651CTTI9A4'})
                     end
                   end

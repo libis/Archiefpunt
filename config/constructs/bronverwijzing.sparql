@@ -31,12 +31,18 @@ construct {
 
     bind (CONCAT(STR(DAY(NOW())), "/", STR(MONTH(NOW())), "/", STR(YEAR(NOW()))) as ?displayDate) .
 
-    bind(concat(str(?beheerder_naam),", ",?beheerder_adres_plaatsnaam,": ", ?titel,". ", ?datering, "\n",
+    bind(concat(str(?beheerder_naam), ", ",
+                   replace(str(?beheerder_adres_plaatsnaam), "[0-9]* (.*)", "$1"),
+                   ": ",
+                   ?titel,
+                   ". ",
+                   ?datering,
+                   "\n",
                    ?identificatienummer_id )
         as ?bronverwijzing_archief
     ) .
 
-    bind(concat("Archiefbank Vlaanderen:", str(?titel),". ", str(?datering)," In: ",
+    bind(concat("Archiefbank Vlaanderen: ", str(?titel),". ", str(?datering)," In: ",
                    ?identificatienummer_id, "\n", "(Geraadpleegd op ",?displayDate,")" )
         as ?bronverwijzing_record
     ) .
