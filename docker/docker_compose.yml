@@ -171,6 +171,19 @@ services:
       - private
     restart: unless-stopped
 
+  policy-agent:
+    image: registry.docker.libis.be/archiefpunt/policy-agent
+    container_name: policy.agent
+    hostname: policy.agent
+    environment:
+      SERVICE_ROLE: ping
+    volumes:
+      - "./volumes/api/config:/app/config"
+      - "./volumes/api/cache:/app/cache"
+    networks:
+      - private
+    restart: unless-stopped
+
   event-listener:
     image: registry.docker.libis.be/archiefpunt/loaders
     container_name: listener.event
@@ -186,3 +199,34 @@ services:
     restart: unless-stopped
     links:
       - elastic:elastic
+
+  opa:
+    image: openpolicyagent/opa:latest-debug
+#    image: openpolicyagent/opa:latest-rootless
+    networks:
+      - private
+    volumes:
+      - ./volumes/opa/policies:/policies
+    depends_on:
+      - opa-bundle-server
+    command:
+      - "run"
+      - "--server"
+      - "--addr=0.0.0.0:8181"
+      - "--bundle"
+      - "--watch"
+      - "--log-format=json-pretty"
+      - "--log-level=debug"
+      - "--set=decision_logs.console=true"
+      - "--set=services.nginx.url=http://opa-bundle-server"
+      - "--set=bundles.nginx.service=nginx"
+      - "--set=bundles.nginx.resource=archiefpunt.tar.gz"
+      - "--set=bundles.nginx.polling.min_delay_seconds=10"
+      - "--set=bundles.nginx.polling.max_delay_seconds=30"
+
+  opa-bundle-server:
+    image: nginx
+    networks:
+      - private
+    volumes:
+      - ./volumes/opa/bundled_policies:/usr/share/nginx/html

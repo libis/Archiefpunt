@@ -1,0 +1,6 @@
+{ "acl": {
+    "antenna": ["full"],
+    "kadoc": ["read-only"]
+  },
+  "roles": ["read-only", "full"]
+}
