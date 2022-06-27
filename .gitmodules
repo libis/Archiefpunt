@@ -10,3 +10,6 @@
 [submodule "services/ping"]
 	path = services/ping
 	url = https://github.com/mehmetc/solis-ping
+[submodule "services/policy-agent"]
+	path = services/policy-agent
+	url = https://github.com/mehmetc/solis-policy-agent
