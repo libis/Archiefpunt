@@ -9,3 +9,4 @@ build/gems
 *.lock
 **/*/config
 data/*
+*.iml

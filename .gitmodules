@@ -1,20 +1,8 @@
-[submodule "logic"]
-	path = services/logic
-	url = https://github.com/mehmetc/solis-logic
-[submodule "data"]
-	path = services/data
-	url = https://github.com/mehmetc/solis-data
-[submodule "search"]
-	path = services/search
-	url = https://github.com/mehmetc/solis-search
 [submodule "services/ping"]
 	path = services/ping
 	url = https://github.com/mehmetc/solis-ping
 [submodule "services/policy-agent"]
 	path = services/policy-agent
-	url = https://github.com/mehmetc/solis-policy-agent
-[submodule "solis-policy-agent"]
-	path = solis-policy-agent
 	url = https://github.com/mehmetc/solis-policy-agent
 [submodule "services/search"]
 	path = services/search
@@ -25,6 +13,3 @@
 [submodule "services/logic"]
 	path = services/logic
 	url = https://github.com/mehmetc/solis-logic
-[submodule "services/searchh"]
-	path = services/searchh
-	url = https://github.com/mehmetc/solis-search

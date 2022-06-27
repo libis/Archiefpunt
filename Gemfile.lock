@@ -1,5 +1,5 @@
 PATH
-  remote: ../../../ego/solis
+  remote: ../ego/solis
   specs:
     solis (0.49.0)
       activesupport (~> 7.0)
