@@ -13,3 +13,15 @@
 [submodule "services/policy-agent"]
 	path = services/policy-agent
 	url = https://github.com/mehmetc/solis-policy-agent
+[submodule "solis-policy-agent"]
+	path = solis-policy-agent
+	url = https://github.com/mehmetc/solis-policy-agent
+[submodule "services/search"]
+	path = services/search
+	url = https://github.com/mehmetc/solis-search
+[submodule "services/data"]
+	path = services/data
+	url = https://github.com/mehmetc/solis-data
+[submodule "services/logic"]
+	path = services/logic
+	url = https://github.com/mehmetc/solis-logic
