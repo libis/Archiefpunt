@@ -171,19 +171,6 @@ services:
       - private
     restart: unless-stopped
 
-  policy-agent:
-    image: registry.docker.libis.be/archiefpunt/policy-agent
-    container_name: policy.agent
-    hostname: policy.agent
-    environment:
-      SERVICE_ROLE: ping
-    volumes:
-      - "./volumes/api/config:/app/config"
-      - "./volumes/api/cache:/app/cache"
-    networks:
-      - private
-    restart: unless-stopped
-
   event-listener:
     image: registry.docker.libis.be/archiefpunt/loaders
     container_name: listener.event
@@ -199,6 +186,21 @@ services:
     restart: unless-stopped
     links:
       - elastic:elastic
+
+  policy-agent:
+    image: registry.docker.libis.be/archiefpunt/policy-agent
+    container_name: policy.agent
+    hostname: policy.agentA
+    depends_on:
+      - opa
+    environment:
+      SERVICE_ROLE: policy_agent
+    volumes:
+      - "./volumes/api/config:/app/config"
+      - "./volumes/api/cache:/app/cache"
+    networks:
+      - private
+    restart: unless-stopped
 
   opa:
     image: openpolicyagent/opa:latest-debug

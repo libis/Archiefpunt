@@ -13,12 +13,13 @@ module Solis
 
               audit_ids = data.map{|m| m.id}
               #audit_ids = data.map{|m| "<#{m.class.graph_name}#{m.name.tableize}/#{m.id}>"}
+              unless audit_ids.nil? || audit_ids.empty?
+                bronverwijzingen = Solis::Query.run_construct_with_file('./config/constructs/bronverwijzing.sparql','archief_id', 'Archief', audit_ids)
 
-              bronverwijzingen = Solis::Query.run_construct_with_file('./config/constructs/bronverwijzing.sparql','archief_id', 'Archief', audit_ids)
-
-              if data && bronverwijzingen && !bronverwijzingen.empty?
-                data.first.bronverwijzing_archief =bronverwijzingen.first['archiefbestand'].first
-                data.first.bronverwijzing_record =bronverwijzingen.first['archiefbankrecord'].first
+                if data && bronverwijzingen && !bronverwijzingen.empty?
+                  data.first.bronverwijzing_archief =bronverwijzingen.first['archiefbestand'].first
+                  data.first.bronverwijzing_record =bronverwijzingen.first['archiefbankrecord'].first
+                end
               end
               data
             end

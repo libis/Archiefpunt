@@ -4,4 +4,4 @@
 ./build.sh search
 ./build.sh data
 ./build.sh loaders
-
+./build.sh policy-agent
