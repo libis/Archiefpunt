@@ -4,6 +4,14 @@ require 'active_support/all'
 
 module Logic
   def codetabel(params)
+    if params['naam'].eql?('*')
+      kv_codetabel = []
+      codetabel_lijst.each do |v|
+        kv_codetabel << {id: v.underscore, label: v.classify}
+      end
+      return kv_codetabel.to_json
+    end
+
     naam = params['naam'].classify
     result = {}
 
@@ -47,9 +55,15 @@ a abv:#{naam}.
   end
 
   private
+  def codetabel_lijst
+    c = Object.const_get('Codetabel'.to_sym)
+    c.descendants.map{|m| m.name.to_s}
+  end
+
   def codetable?(naam)
-    ct = Object.const_get(naam.to_sym)
-    ct ? ct.metadata[:target_node].value.eql?("#{Solis::Options.instance.get[:graph_name]}CodetabelShape") : false
+    codetabel_lijst.include?(naam)
+    #    ct = Object.const_get(naam.to_sym)
+    #    ct ? ct.metadata[:target_node].value.eql?("#{Solis::Options.instance.get[:graph_name]}CodetabelShape") : false
   rescue StandardError => e
     false
   end
