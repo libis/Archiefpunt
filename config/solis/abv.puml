@@ -7,7 +7,7 @@ skinparam componentStyle uml2
 skinparam wrapMessageWidth 100
 skinparam ArrowColor #Maroon
 
-title Archiefbank ontology - 1.0.0 - 2022-05-20 11:30:11 +0200
+title Archiefbank ontology - 1.0.0 - 2022-06-30 04:30:28 +0200
               
 package abv {
 
@@ -28,7 +28,7 @@ class Agent{
 	{field} abv:Identificatienummer : identificatienummer 
 	{field} abv:Naam : naam 
 	{field} abv:TypeAgent : type 
-	{field} xsd:duration : datering_systematisch 
+	{field} time:DateTimeInterval : datering_systematisch 
 	{field} xsd:string : datering_text 
 	{field} rdf:langString : geschiedenis_agent 
 	{field} abv:Taal : taal 

@@ -1,6 +1,6 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX abv: <https://abv.libis.be/>
+PREFIX abv: <https://data.archiefpunt.be/>
 
 construct {
     ?archief_id a abv:Archief ;
@@ -8,7 +8,7 @@ construct {
         abv:archiefbankrecord ?bronverwijzing_record .
 } where {
     {{VALUES}}
-    #VALUES ?archief_id { <https://abv.libis.be/archieven/1007-A944-E024-9196-98AE13348AE9>}
+    #VALUES ?archief_id { <https://data.archiefpunt.be/archieven/1007-A944-E024-9196-98AE13348AE9>}
 
     ?archief_id abv:titel ?titel ;
         abv:datering_text ?datering ;

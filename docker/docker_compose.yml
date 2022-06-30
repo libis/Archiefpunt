@@ -45,7 +45,7 @@ services:
     container_name: virtuoso
     environment:
       SPARQL_UPDATE: 'true'
-      DEFAULT_GRAPH: https://abv.libis.be/
+      DEFAULT_GRAPH: https://data.archiefpunt.be/
     volumes:
       - "./volumes/virtuoso/data/db:/data"
     networks:

@@ -16,7 +16,7 @@ def archief_as_jsonld(c, archief_ids)
   context = JSON.parse %(
 {
     "@context": {
-        "@vocab": "https://abv.libis.be/",
+        "@vocab": "#{Solis::Options.instance.get[:graph_name]}",
         "id": "@id"
     },
     "@type": "Archief",
@@ -59,8 +59,11 @@ elastic.index.create unless elastic.index.exist?
 # data = result.data
 # puts data[0].to_ttl
 
-c = Solis::Store::Sparql::Client.new(Solis::ConfigFile[:solis][:sparql_endpoint], Solis::ConfigFile[:solis][:graph_name])
-count_alle_archieven = c.query("SELECT (COUNT(distinct ?s) as ?count) FROM <https://abv.libis.be/> WHERE {?s ?p ?o ; a <https://abv.libis.be/Archief>.}").first[:count].object
+SOLIS_CONF = Solis::ConfigFile[:services][:data][:solis]
+c = Solis::Graph.new(Solis::Shape::Reader::File.read(SOLIS_CONF[:shape]), SOLIS_CONF)
+
+
+count_alle_archieven = c.query("SELECT (COUNT(distinct ?s) as ?count) FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Archief>.}").first[:count].object
 
 limit = 1000
 offset = 0
@@ -68,7 +71,7 @@ offset = 0
 #while offset < 100
 while offset < count_alle_archieven
   puts "reading #{offset}/#{count_alle_archieven}"
-  q_alle_archieven = "SELECT DISTINCT ?s FROM <https://abv.libis.be/> WHERE {?s ?p ?o ; a <https://abv.libis.be/Archief>.} limit #{limit} offset #{offset}"
+  q_alle_archieven = "SELECT DISTINCT ?s FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Archief>.} limit #{limit} offset #{offset}"
   alle_archieven = c.query(q_alle_archieven)
 
   ids = []

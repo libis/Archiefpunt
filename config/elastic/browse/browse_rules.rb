@@ -28,11 +28,11 @@ RULES = {
         #findex = index.split('.').join('..')
         #candidates = d.map{|m| m[index]||filter(m, "$..#{findex}")}
         findex = index.split('.')
-        candidates = d.map{|m| [m[index]].grep(/#{browse}/i) || filter(m, "$..#{findex[0]}[?(@['#{findex[1]}'] =~ /#{browse}/i)]")}
+        candidates = d.map{|m| m[index]&.grep(/#{browse}/i) || filter(m, "$..#{findex[0]}[?(@['#{findex[1]}'] =~ /#{browse}/i)]")}
         candidates = [candidates] unless candidates.is_a?(Array)
 
         #candidates.flatten.grep(/#{browse}/i)
-        candidates.flatten
+        candidates
       end
     }
   }

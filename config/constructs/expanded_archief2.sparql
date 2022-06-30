@@ -1,6 +1,6 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX abv: <https://abv.libis.be/>
+PREFIX abv: <https://data.archiefpunt.be/>
 
 construct {
     ?archief_id a abv:Archief ;
@@ -54,17 +54,25 @@ construct {
         abv:topologie ?archief_beschrijvingsniveau, ?rol_beheerder, ?rol_samensteller ;
         abv:geografie ?beheerder_gemeente, ?archief_associatie_plaats ;
         abv:trefwoord ?archief_associatie_periode, ?archief_associatie_agent, ?archief_associatie_onderwerp ;
-        abv:archiefvormer ?samensteller_agent ;
-        abv:bewaarplaats ?beheerder_agent ;
+        abv:archiefvormer ?archief_samensteller_id ;
+        abv:bewaarplaats ?archief_beheerder_id ;
+        #abv:archiefvormer ?samensteller_agent ;
+        #abv:bewaarplaats ?beheerder_agent ;
         abv:sanitized_archiefvormer ?archiefvormer ;
         abv:sanitized_bewaarplaats ?bewaarplaats ;
-        abv:archief_titel ?archief_titel_id .
+        abv:archief_titel ?archief_titel_id ;
+        abv:generated_date ?generatedDate.
 
-    ?samensteller_agent a abv:Archiefvormer ;
-        abv:waarde ?samensteller_agent_naam .
+#    ?samensteller_agent a abv:Archiefvormer ;
+#        abv:waarde ?samensteller_agent_naam .
+#    ?beheerder_agent a abv:Bewaarplaats ;
+#        abv:waarde ?beheerder_agent_naam .
 
-    ?beheerder_agent a abv:Bewaarplaats ;
-        abv:waarde ?beheerder_agent_naam .
+#    ?archief_samensteller_id a abv:Archiefvormer;
+#        abv:waarde ?samensteller_agent_naam.
+
+#    ?archief_beheerder_id a abv:Bewaarplaats ;
+#        abv:waarde ?beheerder_agent_naam.
 
     ?archief_titel_id a abv:ArchiefTitel ;
         abv:waarde ?archief_titel .
@@ -151,7 +159,7 @@ construct {
 
 } WHERE {
     { { VALUES } }
-    #values ?archief_id {<https://abv.libis.be/archieven/1007-A944-E024-9196-98AE13348AE9>}
+    #values ?archief_id {<https://data.archiefpunt.be/archieven/1007-A944-E024-9196-98AE13348AE9>}
     {
         ?archief_id abv:id ?id ;
             abv:identificatienummer ?archief_identificatienummer ;
@@ -393,15 +401,18 @@ construct {
     #bronverwijzing_archief
     ?archief_id abv:bronverwijzing_archief ?archief_bronverwijzing_archief .
 
-    bind(uri(concat('https://abv.libis.be/', 'meta_', str(?id))) as ?meta_id) .
-    bind(uri(concat('https://abv.libis.be/', 'auto_', str(?id))) as ?auto_id) .
+    bind(uri(concat(abv:, 'meta_', str(?id))) as ?meta_id) .
+    bind(uri(concat(abv:, 'auto_', str(?id))) as ?auto_id) .
     bind(lcase(substr(replace(?beheerder_agent_naam, '[^a-zA-Z]+',''),1,1)) as ?bewaarplaats_az) .
     bind(lcase(substr(replace(?samensteller_agent_naam, '[^a-zA-Z]+',''),1,1)) as ?archiefvormer_az) .
     bind(lcase(?samensteller_agent_naam) as ?archiefvormer) .
     bind(lcase(?beheerder_agent_naam) as ?bewaarplaats) .
+    bind(?archief_samensteller_id as ?auto_archief_samensteller_id)
+
     bind(str(?id) as ?rid) .
     bind(uri(concat(str(?archief_id),'?')) as ?archief_titel_id) .
     bind (CONCAT(STR(DAY(NOW())), "/", STR(MONTH(NOW())), "/", STR(YEAR(NOW()))) as ?displayDate) .
+    bind (CONCAT(STR(YEAR(NOW())), "-", STR(MONTH(NOW())), "-", STR(DAY(NOW()))) as ?generatedDate) .
 
     bind(
         concat(str(?beheerder_agent_naam),", ", replace(str(?beheerder_gemeente), "[0-9]* (.*)", "$1"),": ",

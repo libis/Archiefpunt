@@ -1,5 +1,5 @@
-PREFIX audit: <https://abv.libis.be/_audit/>
-PREFIX abv: <https://abv.libis.be/>
+PREFIX audit: <https://data.archiefpunt.be/_audit/>
+PREFIX abv: <https://data.archiefpunt.be/>
 
 construct {
          ?change_set a abv:Audit ;
@@ -8,7 +8,7 @@ construct {
          abv:change_set ?change_set .
 }
 WHERE {
-      graph <https://abv.libis.be/_audit/> {
+      graph audit: {
                                            select ?change_set ?id ?subject_of_change where {
                                                                                ?change_set ?p ?o ;
                                                                                audit:created_date ?created_date;

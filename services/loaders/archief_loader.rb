@@ -8,8 +8,8 @@ def elastic_config
   @elastic_config ||= Solis::ConfigFile[:services][$SERVICE_ROLE][:elastic]
 end
 
-solis = Solis::Graph.new(Solis::Shape::Reader::File.read(Solis::ConfigFile[:shape]),
-                 Solis::ConfigFile[:solis])
+SOLIS_CONF = Solis::ConfigFile[:services][:data][:solis]
+SOLIS = Solis::Graph.new(Solis::Shape::Reader::File.read(SOLIS_CONF[:shape]), SOLIS_CONF)
 
 elastic = Elastic.new(elastic_config[:index],
                       elastic_config[:mapping],
@@ -25,7 +25,7 @@ def load_data(elastic, total, filename, entity, entity_id)
 
   while offset < total
     puts "#{entity} reading #{offset}/#{total}"
-    ids = Solis::Query.run('', "SELECT DISTINCT ?s FROM <https://abv.libis.be/> WHERE {?s ?p ?o ; a <https://abv.libis.be/#{entity}>.} limit #{limit} offset #{offset}").map{|m| m[:s]}
+    ids = Solis::Query.run('', "SELECT DISTINCT ?s FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}#{entity}>.} limit #{limit} offset #{offset}").map{|m| m[:s]}
 
     s = 0
     e = 0
@@ -49,11 +49,11 @@ rescue StandardError => e
   puts e.message
 end
 
-total_archieven = Solis::Query.run('',"SELECT (COUNT(distinct ?s) as ?count) FROM <https://abv.libis.be/> WHERE {?s ?p ?o ; a <https://abv.libis.be/Archief>.}").first[:count].to_i
+total_archieven = Solis::Query.run('',"SELECT (COUNT(distinct ?s) as ?count) FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Archief>.}").first[:count].to_i
 load_data(elastic, total_archieven,'./config/constructs/expanded_archief2.sparql', 'Archief', 'archief_id')
 
-totaal_beheerders = Solis::Query.run('',"SELECT (COUNT(distinct ?s) as ?count) FROM <https://abv.libis.be/> WHERE {?s ?p ?o ; a <https://abv.libis.be/Beheerder>.}").first[:count].to_i
+totaal_beheerders = Solis::Query.run('',"SELECT (COUNT(distinct ?s) as ?count) FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Beheerder>.}").first[:count].to_i
 load_data(elastic, totaal_beheerders,'./config/constructs/expanded_beheerder.sparql', 'Beheerder', 'beheerder_id')
 
-totaal_samenstellers = Solis::Query.run('',"SELECT (COUNT(distinct ?s) as ?count) FROM <https://abv.libis.be/> WHERE {?s ?p ?o ; a <https://abv.libis.be/Samensteller>.}").first[:count].to_i
+totaal_samenstellers = Solis::Query.run('',"SELECT (COUNT(distinct ?s) as ?count) FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Samensteller>.}").first[:count].to_i
 load_data(elastic, totaal_samenstellers,'./config/constructs/expanded_samensteller.sparql', 'Samensteller', 'samensteller_id')

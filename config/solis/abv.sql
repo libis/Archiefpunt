@@ -1,5 +1,5 @@
 --
--- Archiefbank ontology - 1.0.0 - 2022-05-20 11:30:11 +0200
+-- Archiefbank ontology - 1.0.0 - 2022-06-30 04:30:28 +0200
 -- description: Archiefbank ontology
 -- author: Archiefpunt, Meemo, KADOC, LIBIS
 --

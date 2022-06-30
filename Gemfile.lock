@@ -1,7 +1,7 @@
 PATH
   remote: ../ego/solis
   specs:
-    solis (0.49.0)
+    solis (0.50.0)
       activesupport (~> 7.0)
       connection_pool (~> 2.2.5)
       dry-struct (~> 1.2)

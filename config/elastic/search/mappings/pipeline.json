@@ -1,0 +1,13 @@
+{
+  "es_created": {
+    "description": "Sets the document creation date",
+    "processors": [
+      {
+        "script": {
+          "lang": "painless",
+          "source": "DateFormat df = new SimpleDateFormat(\"yyyy-MM-dd\"); \nDate date=new Date(); \nctx.es_created=df.format(date);"
+        }
+      }
+    ]
+  }
+}
