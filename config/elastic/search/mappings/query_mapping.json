@@ -55,16 +55,5 @@
         ]
       }
     }
-  },
-  "facet_newrecords": {
-    "07DaysBack": {
-      "range": {
-        "es_created": {
-          "gte": "now-07d/d",
-          "lte": "now/d",
-          "relation": "INTERSECTS"
-        }
-      }
-    }
   }
 }

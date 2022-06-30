@@ -48,6 +48,18 @@
         "type": "date_range",
         "format": "yyyy||yyyyMMdd||yyyy-MM-dd||epoch_millis"
       },
+      "archief.generated_date": {
+        "type": "date",
+        "format": "yyyy-MM-d||yyyy-M-dd||yyyy-M-d||yyyy-MM-dd"
+      },
+      "beheerder.generated_date": {
+        "type": "date",
+        "format": "yyyy-MM-d||yyyy-M-dd||yyyy-M-d||yyyy-MM-dd"
+      },
+      "samensteller.generated_date": {
+        "type": "date",
+        "format": "yyyy-MM-d||yyyy-M-dd||yyyy-M-d||yyyy-MM-dd"
+      },
       "archief.auto": {
         "properties": {
           "archiefvormer.waarde": {

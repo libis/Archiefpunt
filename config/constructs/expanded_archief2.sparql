@@ -37,7 +37,8 @@ construct {
         abv:bronverwijzing_record ?bronverwijzing_record ;
         abv:bronverwijzing_archief ?bronverwijzing_archief ;
         abv:meta ?meta_id ;
-        abv:auto ?auto_id .
+        abv:auto ?auto_id ;
+        abv:generated_date ?generatedDate.
 
     ?meta_id a abv:Meta ;
         abv:topologie ?archief_beschrijvingsniveau, ?rol_beheerder, ?rol_samensteller ;
@@ -60,8 +61,7 @@ construct {
         #abv:bewaarplaats ?beheerder_agent ;
         abv:sanitized_archiefvormer ?archiefvormer ;
         abv:sanitized_bewaarplaats ?bewaarplaats ;
-        abv:archief_titel ?archief_titel_id ;
-        abv:generated_date ?generatedDate.
+        abv:archief_titel ?archief_titel_id .
 
 #    ?samensteller_agent a abv:Archiefvormer ;
 #        abv:waarde ?samensteller_agent_naam .

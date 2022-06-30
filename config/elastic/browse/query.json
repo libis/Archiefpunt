@@ -1,5 +1,5 @@
 {
-  "_source": {"includes": ["archief.id","archief.auto.*"]},
+  "_source": {"includes": ["archief.id","archief.auto.*","archief.generated_date"]},
   "size": 100000,
   "query": {},
   "from": 0

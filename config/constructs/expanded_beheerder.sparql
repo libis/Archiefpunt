@@ -16,7 +16,8 @@ CONSTRUCT {
         abv:toegang ?toegang ;
         abv:openingsuren ?openingsuren ;
         abv:toegangsvoorwaarden ?toegangsvoorwaarden ;
-        abv:bereikbaarheid ?bereikbaarheid .
+        abv:bereikbaarheid ?bereikbaarheid ;
+        abv:archief_titel ?archief_titel_id .
 
     ?agent_id a abv:Agent ;
         abv:identificatienummer ?agent_identificatienummer_id ;
@@ -165,4 +166,6 @@ WHERE {
     optional {
         ?agent_id abv:opmerking ?agent_opmerking .
     }
+
+    bind (CONCAT(STR(YEAR(NOW())), "-", STR(MONTH(NOW())), "-", STR(DAY(NOW()))) as ?generatedDate) .
 }

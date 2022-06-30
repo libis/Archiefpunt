@@ -5,7 +5,8 @@ CONSTRUCT {
         abv:id ?id;
         abv:record_type "samensteller";
         abv:agent ?agent_id ;
-        abv:functie_beroep_activiteit ?functie .
+        abv:functie_beroep_activiteit ?functie ;
+        abv:archief_titel ?archief_titel_id .
 
     ?agent_id a abv:Agent ;
                 abv:identificatienummer ?agent_identificatienummer_id ;
@@ -104,4 +105,5 @@ WHERE {
         ?agent_id abv:opmerking ?agent_opmerking .
     }
 
+    bind (CONCAT(STR(YEAR(NOW())), "-", STR(MONTH(NOW())), "-", STR(DAY(NOW()))) as ?generatedDate) .
 }

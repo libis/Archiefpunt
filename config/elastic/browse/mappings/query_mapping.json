@@ -36,9 +36,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "archief.auto.archiefvormer.waarde",
-          "archief.auto.archiefvormer.waarde._2gram",
-          "archief.auto.archiefvormer.waarde._3gram"
+          "archief.auto.archiefvormer.naam",
+          "archief.auto.archiefvormer.naam._2gram",
+          "archief.auto.archiefvormer.naam._3gram"
         ]
       }
     }
@@ -49,9 +49,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "archief.auto.bewaarplaats.waarde",
-          "archief.auto.bewaarplaats.waarde._2gram",
-          "archief.auto.bewaarplaats.waarde._3gram"
+          "archief.auto.bewaarplaats.naam",
+          "archief.auto.bewaarplaats.naam._2gram",
+          "archief.auto.bewaarplaats.naam._3gram"
         ]
       }
     }
@@ -76,6 +76,17 @@
           "archief.meta.archiefvormer": {
             "value": "{{}}"
           }
+        }
+      }
+    }
+  },
+  "updated_records": {
+    "07DaysBack": {
+      "range": {
+        "archief.generated_date": {
+          "gte": "now-07d/d",
+          "lte": "now/d",
+          "relation": "INTERSECTS"
         }
       }
     }
