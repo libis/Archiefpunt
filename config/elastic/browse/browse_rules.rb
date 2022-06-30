@@ -36,8 +36,6 @@ RULES = {
         index = (index.first unless index.nil? || index.empty?)&.gsub(/^archief.auto\./, '')
 
         return d if (browse.nil? || browse.empty?) || (index.nil? || index.empty?) && d.include?(index)
-        #findex = index.split('.').join('..')
-        #candidates = d.map{|m| m[index]||filter(m, "$..#{findex}")}
         findex = index.split('.')
 
         #candidates = d.map{|m| m[index]&.grep(/#{browse}/i) || filter(m, "$..#{findex[0]}[?(@['#{findex[1]}'] =~ /#{browse}/i)]")}
@@ -49,8 +47,6 @@ RULES = {
         end
 
         candidates = [candidates] unless candidates.is_a?(Array)
-
-        #candidates.flatten.grep(/#{browse}/i)
         candidates
       end
     }
