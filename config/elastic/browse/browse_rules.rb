@@ -4,8 +4,10 @@ RULES = {
       '@' => lambda do |d, query|
         result = []
         out = DataCollector::Output.new
-        unless filter(query, '$..range').empty?
-          rules_ng.run(RULES['browse2'], d, out, query)
+        if !filter(query, '$..range').empty?
+          rules_ng.run(RULES['browse_7days'], d, out, query)
+        elsif !filter(query, '$..fields[?(@ =~ /bewaarplaats|archiefvormer/i)]').empty?
+          rules_ng.run(RULES['browse_bewaarplaats_archiefvormer'], d, out, query)
         else
           rules_ng.run(RULES['browse'], d, out, query)
         end
@@ -19,10 +21,32 @@ RULES = {
       end
     }
   },
-  'browse2' => {
+  'browse_7days' => {
     'data' => {
       '@.hits.hits[*]._source.archief' => lambda do |d, query|
-        {id: d['id'], titel: d['auto'].map{|a| a['archief_titel'].map{|m| m['waarde']}}.flatten, laatste_wijziging: d['generated_date']}
+        { id: d['id'], titel: d['auto'].map { |a| a['archief_titel'].map { |m| m['waarde'] } }.flatten, laatste_wijziging: d['generated_date'] }
+      end
+    }
+  },
+  'browse_bewaarplaats_archiefvormer' => {
+    'data' => {
+      '@.hits.hits[*]._source.archief.auto' => lambda do |d, query|
+
+        result = []
+        if !filter(query, '$..fields[?(@ =~ /bewaarplaats/i)]').empty?
+          d.each do |bewaarplaats|
+            bewaarplaats['bewaarplaats'].each do |b|
+              result << { id: b['id'], waarde: b['naam'] }
+            end
+          end
+        elsif !filter(query, '$..fields[?(@ =~ /archiefvormer/i)]').empty?
+          d.each do |archiefvormer|
+            archiefvormer['archiefvormer'].each do |b|
+              result << { id: b['id'], waarde: b['naam'] }
+            end
+          end
+        end
+        result
       end
     }
   },
