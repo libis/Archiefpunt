@@ -51,7 +51,7 @@ module Logic
       return result unless File.exist?(filename)
 
       q = File.read(filename)
-      c = Solis::Store::Sparql::Client.new(Solis::ConfigFile[:solis][:sparql_endpoint], Solis::ConfigFile[:solis][:graph_name])
+      c = Solis::Store::Sparql::Client.new(config[:solis][:sparql_endpoint], config[:solis][:graph_name])
       r = c.query(q)
       t = r.query('select * where{?s ?p ?o}')
 
@@ -84,4 +84,9 @@ module Logic
     puts e.message
     {}
   end
+
+  def config
+    Solis::ConfigFile[:services][:data]
+  end
+
 end

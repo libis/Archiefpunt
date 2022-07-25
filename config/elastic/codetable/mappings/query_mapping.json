@@ -1,0 +1,267 @@
+{
+  "any": {
+    "*": {
+      "match_all": {}
+    }
+  },
+  "type_waarde": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "type_waarde.label",
+          "type_waarde.label._2gram",
+          "type_waarde.label._3gram"
+        ]
+      }
+    }
+  },
+  "type_vergelijking": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "type_vergelijking.label",
+          "type_vergelijking.label._2gram",
+          "type_vergelijking.label._3gram"
+        ]
+      }
+    }
+  },
+  "type_naam": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "type_naam.label",
+          "type_naam.label._2gram",
+          "type_naam.label._3gram"
+        ]
+      }
+    }
+  },
+  "type_identificatienummer": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "type_identificatienummer.label",
+          "type_identificatienummer.label._2gram",
+          "type_identificatienummer.label._3gram"
+        ]
+      }
+    }
+  },
+  "type_concept": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "type_concept.label",
+          "type_concept.label._2gram",
+          "type_concept.label._3gram"
+        ]
+      }
+    }
+  },
+  "type_agent": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "type_agent.label",
+          "type_agent.label._2gram",
+          "type_agent.label._3gram"
+        ]
+      }
+    }
+  },
+  "taal": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "taal.label",
+          "taal.label._2gram",
+          "taal.label._3gram"
+        ]
+      }
+    }
+  },
+  "rol_samensteller": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "rol_samensteller.label",
+          "rol_samensteller.label._2gram",
+          "rol_samensteller.label._3gram"
+        ]
+      }
+    }
+  },
+  "rol_beheerder": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "rol_beheerder.label",
+          "rol_beheerder.label._2gram",
+          "rol_beheerder.label._3gram"
+        ]
+      }
+    }
+  },
+  "rechtenstatus": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "rechtenstatus.label",
+          "rechtenstatus.label._2gram",
+          "rechtenstatus.label._3gram"
+        ]
+      }
+    }
+  },
+  "raadplegingsstatus": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "raadplegingsstatus.label",
+          "raadplegingsstatus.label._2gram",
+          "raadplegingsstatus.label._3gram"
+        ]
+      }
+    }
+  },
+  "periode": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "periode.label",
+          "periode.label._2gram",
+          "periode.label._3gram"
+        ]
+      }
+    }
+  },
+  "ordeningsstatus": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "ordeningsstatus.label",
+          "ordeningsstatus.label._2gram",
+          "ordeningsstatus.label._3gram"
+        ]
+      }
+    }
+  },
+  "onderwerp": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "onderwerp.label",
+          "onderwerp.label._2gram",
+          "onderwerp.label._3gram"
+        ]
+      }
+    }
+  },
+  "materiaalsoort": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "materiaalsoort.label",
+          "materiaalsoort.label._2gram",
+          "materiaalsoort.label._3gram"
+        ]
+      }
+    }
+  },
+  "gebruiksgroep": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "gebruiksgroep.label",
+          "gebruiksgroep.label._2gram",
+          "gebruiksgroep.label._3gram"
+        ]
+      }
+    }
+  },
+  "functie": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "functie.label",
+          "functie.label._2gram",
+          "functie.label._3gram"
+        ]
+      }
+    }
+  },
+  "beschrijvingsniveau": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "beschrijvingsniveau.label",
+          "beschrijvingsniveau.label._2gram",
+          "beschrijvingsniveau.label._3gram"
+        ]
+      }
+    }
+  },
+  "bereikbaarheid": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "bereikbaarheid.label",
+          "bereikbaarheid.label._2gram",
+          "bereikbaarheid.label._3gram"
+        ]
+      }
+    }
+  },
+  "aangroei": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "aangroei.label",
+          "aangroei.label._2gram",
+          "aangroei.label._3gram"
+        ]
+      }
+    }
+  }
+}

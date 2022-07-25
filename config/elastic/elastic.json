@@ -78,6 +78,13 @@
             "type": "search_as_you_type"
           }
         }
+      },
+      "codetabel": {
+        "properties": {
+          "label": {
+            "type": "search_as_you_type"
+          }
+        }
       }
     }
   }
