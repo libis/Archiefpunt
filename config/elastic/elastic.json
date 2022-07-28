@@ -60,6 +60,9 @@
         "type": "date",
         "format": "yyyy-MM-d||yyyy-M-dd||yyyy-M-d||yyyy-MM-dd"
       },
+      "plaats.label" : {
+        "type" : "search_as_you_type"
+      },
       "archief.auto": {
         "properties": {
           "archiefvormer.waarde": {
@@ -75,13 +78,6 @@
             "type": "search_as_you_type"
           },
           "archief.waarde": {
-            "type": "search_as_you_type"
-          }
-        }
-      },
-      "codetabel": {
-        "properties": {
-          "label": {
             "type": "search_as_you_type"
           }
         }

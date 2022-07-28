@@ -1,8 +1,14 @@
 $LOAD_PATH << '.' << 'lib'
+require 'http'
+require 'json'
 require 'solis'
 require 'lib/elastic'
 
 $SERVICE_ROLE = :search
+
+def logic_config
+  Solis::ConfigFile[:services][:logic]
+end
 
 def elastic_config
   @elastic_config ||= Solis::ConfigFile[:services][$SERVICE_ROLE][:elastic]
@@ -57,3 +63,14 @@ load_data(elastic, totaal_beheerders,'./config/constructs/expanded_beheerder.spa
 
 totaal_samenstellers = Solis::Query.run('',"SELECT (COUNT(distinct ?s) as ?count) FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Samensteller>.}").first[:count].to_i
 load_data(elastic, totaal_samenstellers,'./config/constructs/expanded_samensteller.sparql', 'Samensteller', 'samensteller_id')
+
+
+response = HTTP.get("#{logic_config[:host]}/#{logic_config[:base_path]}/plaats")
+data = {}
+if response.status == 200
+  data = JSON.parse(response.body.to_s)
+end
+
+data.each do |d|
+  elastic.index.insert( {"plaats": d}, 'id', true)
+end

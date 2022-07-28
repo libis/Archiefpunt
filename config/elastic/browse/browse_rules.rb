@@ -8,6 +8,8 @@ RULES = {
           rules_ng.run(RULES['browse_7days'], d, out, query)
         elsif !filter(query, '$..fields[?(@ =~ /bewaarplaats|archiefvormer/i)]').empty?
           rules_ng.run(RULES['browse_bewaarplaats_archiefvormer'], d, out, query)
+        elsif filter(query, '$..fields').include?('plaats.label')
+          rules_ng.run(RULES['browse_plaats'], d, out, query)
         else
           rules_ng.run(RULES['browse'], d, out, query)
         end
@@ -74,6 +76,12 @@ RULES = {
         candidates
       end
     }
+  },
+  'browse_plaats' => {
+    'data' => {
+      '@.hits.hits[*]._source.plaats' => lambda do |d, query|
+        d
+      end
+    }
   }
-
 }.freeze

@@ -1,1 +1,10 @@
-{"ChangeSet":"ChangeSets","change_set":"change_sets","Addition":"Additions","addition":"additions","Removal":"Removals","removal":"removals","Statement":"Statements","statement":"statements"}
+{
+  "ChangeSet": "ChangeSets",
+  "change_set": "change_sets",
+  "Addition": "Additions",
+  "addition": "additions",
+  "Removal": "Removals",
+  "removal": "removals",
+  "Statement": "Statements",
+  "statement": "statements"
+}

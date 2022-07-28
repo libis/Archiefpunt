@@ -147,19 +147,6 @@
       }
     }
   },
-  "periode": {
-    "{{}}": {
-      "multi_match": {
-        "query": "{{}}",
-        "type": "bool_prefix",
-        "fields": [
-          "periode.label",
-          "periode.label._2gram",
-          "periode.label._3gram"
-        ]
-      }
-    }
-  },
   "ordeningsstatus": {
     "{{}}": {
       "multi_match": {
@@ -169,6 +156,19 @@
           "ordeningsstatus.label",
           "ordeningsstatus.label._2gram",
           "ordeningsstatus.label._3gram"
+        ]
+      }
+    }
+  },
+  "periode": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "periode.label",
+          "periode.label._2gram",
+          "periode.label._3gram"
         ]
       }
     }
