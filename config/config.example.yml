@@ -1,11 +1,12 @@
 ---
+:secret: OPA_SECRET
 :key: YOUR_GOOGLE_API_KEY
 :debug: true
 
 :solis_data: &SOLIS_DATA
   :cache: ./cache
   :cache_expire: 86400
-  :graph_name: https://abv.libis.be/
+  :graph_name: https://data.archiefpunt.be/
   :graph_prefix: abv
   :sparql_endpoint: http://virtuoso:8890/sparql
   :inflections: ./config/solis/abv.json
@@ -15,7 +16,7 @@
 
 :solis_audit: &SOLIS_AUDIT
   :cache: ./cache
-  :graph_name: https://abv.libis.be/_audit/
+  :graph_name: https://data.archiefpunt.be/_audit/
   :graph_prefix: audit
   :sparql_endpoint: http://virtuoso:8890/sparql
   :inflections: ./config/solis/audit.json
@@ -70,17 +71,39 @@
     :base_path: "/_logic"
     :logics: ./config/logics
     :solis: *SOLIS_DATA
+  :audit_logic:
+    :host: "http://audit_logic.api:9292"
+    :base_path: "/_audit/_logic"
+    :logics: ./config/audit_logics
+    :solis: *SOLIS_AUDIT
+  :codetable:
+    :host: "http://codetabel.api:9292"
+    :base_path: "/_codetable"
+    :rules: "./config/elastic/codetable/codetable_rules.rb"
+    :elastic:
+      :mapping: "./config/elastic/elastic.json"
+      :host: "http://elastic:9200"
+      :index: "archiefpunt_codetables"
+      :templates:
+        :query: config/elastic/codetable/query.json
+        :mapping:
+          :sort: config/elastic/codetable/mappings/sort_mapping.json
+          :facet: config/elastic/codetable/mappings/facet_mapping.json
+          :index: config/elastic/codetable/mappings/index_mapping.json
+          :query_string: config/elastic/codetable/mappings/query_string.json
+          :query_mapping: config/elastic/codetable/mappings/query_mapping.json
+          :pipeline: config/elastic/search/mappings/pipeline.json          
+  :policy_agent:
+    :host: "http://policy.agent:9292"
+    :base_path: "/"
+    :opa:
+      :url: http://opa:8181/v1/data
+      :policy: /archiefpunt/authz/allow
 
 
+:events: /app/data
 :cache: ./cache
 :cache_expire: 86400
 :sheets:
   :abv: 1xhvOCfiSIOtHjIJUtRrxvJ54OoDosNJ_JsA1B7FfpsI
   :audit: 1uaQmU9gcCCRI57VKNEobT5pZvBoSGAyeGApdypspX_g
-:redis:
-  url: "redis://redis:6379/3"
-  queue: 'archiefpunt'
-:kafka:
-  name: 'archiefpunt'
-  config:
-    :bootstrap.servers: "kafka:9092"

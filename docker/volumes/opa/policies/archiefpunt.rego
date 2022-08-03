@@ -8,6 +8,7 @@ import data.acl
 import data.roles
 
 default allow=false
+runtime = opa.runtime()
 
 allow = true {
     input.method == "GET"
@@ -42,7 +43,7 @@ allow = true {
 }
 
 token := {"valid": valid, "user": payload.user, "role": payload.role } {
-	[valid, _, payload] := io.jwt.decode_verify(input.token, {"secret": "c4198bb7a64f835ed8c589e42dc44d14"})
+	[valid, _, payload] := io.jwt.decode_verify(input.token, {"secret": runtime.env.SECRET})
 }
 
 #acl := {
