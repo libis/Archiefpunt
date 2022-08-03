@@ -66,35 +66,36 @@ services:
     restart: unless-stopped
     volumes:
     - "./volumes/elastic/data:/usr/share/elasticsearch/data"
+    - "./volumes/elastic/logs:/usr/share/elasticsearch/logs"
 
-#  kafka:
-#    image: bitnami/kafka
-#    volumes:
-#      - ./volumes/kafka:/bitnami/kafka
-#    networks:
-#      - private
-#    environment:
-#      KAFKA_CONF_FILE: /bitnami/kafka/config/server.properties
-#      ALLOW_PLAINTEXT_LISTENER: "yes"
+  kibana:
+    image: kibana:7.14.2
+    networks:
+    - private
+    restart: unless-stopped
+    links:
+    - elastic:elasticsearch
+    depends_on:
+    - elastic
 
   data-api:
     image: registry.docker.libis.be/archiefpunt/data
-    container_name: data.api
-    hostname: data.api
     environment:
       SERVICE_ROLE: data
+    container_name: data.api
+    hostname: data.api
     volumes:
       - "./volumes/api/config:/app/config"
+      - "./volumes/api/data:/app/data"
       - "./volumes/api/cache:/app/cache"
     networks:
       - private
     restart: unless-stopped
     links:
       - virtuoso:virtuoso
-#      - kafka:kafka
 
   audit-api:
-    image: registry.docker.libis.be/archiefpunt/audit
+    image: registry.docker.libis.be/archiefpunt/data
     container_name: audit.api
     hostname: audit.api
     environment:
@@ -107,7 +108,6 @@ services:
     restart: unless-stopped
     links:
       - virtuoso:virtuoso
-#      - kafka:kafka
 
   search-api:
     image: registry.docker.libis.be/archiefpunt/search
@@ -141,13 +141,28 @@ services:
     links:
       - elastic:elastic
 
-
-  logic-api:
-    image: registry.docker.libis.be/archiefpunt/logic
-    container_name: logic.api
-    hostname: logic.api
+  codetabel-api:
+    image: registry.docker.libis.be/archiefpunt/search
+    hostname: codetabel.api
+    deploy:
+      replicas: 2    
     environment:
-      SERVICE_ROLE: logic
+      SERVICE_ROLE: codetable
+    volumes:
+      - "./volumes/api/config:/app/config" 
+      - "./volumes/api/cache:/app/cache" 
+    networks:
+      - private
+    restart: unless-stopped
+    links:
+      - elastic:elastic
+
+  data-logic-api:
+    image: registry.docker.libis.be/archiefpunt/logic
+    container_name: data-logic.api
+    hostname: data-logic.api
+    environment:
+      SERVICE_ROLE: data_logic
     volumes:
       - "./volumes/api/config:/app/config"
       - "./volumes/api/cache:/app/cache"
@@ -156,7 +171,21 @@ services:
     restart: unless-stopped
     links:
       - virtuoso:virtuoso
-#      - kafka:kafka
+
+  audit-logic-api:
+    image: registry.docker.libis.be/archiefpunt/logic
+    container_name: audit_logic.api
+    hostname: audit_logic.api
+    environment:
+      SERVICE_ROLE: audit_logic
+    volumes:
+      - "./volumes/api/config:/app/config"
+      - "./volumes/api/cache:/app/cache"
+    networks:
+      - private
+    restart: unless-stopped
+    links:
+      - virtuoso:virtuoso
 
   ping-api:
     image: registry.docker.libis.be/archiefpunt/ping
@@ -180,17 +209,19 @@ services:
       SERVICE_ROLE: listener
     volumes:
       - "./volumes/api/config:/app/config"
+      - "./volumes/api/data:/app/data"
       - "./volumes/api/cache:/app/cache"
     networks:
       - private
-    restart: unless-stopped
+    restart: unless-stopped      
     links:
       - elastic:elastic
+      - audit-api:audit-api
 
   policy-agent:
     image: registry.docker.libis.be/archiefpunt/policy-agent
     container_name: policy.agent
-    hostname: policy.agentA
+    hostname: policy.agent
     depends_on:
       - opa
     environment:
@@ -211,6 +242,8 @@ services:
       - ./volumes/opa/policies:/policies
     depends_on:
       - opa-bundle-server
+    environment:
+      SECRET: $JWT_SECRET
     command:
       - "run"
       - "--server"
@@ -232,3 +265,4 @@ services:
       - private
     volumes:
       - ./volumes/opa/bundled_policies:/usr/share/nginx/html
+

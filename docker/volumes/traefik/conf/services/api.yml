@@ -58,16 +58,27 @@ http:
       middlewares:
       - "default-https"      
 
-    logic-api:
+    data-logic-api:
       rule: "PathPrefix(`/_logic`)"
       tls: {}
       entryPoints:
       - "https"
       - "http"
-      service: logic-api-svc
+      service: data-logic-api-svc
       priority: 35
       middlewares:
       - "default-https"
+
+    audit-logic-api:
+      rule: "PathPrefix(`/_audit/_logic`)"
+      tls: {}
+      entryPoints:
+        - "https"
+        - "http"
+      service: audit-logic-api-svc
+      priority: 34
+      middlewares:
+        - "default-https"
 
     policy-agent:
       rule: "PathPrefix(`/`)"
@@ -101,10 +112,15 @@ http:
         servers:
         - url: http://browse.api:9292
 
-    logic-api-svc:
+    data-logic-api-svc:
       loadBalancer:
         servers:
-        - url: http://logic.api:9292
+        - url: http://data_logic.api:9292
+
+    audit-logic-api-svc:
+      loadBalancer:
+        servers:
+          - url: http://audit_logic.api:9292
 
     policy-agent-svc:
       loadBalancer:
