@@ -10,16 +10,10 @@ skos:Concept a owl:Class;
 
 abv: a owl:Ontology;
   <dc11:creator> "Archiefpunt, Meemo, KADOC, LIBIS";
-  <dc11:date> "2022-06-30 04:30:28 +0200";
+  <dc11:date> "2022-08-03 10:06:16 +0200";
   <dc11:description> "Archiefbank ontology";
   <dc11:title> "Archiefbank ontology";
   owl:versionInfo "1.0.0" .
-
-abv:_audit a rdf:Property;
-  rdfs:label "_audit";
-  rdfs:comment "";
-  rdfs:domain abv:EntiteitBasis;
-  rdfs:range abv:Audit .
 
 abv:change_set a rdf:Property;
   rdfs:label "change_set";
@@ -201,6 +195,12 @@ abv:TypeConcept a owl:Class;
     owl:maxCardinality 1;
     owl:onProperty abv:id
   ] .
+
+abv:_audit a rdf:Property;
+  rdfs:label "_audit";
+  rdfs:comment "link naar audit";
+  rdfs:domain abv:EntiteitBasis;
+  rdfs:range xsd:anyURI .
 
 abv:aantekening_archivaris a rdf:Property;
   rdfs:label "aantekening_archivaris";
@@ -880,6 +880,19 @@ abv:Adres a owl:Class;
     owl:onProperty abv:gemeente
   ] .
 
+abv:Audit a owl:Class;
+  rdfs:label "Audit";
+  rdfs:comment "Dit is een construct met een verwijzing naar de audits in de audit database";
+  rdfs:subClassOf [
+    a owl:Restriction;
+    owl:minCardinality 1;
+    owl:onProperty abv:id
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty abv:id
+  ] .
+
 abv:Omvang a owl:Class;
   rdfs:label "Omvang";
   rdfs:comment "";
@@ -1027,19 +1040,6 @@ abv:trefwoord a rdf:Property;
   rdfs:domain abv:Omvang,
     abv:Ordening;
   rdfs:range abv:Ordeningsstatus .
-
-abv:Audit a owl:Class;
-  rdfs:label "Audit";
-  rdfs:comment "Dit is een construct met een verwijzing naar de audits in de audit database";
-  rdfs:subClassOf [
-    a owl:Restriction;
-    owl:minCardinality 1;
-    owl:onProperty abv:id
-  ], [
-    a owl:Restriction;
-    owl:maxCardinality 1;
-    owl:onProperty abv:id
-  ] .
 
 abv:Identificatienummer a owl:Class;
   rdfs:label "Identificatienummer";
@@ -1572,6 +1572,10 @@ abv:EntiteitBasis a owl:Class;
     a owl:Restriction;
     owl:maxCardinality 1;
     owl:onProperty abv:id
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty abv:_audit
   ] .
 
 abv:Archief a owl:Class;

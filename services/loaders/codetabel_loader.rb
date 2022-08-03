@@ -50,7 +50,10 @@ query_mapping = {
 
 all_codetables.each do |codetabel|
   data = load_codetabel(codetabel)
-  elastic.index.insert({ "#{codetabel}": data }, 'id', true)
+
+  data.each do |d|
+    elastic.index.insert({ "#{codetabel}": d }, 'id', true)
+  end
   query_mapping[codetabel] =
     {
       "{{}}": {

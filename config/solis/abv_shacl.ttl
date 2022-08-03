@@ -1334,10 +1334,10 @@
                  sh:maxCount 1 ;
     ] ;
     sh:property [sh:path abv:_audit ;
-                 sh:name "_audit" ;
-                 sh:description "" ;
-                 sh:nodeKind sh:IRI ;
-                 sh:class    abv:Audit ;
+                 sh:name "_audit";
+                 sh:description "link naar audit" ;
+                 sh:datatype xsd:anyURI ;
+                 sh:maxCount 1 ;
     ] ;
 .
 

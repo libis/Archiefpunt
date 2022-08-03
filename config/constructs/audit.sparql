@@ -2,20 +2,34 @@ PREFIX audit: <https://data.archiefpunt.be/_audit/>
 PREFIX abv: <https://data.archiefpunt.be/>
 
 construct {
-         ?change_set a abv:Audit ;
-         abv:id ?id ;
-         abv:subject_of_change ?subject_of_change;
-         abv:change_set ?change_set .
+    ?change_set a audit:Audit ;
+        audit:created_date ?created_date;
+        audit:subject_of_change ?soc;
+        audit:change_reason ?reason;
+        audit:creator_name ?name;
+        audit:diff ?diff.
 }
 WHERE {
-      graph audit: {
-                                           select ?change_set ?id ?subject_of_change where {
-                                                                               ?change_set ?p ?o ;
-                                                                               audit:created_date ?created_date;
-                                                                               audit:subject_of_change ?subject_of_change ;
-                                                                               a audit:ChangeSet .
+    graph audit: {
+        select * where {
+            {{VALUES}}
+            ?change_set ?p ?o ;
+                audit:diff ?diff;
+                audit:created_date ?created_date;
+                audit:subject_of_change ?soc ;
+                audit:change_reason ?reason;
+                audit:creator_name ?name;
+                a audit:ChangeSet .
 
-                                                                               bind(substr(str(?change_set), strlen(str(audit:change_sets))+2 ) as ?id)
-                                                                               }  order by ?created_date
-                                           }
-      }
+            optional {
+                ?change_set		 audit:preceding_change_set ?pcs.
+            }
+
+            optional {
+                ?change_set	 audit:other_data ?data.
+            }
+
+            bind(substr(str(?change_set), strlen(str(audit:change_sets))+2 ) as ?id)
+        }  order by desc(?created_date)
+    }
+}

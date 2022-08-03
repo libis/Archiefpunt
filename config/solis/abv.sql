@@ -1,5 +1,5 @@
 --
--- Archiefbank ontology - 1.0.0 - 2022-06-30 04:30:28 +0200
+-- Archiefbank ontology - 1.0.0 - 2022-08-03 10:06:17 +0200
 -- description: Archiefbank ontology
 -- author: Archiefpunt, Meemo, KADOC, LIBIS
 --
@@ -10,10 +10,10 @@ DROP SCHEMA IF EXISTS abv CASCADE;
 CREATE SCHEMA abv;
 
 
-CREATE TABLE abv.rollen(
+CREATE TABLE abv.soorten(
 	id SERIAL NOT NULL PRIMARY KEY
 );
-COMMENT ON COLUMN abv.rollen.id IS 'systeem UUID';
+COMMENT ON COLUMN abv.soorten.id IS 'systeem UUID';
 
 CREATE TABLE abv.ui_bewaarplaats_lijst(
 	id SERIAL NOT NULL PRIMARY KEY, 
@@ -24,6 +24,19 @@ COMMENT ON TABLE abv.ui_bewaarplaats_lijst 'Lijst van alle bewaarplaatsen';
 COMMENT ON COLUMN abv.ui_bewaarplaats_lijst.id IS 'systeem UUID';
 COMMENT ON COLUMN abv.ui_bewaarplaats_lijst.naam IS 'Naam van de bewaarplaats(Beheerder)';
 COMMENT ON COLUMN abv.ui_bewaarplaats_lijst.az IS 'eerste letter van de naam';
+
+CREATE TABLE abv.entiteit_basis(
+	id SERIAL NOT NULL PRIMARY KEY, 
+	_audit text
+);
+COMMENT ON TABLE abv.entiteit_basis 'Basis entiteit waar alle andere van overerven';
+COMMENT ON COLUMN abv.entiteit_basis.id IS 'systeem UUID';
+COMMENT ON COLUMN abv.entiteit_basis._audit IS 'link naar audit';
+
+CREATE TABLE abv.bibliografie_archieven(
+	id SERIAL NOT NULL PRIMARY KEY
+);
+COMMENT ON COLUMN abv.bibliografie_archieven.id IS 'systeem UUID';
 
 CREATE TABLE abv.bronbeschrijvingen(
 	id SERIAL NOT NULL PRIMARY KEY
@@ -61,6 +74,13 @@ CREATE TABLE abv.functies_beroepen_activiteiten(
 );
 COMMENT ON COLUMN abv.functies_beroepen_activiteiten.id IS 'systeem UUID';
 
+CREATE TABLE abv.waarden(
+	id SERIAL NOT NULL PRIMARY KEY, 
+	waarde text NOT NULL, 
+	type_waarde_id int NOT NULL REFERENCES abv.type_waarden(id)
+);
+COMMENT ON COLUMN abv.waarden.id IS 'systeem UUID';
+
 CREATE TABLE abv.toegangen(
 	id SERIAL NOT NULL PRIMARY KEY
 );
@@ -70,11 +90,6 @@ CREATE TABLE abv.termen(
 	id SERIAL NOT NULL PRIMARY KEY
 );
 COMMENT ON COLUMN abv.termen.id IS 'systeem UUID';
-
-CREATE TABLE abv.soorten(
-	id SERIAL NOT NULL PRIMARY KEY
-);
-COMMENT ON COLUMN abv.soorten.id IS 'systeem UUID';
 
 CREATE TABLE abv.publicaties(
 	identificatienummer_id int REFERENCES abv.identificatienummers(id), 
@@ -100,6 +115,11 @@ COMMENT ON COLUMN abv.publicaties.plaats_van_uitgave IS 'naam van de plaats van 
 COMMENT ON COLUMN abv.publicaties.datum_uitgave IS 'datum van uitgave';
 COMMENT ON COLUMN abv.publicaties.url IS 'URL die verwijst naar een digitale versie van de publicatie';
 
+CREATE TABLE abv.rollen(
+	id SERIAL NOT NULL PRIMARY KEY
+);
+COMMENT ON COLUMN abv.rollen.id IS 'systeem UUID';
+
 CREATE TABLE abv.ui_archiefvormer_lijst(
 	id SERIAL NOT NULL PRIMARY KEY, 
 	naam text NOT NULL, 
@@ -123,18 +143,6 @@ CREATE TABLE abv.gebruiksgroepen(
 );
 COMMENT ON TABLE abv.gebruiksgroepen 'Lijst van groepen waartoe een gebruiker kan toe behoren';
 COMMENT ON COLUMN abv.gebruiksgroepen.id IS 'systeem UUID';
-
-CREATE TABLE abv.entiteit_basis(
-	id SERIAL NOT NULL PRIMARY KEY, 
-	_audit_id int REFERENCES abv.audit(id)
-);
-COMMENT ON TABLE abv.entiteit_basis 'Basis entiteit waar alle andere van overerven';
-COMMENT ON COLUMN abv.entiteit_basis.id IS 'systeem UUID';
-
-CREATE TABLE abv.bibliografie_archieven(
-	id SERIAL NOT NULL PRIMARY KEY
-);
-COMMENT ON COLUMN abv.bibliografie_archieven.id IS 'systeem UUID';
 
 CREATE TABLE abv.agenten(
 	identificatienummer_id int NOT NULL REFERENCES abv.identificatienummers(id), 
@@ -431,13 +439,6 @@ CREATE TABLE abv.vergelijkingen(
 	waarde text NOT NULL, 
 	type_vergelijking_id int NOT NULL REFERENCES abv.type_vergelijkingen(id)
 );
-
-CREATE TABLE abv.waarden(
-	id SERIAL NOT NULL PRIMARY KEY, 
-	waarde text NOT NULL, 
-	type_waarde_id int NOT NULL REFERENCES abv.type_waarden(id)
-);
-COMMENT ON COLUMN abv.waarden.id IS 'systeem UUID';
 
 CREATE TABLE abv.identificatienummers(
 	waarde text, 

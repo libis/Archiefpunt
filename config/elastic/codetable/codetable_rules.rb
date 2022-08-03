@@ -19,6 +19,7 @@ RULES = {
   'codetabel' => {
     'data' => {
       '@.hits.hits[*]._source' => lambda do |d, query|
+
         browse = filter(query, '$..bool..query')
         index = filter(query, '$..fields[0]')
 
@@ -32,6 +33,7 @@ RULES = {
 
         candidates = [candidates] unless candidates.is_a?(Array)
         {"#{findex[0]}": d[findex[0]].select{|s| candidates.include?(s['label'])}}
+        d
       end
     }
   }

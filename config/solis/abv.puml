@@ -7,7 +7,7 @@ skinparam componentStyle uml2
 skinparam wrapMessageWidth 100
 skinparam ArrowColor #Maroon
 
-title Archiefbank ontology - 1.0.0 - 2022-06-30 04:30:28 +0200
+title Archiefbank ontology - 1.0.0 - 2022-08-03 10:06:16 +0200
               
 package abv {
 
@@ -414,9 +414,9 @@ TypeConcept --|> Codetabel
 
 class EntiteitBasis{
 	{field} xsd:string : id 
-	{field} abv:Audit : _audit 
+	{field} xsd:anyURI : _audit 
 }
-Audit -  EntiteitBasis : _audit >
+
 
 class Ordeningsstatus{
 	{field} xsd:string : id 
@@ -430,29 +430,9 @@ class Gebruiksgroep{
 
 Gebruiksgroep --|> Codetabel
 
-class Audit{
-	{field} xsd:string : id 
-	{field} xsd:anyURI : change_set 
-	{field} xsd:anyURI : subject_of_change 
-}
-
-
-class UiArchiefvormerLijst{
-	{field} xsd:string : id 
-	{field} rdf:langString : naam 
-	{field} xsd:string : az 
-}
-
-
-class UiBewaarplaatsLijst{
-	{field} xsd:string : id 
-	{field} rdf:langString : naam 
-	{field} xsd:string : az 
-}
-
-
 hide circle
 hide methods
 hide empty members
+hide fields
 @enduml
           

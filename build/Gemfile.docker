@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem "json"
 gem 'puma'
 
-gem 'data_collector'
+gem 'data_collector', '0.12.0'
 gem 'hashdiff'
 gem 'connection_pool'
 gem 'http'

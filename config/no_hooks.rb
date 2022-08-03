@@ -3,17 +3,18 @@
 module Solis
   module HooksHelper
     def self.properties_to_hash(model)
-
       n = {}
       model.class.metadata[:attributes].each_key do |m|
-        if model.instance_variable_get("@#{m}").class.ancestors.include?(Solis::Model)
+        if model.instance_variable_get("@#{m}").is_a?(Array)
+          n[m] = model.instance_variable_get("@#{m}").map{|iv| iv.class.ancestors.include?(Solis::Model) ? properties_to_hash(iv) : iv}
+        elsif model.instance_variable_get("@#{m}").class.ancestors.include?(Solis::Model)
           n[m] = properties_to_hash(model.instance_variable_get("@#{m}"))
         else
           n[m] = model.instance_variable_get("@#{m}")
         end
       end
 
-      n
+      n.compact!
     end
 
     def self.hooks(queue)

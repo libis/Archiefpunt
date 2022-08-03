@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem "json"
 gem 'puma'
 
-gem 'data_collector'
+gem 'data_collector', '0.12.0'
 gem 'hashdiff'
 gem 'connection_pool'
 gem 'http'
@@ -15,7 +15,7 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'uuidtools'
 gem 'moneta'
-#gem 'rdkafka'
+
 gem 'listen'
 gem 'stopwords-filter', :require => 'stopwords'
 gem 'solis', path: '~/Dropbox/AllSources/ego/solis'
