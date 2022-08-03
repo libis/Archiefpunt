@@ -159,8 +159,8 @@ services:
 
   data-logic-api:
     image: registry.docker.libis.be/archiefpunt/logic
-    container_name: data-logic.api
-    hostname: data-logic.api
+    container_name: data_logic.api
+    hostname: data_logic.api
     environment:
       SERVICE_ROLE: data_logic
     volumes:
