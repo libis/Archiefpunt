@@ -10,3 +10,4 @@ build/gems
 **/*/config
 data/*
 *.iml
+.DS_Store
