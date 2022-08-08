@@ -11,7 +11,7 @@ module Solis
             after: lambda do |data|
               puts "-----------after - #{Graphiti.context[:object].query_user}"
 
-              data.map{|m| m._audit = "#{Solis::ConfigFile[:services][:audit_logic][:host]}#{Solis::ConfigFile[:services][:audit_logic][:base_path]}/list?id=#{m.id}&entity=#{m.class.name.underscore}"; m}
+              data.map{|m| m._audit = "#{Solis::ConfigFile[:solis_data][:graph_name].gsub(/\/$/,'')}#{Solis::ConfigFile[:services][:audit_logic][:base_path]}/list?id=#{m.id}&entity=#{m.class.name.underscore}"; m}
               audit_ids = data.map{|m| m.id}
 
               unless audit_ids.nil? || audit_ids.empty?

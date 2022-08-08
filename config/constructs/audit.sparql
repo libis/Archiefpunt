@@ -3,6 +3,7 @@ PREFIX abv: <https://data.archiefpunt.be/>
 
 construct {
     ?change_set a audit:Audit ;
+        audit:this_version ?this_version;
         audit:created_date ?created_date;
         audit:subject_of_change ?soc;
         audit:change_reason ?reason;
@@ -29,7 +30,10 @@ WHERE {
                 ?change_set	 audit:other_data ?data.
             }
 
-            bind(substr(str(?change_set), strlen(str(audit:change_sets))+2 ) as ?id)
+            bind(substr(str(?change_set), strlen(str(audit:change_sets))+2 ) as ?version_id)
+            bind(replace(substr(str(?soc), strlen(str(abv:))+1), '(.*)/(.*)', '$1') as ?entity)
+            bind(replace(substr(str(?soc), strlen(str(abv:))+1), '(.*)/(.*)', '$2') as ?id)
+            bind(uri(concat(substr(str(?change_set), 0, strlen(str(audit:change_sets))-11),'_logic/version?', 'id=', ?id, '&version_id=', ?version_id, '&entity=', ?entity)) as ?this_version)
         }  order by desc(?created_date)
     }
 }

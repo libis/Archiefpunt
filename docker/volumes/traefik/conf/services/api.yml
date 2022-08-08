@@ -58,6 +58,17 @@ http:
       middlewares:
       - "default-https"      
 
+    codetabel-api:
+      rule: "PathPrefix(`/_codetable`)"
+      tls: {}
+      entryPoints:
+        - "https"
+        - "http"
+      service: codetabel-api-svc
+      priority: 35
+      middlewares:
+        - "default-https"
+
     data-logic-api:
       rule: "PathPrefix(`/_logic`)"
       tls: {}
@@ -111,6 +122,11 @@ http:
       loadBalancer:
         servers:
         - url: http://browse.api:9292
+
+    codetabel-api-svc:
+      loadBalancer:
+        servers:
+          - url: http://codetabel.api:9292
 
     data-logic-api-svc:
       loadBalancer:
