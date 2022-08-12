@@ -19,3 +19,5 @@ gem 'moneta'
 gem 'listen'
 gem 'stopwords-filter', :require => 'stopwords'
 gem 'solis', path: '~/Dropbox/AllSources/ego/solis'
+
+gem 'psych', '< 4'
