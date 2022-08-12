@@ -60,9 +60,9 @@ def add_to_audit(data)
   id = data['entity']['id']
   graph = data['entity']['graph']
 
-  subject_of_change = "#{graph}/#{entity_plural.underscore}/#{id}".gsub(/\/{2,}/,'/')
+  subject_of_change = "#{graph}/#{entity_plural.underscore}/#{id}".gsub(/(?<!:)\/{2,}/,'/')
   diff = data['diff']
-  created_date = Date.parse(data['timestamp'])
+  created_date = DateTime.parse(data['timestamp'])
   creator_name = data['user'] || 'unknown'
   change_reason = data['change_reason'] || 'unknown'
   other_data = data['other_data'] || {}

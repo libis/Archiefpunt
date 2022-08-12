@@ -5,11 +5,11 @@ module Solis
         hooks: {
           read: {
             before: lambda do |scope|
-              puts "-----------before - #{Graphiti.context[:object].query_user}"
+              #puts "-----------before - #{Graphiti.context[:object].query_user}"
               scope
             end,
             after: lambda do |data|
-              puts "-----------after - #{Graphiti.context[:object].query_user}"
+              #puts "-----------after - #{Graphiti.context[:object].query_user}"
 
               data.map{|m| m._audit = "#{Solis::ConfigFile[:solis_data][:graph_name].gsub(/\/$/,'')}#{Solis::ConfigFile[:services][:audit_logic][:base_path]}/list?id=#{m.id}&entity=#{m.class.name.underscore}"; m}
               audit_ids = data.map{|m| m.id}
