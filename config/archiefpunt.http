@@ -19,7 +19,7 @@ GET {{endpoint}}/_vandal
 GET {{endpoint}}/schema.json
 
 # De DATA en AUDIT api maken gebruik van JSON::API standaard
-
+# Alle data api's ondersteunen 'language' om data in een andere taal als het Nederlands op te slagen
 # DATA api
 ### Alle DATA API endpoibnts. Geef lijst van entiteiten in de DATA api
 GET {{endpoint}}
@@ -58,12 +58,62 @@ Accept: application/json
   "straat_en_nummer": "Debarkestraat 6"
 }
 
+###
+POST {{endpoint}}/naam
+Content-Type: application/json
+Accept: application/json
+
+{
+  "waarde": "Test naam",
+  "type_naam": {
+    "id": "13FD-53B2-FDB6-1996-976512CTTN9A"
+  }
+}
+
+###
+PUT {{endpoint}}/naam/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "waarde": "Test naam afkorting",
+  "type_naam": {
+    "id": "13FD-53B2-FDB6-1996-976512CTTN9A"
+  }
+}
+
+###
+PUT {{endpoint}}/naam/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "waarde": "Test naam afkorting",
+  "type_naam": {
+    "id": "13FD-53B2-FDB6-1996-976514CTTN9A"
+  }
+}
+
+###
+PUT {{endpoint}}/naam/?language=fr
+Content-Type: application/json
+Accept: application/json
+
+{
+  "waarde": "Test nom abréviation",
+  "type_naam": {
+    "id": "13FD-53B2-FDB6-1996-976514CTTN9A"
+  }
+}
+
+
 ### Opvragen adres als ttl bestand
 GET {{endpoint}}adressen/36f318a0-9d79-48fd-9555-7011f68401b2
 Accept: text/turtle
 
 ### Alternatieve manier om adres op te vragen als ttl bestand
 GET {{endpoint}}adressen/36f318a0-9d79-48fd-9555-7011f68401b2?accept=text/turtle
+Accept: application/json
 
 ### Opvragen mogelijke browse indexen
 GET {{endpoint}}_browse/help
