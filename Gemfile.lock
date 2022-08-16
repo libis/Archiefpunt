@@ -1,7 +1,7 @@
 PATH
   remote: ../ego/solis
   specs:
-    solis (0.53.0)
+    solis (0.55.0)
       activesupport (~> 6.1)
       connection_pool (~> 2.2.5)
       dry-struct (~> 1.2)
@@ -13,6 +13,7 @@ PATH
       json (~> 2.5)
       linkeddata (~> 3.2)
       moneta (~> 1.4)
+      psych (< 4)
       uuidtools (~> 2.2.0)
 
 GEM

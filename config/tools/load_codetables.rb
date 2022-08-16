@@ -6,6 +6,10 @@ require 'pp'
 require 'uuidtools'
 require 'active_support/all'
 
+def solis_conf
+  Solis::ConfigFile[:services][:data][:solis]
+end
+
 def encode_id(data)
   data.unpack("H*")[0].to_i(16).to_s(36)
 end
@@ -17,7 +21,7 @@ end
 key = Solis::ConfigFile[:key]
 code_table_id = '1jcpRRt13mMlZzUtNntsEE6tA4DZCnzKnzvT8hMf4wkM'
 
-solis = Solis::Graph.new(Solis::Shape::Reader::File.read(Solis::ConfigFile[:shape]), Solis::ConfigFile[:solis])
+solis = Solis::Graph.new(Solis::Shape::Reader::File.read(solis_conf[:shape]), solis_conf)
 session = SimpleSheets.new(key, code_table_id)
 sheets = {}
 session.worksheets.each do |worksheet|
