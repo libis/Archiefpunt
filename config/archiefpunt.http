@@ -1,0 +1,153 @@
+# DATA API tools
+### Documentatie
+GET {{endpoint}}/_doc
+
+### Lijst van export formaten die in een Accept header gebruikt kunnen worden
+GET {{endpoint}}/_formats
+Accept: application/json
+
+### Sparql Client
+GET {{endpoint}}/_yas
+
+### Sparql Read only endpoint
+POST {{endpoint}}/_sparql
+
+### JSON::API client
+GET {{endpoint}}/_vandal
+
+### JSON::API schema voor een JSON::API client
+GET {{endpoint}}/schema.json
+
+# De DATA en AUDIT api maken gebruik van JSON::API standaard
+
+# DATA api
+### Alle DATA API endpoibnts. Geef lijst van entiteiten in de DATA api
+GET {{endpoint}}
+Accept: application/json
+Authorization: Bearer {{apikey}}
+
+### Lijst van alle archieven
+GET {{endpoint}}archieven
+Accept: application/json
+
+### Lijst Archieven pagina 3 met 5 records op scherm. Zie JSON::API documentatie voor alle parameters
+GET {{endpoint}}archieven?page[number]=3&page[size]=5
+Accept: application/json
+
+### Maak een nieuw adres, gebruik enkel referentie naar gemeente als ze bestaat
+POST {{endpoint}}adressen
+Content-Type: application/json
+
+{
+  "straat_en_nummer": "Debarkestraat 6-8",
+  "gemeente":{
+    "id": "PL8E-C308-A2D9-9960-F2BF2405GM9A"
+  }
+}
+
+### Filter alle plaatsen met postcode 8660
+GET {{endpoint}}_browse?query=plaats:8660&bulkSize=5
+Accept: application/json
+
+### Aanpassen van adres
+PUT {{endpoint}}adressen/36f318a0-9d79-48fd-9555-7011f68401b2
+Content-Type: application/json
+Accept: application/json
+
+{
+  "straat_en_nummer": "Debarkestraat 6"
+}
+
+### Opvragen adres als ttl bestand
+GET {{endpoint}}adressen/36f318a0-9d79-48fd-9555-7011f68401b2
+Accept: text/turtle
+
+### Alternatieve manier om adres op te vragen als ttl bestand
+GET {{endpoint}}adressen/36f318a0-9d79-48fd-9555-7011f68401b2?accept=text/turtle
+
+### Opvragen mogelijke browse indexen
+GET {{endpoint}}_browse/help
+Accept: application/json
+
+### Opvragen mogelijke search indexen
+GET {{endpoint}}_search/help
+Accept: application/json
+
+### Opvragen codetabellen
+GET {{endpoint}}_codetables/help
+Accept: application/json
+
+### Opvragen alle codetabellen
+GET {{endpoint}}_codetable?query=any:*
+Accept: application/json
+
+### Opvragen alle onderwerpen beginnen met de letter 'w'
+GET {{endpoint}}_codetable?query=onderwerp:w
+Accept: application/json
+
+# LOGIC functies worden op data toegepast. Er zijn 2 data api's. 1 voor de archief data en 1 voor de audit data.
+# LOGIC functies zijn Business rules.
+# Alle resultaten van logic functies worden gecached om geen gecachte resultaten
+# te hebben kan er de query paramter from_cache=0/1 toegevoegd worden
+
+# LOGIC functies op de DATA api
+### Opvragen alle logic functies
+GET {{endpoint}}_logic
+Accept: application/json
+
+### Opvragen van alle plaatsen key/value
+GET {{endpoint}}_logic/plaats
+Accept: application/json
+
+### A-Z lijst van archiefvormers
+GET {{endpoint}}/_logic/ui_archiefvormer_lijst
+Accept: application/json
+
+### A-Z lijst van bewaarplaatsen
+GET {{endpoint}}/_logic/ui_bewaarplaats_lijst
+Accept: application/json
+
+### Ophalen van een archief zonder linkrelaties
+GET {{endpoint}}_logic/archief?id=1007-A4B8-B8EB-4196-A4134440AE9A
+Accept: application/json
+
+### Ophalen van een beheerder zonder linkrelaties
+GET {{endpoint}}_logic/beheerder?id=108d7177-9853-4360-b4cb-3a767593e39c
+Accept: application/json
+
+### Ophalen van een samensteller zonder linkrelaties
+GET {{endpoint}}_logic/samensteller?id=1bbb7a03-4327-4d23-86f6-1899f4eb872f
+Accept: application/json
+
+# LOGIC functies op de AUDIT api
+### Opvragen alle logic functies
+GET {{endpoint}}_audit/_logic
+Accept: application/json
+
+# Entity mag enkel of meervoud zijn
+### Lijst van wijzigingen opvragen voor een adres
+GET {{endpoint}}_audit/_logic/list?id=36f318a0-9d79-48fd-9555-7011f68401b2&entity=adres
+Accept: application/json
+
+### Specifieke versie ophalen
+GET {{endpoint}}_audit/_logic/version?id=1007-A4B8-B8EB-4196-A4134440AE9A&version_id=3ec499d8-1970-45fa-9bac-ac376d0fdcdd&entity=archieven
+Accept: application/json
+
+### Verschil ophalen tussen 2 versies
+GET {{endpoint}}_audit/_logic/diff?id=1007-A4B8-B8EB-4196-A4134440AE9A&original_version_id=136afb1a-e66d-4baf-a6c6-c3f0f3a63ca3&changed_version_id=9abfa499-3cd7-43ce-834b-0ca831994c99&entity=archief&from_cache=0
+Accept: application/json
+
+### Een oude versie terugzetten
+GET {{endpoint}}_audit/_logic/revert?id=1007-A4B8-B8EB-4196-A4134440AE9A&version_id=136afb1a-e66d-4baf-a6c6-c3f0f3a63ca3&entity=archief&from_cache=0
+Accept: application/json
+
+# AUDIT api
+
+### Alle AUDIT api endpoints. Enkel de change_sets endpoint wordt op dit ogenblik gebruikt
+GET {{endpoint}}_audit
+
+### Geeft een lijst van alle veranderingen
+GET {{endpoint}}_audit/change_sets
+
+### Geeft 1 verandering
+GET {{endpoint}}/change_sets/136afb1a-e66d-4baf-a6c6-c3f0f3a63ca3

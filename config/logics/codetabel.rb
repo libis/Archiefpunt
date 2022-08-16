@@ -3,7 +3,9 @@ require 'solis/options'
 require 'active_support/all'
 
 module Logic
-  def codetabel(params)
+  def codetabel(params={})
+    required_parameters(params, [:naam])
+
     if params['naam'].eql?('*')
       kv_codetabel = []
       codetabel_lijst.each do |v|

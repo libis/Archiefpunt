@@ -13,14 +13,14 @@ module Logic
     required_parameters(params, [:id, :entity])
 
     key = Solis::Query.uuid(params[:id])
-    result = cache[key] if cache.key?(key)
+    #result = cache[key] if cache.key?(key)
 
-    if result.nil? || (params.include?(:from_cache) && params[:from_cache].eql?('0'))
+    #if result.nil? || (params.include?(:from_cache) && params[:from_cache].eql?('0'))
 
       ids = params[:id].split(',').map { |m| "#{Solis::ConfigFile[:solis_data][:graph_name]}#{params[:entity].pluralize.underscore}/#{m}" }
       result = Solis::Query.run_construct_with_file('./config/constructs/audit.sparql', 'soc', 'Audit', ids, 0)
-      cache.store(key, result, expires: 86400)
-    end
+      # cache.store(key, result, expires: 86400)
+    #end
     result.to_json
   end
 
