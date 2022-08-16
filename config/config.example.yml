@@ -29,10 +29,12 @@
   :data:
     :host: "http://data.api:9292"
     :base_path: "/"
+    :ping_path: ""
     :solis: *SOLIS_DATA
   :search:
     :host: "http://search.api:9292"
     :base_path: "/_search"
+    :ping_path: "/ping"
     :rules: "./config/elastic/search/search_rules.rb"
     :elastic:
       :mapping: "./config/elastic/elastic.json"
@@ -49,6 +51,7 @@
   :browse:
     :host: "http://browse.api:9292"
     :base_path: "/_browse"
+    :ping_path: "/ping"
     :rules: "./config/elastic/browse/browse_rules.rb"
     :elastic:
       :mapping: "./config/elastic/elastic.json"
@@ -65,20 +68,24 @@
   :audit:
     :host: "http://audit.api:9292"
     :base_path: "/_audit"
+    :ping_path: ""
     :solis: *SOLIS_AUDIT
   :logic:
     :host: "http://logic.api:9292"
     :base_path: "/_logic"
+    :ping_path: "/ping"
     :logics: ./config/logics
     :solis: *SOLIS_DATA
   :audit_logic:
     :host: "http://audit_logic.api:9292"
     :base_path: "/_audit/_logic"
+    :ping_path: "/ping"
     :logics: ./config/audit_logics
     :solis: *SOLIS_AUDIT
   :codetable:
     :host: "http://codetabel.api:9292"
     :base_path: "/_codetable"
+    :ping_path: "/ping"
     :rules: "./config/elastic/codetable/codetable_rules.rb"
     :elastic:
       :mapping: "./config/elastic/elastic.json"
@@ -96,6 +103,7 @@
   :policy_agent:
     :host: "http://policy.agent:9292"
     :base_path: "/"
+    :ping_path: "/ping"
     :opa:
       :url: http://opa:8181/v1/data
       :policy: /archiefpunt/authz/allow
