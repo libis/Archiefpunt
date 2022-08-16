@@ -58,8 +58,8 @@ Accept: application/json
   "straat_en_nummer": "Debarkestraat 6"
 }
 
-###
-POST {{endpoint}}/naam
+### Aanmaken van een nieuwe naam
+POST {{endpoint}}/namen
 Content-Type: application/json
 Accept: application/json
 
@@ -70,8 +70,12 @@ Accept: application/json
   }
 }
 
-###
-PUT {{endpoint}}/naam/
+### Ophalen van naam adhv een id
+GET {{endpoint}}/namen/dc796f2f-d5fb-41c2-a139-bd74a4c5569e
+Accept: application/json
+
+### Aanpassen van de waarde van naam
+PUT {{endpoint}}/namen/dc796f2f-d5fb-41c2-a139-bd74a4c5569e
 Content-Type: application/json
 Accept: application/json
 
@@ -82,8 +86,8 @@ Accept: application/json
   }
 }
 
-###
-PUT {{endpoint}}/naam/
+### Aanpassen van naam type
+PUT {{endpoint}}/namen/dc796f2f-d5fb-41c2-a139-bd74a4c5569e
 Content-Type: application/json
 Accept: application/json
 
@@ -94,8 +98,8 @@ Accept: application/json
   }
 }
 
-###
-PUT {{endpoint}}/naam/?language=fr
+### Toevoegen van Franse vertaling voor naam waarde
+PUT {{endpoint}}/namen/dc796f2f-d5fb-41c2-a139-bd74a4c5569e?language=fr
 Content-Type: application/json
 Accept: application/json
 
@@ -106,6 +110,10 @@ Accept: application/json
   }
 }
 
+
+### Ophalen van Franse waarde van naam
+GET {{endpoint}}/namen/dc796f2f-d5fb-41c2-a139-bd74a4c5569e?language=fr
+Accept: application/json
 
 ### Opvragen adres als ttl bestand
 GET {{endpoint}}adressen/36f318a0-9d79-48fd-9555-7011f68401b2
