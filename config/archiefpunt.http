@@ -110,7 +110,6 @@ Accept: application/json
   }
 }
 
-
 ### Ophalen van Franse waarde van naam
 GET {{endpoint}}/namen/dc796f2f-d5fb-41c2-a139-bd74a4c5569e?language=fr
 Accept: application/json
@@ -209,3 +208,24 @@ GET {{endpoint}}_audit/change_sets
 
 ### Geeft 1 verandering
 GET {{endpoint}}/change_sets/136afb1a-e66d-4baf-a6c6-c3f0f3a63ca3
+
+
+### Creatie van een samensteller.
+# identificatienummer object wordt automatisch aangemaakt. ook in embedded objecten zoals in agent en agent.naam
+POST {{endpoint}}/samensteller
+Content-Type: application/json
+Accept: application/json
+
+{
+  "agent": {
+    "type": {"id": "116cdbb4-409d-552d-9c02-3b8e4d151e63"},
+    "naam": [
+      {
+        "waarde": "test samensteller",
+        "type_naam": {"id": "13FD-53B2-FDB6-1996-976512CTTN9A"}
+      }
+    ],
+    "datering_systematisch": ["1920-08-17T11:07:14+01:00/1930-08-17T11:07:14+01:00"],
+    "datering_text": null
+  }
+}

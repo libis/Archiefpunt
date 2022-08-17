@@ -42,7 +42,7 @@ module Solis
                     end
                     inner_model.identificatienummer = Identificatienummer.new(id: model.id, waarde: 'Archiefpunt', type: {id: '13A6-70DC-CCB6-1996-97651CTTI9A4'})
                   else
-                    if inner_model.instance_variable_get(:'@identificatienummer').nil? && inner_model.class.metadata[:attributes].key?('identificatienummer')
+                    if model.class.metadata[:attributes][k][:node].is_a?(RDF::URI) && inner_model.instance_variable_get(:'@identificatienummer').nil? && inner_model.class.metadata[:attributes].key?('identificatienummer')
                       inner_model.identificatienummer = Identificatienummer.new(id: inner_model.id, waarde: 'Archiefpunt', type: {id: '13A6-70DC-CCB6-1996-97651CTTI9A4'})
                     end
                   end
