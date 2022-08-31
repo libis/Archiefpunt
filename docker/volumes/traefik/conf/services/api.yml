@@ -24,6 +24,7 @@ http:
       priority: 30
       middlewares:
       - "default-https"
+      - "opa-authz"
 
     audit-api:
       rule: "PathPrefix(`/_audit`)"
@@ -35,6 +36,7 @@ http:
       priority: 35
       middlewares:
       - "default-https"
+      - "opa-authz"
 
     search-api:
       rule: "PathPrefix(`/_search`)"
@@ -45,7 +47,8 @@ http:
       service: search-api-svc
       priority: 35
       middlewares:
-      - "default-https"      
+      - "default-https"
+      - "opa-authz"
 
     browse-api:
       rule: "PathPrefix(`/_browse`)"
@@ -56,7 +59,8 @@ http:
       service: browse-api-svc
       priority: 35
       middlewares:
-      - "default-https"      
+      - "default-https"
+      - "opa-authz"
 
     codetabel-api:
       rule: "PathPrefix(`/_codetable`)"
@@ -68,6 +72,7 @@ http:
       priority: 35
       middlewares:
         - "default-https"
+        - "opa-authz"
 
     data-logic-api:
       rule: "PathPrefix(`/_logic`)"
@@ -79,6 +84,7 @@ http:
       priority: 35
       middlewares:
       - "default-https"
+      - "opa-authz"
 
     audit-logic-api:
       rule: "PathPrefix(`/_audit/_logic`)"
@@ -90,6 +96,7 @@ http:
       priority: 34
       middlewares:
         - "default-https"
+        - "opa-authz"
 
     policy-agent:
       rule: "PathPrefix(`/`)"

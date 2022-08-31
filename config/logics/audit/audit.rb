@@ -17,9 +17,9 @@ module Logic
 
     #if result.nil? || (params.include?(:from_cache) && params[:from_cache].eql?('0'))
 
-      ids = params[:id].split(',').map { |m| "#{Solis::ConfigFile[:solis_data][:graph_name]}#{params[:entity].pluralize.underscore}/#{m}" }
-      result = Solis::Query.run_construct_with_file('./config/constructs/audit.sparql', 'soc', 'Audit', ids, 0)
-      # cache.store(key, result, expires: 86400)
+    ids = params[:id].split(',').map { |m| "#{Solis::ConfigFile[:solis_data][:graph_name]}#{params[:entity].pluralize.underscore}/#{m}" }
+    result = Solis::Query.run_construct_with_file('./config/constructs/audit.sparql', 'soc', 'Audit', ids, 0)
+    # cache.store(key, result, expires: 86400)
     #end
     result.to_json
   end
@@ -71,21 +71,70 @@ module Logic
 
     result = HTTP.put(id_url, json: version_data)
 
-    if result.status==200
+    if result.status == 200
       result_from_api = HTTP.get(id_url)
       if result_from_api.status == 200
         return result.body.to_s
       else
-        api_error(500, '', 'Error reverting', 'Unable to load from DATA api')
+        raise RuntimeError, api_error(500, '', 'Error reverting', 'Unable to load from DATA api')
       end
     else
-      $SOLIS::LOGGER.error(result.body.to_s)
-      api_error(500, '', 'Error reverting', '')
+      LOGGER.error(result.body.to_s)
+      error_data = JSON.parse(result.body.to_s)
+      if error_data && error_data.key?('errors')
+        error_detail = error_data['errors'].first['detail']
+        raise RuntimeError, api_error(500, '', 'Error reverting', error_detail)
+      else
+        raise RuntimeError, api_error(500, '', 'Error reverting', 'Not possible to revert record')
+      end
+
     end
   rescue StandardError => e
-    $SOLIS::LOGGER.error(e.message)
-    {}.to_json
-    api_error(500, '', 'Error reverting', e.message)
+    raise e
+  end
+
+  def list_changes_for_creator(params = {})
+    required_parameters(params, [:groep, :van_date])
+    #    result = cache["change_set_#{params[:creator]}"] || nil
+
+    #if result.nil? || result.empty? || (params.key?(:from_cache) && params[:from_cache].eql?('0'))
+    from_date = Date.parse(params[:van_date]).strftime('%Y-%m-%d')
+    group = params[:groep] || ''
+    name = params[:naam] || ''
+
+    query = %(
+PREFIX audit: <https://data.archiefpunt.be/_audit/>
+
+select ?subject_of_change ?creator_name ?reason (max(?created_date) as ?change_date)  where {
+  values ?name {"#{name}"}
+  values ?group {"#{group}"}
+ ?s		audit:creator_name ?creator_name;
+      	audit:created_date ?created_date;
+	    audit:change_reason ?reason;
+	    audit:subject_of_change ?subject_of_change;
+        a audit:ChangeSet.
+
+   optional {
+   ?s     audit:creator_group ?creator_group.
+  }
+
+  filter(?created_date >= '#{from_date}'^^xsd:dateTime)
+
+  filter(!isLiteral(?group) || ?group = ?creator_name || (?group = "" && not exists {?s ?p ?other_group. filter(isLiteral(?other_group) && ?other_group = ?group)}))
+  filter(!isLiteral(?name) || ?name = ?creator_name || (?name = "" && not exists {?s ?p ?other_name. filter(isLiteral(?other_name) && ?other_name = ?name)}))
+}
+group by ?subject_of_change ?creator_name ?reason ?created_date
+order by ?subject_of_change
+    )
+
+    puts query
+
+    result = Solis::Query.run('ChangeSet', query)
+    #      cache.store("change_set_#{params[:creator]}", result, expires: 86400)
+    #    end
+    result.to_json
+  rescue StandardError => e
+    raise RuntimeError, api_error(500, '', 'Error loading change list', e.message)
   end
 
   private

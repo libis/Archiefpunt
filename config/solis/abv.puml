@@ -7,7 +7,7 @@ skinparam componentStyle uml2
 skinparam wrapMessageWidth 100
 skinparam ArrowColor #Maroon
 
-title Archiefbank ontology - 1.0.0 - 2022-08-03 10:06:16 +0200
+title Archiefbank ontology - 1.0.1 - 2022-08-26 11:45:34 +0200
               
 package abv {
 
@@ -173,6 +173,18 @@ Identificatienummer -  Concept : identificatienummer >
 TypeConcept -  Concept : type >
 Concept --|> EntiteitBasis
 
+class Datering{
+	{field} xsd:string : id 
+}
+
+Datering --|> EntiteitBasis
+
+class EntiteitBasis{
+	{field} xsd:string : id 
+	{field} xsd:anyURI : _audit 
+}
+
+
 class Erkenning{
 	{field} xsd:string : id 
 }
@@ -191,6 +203,12 @@ class FunctieBeroepActiviteit{
 
 FunctieBeroepActiviteit --|> Concept
 
+class Gebruiksgroep{
+	{field} xsd:string : id 
+}
+
+Gebruiksgroep --|> Codetabel
+
 class Identificatienummer{
 	{field} rdf:langString : waarde 
 	{field} abv:TypeIdentificatienummer : type 
@@ -207,6 +225,12 @@ class JuridischeBeperking{
 }
 
 JuridischeBeperking --|> EntiteitBasis
+
+class Materiaalsoort{
+	{field} xsd:string : id 
+}
+
+Materiaalsoort --|> Codetabel
 
 class Naam{
 	{field} rdf:langString : waarde 
@@ -234,6 +258,12 @@ class Ordening{
 }
 Ordeningsstatus - "1" Ordening : trefwoord >
 Ordening --|> EntiteitBasis
+
+class Ordeningsstatus{
+	{field} xsd:string : id 
+}
+
+Ordeningsstatus --|> Codetabel
 
 class Periode{
 	{field} xsd:string : id 
@@ -264,6 +294,12 @@ class Publicatie{
 Identificatienummer -  Publicatie : identificatienummer >
 Naam -  Publicatie : auteur >
 Publicatie --|> EntiteitBasis
+
+class Raadplegingsstatus{
+	{field} xsd:string : id 
+}
+
+Raadplegingsstatus --|> Codetabel
 
 class Raadplegingsvoorwaarde{
 	{field} xsd:string : tekst 
@@ -336,6 +372,12 @@ class TypeAgent{
 
 TypeAgent --|> Codetabel
 
+class TypeConcept{
+	{field} xsd:string : id 
+}
+
+TypeConcept --|> Codetabel
+
 class TypeIdentificatienummer{
 	{field} xsd:string : id 
 }
@@ -388,51 +430,27 @@ Waarde -  Waardering : waarde >
 Vergelijking -  Waardering : vergelijking >
 Waardering --|> EntiteitBasis
 
-class Materiaalsoort{
+class Test{
 	{field} xsd:string : id 
+	{field} xsd:integer : integer_dt 
+	{field} xsd:string : string_dt 
+	{field} xsd:date : date_dt 
+	{field} xsd:gYear : year_dt 
+	{field} xsd:duration : duration_dt 
+	{field} rdf:JSON : json_dt 
+	{field} xsd:anyURI : uri_dt 
+	{field} rdf:langString : lang_string_dt 
+	{field} rdf:langString : lang_string_array_dt 
+	{field} xsd:boolean : boolean_dt 
+	{field} xsd:float : float_dt 
+	{field} xsd:double : double_dt 
+	{field} xsd:dateTime : datetime_dt 
+	{field} xsd:time : time_dt 
 }
 
-Materiaalsoort --|> Codetabel
-
-class Datering{
-	{field} xsd:string : id 
-}
-
-Datering --|> EntiteitBasis
-
-class Raadplegingsstatus{
-	{field} xsd:string : id 
-}
-
-Raadplegingsstatus --|> Codetabel
-
-class TypeConcept{
-	{field} xsd:string : id 
-}
-
-TypeConcept --|> Codetabel
-
-class EntiteitBasis{
-	{field} xsd:string : id 
-	{field} xsd:anyURI : _audit 
-}
-
-
-class Ordeningsstatus{
-	{field} xsd:string : id 
-}
-
-Ordeningsstatus --|> Codetabel
-
-class Gebruiksgroep{
-	{field} xsd:string : id 
-}
-
-Gebruiksgroep --|> Codetabel
 
 hide circle
 hide methods
 hide empty members
-hide fields
 @enduml
           

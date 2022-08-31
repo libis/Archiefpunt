@@ -1,5 +1,5 @@
 --
--- Archiefbank ontology - 1.0.0 - 2022-08-03 10:06:17 +0200
+-- Archiefbank ontology - 1.0.1 - 2022-08-26 11:45:34 +0200
 -- description: Archiefbank ontology
 -- author: Archiefpunt, Meemo, KADOC, LIBIS
 --
@@ -10,28 +10,91 @@ DROP SCHEMA IF EXISTS abv CASCADE;
 CREATE SCHEMA abv;
 
 
+CREATE TABLE abv.rollen(
+	id SERIAL NOT NULL PRIMARY KEY
+);
+COMMENT ON COLUMN abv.rollen.id IS 'systeem UUID';
+
+CREATE TABLE abv.testen(
+	id SERIAL NOT NULL PRIMARY KEY, 
+	integer_dt integer, 
+	string_dt text, 
+	date_dt date, 
+	year_dt text, 
+	duration_dt text, 
+	json_dt text, 
+	uri_dt text, 
+	lang_string_dt text, 
+	lang_string_array_dt text NOT NULL, 
+	boolean_dt bool, 
+	float_dt text, 
+	double_dt text, 
+	datetime_dt text, 
+	time_dt text
+);
+COMMENT ON TABLE abv.testen 'Dit is een test construct mag weg bij productie overgang';
+COMMENT ON COLUMN abv.testen.id IS 'unique record identifier';
+COMMENT ON COLUMN abv.testen.integer_dt IS 'an integer value';
+COMMENT ON COLUMN abv.testen.string_dt IS 'a string value NO language specified';
+COMMENT ON COLUMN abv.testen.date_dt IS 'a date time type';
+COMMENT ON COLUMN abv.testen.year_dt IS 'just a year of a date';
+
 CREATE TABLE abv.soorten(
 	id SERIAL NOT NULL PRIMARY KEY
 );
 COMMENT ON COLUMN abv.soorten.id IS 'systeem UUID';
 
-CREATE TABLE abv.ui_bewaarplaats_lijst(
-	id SERIAL NOT NULL PRIMARY KEY, 
-	naam text NOT NULL, 
-	az text NOT NULL
+CREATE TABLE abv.functies_beroepen_activiteiten(
+	id SERIAL NOT NULL PRIMARY KEY
 );
-COMMENT ON TABLE abv.ui_bewaarplaats_lijst 'Lijst van alle bewaarplaatsen';
-COMMENT ON COLUMN abv.ui_bewaarplaats_lijst.id IS 'systeem UUID';
-COMMENT ON COLUMN abv.ui_bewaarplaats_lijst.naam IS 'Naam van de bewaarplaats(Beheerder)';
-COMMENT ON COLUMN abv.ui_bewaarplaats_lijst.az IS 'eerste letter van de naam';
+COMMENT ON COLUMN abv.functies_beroepen_activiteiten.id IS 'systeem UUID';
 
-CREATE TABLE abv.entiteit_basis(
-	id SERIAL NOT NULL PRIMARY KEY, 
-	_audit text
+CREATE TABLE abv.gebruiksgroepen(
+	id SERIAL NOT NULL PRIMARY KEY
 );
-COMMENT ON TABLE abv.entiteit_basis 'Basis entiteit waar alle andere van overerven';
-COMMENT ON COLUMN abv.entiteit_basis.id IS 'systeem UUID';
-COMMENT ON COLUMN abv.entiteit_basis._audit IS 'link naar audit';
+COMMENT ON TABLE abv.gebruiksgroepen 'Lijst van groepen waartoe een gebruiker kan toe behoren';
+COMMENT ON COLUMN abv.gebruiksgroepen.id IS 'systeem UUID';
+
+CREATE TABLE abv.publicaties(
+	identificatienummer_id int REFERENCES abv.identificatienummers(id), 
+	bibliografische_verwijzing text, 
+	auteur_id int REFERENCES abv.namen(id), 
+	titel text NOT NULL, 
+	reeks text, 
+	reeksnummer text, 
+	uitgever text, 
+	plaats_van_uitgave text, 
+	datum_uitgave date, 
+	url text
+);
+COMMENT ON TABLE abv.publicaties 'bibliografische informatie voor publicaties die een toegang op een archiefbestand vormen, over het archiefbestand gaan of de directe informatiebron zijn voor de archiefbeschrijving. sterk aanbevolen om zoveel mogelijk externe identificatienummers voor de publicatie op te nemen. mogelijkheid om ofwel een tekststring met een volledige bibliografische referentie op te nemen, ofwel een gestructureerde beschrijving van de publicatie. de gestructureerde beschrijving maakt publicaties beter doorzoekbaar binnen archiefbank.';
+COMMENT ON COLUMN abv.publicaties.identificatienummer_id IS 'Identificatienummer voor de publicatie';
+COMMENT ON COLUMN abv.publicaties.bibliografische_verwijzing IS 'volledige bibliografische verwijzing naar de publicatie';
+COMMENT ON COLUMN abv.publicaties.auteur_id IS 'auteur van de publicatie';
+COMMENT ON COLUMN abv.publicaties.titel IS 'titel van de publicatie';
+COMMENT ON COLUMN abv.publicaties.reeks IS 'titel van de reeks waarin de publicatie verschijnt';
+COMMENT ON COLUMN abv.publicaties.reeksnummer IS 'rangnummer van de publicatie binnen de reeks';
+COMMENT ON COLUMN abv.publicaties.uitgever IS 'naam van de uitgever van de publicatie';
+COMMENT ON COLUMN abv.publicaties.plaats_van_uitgave IS 'naam van de plaats van uitgave';
+COMMENT ON COLUMN abv.publicaties.datum_uitgave IS 'datum van uitgave';
+COMMENT ON COLUMN abv.publicaties.url IS 'URL die verwijst naar een digitale versie van de publicatie';
+
+CREATE TABLE abv.waarden(
+	id SERIAL NOT NULL PRIMARY KEY, 
+	waarde text NOT NULL, 
+	type_waarde_id int NOT NULL REFERENCES abv.type_waarden(id)
+);
+COMMENT ON COLUMN abv.waarden.id IS 'systeem UUID';
+
+CREATE TABLE abv.toegangen(
+	id SERIAL NOT NULL PRIMARY KEY
+);
+COMMENT ON COLUMN abv.toegangen.id IS 'systeem UUID';
+
+CREATE TABLE abv.termen(
+	id SERIAL NOT NULL PRIMARY KEY
+);
+COMMENT ON COLUMN abv.termen.id IS 'systeem UUID';
 
 CREATE TABLE abv.bibliografie_archieven(
 	id SERIAL NOT NULL PRIMARY KEY
@@ -69,80 +132,13 @@ CREATE TABLE abv.dateringen(
 );
 COMMENT ON COLUMN abv.dateringen.id IS 'systeem UUID';
 
-CREATE TABLE abv.functies_beroepen_activiteiten(
-	id SERIAL NOT NULL PRIMARY KEY
-);
-COMMENT ON COLUMN abv.functies_beroepen_activiteiten.id IS 'systeem UUID';
-
-CREATE TABLE abv.waarden(
+CREATE TABLE abv.entiteit_basis(
 	id SERIAL NOT NULL PRIMARY KEY, 
-	waarde text NOT NULL, 
-	type_waarde_id int NOT NULL REFERENCES abv.type_waarden(id)
+	_audit text
 );
-COMMENT ON COLUMN abv.waarden.id IS 'systeem UUID';
-
-CREATE TABLE abv.toegangen(
-	id SERIAL NOT NULL PRIMARY KEY
-);
-COMMENT ON COLUMN abv.toegangen.id IS 'systeem UUID';
-
-CREATE TABLE abv.termen(
-	id SERIAL NOT NULL PRIMARY KEY
-);
-COMMENT ON COLUMN abv.termen.id IS 'systeem UUID';
-
-CREATE TABLE abv.publicaties(
-	identificatienummer_id int REFERENCES abv.identificatienummers(id), 
-	bibliografische_verwijzing text, 
-	auteur_id int REFERENCES abv.namen(id), 
-	titel text NOT NULL, 
-	reeks text, 
-	reeksnummer text, 
-	uitgever text, 
-	plaats_van_uitgave text, 
-	datum_uitgave date, 
-	url text
-);
-COMMENT ON TABLE abv.publicaties 'bibliografische informatie voor publicaties die een toegang op een archiefbestand vormen, over het archiefbestand gaan of de directe informatiebron zijn voor de archiefbeschrijving. sterk aanbevolen om zoveel mogelijk externe identificatienummers voor de publicatie op te nemen. mogelijkheid om ofwel een tekststring met een volledige bibliografische referentie op te nemen, ofwel een gestructureerde beschrijving van de publicatie. de gestructureerde beschrijving maakt publicaties beter doorzoekbaar binnen archiefbank.';
-COMMENT ON COLUMN abv.publicaties.identificatienummer_id IS 'Identificatienummer voor de publicatie';
-COMMENT ON COLUMN abv.publicaties.bibliografische_verwijzing IS 'volledige bibliografische verwijzing naar de publicatie';
-COMMENT ON COLUMN abv.publicaties.auteur_id IS 'auteur van de publicatie';
-COMMENT ON COLUMN abv.publicaties.titel IS 'titel van de publicatie';
-COMMENT ON COLUMN abv.publicaties.reeks IS 'titel van de reeks waarin de publicatie verschijnt';
-COMMENT ON COLUMN abv.publicaties.reeksnummer IS 'rangnummer van de publicatie binnen de reeks';
-COMMENT ON COLUMN abv.publicaties.uitgever IS 'naam van de uitgever van de publicatie';
-COMMENT ON COLUMN abv.publicaties.plaats_van_uitgave IS 'naam van de plaats van uitgave';
-COMMENT ON COLUMN abv.publicaties.datum_uitgave IS 'datum van uitgave';
-COMMENT ON COLUMN abv.publicaties.url IS 'URL die verwijst naar een digitale versie van de publicatie';
-
-CREATE TABLE abv.rollen(
-	id SERIAL NOT NULL PRIMARY KEY
-);
-COMMENT ON COLUMN abv.rollen.id IS 'systeem UUID';
-
-CREATE TABLE abv.ui_archiefvormer_lijst(
-	id SERIAL NOT NULL PRIMARY KEY, 
-	naam text NOT NULL, 
-	az text NOT NULL
-);
-COMMENT ON TABLE abv.ui_archiefvormer_lijst 'Lijst van alle archiefvormers';
-COMMENT ON COLUMN abv.ui_archiefvormer_lijst.id IS 'systeem UUID';
-COMMENT ON COLUMN abv.ui_archiefvormer_lijst.naam IS 'Naam van de archiefvomer(Samensteller)';
-COMMENT ON COLUMN abv.ui_archiefvormer_lijst.az IS 'eerste letter van de naam';
-
-CREATE TABLE abv.audit(
-	id SERIAL NOT NULL PRIMARY KEY, 
-	change_set text, 
-	subject_of_change text
-);
-COMMENT ON TABLE abv.audit 'Dit is een construct met een verwijzing naar de audits in de audit database';
-COMMENT ON COLUMN abv.audit.id IS 'system UUID';
-
-CREATE TABLE abv.gebruiksgroepen(
-	id SERIAL NOT NULL PRIMARY KEY
-);
-COMMENT ON TABLE abv.gebruiksgroepen 'Lijst van groepen waartoe een gebruiker kan toe behoren';
-COMMENT ON COLUMN abv.gebruiksgroepen.id IS 'systeem UUID';
+COMMENT ON TABLE abv.entiteit_basis 'Basis entiteit waar alle andere van overerven';
+COMMENT ON COLUMN abv.entiteit_basis.id IS 'systeem UUID';
+COMMENT ON COLUMN abv.entiteit_basis._audit IS 'link naar audit';
 
 CREATE TABLE abv.agenten(
 	identificatienummer_id int NOT NULL REFERENCES abv.identificatienummers(id), 
@@ -177,11 +173,6 @@ CREATE TABLE abv.talen(
 );
 COMMENT ON COLUMN abv.talen.id IS 'systeem UUID';
 
-CREATE TABLE abv.namen(
-	waarde text NOT NULL, 
-	type_naam_id int NOT NULL REFERENCES abv.type_namen(id)
-);
-
 CREATE TABLE abv.associaties(
 	plaats_id int REFERENCES abv.plaatsen(id), 
 	agent_id int REFERENCES abv.agenten(id), 
@@ -199,6 +190,11 @@ CREATE TABLE abv.plaatsen(
 );
 COMMENT ON TABLE abv.plaatsen 'capteert informatie over geografische locaties. Verwijzingen naar externe geografische thesauri is sterk aanbevolen. De beschrijving is uiterst beperkt gehouden, in de veronderstelling dat rijkere metadata, zoals historische namen, taalvarianten, maar ook coördinaten eenvoudig aan externe geografische thesauri ontleend kunnen worden. ';
 COMMENT ON COLUMN abv.plaatsen.identificatienummer_id IS 'Identificatienummer voor de publicatie';
+
+CREATE TABLE abv.namen(
+	waarde text NOT NULL, 
+	type_naam_id int NOT NULL REFERENCES abv.type_namen(id)
+);
 
 CREATE TABLE abv.type_agenten(
 	id SERIAL NOT NULL PRIMARY KEY

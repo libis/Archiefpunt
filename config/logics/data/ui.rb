@@ -18,21 +18,21 @@ module Logic
     raise RuntimeError, "Error loading 'ui_bewaarplaats_lijst'"
   end
 
-  def archief(params)
+  def archief(params={})
     required_parameters(params, [:id])
     resolve('./config/constructs/expanded_archief2.sparql', 'archief_id', 'Archief', params['id'], params['from_cache']).to_json
   rescue StandardError => e
     raise RuntimeError, "Error loading 'archief'"
   end
 
-  def beheerder(params)
+  def beheerder(params={})
     required_parameters(params, [:id])
     resolve('./config/constructs/expanded_beheerder.sparql', 'beheerder_id', 'Beheerder', params['id'], params['from_cache']).to_json
   rescue StandardError => e
     raise RuntimeError, "Error loading 'beheerder'"
   end
 
-  def samensteller(params)
+  def samensteller(params={})
     required_parameters(params, [:id])
     resolve('./config/constructs/expanded_samensteller.sparql', 'samensteller_id', 'Samensteller', params['id'], params['from_cache']).to_json
   rescue StandardError => e

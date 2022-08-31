@@ -18,8 +18,8 @@ module Solis
                 bronverwijzingen = Solis::Query.run_construct_with_file('./config/constructs/bronverwijzing.sparql','archief_id', 'Archief', audit_ids)
 
                 if data && bronverwijzingen && !bronverwijzingen.empty?
-                  data.first.bronverwijzing_archief = bronverwijzingen.first['archiefbestand'].first
-                  data.first.bronverwijzing_record  = bronverwijzingen.first['archiefbankrecord'].first
+                  data.first.bronverwijzing_archief = bronverwijzingen.first['archiefbestand'].is_a?(Array) ? bronverwijzingen.first['archiefbestand'].first : bronverwijzingen.first['archiefbestand']
+                  data.first.bronverwijzing_record  = bronverwijzingen.first['archiefbankrecord'].is_a?(Array) ? bronverwijzingen.first['archiefbankrecord'].first : bronverwijzingen.first['archiefbankrecord']
                 end
               end
               data

@@ -1,6 +1,30 @@
-{ "acl": {
-    "antenna": ["full"],
-    "kadoc": ["read-only"]
+{
+  "acl": {
+    "antenna": [
+      "full"
+    ],
+    "KADOC": [
+      "full-min"
+    ],
+    "SYSTEM": [
+      "full"
+    ],
+    "ADVN": [
+      "full-min"
+    ],
+    "Liberas": [
+      "full-min"
+    ],
+    "Vlaams Architectuurinstituut": [
+      "full-min"
+    ]
   },
-  "roles": ["read-only", "full"]
+  "roles": [
+    "read-only",
+    "full",
+    "full-min"
+  ],
+  "readonlytabellen": [
+    "rechtenstatus"
+  ]
 }

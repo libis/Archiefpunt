@@ -1,0 +1,31 @@
+@startuml
+!pragma layout elk
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam groupInheritance 1
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+skinparam ArrowColor #Maroon
+
+title AUDIT ontology - 0.2 - 2022-08-30 15:37:15 +0200
+              
+package audit {
+
+class ChangeSet{
+	{field} xsd:string : id 
+	{field} rdf:JSON : diff 
+	{field} xsd:anyURI : subject_of_change 
+	{field} audit:ChangeSet : preceding_change_set 
+	{field} xsd:dateTime : created_date 
+	{field} xsd:string : change_reason 
+	{field} xsd:string : creator_name 
+	{field} xsd:string : creator_group 
+	{field} rdf:JSON : other_data 
+}
+ChangeSet - "1" ChangeSet : preceding_change_set >
+
+hide circle
+hide methods
+hide empty members
+@enduml
+          

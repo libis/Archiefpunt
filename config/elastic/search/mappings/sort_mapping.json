@@ -1,6 +1,6 @@
 {
-  "aTitel" : { "titel.keyword" : {"order" : "asc"}},
-  "dTitel" : { "titel.keyword" : {"order" : "desc"}},
-  "aDatering" : { "datering_text.keyword" : {"order" : "asc"}},
-  "dDatering" : { "datering_text.keyword" : {"order" : "desc"}}
+  "aTitel" : { "archief.titel.keyword" : {"order" : "asc"}, "samensteller.agent.naam.waarde.keyword" : {"order" : "asc"}, "beheerder.agent.naam.waarde.keyword" : {"order" : "asc"}},
+  "dTitel" : { "archief.titel.keyword" : {"order" : "desc"}, "samensteller.agent.naam.waarde.keyword" : {"order" : "desc"}, "beheerder.agent.naam.waarde.keyword" : {"order" : "desc"}},
+  "aDatering" : { "archief.datering_text.keyword" : {"order" : "asc"}, "samensteller.agent.datering_text.keyword" : {"order" : "asc"}},
+  "dDatering" : { "archief.datering_text.keyword" : {"order" : "desc"}, "samensteller.agent.datering_text.keyword" : {"order" : "desc"}}
 }

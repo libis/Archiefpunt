@@ -20,6 +20,7 @@
   :graph_prefix: audit
   :sparql_endpoint: http://virtuoso:8890/sparql
   :inflections: ./config/solis/audit.json
+  :language: nl
   :shape: ./config/solis/audit_shacl.ttl
 
 :services:
@@ -80,7 +81,7 @@
     :host: "http://audit_logic.api:9292"
     :base_path: "/_audit/_logic"
     :ping_path: "/ping"
-    :logics: ./config/audit_logics
+    :logics: ./config/audit
     :solis: *SOLIS_AUDIT
   :codetable:
     :host: "http://codetabel.api:9292"

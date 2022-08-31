@@ -1,54 +1,53 @@
 package archiefpunt.authz
-#docker-compose exec opa /opa eval -i /policies/input.json -d /policies/archiefpunt.rego 'data.policy.allow'
-#docker-compose exec opa /opa build --bundle --output /bundled_policies/archiefpunt.tar.gz ./policies
+
+#docker-compose exec opa /opa eval -i /policies/input.json -d /policies/archiefpunt.rego -d /policies/data.json 'data.archiefpunt.authz.allow'
+#docker-compose exec opa /opa build --bundle --output /bundled_policies/archiefpunt.tar.gz /policies
+
 
 import future.keywords.in
 
 import data.acl
 import data.roles
+import data.readonlytabellen
 
-default allow=false
+default allow = false
+
 runtime = opa.runtime()
 
-allow = true {
-    input.method == "GET"
+allow {
+	input.method == "GET"
+	token.valid
+	acl[token.user]
+
+	token.role[_] in roles
+}
+
+allow {
+    input.method in ["POST", "PUT"]
     token.valid
     acl[token.user]
 
-    token.role[_] in roles
+    token.role[_] = "full"
 }
 
-allow = true {
-    input.method == "POST"
-    token.valid
-    acl[token.user]
-
-    token.role[_] = "FULL"
-}
-
-allow = true {
-    input.method == "PUT"
-    token.valid
-    acl[token.user]
-
-    token.role[_] = "FULL"
-}
-
-allow = true {
+allow {
     input.method == "DELETE"
     token.valid
     acl[token.user]
 
-    token.role[_] = "FULL"
+    token.role[_] = "full"
+#    not input.path in readonlytabellen
 }
 
-token := {"valid": valid, "user": payload.user, "role": payload.role } {
+allow {
+    input.method in ["POST", "PUT", "DELETE"]
+    token.valid
+    acl[token.user]
+
+    token.role[_] == "full-min"
+    not input.path in readonlytabellen
+}
+
+token := {"valid": valid, "user": payload.user, "role": payload.role} {
 	[valid, _, payload] := io.jwt.decode_verify(input.token, {"secret": runtime.env.SECRET})
 }
-
-#acl := {
-#  "antenna": ["full"],
-#  "kadoc": ["read-only"]
-#}
-
-#roles := ["read-only", "full"]

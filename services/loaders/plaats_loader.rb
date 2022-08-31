@@ -7,7 +7,7 @@ require 'json'
 
 $SERVICE_ROLE = :search
 def logic_config
-  Solis::ConfigFile[:services][:logic]
+  Solis::ConfigFile[:services][:data_logic]
 end
 
 def elastic_config

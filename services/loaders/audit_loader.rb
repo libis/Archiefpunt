@@ -10,7 +10,7 @@ def add_to_audit(data)
   id = data['entity']['id']
   graph = data['entity']['graph']
 
-  subject_of_change = "#{graph}/#{entity_plural.underscore}/#{id}"#.gsub(/\/{2,}/,'/')
+  subject_of_change = "#{graph}/#{entity_plural.underscore}/#{id}"
   LOGGER.info("#{__method__}: #{entity}(#{subject_of_change})")
   diff = data['diff']
 
@@ -18,6 +18,15 @@ def add_to_audit(data)
   creator_name = data['user'] || 'unknown'
   change_reason = data['change_reason'] || 'unknown'
   other_data = data['other_data'] || {}
+
+  stat_data=STAT.find{|f| f['id'].eql?(id)}
+  if stat_data
+    LOGGER.info("Stats found")
+    created_date = stat_data['updater_at']
+    creator_name = stat_data['updater_name']
+    subject_of_change = stat_data['subject_of_change']
+    other_data = stat_data
+  end
 
   change_set = {
     subject_of_change: subject_of_change,
@@ -83,10 +92,9 @@ def load_entity(entity, total)
   while offset < total
     puts "#{entity} reading #{offset}/#{total}"
     ids = Solis::Query.run('', "SELECT DISTINCT ?s FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}#{entity}>.} limit #{limit} offset #{offset}").map { |m| m[:s] }
-    values = ids.map { |m| m.split('/').last }
+    #values = ids.map { |m| m.split('/').last }
+    values = ['AB94-7EA4-1EF3-9960-1F1161BW9A4D', 'AB94-7EA4-1EF3-9960-1F1162BW9A4D']
     context = OpenStruct.new(query_user: 'system', other_data: {}, language: DATA_SOLIS_CONF[:language])
-
-
       Graphiti::with_context(context) do
 
         query = {"filter"=>{"id"=>{"eq"=>values.join(',')}}, "entity"=>entity.pluralize.underscore, "stats"=>{"total"=>:count}}
@@ -111,10 +119,17 @@ LOGGER = Logger.new(STDOUT)
 DATA_SOLIS_CONF = Solis::ConfigFile[:services][:data][:solis]
 DATA_SOLIS = Solis::Graph.new(Solis::Shape::Reader::File.read(DATA_SOLIS_CONF[:shape]), DATA_SOLIS_CONF)
 
+puts "Loading stats"
+stat = JSON.parse(File.read('/Users/mehmetc/Tmp/stats.json'))
+STAT = stat.freeze
+puts "Done loading stats"
+
+
 totaal_archieven = Solis::Query.run('', "SELECT (COUNT(distinct ?s) as ?count) FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Archief>.}").first[:count].to_i
 totaal_beheerders = Solis::Query.run('', "SELECT (COUNT(distinct ?s) as ?count) FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Beheerder>.}").first[:count].to_i
 totaal_samenstellers = Solis::Query.run('', "SELECT (COUNT(distinct ?s) as ?count) FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Samensteller>.}").first[:count].to_i
 
+totaal_archieven=2
 load_entity('Archief', totaal_archieven)
-load_entity('Beheerder', totaal_beheerders)
-load_entity('Samensteller', totaal_samenstellers)
+#load_entity('Beheerder', totaal_beheerders)
+#load_entity('Samensteller', totaal_samenstellers)

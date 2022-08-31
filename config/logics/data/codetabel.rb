@@ -8,8 +8,8 @@ module Logic
 
     if params['naam'].eql?('*')
       kv_codetabel = []
-      codetabel_lijst.each do |v|
-        kv_codetabel << {id: v.underscore, label: v.classify}
+      _codetabel_lijst.each do |v|
+        kv_codetabel << {id: v.underscore, plural: v.pluralize.underscore, label: v.classify}
       end
       return kv_codetabel.to_json
     end
@@ -56,14 +56,21 @@ a abv:#{naam}.
     raise RuntimeError, "Error loading '#{naam}'. #{e.message}"
   end
 
+  def codetabel_lijst(params={})
+    _codetabel_lijst.to_json
+  rescue StandardError => e
+    puts e.message
+    raise RuntimeError, "Error: #{e.message}"
+  end
+
   private
-  def codetabel_lijst
+  def _codetabel_lijst
     c = Object.const_get('Codetabel'.to_sym)
     c.descendants.map{|m| m.name.to_s}
   end
 
   def codetable?(naam)
-    codetabel_lijst.include?(naam)
+    _codetabel_lijst.include?(naam)
     #    ct = Object.const_get(naam.to_sym)
     #    ct ? ct.metadata[:target_node].value.eql?("#{Solis::Options.instance.get[:graph_name]}CodetabelShape") : false
   rescue StandardError => e

@@ -1,136 +1,76 @@
-@prefix audit:  <https://data.archiefpunt.be/_audit/> .
-@prefix owl:    <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix dc:     <http://purl.org/dc/elements/1.1/> .
+@prefix audit: <https://data.archiefpunt.be/_audit/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix schema: <http://schema.org/> .
-@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
-@prefix dc11:   <http://purl.org/dc/terms/> .
-@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
-@prefix sh:     <http://www.w3.org/ns/shacl#> .
-@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix cs:     <http://purl.org/vocab/changeset/schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc11: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix cs: <http://purl.org/vocab/changeset/schema#> .
 
-audit:ChangeSetShape
-    a              sh:NodeShape ;
+                audit:ChangeSetShape
+    a               sh:NodeShape ;
     sh:description "" ;
-    sh:targetClass audit:ChangeSet ;
-    sh:node        audit:ChangeSet ;
-    sh:name        "ChangeSet" ;
-    sh:property    [ sh:path        audit:id ;
-                     sh:name        "id" ;
-                     sh:description "uuid" ;
-                     sh:datatype    xsd:string ;
-                     sh:minCount    1 ;
-                     sh:maxCount    1 ; ] ;
-    sh:property    [ sh:path        audit:diff ;
-                     sh:name        "diff" ;
-                     sh:description "changes in hashdiff format" ;
-                     sh:datatype    rdf:JSON ;
-                     sh:minCount    1 ;
-                     sh:maxCount    1 ; ] ;
-    sh:property    [ sh:path        audit:subject_of_change ;
-                     sh:name        "subject_of_change" ;
-                     sh:description "the resource to which this set of changes applies" ;
-                     sh:datatype    xsd:anyURI ;
-                     sh:maxCount    1 ; ] ;
-    sh:property    [ sh:path     audit:preceding_change_set ;
-                     sh:name     "preceding_change_set" ;
-                     sh:description
-                                 "This property can be used to build a history of changes to a particular resource description" ;
-                     sh:nodeKind sh:IRI ;
-                     sh:class    audit:ChangeSet ;
-                     sh:maxCount 1 ; ] ;
-    sh:property    [ sh:path        audit:created_date ;
-                     sh:name        "created_date" ;
-                     sh:description "the date that the changeset was created. The date should be in W3CDTF format" ;
-                     sh:datatype    xsd:dateTime ;
-                     sh:maxCount    1 ; ] ;
-    sh:property    [ sh:path        audit:change_reason ;
-                     sh:name        "change_reason" ;
-                     sh:description "a short, human readable description of the purpose for the changeset" ;
-                     sh:datatype    rdf:langString ;
-                     sh:maxCount    1 ; ] ;
-    sh:property    [ sh:path        audit:creator_name ;
-                     sh:name        "creator_name" ;
-                     sh:description "the name of the entity responsible for creating the changeset" ;
-                     sh:datatype    rdf:langString ;
-                     sh:maxCount    1 ; ] ;
-    sh:property    [ sh:path        audit:removal ;
-                     sh:name        "removal" ;
-                     sh:description "properties removed from entity" ;
-                     sh:nodeKind    sh:IRI ;
-                     sh:class       audit:Statement ; ] ;
-    sh:property    [ sh:path        audit:addition ;
-                     sh:name        "addition" ;
-                     sh:description "properties added to entity" ;
-                     sh:nodeKind    sh:IRI ;
-                     sh:class       audit:Statement ; ] ;
-    sh:property    [ sh:path        audit:change ;
-                     sh:name        "change" ;
-                     sh:description "properties changed in entity" ;
-                     sh:nodeKind    sh:IRI ;
-                     sh:class       audit:Statement ; ] ;
-    sh:property    [ sh:path        audit:other_data ;
-                     sh:name        "other_data" ;
-                     sh:description "data pushed from the enduser" ;
-                     sh:datatype    rdf:JSON ;
-                     sh:maxCount    1 ; ] ;
-.
-
-audit:AdditionShape
-    a              sh:NodeShape ;
-    sh:description "" ;
-    sh:targetClass audit:Addition ;
-    sh:node        audit:StatementShape ;
-    sh:name        "Addition" ;
-    sh:property    [ sh:path        audit:id ;
-                     sh:name        "id" ;
-                     sh:description "systeem UUID" ;
-                     sh:datatype    xsd:string ;
-                     sh:minCount    1 ;
-                     sh:maxCount    1 ; ] ;
-.
-
-audit:RemovalShape
-    a              sh:NodeShape ;
-    sh:description "" ;
-    sh:targetClass audit:Removal ;
-    sh:node        audit:StatementShape ;
-    sh:name        "Removal" ;
-    sh:property    [ sh:path        audit:id ;
-                     sh:name        "id" ;
-                     sh:description "systeem UUID" ;
-                     sh:datatype    xsd:string ;
-                     sh:minCount    1 ;
-                     sh:maxCount    1 ; ] ;
-.
-
-audit:StatementShape
-    a              sh:NodeShape ;
-    sh:description "" ;
-    sh:targetClass audit:Statement ;
-    sh:node        audit:Statement ;
-    sh:name        "Statement" ;
-    sh:property    [ sh:path        audit:id ;
-                     sh:name        "id" ;
-                     sh:description "uuid" ;
-                     sh:datatype    xsd:string ;
-                     sh:minCount    1 ;
-                     sh:maxCount    1 ; ] ;
-    sh:property    [ sh:path        audit:subject ;
-                     sh:name        "subject" ;
-                     sh:description "subject of the change" ;
-                     sh:datatype    xsd:anyURI ; ] ;
-    sh:property    [ sh:path        audit:predicate ;
-                     sh:name        "predicate" ;
-                     sh:description "predicate of the change" ;
-                     sh:datatype    xsd:anyURI ; ] ;
-    sh:property    [ sh:path        audit:object ;
-                     sh:name        "object" ;
-                     sh:description "the value/object of the change" ;
-                     sh:datatype    xsd:string ; ] ;
-    sh:property    [ sh:path        audit:graph ;
-                     sh:name        "graph" ;
-                     sh:description "the graph/namespace the change belongs to" ;
-                     sh:datatype    xsd:anyURI ; ] ;
+    sh:targetClass  audit:ChangeSet ;
+    sh:node         audit:ChangeSet ;
+                sh:name         "ChangeSet" ;
+    sh:property [sh:path audit:id ;
+                 sh:name "id";
+                 sh:description "uuid" ;
+                 sh:datatype xsd:string ;
+                 sh:minCount 1 ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path audit:diff ;
+                 sh:name "diff";
+                 sh:description "changes in hashdiff format" ;
+                 sh:datatype rdf:JSON ;
+                 sh:minCount 1 ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path audit:subject_of_change ;
+                 sh:name "subject_of_change";
+                 sh:description "the resource to which this set of changes applies" ;
+                 sh:datatype xsd:anyURI ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path audit:preceding_change_set ;
+                 sh:name "preceding_change_set" ;
+                 sh:description "This property can be used to build a history of changes to a particular resource description" ;
+                 sh:nodeKind sh:IRI ;
+                 sh:class    audit:ChangeSet ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path audit:created_date ;
+                 sh:name "created_date";
+                 sh:description "the date that the changeset was created. The date should be in W3CDTF format" ;
+                 sh:datatype xsd:dateTime ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path audit:change_reason ;
+                 sh:name "change_reason";
+                 sh:description "a short, human readable description of the purpose for the changeset" ;
+                 sh:datatype xsd:string ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path audit:creator_name ;
+                 sh:name "creator_name";
+                 sh:description "the name of the entity responsible for creating the changeset" ;
+                 sh:datatype xsd:string ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path audit:creator_group ;
+                 sh:name "creator_group";
+                 sh:description "the name of the group responsible for creating the changeset" ;
+                 sh:datatype xsd:string ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path audit:other_data ;
+                 sh:name "other_data";
+                 sh:description "data pushed from the enduser" ;
+                 sh:datatype rdf:JSON ;
+                 sh:maxCount 1 ;
+    ] ;
 .

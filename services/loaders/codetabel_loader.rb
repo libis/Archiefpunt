@@ -12,7 +12,7 @@ def elastic_config
 end
 
 def logic_config
-  Solis::ConfigFile[:services][:logic]
+  Solis::ConfigFile[:services][:data_logic]
 end
 
 def all_codetables

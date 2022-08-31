@@ -18,33 +18,60 @@ def elastic_config
   @elastic_config ||= Solis::ConfigFile[:services][:search][:elastic]
 end
 
+def is_codetabel?(entity)
+  @codetabellen ||= begin
+                    result = HTTP.get("#{SOLIS_CONF[:graph_name]}_logic/codetabel_lijst")
+                    if result.status == 200
+                      JSON.parse(result.body.to_s)
+                    else
+                      nil
+                    end
+                  end
+end
+
 def add_to_elastic(data)
   change = data['change_reason']
   entity = data['entity']['name']
   entity_id = "#{entity.underscore}_id"
   id = data['entity']['id']
 
-  constructs = {'Archief' => './config/constructs/expanded_archief2.sparql',
-                'Beheerder' => './config/constructs/expanded_beheerder.sparql',
-                'Samensteller' => './config/constructs/expanded_samensteller.sparql'}
-
-
-  filename = constructs[entity]
-  raise "#{entity} not registered for Elastic" if filename.nil? || filename.empty?
-
-  elastic_data = Solis::Query.run_construct_with_file(filename, entity_id, entity, id)
-  elastic_data = elastic_data.map{|m| {"#{entity.underscore}": m}}
-
-  case change
-  when 'create'
-    ELASTIC.index.insert(elastic_data, 'id', true)
-  when 'update'
-    ELASTIC.index.delete_data(elastic_data, 'id', true)
-    ELASTIC.index.insert(elastic_data, 'id', true)
-  when 'delete'
-    ELASTIC.index.delete_data(elastic_data, 'id', true)
+  if is_codetabel?(entity)
+    # elastic_data = {"#{entity}"}
+    #
+    # case change
+    # when 'create'
+    #   ELASTIC.index.insert(elastic_data, 'id', true)
+    # when 'update'
+    #   ELASTIC.index.delete_data(elastic_data, 'id', true)
+    #   ELASTIC.index.insert(elastic_data, 'id', true)
+    # when 'delete'
+    #   ELASTIC.index.delete_data(elastic_data, 'id', true)
+    # else
+    #   raise 'Unknown change request'
+    # end
   else
-    raise 'Unknown change request'
+    constructs = {'Archief' => './config/constructs/expanded_archief2.sparql',
+                  'Beheerder' => './config/constructs/expanded_beheerder.sparql',
+                  'Samensteller' => './config/constructs/expanded_samensteller.sparql'}
+
+
+    filename = constructs[entity]
+    raise "#{entity} not registered for Elastic" if filename.nil? || filename.empty?
+
+    elastic_data = Solis::Query.run_construct_with_file(filename, entity_id, entity, id)
+    elastic_data = elastic_data.map{|m| {"#{entity.underscore}": m}}
+
+    case change
+    when 'create'
+      ELASTIC.index.insert(elastic_data, 'id', true)
+    when 'update'
+      ELASTIC.index.delete_data(elastic_data, 'id', true)
+      ELASTIC.index.insert(elastic_data, 'id', true)
+    when 'delete'
+      ELASTIC.index.delete_data(elastic_data, 'id', true)
+    else
+      raise 'Unknown change request'
+    end
   end
   true
 rescue StandardError => e
