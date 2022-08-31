@@ -121,6 +121,7 @@ module Solis
         diff: diff,
         timestamp: Time.now,
         user: Graphiti.context[:object].query_user || 'unknown',
+        group: Graphiti.context[:object].query_group || 'unknown',
         misc: Graphiti.context[:object].other_data || {},
         change_reason: reason
       }
