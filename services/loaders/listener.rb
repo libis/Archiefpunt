@@ -91,6 +91,7 @@ def add_to_audit(data)
   diff = data['diff']
   created_date = DateTime.parse(data['timestamp'])
   creator_name = data['user'] || 'unknown'
+  creator_group = data['group'] || 'unknown'
   change_reason = data['change_reason'] || 'unknown'
   other_data = data['other_data'] || {}
 
@@ -99,6 +100,7 @@ def add_to_audit(data)
     diff: diff,
     created_date: created_date,
     creator_name: creator_name,
+    creator_group: creator_group,
     change_reason: change_reason,
     other_data: other_data
   }

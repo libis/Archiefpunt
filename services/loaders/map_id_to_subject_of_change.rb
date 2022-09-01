@@ -72,22 +72,3 @@ end
 File.open('/Users/mehmetc/Tmp/stats.json', 'wb') do |f|
   f.puts JSON.pretty_generate(stat)
 end
-
-
-
-
-# File.open('~/Tmp/stats.json', 'wb') do |f|
-#   f.puts['[']
-#   stat.each_with_index do |s,i |
-#     print "#{i}/#{stat.length}"
-#     q = find_soc_query(s['id'])
-#     data = Solis::Query.run('EntiteitBasis', q)
-#     unless data.nil? || data.empty?
-#       s['subject_of_change'] = data.map{|m| m[:subject_of_change]}.first
-#     end
-#
-#     f.puts JSON.pretty_generate(s)
-#     f.puts[','] if i != stat.length
-#   end
-#   f.puts[']']
-# end

@@ -10,7 +10,7 @@ def add_to_audit(data)
   id = data['entity']['id']
   graph = data['entity']['graph']
 
-  subject_of_change = "#{graph}/#{entity_plural.underscore}/#{id}"
+  subject_of_change = "#{graph}#{entity_plural.underscore}/#{id}"
   LOGGER.info("#{__method__}: #{entity}(#{subject_of_change})")
   diff = data['diff']
 
@@ -24,7 +24,8 @@ def add_to_audit(data)
     LOGGER.info("Stats found")
     created_date = stat_data['updater_at']
     creator_name = stat_data['updater_name']
-    subject_of_change = stat_data['subject_of_change']
+    creator_group= stat_data['updater_group']
+    subject_of_change = stat_data['subject_of_change'] if stat_data.key?('subject_of_change')
     other_data = stat_data
   end
 
@@ -33,6 +34,7 @@ def add_to_audit(data)
     diff: diff,
     created_date: created_date,
     creator_name: creator_name,
+    creator_group: creator_group,
     change_reason: change_reason,
     other_data: other_data
   }
@@ -81,6 +83,7 @@ def build_data(reason, diff, model)
     diff: diff,
     timestamp: Time.now,
     user: Graphiti.context[:object].query_user || 'unknown',
+    group: Graphiti.context[:object].query_group || 'unknown',
     misc: Graphiti.context[:object].other_data || {},
     change_reason: reason
   }
@@ -92,9 +95,8 @@ def load_entity(entity, total)
   while offset < total
     puts "#{entity} reading #{offset}/#{total}"
     ids = Solis::Query.run('', "SELECT DISTINCT ?s FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}#{entity}>.} limit #{limit} offset #{offset}").map { |m| m[:s] }
-    #values = ids.map { |m| m.split('/').last }
-    values = ['AB94-7EA4-1EF3-9960-1F1161BW9A4D', 'AB94-7EA4-1EF3-9960-1F1162BW9A4D']
-    context = OpenStruct.new(query_user: 'system', other_data: {}, language: DATA_SOLIS_CONF[:language])
+    values = ids.map { |m| m.split('/').last }
+    context = OpenStruct.new(query_user: 'system', query_group: 'system', other_data: {}, language: DATA_SOLIS_CONF[:language])
       Graphiti::with_context(context) do
 
         query = {"filter"=>{"id"=>{"eq"=>values.join(',')}}, "entity"=>entity.pluralize.underscore, "stats"=>{"total"=>:count}}
@@ -131,5 +133,5 @@ totaal_samenstellers = Solis::Query.run('', "SELECT (COUNT(distinct ?s) as ?coun
 
 totaal_archieven=2
 load_entity('Archief', totaal_archieven)
-#load_entity('Beheerder', totaal_beheerders)
-#load_entity('Samensteller', totaal_samenstellers)
+load_entity('Beheerder', totaal_beheerders)
+load_entity('Samensteller', totaal_samenstellers)

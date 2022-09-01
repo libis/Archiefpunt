@@ -3,49 +3,51 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX abv: <https://data.archiefpunt.be/>
 
 construct {
-    ?archief_id a abv:Archief ;
+    ?beheerder_id a abv:Beheerder ;
         abv:archiefbestand ?bronverwijzing_archief ;
         abv:archiefbankrecord ?bronverwijzing_record .
 } where {
-   # {{VALUES}}
-    VALUES ?archief_id { <https://data.archiefpunt.be/archieven/1007-A944-E024-9196-98AE13348AE9>}
-
-    ?archief_id abv:titel ?titel ;
-        abv:datering_text ?datering ;
-        abv:beheerder ?beheerder_id ;
-        abv:identificatienummer ?identificatienummer_id ;
-        abv:identificatienummer/abv:id ?id_identificatienummer_id .
-
+    {{VALUES}}
+#    VALUES ?beheerder_id { <https://data.archiefpunt.be/beheerders/BH11-3935-CD11-C926-D0406305BW9A> }
+    ?beheerder_id abv:id ?id.
+    ?beheerder_id rdf:type ?entity_type.
     ?beheerder_id a abv:Beheerder ;
-        abv:id ?id ;
         abv:agent ?agent_id .
 
     optional {
         ?beheerder_id abv:adres ?beheerder_adres_id .
         ?beheerder_adres_id abv:gemeente/abv:plaatsnaam/abv:waarde ?beheerder_adres_plaatsnaam .
     }
+    ?agent_id abv:naam ?agent_naam_id ;
+        abv:identificatienummer ?identificatienummer_id ;
+        abv:identificatienummer/abv:id ?id_identificatienummer_id ;
+        abv:identificatienummer/abv:waarde ?identificatienummer_waarde .
 
-    ?agent_id abv:naam ?agent_naam_id .
     ?agent_naam_id abv:waarde ?beheerder_naam .
+
+    optional {
+        ?agent_id   abv:datering_text ?datering .
+    }
 
     optional {
         ?identificatienummer_id abv:identificatienummer/abv:type/abv:label "persistente URI"@nl
     }
+
     bind (CONCAT(STR(DAY(NOW())), "/", STR(MONTH(NOW())), "/", STR(YEAR(NOW()))) as ?displayDate) .
+
+    bind(lcase(replace(str(?entity_type), "https://data.archiefpunt.be/", "")) as ?short_entity_type).
 
     bind(concat(str(?beheerder_naam), ", ",
                    replace(str(?beheerder_adres_plaatsnaam), "[0-9]* (.*)", "$1"),
                    ": ",
-                   ?titel,
-                   ". ",
                    ?datering,
                    "\n",
-                   ?identificatienummer_id )
+                   "<a href='/", ?short_entity_type, "/", ?id, "'>", ?identificatienummer_waarde, "</a>" )
         as ?bronverwijzing_archief
     ) .
 
-    bind(concat("Archiefpunt Vlaanderen: ", str(?titel),". ", str(?datering)," In: <a href='",
-                   ?identificatienummer_id, "'>", ?id_identificatienummer_id, "</a>>", "\n", "(Geraadpleegd op ",?displayDate,")" )
+    bind(concat("Archiefpunt: ", str(?datering)," In: <a href='/", ?short_entity_type, "/",
+                   ?id, "'>", ?identificatienummer_waarde, '.  ', "</a>", "\n", "(Geraadpleegd op ",?displayDate,")" )
         as ?bronverwijzing_record
     ) .
 

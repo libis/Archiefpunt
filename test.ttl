@@ -1,0 +1,32 @@
+<https://data.archiefpunt.be/archieven/1007-A4B8-B8EB-4196-A4134443AE9A>
+    a                                                    <https://data.archiefpunt.be/Archief> ;
+    <https://data.archiefpunt.be/id>                     "1007-A4B8-B8EB-4196-A4134443AE9A" ;
+    <https://data.archiefpunt.be/beschrijvingsniveau>    <https://data.archiefpunt.be/beschrijvingsniveaus/1454-EC6B-4A86-3260-778143CTBN9A> ;
+    <https://data.archiefpunt.be/rechtenstatus_metadata> <https://data.archiefpunt.be/rechtenstatussen/EE86-F083-A863-2600-778131CTRE9A> ;
+    <https://data.archiefpunt.be/juridische_beperking>   <https://data.archiefpunt.be/juridische_beperkingen/JU07-A4B8-B8EB-4196-A4134443AE9A> ;
+    <https://data.archiefpunt.be/beheerder>              <https://data.archiefpunt.be/beheerders/BHFF-AC07-2EF3-9960-1F1178BW9A4D> ;
+    <https://data.archiefpunt.be/rol_beheerder>          <https://data.archiefpunt.be/rol_beheerders/EE86-F083-A863-2600-778128CTRB9A> ;
+    <https://data.archiefpunt.be/titel>                  "Archief directeur-generaal Carl Vandekerckhove"@nl ;
+    <https://data.archiefpunt.be/omvang>                 <https://data.archiefpunt.be/omvangen/OM07-A4B8-B8EB-4196-A4134443AE9A> ;
+    <https://data.archiefpunt.be/datering_text>          "1941-1996" ;
+    <https://data.archiefpunt.be/datering>               "1940-12-31T22:00:00.000Z-1995-12-31T23:00:00.000Z" ;
+    <https://data.archiefpunt.be/bronverwijzing_record>  "undefined" ;
+    <https://data.archiefpunt.be/bronverwijzing_archief> "undefined" ;
+    <https://data.archiefpunt.be/samensteller>           <https://data.archiefpunt.be/samenstellers/SS48-FB31-E854-9960-585C82089AR9> ;
+    <https://data.archiefpunt.be/rol_samensteller>       <https://data.archiefpunt.be/rol_samenstellers/EE86-F083-A863-2600-778124CTRS9A> ;
+    <https://data.archiefpunt.be/is_onderdeel_van>       <https://data.archiefpunt.be/archieven/1007-A4B8-B8EB-4196-A4134442AE9A> ;
+    <https://data.archiefpunt.be/aantekening_archivaris> "meest recente gegevenscontrole 31/12/2009<br>update gerealiseerd - 06 apr 2012<br>update gerealiseerd - 11 jun 2015" ;
+    <https://data.archiefpunt.be/identificatienummer>    <https://data.archiefpunt.be/identificatienummers/1007-A4B8-B8EB-4196-A4134443AEID> .
+
+<https://data.archiefpunt.be/juridische_beperkingen/JU07-A4B8-B8EB-4196-A4134443AE9A>
+    a                                                                         <https://data.archiefpunt.be/JuridischeBeperking> ;
+    <https://data.archiefpunt.be/id>                                          "JU07-A4B8-B8EB-4196-A4134443AE9A" ;
+    <https://data.archiefpunt.be/contractuele_beperking>                      false ;
+    <https://data.archiefpunt.be/gevoelig_voor_auteursrechtelijkebescherming> false ;
+    <https://data.archiefpunt.be/privacy_gevoelig>                            false .
+
+<https://data.archiefpunt.be/identificatienummers/1007-A4B8-B8EB-4196-A4134443AEID>
+    a                                    <https://data.archiefpunt.be/Identificatienummer> ;
+    <https://data.archiefpunt.be/id>     "1007-A4B8-B8EB-4196-A4134443AEID" ;
+    <https://data.archiefpunt.be/type>   <https://data.archiefpunt.be/type_identificatienummers/141D-A7A8-45A3-5326-DAB01CTTI9A4> ;
+    <https://data.archiefpunt.be/waarde> "BE/578920/IIIa"@nl .

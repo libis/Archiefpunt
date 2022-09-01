@@ -1,0 +1,50 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX abv: <https://data.archiefpunt.be/>
+
+construct {
+    ?samensteller_id a abv:Samensteller ;
+        abv:archiefbestand ?bronverwijzing_archief ;
+        abv:archiefbankrecord ?bronverwijzing_record .
+} where {
+    #    {{VALUES}}
+    VALUES ?samensteller_id { <https://data.archiefpunt.be/samenstellers/SS01-55F8-B109-D960-B7AF87720AR9> }
+    ?samensteller_id abv:id ?id.
+    ?samensteller_id rdf:type ?entity_type.
+    ?samensteller_id a abv:Samensteller ;
+        abv:agent ?agent_id .
+
+    ?agent_id abv:naam ?agent_naam_id ;
+        abv:identificatienummer ?identificatienummer_id ;
+        abv:identificatienummer/abv:id ?id_identificatienummer_id ;
+        abv:identificatienummer/abv:waarde ?identificatienummer_waarde .
+
+    ?agent_naam_id abv:waarde ?beheerder_naam .
+
+    optional {
+        ?agent_id   abv:datering_text ?datering .
+    }
+
+    optional {
+        ?identificatienummer_id abv:identificatienummer/abv:type/abv:label "persistente URI"@nl
+    }
+
+    bind (CONCAT(STR(DAY(NOW())), "/", STR(MONTH(NOW())), "/", STR(YEAR(NOW()))) as ?displayDate) .
+
+    bind(lcase(replace(str(?entity_type), "https://data.archiefpunt.be/", "")) as ?short_entity_type).
+
+    bind(concat(str(?beheerder_naam), ", ",
+                   replace(str(?beheerder_adres_plaatsnaam), "[0-9]* (.*)", "$1"),
+                   ": ",
+                   ?datering,
+                   "\n",
+                   "<a href='/", ?short_entity_type, "/", ?id, "'>", ?identificatienummer_waarde, "</a>" )
+        as ?bronverwijzing_archief
+    ) .
+
+    bind(concat("Archiefpunt: ", str(?datering)," In: <a href='/", ?short_entity_type, "/",
+                   ?id, "'>", ?identificatienummer_waarde, '.  ', "</a>", "\n", "(Geraadpleegd op ",?displayDate,")" )
+        as ?bronverwijzing_record
+    ) .
+
+}

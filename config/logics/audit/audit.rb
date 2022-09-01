@@ -93,12 +93,12 @@ module Logic
     raise e
   end
 
-  def list_changes_for_creator(params = {})
-    required_parameters(params, [:groep, :van_date])
+  def list_of_changes_since_for_group(params = {})
+    required_parameters(params, [:groep, :sinds])
     #    result = cache["change_set_#{params[:creator]}"] || nil
 
     #if result.nil? || result.empty? || (params.key?(:from_cache) && params[:from_cache].eql?('0'))
-    from_date = Date.parse(params[:van_date]).strftime('%Y-%m-%d')
+    from_date = Date.parse(params[:sinds]).strftime('%Y-%m-%d')
     group = params[:groep] || ''
     name = params[:naam] || ''
 

@@ -1,6 +1,6 @@
 require 'iso8601'
-
-tests = ['11/01/1993–11/01/1993', '1832 tot heden', '1960/1980', '1920 ; 1980-heden', '1938-1965', '1830 ; 1892-1995',
+require 'solis'
+tests = ['19de-20ste eeuw', '11/01/1993–11/01/1993', '1832 tot heden', '1960/1980', '1920 ; 1980-heden', '1938-1965', '1830 ; 1892-1995',
          'Circa 1858 - circa 1930','1807-','[1910]-[1940]','1996-heden', '19de eeuw-heden', '1809-nu', 'Datering Niet geidentificeerd -1017390']
 
 def convert(parsed)
@@ -31,6 +31,11 @@ def convert(parsed)
     parsed[token_index][:value].gsub!('de', '00')
 
     new_t << convert(parsed).first
+  elsif (token = parsed.select{|s| s[:value] =~/ste$/ }).length > 0
+    token_index = parsed.index(token[0])
+    parsed[token_index][:value].gsub!('ste', '00')
+
+    new_t << convert(parsed).first
   elsif (token = parsed.select{|s| s[:value].eql?('–')}).length > 0
     token_index = parsed.index(token[0])
     one = parsed[0..token_index-1]
@@ -47,19 +52,57 @@ def convert(parsed)
 end
 
 
-tests.each do |t|
-  parsed = []
 
-  t.scan(/\u2013|-|;|\/|heden|nu|tot heden|\w*|\d*/) do |token|
-    token_offset = $~.offset(0)
-    deleted = token.empty? || token.eql?('-') || token.eql?('eeuw') || token.downcase.eql?('circa') ? true : false
+DATA_SOLIS_CONF = Solis::ConfigFile[:services][:data][:solis]
+DATA_SOLIS = Solis::Graph.new(Solis::Shape::Reader::File.read(DATA_SOLIS_CONF[:shape]), DATA_SOLIS_CONF)
 
-    parsed << {value: token, deleted: deleted, offset: token_offset}
+
+totaal_archieven = Solis::Query.run('', "SELECT (COUNT(distinct ?s) as ?count) FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Archief>.}").first[:count].to_i
+
+page = 0
+limit = 10
+
+while page*limit < totaal_archieven
+
+  puts "#{page*limit}/#{totaal_archieven}"
+
+  ArchiefResource.all({"page"=>{"number"=>"#{page}", "size"=>"#{limit}"}}).each do |archief|
+      parsed = []
+
+      archief.datering_text.scan(/\u2013|-|;|\/|heden|nu|tot heden|\w*|\d*/) do |token|
+        token_offset = $~.offset(0)
+        deleted = token.empty? || token.eql?('-') || token.eql?('eeuw') || token.downcase.eql?('circa') ? true : false
+
+        parsed << {value: token, deleted: deleted, offset: token_offset}
+      end
+
+      parsed.delete_if { |d|d[:deleted] }
+
+      new_t = convert(parsed)
+
+    archief.datering_systematisch = new_t
+    archief.save
   end
-
-  parsed.delete_if { |d|d[:deleted] }
-
-  new_t = convert(parsed)
-
-  puts t, new_t
+  page+=1
 end
+
+
+
+
+
+# tests.each do |t|
+#   parsed = []
+#
+#   t.scan(/\u2013|-|;|\/|heden|nu|tot heden|\w*|\d*/) do |token|
+#     token_offset = $~.offset(0)
+#     deleted = token.empty? || token.eql?('-') || token.eql?('eeuw') || token.downcase.eql?('circa') ? true : false
+#
+#     parsed << {value: token, deleted: deleted, offset: token_offset}
+#   end
+#
+#   parsed.delete_if { |d|d[:deleted] }
+#
+#   new_t = convert(parsed)
+#
+#   puts t, new_t
+# end

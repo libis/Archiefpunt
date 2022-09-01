@@ -8,6 +8,7 @@ construct {
         audit:subject_of_change ?soc;
         audit:change_reason ?reason;
         audit:creator_name ?name;
+        audit:creator_group ?group;
         audit:diff ?diff.
 }
 WHERE {
@@ -28,6 +29,10 @@ WHERE {
 
             optional {
                 ?change_set	 audit:other_data ?data.
+            }
+
+            optional {
+                ?change_set audit:creator_group ?group.
             }
 
             bind(substr(str(?change_set), strlen(str(audit:change_sets))+2 ) as ?version_id)
