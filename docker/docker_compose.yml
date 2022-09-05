@@ -22,9 +22,9 @@ networks:
 
 services:
   traefik:
-    image: traefik:2.8.1
-    container_name: traefik
+    image: traefik:2.8.3
     restart: unless-stopped
+    container_name: traefik
     command:
       - --configFile=/traefik/traefik.yml
     ports:
@@ -41,6 +41,7 @@ services:
 
   virtuoso:
     image: registry.docker.libis.be/library/virtuoso:7.2.5
+    restart: unless-stopped
     hostname: virtuoso
     container_name: virtuoso
     environment:
@@ -50,10 +51,10 @@ services:
       - "./volumes/virtuoso/data/db:/data"
     networks:
       - private
-    restart: unless-stopped
 
   elastic:
     image: elasticsearch:7.14.2
+    restart: unless-stopped
     container_name: elastic
     environment:
       discovery.type: single-node
@@ -63,16 +64,15 @@ services:
       http.cors.allow-credentials: 'true'
     networks:
     - private
-    restart: unless-stopped
     volumes:
     - "./volumes/elastic/data:/usr/share/elasticsearch/data"
     - "./volumes/elastic/logs:/usr/share/elasticsearch/logs"
 
   kibana:
     image: kibana:7.14.2
+    restart: unless-stopped
     networks:
     - private
-    restart: unless-stopped
     links:
     - elastic:elasticsearch
     depends_on:
@@ -80,9 +80,11 @@ services:
 
   data-api:
     image: registry.docker.libis.be/archiefpunt/data
+    restart: unless-stopped
     environment:
       SERVICE_ROLE: data
-    container_name: data.api
+    deploy:
+      replicas: 3
     hostname: data.api
     volumes:
       - "./volumes/api/config:/app/config"
@@ -90,12 +92,12 @@ services:
       - "./volumes/api/cache:/app/cache"
     networks:
       - private
-    restart: unless-stopped
     links:
       - virtuoso:virtuoso
 
   audit-api:
     image: registry.docker.libis.be/archiefpunt/data
+    restart: unless-stopped
     container_name: audit.api
     hostname: audit.api
     environment:
@@ -105,12 +107,12 @@ services:
       - "./volumes/api/cache:/app/cache"
     networks:
       - private
-    restart: unless-stopped
     links:
       - virtuoso:virtuoso
 
   search-api:
     image: registry.docker.libis.be/archiefpunt/search
+    restart: unless-stopped
     hostname: search.api
     deploy:
       replicas: 2
@@ -121,12 +123,12 @@ services:
       - "./volumes/api/cache:/app/cache"
     networks:
       - private
-    restart: unless-stopped
     links:
       - elastic:elastic
 
   browse-api:
     image: registry.docker.libis.be/archiefpunt/search
+    restart: unless-stopped
     hostname: browse.api
     deploy:
       replicas: 2
@@ -137,28 +139,28 @@ services:
       - "./volumes/api/cache:/app/cache"
     networks:
       - private
-    restart: unless-stopped
     links:
       - elastic:elastic
 
   codetabel-api:
     image: registry.docker.libis.be/archiefpunt/search
+    restart: unless-stopped
     hostname: codetabel.api
     deploy:
-      replicas: 2    
+      replicas: 2
     environment:
       SERVICE_ROLE: codetable
     volumes:
-      - "./volumes/api/config:/app/config" 
-      - "./volumes/api/cache:/app/cache" 
+      - "./volumes/api/config:/app/config"
+      - "./volumes/api/cache:/app/cache"
     networks:
       - private
-    restart: unless-stopped
     links:
       - elastic:elastic
 
   data-logic-api:
     image: registry.docker.libis.be/archiefpunt/logic
+    restart: unless-stopped
     container_name: data_logic.api
     hostname: data_logic.api
     environment:
@@ -168,12 +170,12 @@ services:
       - "./volumes/api/cache:/app/cache"
     networks:
       - private
-    restart: unless-stopped
     links:
       - virtuoso:virtuoso
 
   audit-logic-api:
     image: registry.docker.libis.be/archiefpunt/logic
+    restart: unless-stopped
     container_name: audit_logic.api
     hostname: audit_logic.api
     environment:
@@ -183,12 +185,12 @@ services:
       - "./volumes/api/cache:/app/cache"
     networks:
       - private
-    restart: unless-stopped
     links:
       - virtuoso:virtuoso
 
   ping-api:
     image: registry.docker.libis.be/archiefpunt/ping
+    restart: unless-stopped
     container_name: ping.api
     hostname: ping.api
     environment:
@@ -198,10 +200,10 @@ services:
       - "./volumes/api/cache:/app/cache"
     networks:
       - private
-    restart: unless-stopped
 
   event-listener:
     image: registry.docker.libis.be/archiefpunt/loaders
+    restart: unless-stopped
     container_name: listener.event
     hostname: listener.event
     tty: true
@@ -213,13 +215,13 @@ services:
       - "./volumes/api/cache:/app/cache"
     networks:
       - private
-    restart: unless-stopped      
     links:
       - elastic:elastic
       - audit-api:audit-api
 
   policy-agent:
     image: registry.docker.libis.be/archiefpunt/policy-agent
+    restart: unless-stopped
     container_name: policy.agent
     hostname: policy.agent
     depends_on:
@@ -231,11 +233,11 @@ services:
       - "./volumes/api/cache:/app/cache"
     networks:
       - private
-    restart: unless-stopped
 
   opa:
     image: openpolicyagent/opa:latest-debug
 #    image: openpolicyagent/opa:latest-rootless
+    restart: unless-stopped
     networks:
       - private
     volumes:
@@ -261,6 +263,7 @@ services:
 
   opa-bundle-server:
     image: nginx
+    restart: unless-stopped
     networks:
       - private
     volumes:
