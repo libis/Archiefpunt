@@ -72,6 +72,9 @@ class Index
     raise "Index type is not set. Configuration not loaded" unless @type
 
     data = [data] unless data.is_a?(Array)
+
+    return '' if data.nil? || data.empty?
+
     if save_to_disk
       File.open("./ndjson/#{Time.new.to_i}-#{rand(100000)}.ndjson", "wb") do |f|
         f.puts data.to_ndjson(@name, id, "index")

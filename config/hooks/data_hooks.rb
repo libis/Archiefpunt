@@ -32,7 +32,9 @@ select distinct ?id ?entity_type where {
 	values ?agent_id { {{VALUES}} }
   ?s abv:agent ?agent_id;
      abv:id ?id;
-  rdf:type ?entity_type
+  rdf:type ?entity_type.
+
+  filter (?entity_type in ( <#{Solis::ConfigFile[:solis_data][:graph_name]}Samensteller>, <#{Solis::ConfigFile[:solis_data][:graph_name]}Archief>, <#{Solis::ConfigFile[:solis_data][:graph_name]}Beheerder>) )
 }
                     ).gsub(/{{VALUES}}/, "<#{bronverwijzing["id"]}>")
 
