@@ -36,6 +36,7 @@ def load_data(elastic, total, filename, entity, entity_id)
     s = 0
     e = 0
     step = 100
+
     while e < ids.length
       d = ids.length - e
       e = if d < step
@@ -46,13 +47,18 @@ def load_data(elastic, total, filename, entity, entity_id)
 
       data = Solis::Query.run_construct_with_file(filename, entity_id, entity, ids[s..e])
       data = data.map{|m| {"#{entity.underscore}": m}}
-      elastic.index.insert(data, 'id', true)
+      begin
+        elastic.index.insert(data, 'id', true)
+      rescue StandardError => x
+        puts x.message
+      end
+
       s = e
     end
     offset += limit
   end
-rescue StandardError => e
-  puts e.message
+rescue StandardError => x
+  puts x.message
 end
 
 total_archieven = Solis::Query.run('',"SELECT (COUNT(distinct ?s) as ?count) FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Archief>.}").first[:count].to_i
