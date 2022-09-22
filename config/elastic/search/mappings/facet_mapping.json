@@ -1,14 +1,13 @@
 {
-  "facet_beschrijvingsniveau": "archief.beschrijvingsniveau.keyword",
-  "facet_rol_beheerder": "archief.beheerder.rol.keyword",
-  "facet_trefwoord": "archief.meta.trefwoord.keyword",
-  "facet_geografie": "archief.meta.geografie.keyword",
-  "facet_topologie": "archief.meta.topologie.keyword",
-  "facet_bewaarplaats_naam": "archief.beheerder.naam.keyword",
-  "facet_jaartal": "archief.datering_text.keyword",
-  "facet_rid": "archief.id.keyword",
-  "facet_archiefvormer_az": "archief.meta.archiefvormer_az.keyword",
-  "facet_archiefvormer": "archief.meta.archiefvormer.keyword",
-  "facet_bewaarplaats": "archief.meta.bewaarplaats.keyword",
-  "datering_systematisch": "duration"
+  "facet_beschrijvingsniveau": "fiche.beschrijvingsniveau.keyword",
+  "facet_rol_beheerder": "fiche.beheerder_rol.keyword",
+  "facet_trefwoord": "fiche.trefwoord.keyword",
+  "facet_geografie": "fiche.geografie.keyword",
+  "facet_bewaarplaats_naam": "fiche.beheerder.keyword",
+  "facet_jaartal": "fiche.datering_text.keyword",
+  "facet_rid": "fiche.id.keyword",
+  "facet_archiefvormer": "fiche.samensteller.keyword",
+  "facet_bewaarplaats": "fiche.beheerder.keyword",
+  "datering_systematisch": "fiche.datering",
+  "facet_materiaal": "fiche.materiaal_type.keyword"
 }

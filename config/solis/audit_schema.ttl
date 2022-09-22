@@ -6,7 +6,7 @@
 
 audit: a owl:Ontology;
   <dc11:creator> "LIBIS";
-  <dc11:date> "2022-08-30 15:37:15 +0200";
+  <dc11:date> "2022-09-20 15:04:20 +0200";
   <dc11:description> "";
   <dc11:title> "AUDIT ontology";
   owl:versionInfo 0.2 .

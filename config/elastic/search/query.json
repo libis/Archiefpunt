@@ -1,5 +1,5 @@
 {
-  "_source": {"excludes": ["archief.auto", "*.@type"]},
+  "_source": {"includes": ["fiche.data"]},
   "size": 10,
   "query": {},
   "from": 0,
@@ -7,28 +7,19 @@
   "aggs": {
     "facet_jaartal": {
       "terms": {
-        "field": "archief.datering_text.keyword",
+        "field": "fiche.datering_text.keyword",
         "size": 10
       }
     },
-    "facet_bewaarplaats": {
+    "facet_beheerder": {
       "terms": {
-        "field": "archief.beheerder.naam.keyword",
+        "field": "fiche.beheerder.keyword",
         "size": 10
       }
     },
-    "facet_archiefvormer": {
+    "facet_samensteller": {
       "terms": {
-        "field": "archief.samensteller.naam.keyword",
-        "size": 10,
-        "order": {
-          "_key": "asc"
-        }
-      }
-    },
-    "facet_topologie": {
-      "terms": {
-        "field": "archief.meta.topologie.keyword",
+        "field": "fiche.samensteller.keyword",
         "size": 10,
         "order": {
           "_key": "asc"
@@ -37,7 +28,7 @@
     },
     "facet_geografie": {
       "terms": {
-        "field": "archief.meta.geografie.keyword",
+        "field": "fiche.geografie.keyword",
         "size": 10,
         "order": {
           "_key": "asc"
@@ -46,48 +37,8 @@
     },
     "facet_trefwoord": {
       "terms": {
-        "field": "archief.meta.trefwoord.keyword",
+        "field": "fiche.trefwoord.keyword",
         "size": 10
-      }
-    },
-    "facet_archiefvormer_az": {
-      "terms": {
-        "field": "archief.meta.archiefvormer_az.keyword",
-        "size": 26,
-        "order": {
-          "_key": "asc"
-        }
-      },
-      "aggs": {
-        "archiefvormers": {
-          "terms": {
-            "field": "archief.samensteller.naam.keyword",
-            "size": 10,
-            "order": {
-              "_key": "asc"
-            }
-          }
-        }
-      }
-    },
-    "facet_bewaarplaats_az": {
-      "terms": {
-        "field": "archief.meta.bewaarplaats_az.keyword",
-        "size": 26,
-        "order": {
-          "_key": "asc"
-        }
-      },
-      "aggs": {
-        "bewaarplaats": {
-          "terms": {
-            "field": "archief.beheerder.naam.keyword",
-            "size": 10,
-            "order": {
-              "_key": "asc"
-            }
-          }
-        }
       }
     }
   }

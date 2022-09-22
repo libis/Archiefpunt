@@ -1,6 +1,5 @@
 {
     "method": "DELETE",
     "path": "rechtenstatus",
-    "token": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyIjoiYW50ZW5uYSIsInJvbGUiOlsiZnVsbCJdfQ.DbWc3sh0N7J8KD2iN8L7L981Hm5S0rSbmKWPGCRhm3Y37XOhjijXCjvFqwFp_BbV-A7JI42KFejQPClgk4JvrQ",
-    "token_advn": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyIjoiQURWTiIsInJvbGUiOlsiZnVsbC1taW4iXX0.kdo7UU37fnv__zMwdktt3NLYQnd8TYmuijKU31AwoFIb8JEoG56OntT8GLWSqr7-ZxsxpIk4CNwY0qmhu9EJXQ"
+    "token": "YOUR-TOKEN"
 }

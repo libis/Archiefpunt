@@ -1,5 +1,5 @@
 --
--- Archiefbank ontology - 1.0.1 - 2022-08-26 11:45:34 +0200
+-- Archiefbank ontology - 1.0.2 - 2022-09-20 15:05:51 +0200
 -- description: Archiefbank ontology
 -- author: Archiefpunt, Meemo, KADOC, LIBIS
 --
@@ -163,8 +163,8 @@ COMMENT ON COLUMN abv.agenten.datering_text IS 'Woordelijke uitleg bij datering_
 COMMENT ON COLUMN abv.agenten.geschiedenis_agent IS 'Biografische geschiedenis van de agent.';
 COMMENT ON COLUMN abv.agenten.taal_id IS 'Taal ivm agent';
 COMMENT ON COLUMN abv.agenten.associaties_id IS 'Plaats, Periode, Onderwerp of agent gelinkt aan de agent. ';
-COMMENT ON COLUMN abv.agenten.bronnen_agent IS 'Bronnen gebruikt om agentbeschrijving op te stellen.';
-COMMENT ON COLUMN abv.agenten.bibliografie_agent IS 'Bronnen over de agent.';
+COMMENT ON COLUMN abv.agenten.bronnen_agent IS 'Bronnen die gebruik maakten van de agent';
+COMMENT ON COLUMN abv.agenten.bibliografie_agent IS 'Bronnen gebruikt om agentbeschrijving op te stellen.';
 COMMENT ON COLUMN abv.agenten.bronverwijzing_record IS 'Correcte verwijzing naar het record in de Chicagostijl.';
 COMMENT ON COLUMN abv.agenten.opmerking IS 'Vrij opmerkingen veld.';
 
@@ -208,7 +208,6 @@ CREATE TABLE abv.ordeningen(
 
 CREATE TABLE abv.raadplegingsvoorwaarden(
 	tekst text NOT NULL, 
-	taal_id int NOT NULL REFERENCES abv.talen(id), 
 	raadplegingsstatus_id int NOT NULL REFERENCES abv.raadplegingsstatussen(id)
 );
 
@@ -302,7 +301,7 @@ COMMENT ON COLUMN abv.archieven.beheerder_id IS 'persoon of organisatie die het 
 COMMENT ON COLUMN abv.archieven.geschiedenis_archief IS 'Geschiedenis van het archief.';
 COMMENT ON COLUMN abv.archieven.verwerving IS 'Uitleg hoe archief verworven werd door bewaarinstelling.';
 COMMENT ON COLUMN abv.archieven.inhoud_en_bereik IS 'Inhoud van archief.';
-COMMENT ON COLUMN abv.archieven.selectie_id IS 'Verklaring over de erfgoedwaarde van het archiefbestand en de vergelijking met andere archiefbestanden.';
+COMMENT ON COLUMN abv.archieven.selectie_id IS 'selectie';
 COMMENT ON COLUMN abv.archieven.aangroei_id IS 'Aangroei toont status van het archief aan: statisch, dynamisch of is de status onbekend.';
 COMMENT ON COLUMN abv.archieven.aangroei_text IS 'oud aangroei veld';
 COMMENT ON COLUMN abv.archieven.ordening_id IS 'Toont de ordeningsstatus aan van het archief:geordend, niet geordend of onbekend.';

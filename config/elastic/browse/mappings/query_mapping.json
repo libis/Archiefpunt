@@ -4,15 +4,28 @@
       "match_all": {}
     }
   },
+  "agent": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "fiche.agent.naam",
+          "fiche.agent.naam._2gram",
+          "fiche.agent.naam._3gram"
+        ]
+      }
+    }
+  },
   "trefwoord": {
     "{{}}": {
       "multi_match": {
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "archief.auto.trefwoord",
-          "archief.auto.trefwoord._2gram",
-          "archief.auto.trefwoord._3gram"
+          "fiche.trefwoord",
+          "fiche.trefwoord._2gram",
+          "fiche.trefwoord._3gram"
         ]
       }
     }
@@ -23,9 +36,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "archief.auto.geografie",
-          "archief.auto.geografie._2gram",
-          "archief.auto.geografie._3gram"
+          "fiche.geografie",
+          "fiche.geografie._2gram",
+          "fiche.geografie._3gram"
         ]
       }
     }
@@ -36,9 +49,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "archief.auto.archiefvormer.naam",
-          "archief.auto.archiefvormer.naam._2gram",
-          "archief.auto.archiefvormer.naam._3gram"
+          "fiche.samensteller.naam",
+          "fiche.samensteller.naam._2gram",
+          "fiche.samensteller.naam._3gram"
         ]
       }
     }
@@ -49,9 +62,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "archief.auto.bewaarplaats.naam",
-          "archief.auto.bewaarplaats.naam._2gram",
-          "archief.auto.bewaarplaats.naam._3gram"
+          "fiche.beheerder.naam",
+          "fiche.beheerder.naam._2gram",
+          "fiche.beheerder.naam._3gram"
         ]
       }
     }
@@ -62,9 +75,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "archief.auto.archief_titel.waarde",
-          "archief.auto.archief_titel.waarde._2gram",
-          "archief.auto.archief_titel.waarde._3gram"
+          "fiche.titel",
+          "fiche.titel._2gram",
+          "fiche.titel._3gram"
         ]
       }
     }
@@ -82,21 +95,10 @@
       }
     }
   },
-  "parchiefvormer": {
-    "{{}}": {
-      "query": {
-        "prefix": {
-          "archief.meta.archiefvormer": {
-            "value": "{{}}"
-          }
-        }
-      }
-    }
-  },
   "updated_records": {
     "07DaysBack": {
       "range": {
-        "archief.generated_date": {
+        "fiche.generated_date": {
           "gte": "now-07d/d",
           "lte": "now/d",
           "relation": "INTERSECTS"

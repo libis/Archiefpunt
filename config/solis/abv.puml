@@ -7,7 +7,7 @@ skinparam componentStyle uml2
 skinparam wrapMessageWidth 100
 skinparam ArrowColor #Maroon
 
-title Archiefbank ontology - 1.0.1 - 2022-08-26 11:45:34 +0200
+title Archiefbank ontology - 1.0.2 - 2022-09-20 15:05:50 +0200
               
 package abv {
 
@@ -302,11 +302,9 @@ class Raadplegingsstatus{
 Raadplegingsstatus --|> Codetabel
 
 class Raadplegingsvoorwaarde{
-	{field} xsd:string : tekst 
-	{field} abv:Taal : taal 
+	{field} rdf:langString : tekst 
 	{field} abv:Raadplegingsstatus : raadplegingsstatus 
 }
-Taal - "1" Raadplegingsvoorwaarde : taal >
 Raadplegingsstatus - "1" Raadplegingsvoorwaarde : raadplegingsstatus >
 Raadplegingsvoorwaarde --|> EntiteitBasis
 

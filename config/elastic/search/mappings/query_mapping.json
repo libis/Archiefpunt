@@ -10,9 +10,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "archief.auto.trefwoord",
-          "archief.auto.trefwoord._2gram",
-          "archief.auto.trefwoord._3gram"
+          "fiche.trefwoord",
+          "fiche.trefwoord._2gram",
+          "fiche.trefwoord._3gram"
         ]
       }
     }
@@ -23,9 +23,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "archief.auto.geografie",
-          "archief.auto.geografie._2gram",
-          "archief.auto.geografie._3gram"
+          "fiche.geografie",
+          "fiche.geografie._2gram",
+          "fiche.geografie._3gram"
         ]
       }
     }
@@ -36,9 +36,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "archief.auto.archiefvormer",
-          "archief.auto.archiefvormer._2gram",
-          "archief.auto.archiefvormer._3gram"
+          "fiche.samensteller",
+          "fiche.samensteller._2gram",
+          "fiche.samensteller._3gram"
         ]
       }
     }
@@ -49,9 +49,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "archief.auto.bewaarplaats",
-          "archief.auto.bewaarplaats._2gram",
-          "archief.auto.bewaarplaats._3gram"
+          "fiche.beheerder",
+          "fiche.beheerder._2gram",
+          "fiche.beheerder._3gram"
         ]
       }
     }

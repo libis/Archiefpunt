@@ -1,0 +1,136 @@
+<h2 id="intro" class="list">Architectuur <span class="backlink"> terug naar <a href="#toc">Index</a></span></h2>
+<img src="img/archiefpunt_overview.drawio.png" alt="Archiefpunt software architectuur">
+
+<p>
+    De Software is opgedeeld in microservices met elk een specifieke taak.
+    De load balancer bepaald samen AuthN/Z component wie waar toegang toe heeft.
+    Hiernaast zijn er nog services die data in/uit de database halen.
+</p>
+
+<h3>Endpoints</h3>
+<table>
+    <tr>
+        <td>Productie</td>
+        <td><a href="https://data.archiefpunt.be/">https://data.archiefpunt.be/</a></td>
+    </tr>
+    <tr>
+        <td>Test</td>
+        <td><a href="https://data.q.archiefpunt.be/">https://data.q.archiefpunt.be/</a></td>
+    </tr>
+</table>
+
+<h3>APIKEY</h3>
+<p>
+    Alle API calls die toegang geven tot data moeten voorzien worden van een APIKEY deze kan op 2 manieren meegegeven
+    worden.
+</p>
+<ol>
+    <li>Header
+        <ul>
+            <li>Authorization: Bearer abc1232up3r23cr3t</li>
+        </ul>
+    </li>
+    <li>
+        Parameter
+        <ul>
+            <li>[endpoint]/archieven?apikey=abc1232up3r23cr3t</li>
+        </ul>
+    </li>
+</ol>
+<p>
+    Een APIKEY is een JSON Web Token en kan via Archiefpunt aangevraagd worden.
+</p>
+
+<h3>Rollen</h3>
+Rollen zijn verbonden met de APIKEY.
+<ul>
+    <li>
+<h3>FULL</h3>
+Geeft Create, Read, Update, Delete toegang tot alle entiteiten
+    </li>
+    <li>
+        <h3>FULLMIN</h3>
+Zelfde als Full maar Codetabellen en Audit/ChangeSets kunnen enkel gelezen worden.
+    </li>
+    <li>
+<h3>READ-ONLY</h3>
+Enkel Read bewerking zijn toegelaten
+    </li>
+</ul>
+
+
+<h3>Query parameters</h3>
+Andere parameters los van de JSON:API standaard
+<ul>
+    <li>
+Language: elke eigenschap van type rdf:langString kan meerdere talen bevatten. Het systeem is ingesteld op “nl”.
+language=nl, language=en, …
+    </li>
+    <li>
+Accept: Dit is bij voorkeur een header waarde maar als parameter kan het ook
+accept=text/turtle
+    </li>
+    <li>
+Apikey: Dit is bij voorkeur een header waarde(Authorization: bearer abc1232up3r23cr3t)
+apikey=abc1232up3r23cr3t
+    </li>
+    <li>
+       FromCache: from_cache=0 om cache te breken.
+    </li>
+</ul>
+
+<h3>Niet data gerelateerde services</h3>
+<ol>
+    <li>
+        <a href="/_doc">/_doc</a>
+        <p>Documentatie</p>
+    </li>
+    <li>
+        <a href="/_yas">/_doc</a>
+        <p>YAS SPARQL client</p>
+    </li>
+    <li>
+        <a href="/_sparql">/_sparql</a>
+        <p>Read only SPARQL endpoint</p>
+    </li>
+    <li>
+        <a href="/_vandal">/_vandal</a>
+        <p>JSON:API client</p>
+    </li>
+    <li>
+        <a href="/_formats">/_formats</a>
+        <p>Lijst van ondersteunde output formaten. Toepasbaar op 1 record via accept parameter of Accept header.
+            bv. Record 97C9-0F59-FD0F-9260-87F028272AE9 weergeven in turtle definitie
+        <p>
+        <p>
+            <a href="https://data.archiefpunt.be/archieven/97C9-0F59-FD0F-9260-87F028272AE9?accept=text/turtle">
+                https://data.archiefpunt.be/archieven/97C9-0F59-FD0F-9260-87F028272AE9?accept=text/turtle
+            </a>
+        </p>
+    </li>
+    <li>
+        <a href="/_logic">/_logic</a>
+        <p>Presentatie bewerkingen op data. Vooral gebruikt voor UI.</p>
+    </li>
+    <li>
+        <a href="/_audit">/_audit</a>
+        <p>Audit api</p>
+    </li>
+    <li>
+        <a href="/_search">/_search</a>
+        <p>Search api. Meer info op <a href="/_search/help">/_search/help</a></p>
+    </li>
+    <li>
+        <a href="/_browse">/_search</a>
+        <p>Browse api. Meer info op <a href="/_browse/help">/_browse/help</a></p>
+    </li>
+    <li>
+        <a href="/_codetable">/_codetable</a>
+        <p>Codetabel api. Meer info op <a href="/_codetable/help">/_codetable/help</a></p>
+    </li>
+    <li>
+        <a href="/ping">/ping</a>
+        <p>Service controle</p>
+    </li>
+
+</ol>

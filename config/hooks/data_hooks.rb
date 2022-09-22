@@ -50,12 +50,12 @@ select distinct ?id ?entity_type where {
 
                       if entity.instance_variable_names.include?("@bronverwijzing_archief")
                         bronverwijzing_archief = bronverwijzing['archiefbestand'].is_a?(Array) ? bronverwijzing['archiefbestand'].first : bronverwijzing['archiefbestand']
-                        entity.bronverwijzing_archief = bronverwijzing_archief.gsub(/{{LINK}}/, link)
+                        entity.bronverwijzing_archief = bronverwijzing_archief.is_a?(String) ? bronverwijzing_archief.gsub(/{{LINK}}/, link) : bronverwijzing_archief
                       end
 
                       if entity.instance_variable_names.include?("@bronverwijzing_record")
                         bronverwijzing_record = bronverwijzing['archiefbankrecord'].is_a?(Array) ? bronverwijzing['archiefbankrecord'].first : bronverwijzing['archiefbankrecord']
-                        entity.bronverwijzing_record = bronverwijzing_record.gsub(/{{LINK}}/, link)
+                        entity.bronverwijzing_record = bronverwijzing_record.is_a?(String) ? bronverwijzing_record.gsub(/{{LINK}}/, link) : bronverwijzing_record
                       end
                     end
                   end

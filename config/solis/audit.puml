@@ -7,7 +7,7 @@ skinparam componentStyle uml2
 skinparam wrapMessageWidth 100
 skinparam ArrowColor #Maroon
 
-title AUDIT ontology - 0.2 - 2022-08-30 15:37:15 +0200
+title AUDIT ontology - 0.2 - 2022-09-20 15:04:20 +0200
               
 package audit {
 

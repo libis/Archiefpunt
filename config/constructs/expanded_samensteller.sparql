@@ -30,9 +30,17 @@ CONSTRUCT {
    ?agent_naam_id a abv:Naam;
        abv:waarde ?agent_naam_waarde;
        abv:type ?agent_naam_type.
+
+   ?agent_associaties a abv:Associatie;
+       abv:agent ?agent_associatie_agent;
+       abv:plaats ?agent_associatie_plaats;
+       abv:periode ?agent_associatie_periode;
+       abv:onderwerp ?agent_associcatie_onderwerp.
 }
 WHERE {
     {{VALUES}}
+
+#    values ?samensteller_id {<https://data.archiefpunt.be/samenstellers/6acaeeff-907d-4c24-be38-243c5c6f4ba8>}
 
     ?samensteller_id a abv:Samensteller ;
         abv:id ?id;

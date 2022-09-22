@@ -20,7 +20,7 @@ module Logic
 
   def archief(params={})
     required_parameters(params, [:id])
-    resolve('./config/constructs/expanded_archief2.sparql', 'archief_id', 'Archief', params['id'], params['from_cache']).to_json
+    resolve('./config/constructs/expanded_archief3.sparql', 'archief_id', 'Archief', params['id'], params['from_cache']).to_json
   rescue StandardError => e
     raise RuntimeError, "Error loading 'archief'"
   end

@@ -10,10 +10,10 @@ skos:Concept a owl:Class;
 
 abv: a owl:Ontology;
   <dc11:creator> "Archiefpunt, Meemo, KADOC, LIBIS";
-  <dc11:date> "2022-08-26 11:45:34 +0200";
+  <dc11:date> "2022-09-20 15:05:50 +0200";
   <dc11:description> "Archiefbank ontology";
   <dc11:title> "Archiefbank ontology";
-  owl:versionInfo "1.0.1" .
+  owl:versionInfo "1.0.2" .
 
 abv:BibliografieArchief a owl:Class;
   rdfs:label "BibliografieArchief";
@@ -224,7 +224,7 @@ abv:bereikbaarheid a rdf:Property;
 
 abv:bibliografie_agent a rdf:Property;
   rdfs:label "bibliografie_agent";
-  rdfs:comment "Bronnen over de agent.";
+  rdfs:comment "Bronnen gebruikt om agentbeschrijving op te stellen.";
   rdfs:domain abv:Agent;
   rdfs:range xsd:string .
 
@@ -248,7 +248,7 @@ abv:bron_waardering a rdf:Property;
 
 abv:bronnen_agent a rdf:Property;
   rdfs:label "bronnen_agent";
-  rdfs:comment "Bronnen gebruikt om agentbeschrijving op te stellen.";
+  rdfs:comment "Bronnen die gebruik maakten van de agent";
   rdfs:domain abv:Agent;
   rdfs:range xsd:string .
 
@@ -380,7 +380,7 @@ abv:samensteller a rdf:Property;
 
 abv:selectie a rdf:Property;
   rdfs:label "selectie";
-  rdfs:comment "Verklaring over de erfgoedwaarde van het archiefbestand en de vergelijking met andere archiefbestanden.";
+  rdfs:comment "selectie";
   rdfs:domain abv:Archief;
   rdfs:range abv:Waardering .
 
@@ -876,11 +876,18 @@ abv:string_dt a rdf:Property;
   rdfs:domain abv:Test;
   rdfs:range xsd:string .
 
+abv:taal a rdf:Property;
+  rdfs:label "taal";
+  rdfs:comment "trefwoord dat aangeeft welke taal gebruikt wordt in het archief";
+  rdfs:domain abv:Agent,
+    abv:Archief;
+  rdfs:range abv:Taal .
+
 abv:tekst a rdf:Property;
   rdfs:label "tekst";
   rdfs:comment "";
   rdfs:domain abv:Raadplegingsvoorwaarde;
-  rdfs:range xsd:string .
+  rdfs:range rdf:langString .
 
 abv:time_dt a rdf:Property;
   rdfs:label "time_dt";
@@ -994,6 +1001,27 @@ abv:Ordening a owl:Class;
     a owl:Restriction;
     owl:maxCardinality 1;
     owl:onProperty abv:trefwoord
+  ] .
+
+abv:Raadplegingsvoorwaarde a owl:Class;
+  rdfs:label "Raadplegingsvoorwaarde";
+  rdfs:comment "";
+  rdfs:subClassOf abv:EntiteitBasis, [
+    a owl:Restriction;
+    owl:minCardinality 1;
+    owl:onProperty abv:tekst
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty abv:tekst
+  ], [
+    a owl:Restriction;
+    owl:minCardinality 1;
+    owl:onProperty abv:raadplegingsstatus
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty abv:raadplegingsstatus
   ] .
 
 abv:Samensteller a owl:Class;
@@ -1119,35 +1147,6 @@ abv:Plaats a owl:Class;
     owl:onProperty abv:plaatsnaam
   ] .
 
-abv:Raadplegingsvoorwaarde a owl:Class;
-  rdfs:label "Raadplegingsvoorwaarde";
-  rdfs:comment "";
-  rdfs:subClassOf abv:EntiteitBasis, [
-    a owl:Restriction;
-    owl:minCardinality 1;
-    owl:onProperty abv:tekst
-  ], [
-    a owl:Restriction;
-    owl:maxCardinality 1;
-    owl:onProperty abv:tekst
-  ], [
-    a owl:Restriction;
-    owl:minCardinality 1;
-    owl:onProperty abv:taal
-  ], [
-    a owl:Restriction;
-    owl:maxCardinality 1;
-    owl:onProperty abv:taal
-  ], [
-    a owl:Restriction;
-    owl:minCardinality 1;
-    owl:onProperty abv:raadplegingsstatus
-  ], [
-    a owl:Restriction;
-    owl:maxCardinality 1;
-    owl:onProperty abv:raadplegingsstatus
-  ] .
-
 abv:Waarde a owl:Class;
   rdfs:label "Waarde";
   rdfs:comment "";
@@ -1190,14 +1189,6 @@ abv:datering_text a rdf:Property;
   rdfs:domain abv:Agent,
     abv:Archief;
   rdfs:range xsd:string .
-
-abv:taal a rdf:Property;
-  rdfs:label "taal";
-  rdfs:comment "";
-  rdfs:domain abv:Agent,
-    abv:Archief,
-    abv:Raadplegingsvoorwaarde;
-  rdfs:range abv:Taal .
 
 abv:Naam a owl:Class;
   rdfs:label "Naam";

@@ -1,0 +1,77 @@
+<h2>Snelle start</h2>
+<a href="https://docs.google.com/presentation/d/1RASoPSXG8yBaEfk8xbwUn45ZDHtVBYa-IeXjoHEPjDc/edit#slide=id.g13821f862ff_0_37">API-workshop
+    presentatie</a>
+
+<h2>Samenvatting</h2>
+<p>De nieuwe DataAPI is een op het <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>
+    principe gebaseerde API die de <a href="https://jsonapi.org/">JSON:API</a> standaard volgt.
+    JSON:API focust zich op de eenvoud van implementatie zowel in de frontend als de backend.
+    Met de DataAPI kan je data opslaan en ophalen uit de “storage repository”. De DataAPI legt geen business processen
+    op.
+    Deze moeten op een ander niveau verwerkt worden.</p>
+<p>Dit document bevat geen uitgebreide lijst van entiteiten of api endpoints.
+    JSON:API maakt gebruik van een schema: alle entiteiten kunnen op dezelfde wijze opgevraagd, aangemaakt, verwijderd
+    en aangepast worden.
+    Het schema kan via de <a href="/schema.json">Schema Endpoint</a> opgevraagd worden.</p>
+<ol>
+    <li>
+        <h3>Datamodel</h3>
+        <p>
+            Het <a href="https://docs.google.com/spreadsheets/d/1xhvOCfiSIOtHjIJUtRrxvJ54OoDosNJ_JsA1B7FfpsI/edit?usp=sharing">model</a>
+            maakt gebruik van een Google Sheet. De data hierin wordt omgezet naar een <a href=""https://www.w3.org/TR/shacl/">SHACL</a> file. Deze
+            beschrijft de API die hieronder beschreven is. De <a href="https://docs.google.com/spreadsheets/d/1xhvOCfiSIOtHjIJUtRrxvJ54OoDosNJ_JsA1B7FfpsI/edit?usp=sharing">_ENTITIES</a> tab bevat een lijst van actieve entiteiten.
+            <ul>
+        <li>subClassOf geeft inheritance binnen het datamodel weer</li>
+        <li>sameAs geeft de semantische inheritance met een extern datamodel weer</li>
+            </ul>
+            Dus Functies is een subClassOf Codetabellen en deze een subClassOf Concept.
+            Alle Codetabellen, samen met de Functies codetabel kunnen met de ‘/codetabellen’ endpoint opgevraagd worden
+            alsook alle ‘/concepten’ waar Codetabellen een onderdeel van is.
+            Elke tab beschrijft een entity met zijn properties, cardinaliteit en verwachte datatype.
+        </p>
+    </li>
+    <li>
+        <h3>Audit</h3>
+        <p>
+            Alle queries naar de API komen in een audit log terecht deze kan door beheerders bevraagd worden.
+        </p>
+    </li>
+    <li>
+        <h3>Identifiers</h3>
+        <p>
+            Bij het aanmaken van een record wordt er een <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> (v4:random) aangemaakt voor de nieuwe entiteit. Als er een
+            UUID aanwezig is wordt deze gebruikt bij het aanmaak van nieuwe entiteiten. We raden aan om het systeem een
+            UUID te laten genereren.
+        </p>
+    </li>
+    <li>
+        <h3>Soorten API’s</h3>
+        Er zijn drie soorten API
+        <ul>
+            <li>
+                data: Via deze API kan je aan de data geraken en het datamodel aanspreken
+                <ol>
+                    <li>Read</li>
+                    <li>Create</li>
+                    <li>Update</li>
+                    <li>Delete</li>
+                </ol>
+            </li>
+            <li>
+                fulltext: Via deze API zijn meer uitgebreide zoekopdrachten mogelijk dat vua de dataAPI. Filters en
+                indexen kunnen uitgebreid worden.
+            </li>
+            <li>
+                logic: Via deze API kan de data op andere manieren getoond worden dan bepaald via het model. Zo kunnen
+                bepaalde queries sneller gedaan worden. Met de logic API kunnen er extra business logic acties gedaan
+                worden op de data. Bvb. de -audit API gebruiken om het verschil in de tijd te zien tussen twee versies
+                van hetzelfde record.
+            </li>
+        </ul>
+    </li>
+    <li>
+        <h3>Ping</h3>
+        Service controle: <a href="https://data.archiefpunt.be/ping">https://data.archiefpunt.be/ping</a>
+    </li>
+</ol>
+<img href="img/archiefpunt_overview.drawio.png">

@@ -1,5 +1,6 @@
 {
   "settings": {
+    "index": {"mapping": {"total_fields": {"limit": 2000}}},
     "number_of_shards": 2,
     "number_of_replicas": 4,
     "highlight": {
@@ -44,31 +45,15 @@
       }
     ],
     "properties": {
-      "duration": {
-        "type": "date_range",
-        "format": "yyyy||yyyyMMdd||yyyy-MM-dd||epoch_millis"
-      },
-      "archief.generated_date": {
-        "type": "date",
-        "format": "yyyy-MM-d||yyyy-M-dd||yyyy-M-d||yyyy-MM-dd"
-      },
-      "beheerder.generated_date": {
-        "type": "date",
-        "format": "yyyy-MM-d||yyyy-M-dd||yyyy-M-d||yyyy-MM-dd"
-      },
-      "samensteller.generated_date": {
-        "type": "date",
-        "format": "yyyy-MM-d||yyyy-M-dd||yyyy-M-d||yyyy-MM-dd"
-      },
       "plaats.label" : {
         "type" : "search_as_you_type"
       },
-      "archief.auto": {
+      "fiche": {
         "properties": {
-          "archiefvormer.waarde": {
+          "beheerder.naam": {
             "type": "search_as_you_type"
           },
-          "bewaarplaats.waarde": {
+          "samensteller.naam": {
             "type": "search_as_you_type"
           },
           "trefwoord": {
@@ -77,8 +62,16 @@
           "geografie": {
             "type": "search_as_you_type"
           },
-          "archief.waarde": {
+          "agent.naam": {
             "type": "search_as_you_type"
+          },
+          "datering": {
+            "type": "date_range",
+            "format": "yyyy||yyyyMMdd||yyyy-MM-dd||epoch_millis||date_time"
+          },
+          "generated_date": {
+            "type": "date",
+            "format": "yyyy-MM-d||yyyy-M-dd||yyyy-M-d||yyyy-MM-dd"
           }
         }
       }

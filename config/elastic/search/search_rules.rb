@@ -13,6 +13,7 @@ RULES = {
     'docs' => {
       '@.hits.hits' => lambda do |d, query|
         result = d['_source']
+        result['fiche']['data'] unless result.empty?
       end
     },
     'facets' => {

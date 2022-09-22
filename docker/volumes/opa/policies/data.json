@@ -17,6 +17,9 @@
     ],
     "Vlaams Architectuurinstituut": [
       "full-min"
+    ],
+    "meemo": [
+      "read-only"
     ]
   },
   "roles": [

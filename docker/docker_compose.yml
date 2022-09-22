@@ -39,16 +39,55 @@ services:
       - public
       - private
 
-  virtuoso:
+  virtuoso1:
     image: registry.docker.libis.be/library/virtuoso:7.2.5
     restart: unless-stopped
-    hostname: virtuoso
-    container_name: virtuoso
+    hostname: virtuoso1
+    container_name: virtuoso1
     environment:
       SPARQL_UPDATE: 'true'
       DEFAULT_GRAPH: https://data.archiefpunt.be/
     volumes:
-      - "./volumes/virtuoso/data/db:/data"
+      - "./volumes/virtuoso/data/db1:/data"
+    networks:
+      - private
+
+  virtuoso2:
+    image: registry.docker.libis.be/library/virtuoso:7.2.5
+    restart: unless-stopped
+    hostname: virtuoso2
+    container_name: virtuoso2
+    environment:
+      SPARQL_UPDATE: 'true'
+      DEFAULT_GRAPH: https://data.archiefpunt.be/
+    volumes:
+      - "./volumes/virtuoso/data/db2:/data"
+    networks:
+      - private
+
+  virtuoso3:
+    image: registry.docker.libis.be/library/virtuoso:7.2.5
+    restart: unless-stopped
+    hostname: virtuoso3
+    container_name: virtuoso3
+    environment:
+      SPARQL_UPDATE: 'true'
+      DEFAULT_GRAPH: https://data.archiefpunt.be/
+    volumes:
+      - "./volumes/virtuoso/data/db3:/data"
+    networks:
+      - private
+
+  virtuoso4:
+    image: registry.docker.libis.be/library/virtuoso:7.2.5
+    restart: unless-stopped
+    hostname: virtuoso4
+    container_name: virtuoso4
+    environment:
+      SPARQL_UPDATE: 'true'
+      DEFAULT_GRAPH: https://data.archiefpunt.be/
+    volumes:
+      - "./volumes/virtuoso/data/db4:/data"
     networks:
       - private
 
