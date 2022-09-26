@@ -1,13 +1,12 @@
 {
   "facet_beschrijvingsniveau": "fiche.beschrijvingsniveau.keyword",
-  "facet_rol_beheerder": "fiche.beheerder_rol.keyword",
+  "facet_rol_beheerder": "fiche.beheerder.rol.keyword",
   "facet_trefwoord": "fiche.trefwoord.keyword",
   "facet_geografie": "fiche.geografie.keyword",
-  "facet_bewaarplaats_naam": "fiche.beheerder.keyword",
   "facet_jaartal": "fiche.datering_text.keyword",
   "facet_rid": "fiche.id.keyword",
-  "facet_archiefvormer": "fiche.samensteller.keyword",
-  "facet_bewaarplaats": "fiche.beheerder.keyword",
+  "facet_archiefvormer": "fiche.samensteller.naam.keyword",
+  "facet_bewaarplaats": "fiche.beheerder.naam.keyword",
   "datering_systematisch": "fiche.datering",
   "facet_materiaal": "fiche.materiaal_type.keyword"
 }

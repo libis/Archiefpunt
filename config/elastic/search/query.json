@@ -13,13 +13,13 @@
     },
     "facet_beheerder": {
       "terms": {
-        "field": "fiche.beheerder.keyword",
+        "field": "fiche.beheerder.naam.keyword",
         "size": 10
       }
     },
     "facet_samensteller": {
       "terms": {
-        "field": "fiche.samensteller.keyword",
+        "field": "fiche.samensteller.naam.keyword",
         "size": 10,
         "order": {
           "_key": "asc"

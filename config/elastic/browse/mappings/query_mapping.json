@@ -23,9 +23,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "fiche.trefwoord",
-          "fiche.trefwoord._2gram",
-          "fiche.trefwoord._3gram"
+          "fiche.sayt.trefwoord",
+          "fiche.sayt.trefwoord._2gram",
+          "fiche.sayt.trefwoord._3gram"
         ]
       }
     }
@@ -36,9 +36,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "fiche.geografie",
-          "fiche.geografie._2gram",
-          "fiche.geografie._3gram"
+          "fiche.sayt.geografie",
+          "fiche.sayt.geografie._2gram",
+          "fiche.sayt.geografie._3gram"
         ]
       }
     }
@@ -49,9 +49,22 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "fiche.samensteller.naam",
-          "fiche.samensteller.naam._2gram",
-          "fiche.samensteller.naam._3gram"
+          "fiche.sayt.samensteller.naam",
+          "fiche.sayt.samensteller.naam._2gram",
+          "fiche.sayt.samensteller.naam._3gram"
+        ]
+      }
+    }
+  },
+  "samensteller": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "fiche.sayt.samensteller.naam",
+          "fiche.sayt.samensteller.naam._2gram",
+          "fiche.sayt.samensteller.naam._3gram"
         ]
       }
     }
@@ -62,9 +75,22 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "fiche.beheerder.naam",
-          "fiche.beheerder.naam._2gram",
-          "fiche.beheerder.naam._3gram"
+          "fiche.sayt.beheerder.naam",
+          "fiche.sayt.beheerder.naam._2gram",
+          "fiche.sayt.beheerder.naam._3gram"
+        ]
+      }
+    }
+  },
+  "beheerder": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "fiche.sayt.beheerder.naam",
+          "fiche.sayt.beheerder.naam._2gram",
+          "fiche.sayt.beheerder.naam._3gram"
         ]
       }
     }
@@ -75,9 +101,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "fiche.titel",
-          "fiche.titel._2gram",
-          "fiche.titel._3gram"
+          "fiche.sayt.titel",
+          "fiche.sayt.titel._2gram",
+          "fiche.sayt.titel._3gram"
         ]
       }
     }

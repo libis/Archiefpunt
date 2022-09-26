@@ -4,6 +4,18 @@ require 'logger'
 require 'date'
 require 'http'
 
+def audit_config
+  Solis::ConfigFile[:services][:audit]
+end
+
+def create_audit?(soc)
+  c = Solis::Store::Sparql::Client.new(audit_config[:solis][:sparql_endpoint], audit_config[:solis][:graph_name])
+  q =%(
+    PREFIX audit: <https://data.archiefpunt.be/_audit/>
+    ask { ?s audit:subject_of_change <#{soc}>; audit:change_reason 'create'})
+  r = c.query(q)
+end
+
 def add_to_audit(data)
   entity = data['entity']['name']
   entity_plural = data['entity']['name_plural']
@@ -81,7 +93,7 @@ def build_data(reason, diff, model)
       graph: model.class.graph_name
     },
     diff: diff,
-    timestamp: Time.now,
+    timestamp: DateTime.parse('2022-01-01'), # Time.now,
     user: Graphiti.context[:object].query_user || 'unknown',
     group: Graphiti.context[:object].query_group || 'unknown',
     misc: Graphiti.context[:object].other_data || {},
@@ -95,6 +107,9 @@ def load_entity(entity, total)
   while offset < total
     puts "#{entity} reading #{offset}/#{total}"
     ids = Solis::Query.run('', "SELECT DISTINCT ?s FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}#{entity}>.} limit #{limit} offset #{offset}").map { |m| m[:s] }
+
+    ids.delete_if{|d| create_audit?(d)}
+
     values = ids.map { |m| m.split('/').last }
     context = OpenStruct.new(query_user: 'system', query_group: 'system', other_data: {}, language: DATA_SOLIS_CONF[:language])
       Graphiti::with_context(context) do
@@ -131,7 +146,6 @@ totaal_archieven = Solis::Query.run('', "SELECT (COUNT(distinct ?s) as ?count) F
 totaal_beheerders = Solis::Query.run('', "SELECT (COUNT(distinct ?s) as ?count) FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Beheerder>.}").first[:count].to_i
 totaal_samenstellers = Solis::Query.run('', "SELECT (COUNT(distinct ?s) as ?count) FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Samensteller>.}").first[:count].to_i
 
-totaal_archieven=2
 load_entity('Archief', totaal_archieven)
 load_entity('Beheerder', totaal_beheerders)
 load_entity('Samensteller', totaal_samenstellers)

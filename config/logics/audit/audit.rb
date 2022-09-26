@@ -22,6 +22,9 @@ module Logic
     # cache.store(key, result, expires: 86400)
     #end
     result.to_json
+  rescue StandardError => e
+    puts e.message
+    raise RuntimeError, "Error: #{e.message}"
   end
 
   def version(params = {})
@@ -31,13 +34,18 @@ module Logic
 
     result = {}
 
+    raise "No initial audit entry found." if data.map{|m| m['change_reason']}.uniq.compact.empty?
+    raise "No CREATE audit entry found" unless data.map{|m| m['change_reason']}.include?('create')
+
     data.each do |d|
       Hashdiff.patch!(result, d['diff'])
       break if d['id'] =~ /#{params[:version_id]}/
     end
     result.to_json
   rescue StandardError => e
-    $SOLIS::LOGGER.error(e.message)
+    #$SOLIS::LOGGER.error(e.message)
+    raise RuntimeError, e.message
+
     {}.to_json
   end
 
@@ -55,7 +63,8 @@ module Logic
 
     Hashdiff.diff(changed_data, original_data).flatten.to_json
   rescue StandardError => e
-    $SOLIS::LOGGER.error(e.message)
+    #$SOLIS::LOGGER.error(e.message)
+    raise RuntimeError, e.message
     {}.to_json
   end
 
@@ -90,7 +99,7 @@ module Logic
 
     end
   rescue StandardError => e
-    raise e
+    raise RuntimeError, e.message
   end
 
   def list_of_changes_since_for_group(params = {})

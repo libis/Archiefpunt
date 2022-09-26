@@ -13,7 +13,10 @@ RULES = {
     'docs' => {
       '@.hits.hits' => lambda do |d, query|
         result = d['_source']
-        result['fiche']['data'] unless result.empty?
+        unless result.empty?
+          record_type = result['fiche']['data']['record_type']
+          { record_type => result['fiche']['data'] }
+        end
       end
     },
     'facets' => {

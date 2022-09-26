@@ -75,8 +75,9 @@ class Index
 
     return '' if data.nil? || data.empty?
 
+    filename = "#{Time.new.to_i}-#{rand(100000)}"
     if save_to_disk
-      File.open("./ndjson/#{Time.new.to_i}-#{rand(100000)}.ndjson", "wb") do |f|
+      File.open("./ndjson/#{filename}.ndjson", "wb") do |f|
         f.puts data.to_ndjson(@name, id, "index")
       end
     end
@@ -87,8 +88,8 @@ class Index
                          body: data.to_ndjson(@name, id, "index"))
 
     response_body = JSON.parse(response.body.to_s)
-    raise "Failed to insert record into #{@name}, #{response.code}, #{response.body.to_s}" if response.code != 200
-    raise "Failed to insert record into #{@name}, #{response.code}, #{response_body.to_s}" if response_body["errors"]
+    raise "Failed to insert record into #{@name}, #{"./ndjson/#{filename}.ndjson"} - #{response.code}, #{response.body.to_s}" if response.code != 200
+    raise "Failed to insert record into #{@name}, #{"./ndjson/#{filename}.ndjson"} - #{response.code}, #{response_body.to_s}" if response_body["errors"]
 
     response_body.to_s
   end

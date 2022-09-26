@@ -10,9 +10,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "fiche.trefwoord",
-          "fiche.trefwoord._2gram",
-          "fiche.trefwoord._3gram"
+          "fiche.sayt.trefwoord",
+          "fiche.sayt.trefwoord._2gram",
+          "fiche.sayt.trefwoord._3gram"
         ]
       }
     }
@@ -23,9 +23,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "fiche.geografie",
-          "fiche.geografie._2gram",
-          "fiche.geografie._3gram"
+          "fiche.sayt.geografie",
+          "fiche.sayt.geografie._2gram",
+          "fiche.sayt.geografie._3gram"
         ]
       }
     }
@@ -36,9 +36,22 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "fiche.samensteller",
-          "fiche.samensteller._2gram",
-          "fiche.samensteller._3gram"
+          "fiche.sayt.samensteller",
+          "fiche.sayt.samensteller._2gram",
+          "fiche.sayt.samensteller._3gram"
+        ]
+      }
+    }
+  },
+  "ac_samensteller": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "fiche.sayt.samensteller",
+          "fiche.sayt.samensteller._2gram",
+          "fiche.sayt.samensteller._3gram"
         ]
       }
     }
@@ -49,9 +62,22 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "fiche.beheerder",
-          "fiche.beheerder._2gram",
-          "fiche.beheerder._3gram"
+          "fiche.sayt.beheerder",
+          "fiche.sayt.beheerder._2gram",
+          "fiche.sayt.beheerder._3gram"
+        ]
+      }
+    }
+  },
+  "ac_beheerder": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "fiche.sayt.beheerder",
+          "fiche.sayt.beheerder._2gram",
+          "fiche.sayt.beheerder._3gram"
         ]
       }
     }

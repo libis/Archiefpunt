@@ -50,19 +50,22 @@
       },
       "fiche": {
         "properties": {
-          "beheerder.naam": {
+          "sayt.titel": {
             "type": "search_as_you_type"
           },
-          "samensteller.naam": {
+          "sayt.beheerder": {
             "type": "search_as_you_type"
           },
-          "trefwoord": {
+          "sayt.samensteller": {
             "type": "search_as_you_type"
           },
-          "geografie": {
+          "sayt.trefwoord": {
             "type": "search_as_you_type"
           },
-          "agent.naam": {
+          "sayt.geografie": {
+            "type": "search_as_you_type"
+          },
+          "sayt.agent": {
             "type": "search_as_you_type"
           },
           "datering": {

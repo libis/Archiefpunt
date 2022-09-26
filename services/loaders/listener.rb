@@ -5,9 +5,11 @@ require 'logger'
 require 'solis'
 require 'http'
 require 'lib/elastic'
-
+require 'lib/loader'
 require 'lib/file_queue'
 
+
+include LoaderHelper
 $running = true
 Signal.trap(0, proc do
   $running = false
@@ -50,28 +52,34 @@ def add_to_elastic(data)
     #   raise 'Unknown change request'
     # end
   else
-    constructs = {'Archief' => './config/constructs/expanded_archief2.sparql',
-                  'Beheerder' => './config/constructs/expanded_beheerder.sparql',
-                  'Samensteller' => './config/constructs/expanded_samensteller.sparql'}
+    new_data = []
 
-
-    filename = constructs[entity]
-    raise "#{entity} not registered for Elastic" if filename.nil? || filename.empty?
-
-    elastic_data = Solis::Query.run_construct_with_file(filename, entity_id, entity, id)
-    elastic_data = elastic_data.map{|m| {"#{entity.underscore}": m}}
+    case entity
+    when 'Archief'
+      elastic_data = Solis::Query.run_construct_with_file('./config/constructs/expanded_archief3.sparql', entity_id, entity, id)
+      new_data = apply_data_to_query_list(elastic_data, entity, archieven_query_list)
+    when 'Beheerder'
+      elastic_data = Solis::Query.run_construct_with_file('./config/constructs/expanded_beheerder.sparql', entity_id, entity, id)
+      new_data = apply_data_to_query_list(elastic_data, entity, beheerders_query_list)
+    when 'Samensteller'
+      elastic_data = Solis::Query.run_construct_with_file('./config/constructs/expanded_samensteller.sparql', entity_id, entity, id)
+      new_data = apply_data_to_query_list(elastic_data, entity, samenstellers_query_list)
+    else
+      raise "#{entity} not registered for Elastic"
+    end
 
     case change
     when 'create'
-      ELASTIC.index.insert(elastic_data, 'id', true)
+      ELASTIC.index.insert(new_data, 'id', true)
     when 'update'
-      ELASTIC.index.delete_data(elastic_data, 'id', true)
-      ELASTIC.index.insert(elastic_data, 'id', true)
+      ELASTIC.index.delete_data(new_data, 'id', true)
+      ELASTIC.index.insert(new_data, 'id', true)
     when 'delete'
-      ELASTIC.index.delete_data(elastic_data, 'id', true)
+      ELASTIC.index.delete_data(new_data, 'id', true)
     else
       raise 'Unknown change request'
     end
+
   end
   true
 rescue StandardError => e
