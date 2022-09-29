@@ -1,6 +1,6 @@
 {
-  "aTitel" : { "fiche.titel.keyword" : {"order" : "asc"}, "fiche.samensteller.keyword" : {"order" : "asc"}, "fiche.beheerder.keyword" : {"order" : "asc"}},
-  "dTitel" : { "fiche.titel.keyword" : {"order" : "desc"}, "fiche.samensteller.keyword" : {"order" : "desc"}, "fiche.beheerder.keyword" : {"order" : "desc"}},
+  "aTitel" : { "fiche.titel.keyword" : {"order" : "asc"}, "fiche.samensteller.naam.keyword" : {"order" : "asc"}, "fiche.beheerder.naam.keyword" : {"order" : "asc"}},
+  "dTitel" : { "fiche.titel.keyword" : {"order" : "desc"}, "fiche.samensteller.naam.keyword" : {"order" : "desc"}, "fiche.beheerder.naam.keyword" : {"order" : "desc"}},
   "aDatering" : { "fiche.datering_text.keyword" : {"order" : "asc"}},
   "dDatering" : { "fiche.datering_text.keyword" : {"order" : "desc"}}
 }

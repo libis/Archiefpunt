@@ -1,7 +1,7 @@
 {
   "id": "fiche.id",
-  "beheerder": ["fiche.beheerder"],
-  "samensteller": ["fiche.samensteller"],
+  "beheerder": ["fiche.beheerder.naam"],
+  "samensteller": ["fiche.samensteller.naam"],
   "onderwerp": ["fiche.trefwoord"],
   "titel": ["fiche.titel"],
   "any": [

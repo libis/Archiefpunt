@@ -9,11 +9,17 @@ def audit_config
 end
 
 def create_audit?(soc)
+  retries ||= 0
   c = Solis::Store::Sparql::Client.new(audit_config[:solis][:sparql_endpoint], audit_config[:solis][:graph_name])
   q =%(
     PREFIX audit: <https://data.archiefpunt.be/_audit/>
     ask { ?s audit:subject_of_change <#{soc}>; audit:change_reason 'create'})
   r = c.query(q)
+rescue StandardError => e
+  LOGGER.error(e.message)
+  sleep 5
+  retries += 1
+  retry if retries < 3
 end
 
 def add_to_audit(data)
@@ -34,7 +40,7 @@ def add_to_audit(data)
   stat_data=STAT.find{|f| f['id'].eql?(id)}
   if stat_data
     LOGGER.info("Stats found")
-    created_date = stat_data['updater_at']
+    created_date = stat_data['updated_at']
     creator_name = stat_data['updater_name']
     creator_group= stat_data['updater_group']
     subject_of_change = stat_data['subject_of_change'] if stat_data.key?('subject_of_change')
@@ -55,7 +61,7 @@ def add_to_audit(data)
   response = HTTP.post(audit_url, :json => change_set )
 
   if response.code == 200
-    result = response.body
+    result = JSON.parse(response.body.to_s)
     true
   else
     puts response.body.to_s
@@ -130,6 +136,8 @@ def load_entity(entity, total)
     #   exit 1
     offset += limit
   end
+rescue StandardError => e
+  LOGGER.error(e.message)
 end
 
 LOGGER = Logger.new(STDOUT)

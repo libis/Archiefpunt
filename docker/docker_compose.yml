@@ -39,83 +39,55 @@ services:
       - public
       - private
 
-  virtuoso1:
+  virtuoso:
     image: registry.docker.libis.be/library/virtuoso:7.2.5
     restart: unless-stopped
-    hostname: virtuoso1
-    container_name: virtuoso1
+    hostname: virtuoso
+    container_name: virtuoso
+    mem_limit: 8g
+    mem_reservation: 3g
     environment:
       SPARQL_UPDATE: 'true'
       DEFAULT_GRAPH: https://data.archiefpunt.be/
     volumes:
-      - "./volumes/virtuoso/data/db1:/data"
-    networks:
-      - private
-
-  virtuoso2:
-    image: registry.docker.libis.be/library/virtuoso:7.2.5
-    restart: unless-stopped
-    hostname: virtuoso2
-    container_name: virtuoso2
-    environment:
-      SPARQL_UPDATE: 'true'
-      DEFAULT_GRAPH: https://data.archiefpunt.be/
-    volumes:
-      - "./volumes/virtuoso/data/db2:/data"
-    networks:
-      - private
-
-  virtuoso3:
-    image: registry.docker.libis.be/library/virtuoso:7.2.5
-    restart: unless-stopped
-    hostname: virtuoso3
-    container_name: virtuoso3
-    environment:
-      SPARQL_UPDATE: 'true'
-      DEFAULT_GRAPH: https://data.archiefpunt.be/
-    volumes:
-      - "./volumes/virtuoso/data/db3:/data"
-    networks:
-      - private
-
-  virtuoso4:
-    image: registry.docker.libis.be/library/virtuoso:7.2.5
-    restart: unless-stopped
-    hostname: virtuoso4
-    container_name: virtuoso4
-    environment:
-      SPARQL_UPDATE: 'true'
-      DEFAULT_GRAPH: https://data.archiefpunt.be/
-    volumes:
-      - "./volumes/virtuoso/data/db4:/data"
+      - "./volumes/virtuoso/data/db:/data"
     networks:
       - private
 
   elastic:
-    image: elasticsearch:7.14.2
-    restart: unless-stopped
+    image: elasticsearch:8.4.1
     container_name: elastic
+    restart: unless-stopped
+    mem_limit: 4g
+    mem_reservation: 750m
     environment:
+      ES_JAVA_OPTS: "-Xms750m -Xmx750m"
       discovery.type: single-node
-      http.cors.enabled: 'true'
-      http.cors.allow-origin: '*'
-      http.cors.allow-headers: X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization
-      http.cors.allow-credentials: 'true'
+      xpack.security.enabled: 'false'
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    cap_add:
+      - IPC_LOCK
     networks:
-    - private
+      - private
     volumes:
-    - "./volumes/elastic/data:/usr/share/elasticsearch/data"
-    - "./volumes/elastic/logs:/usr/share/elasticsearch/logs"
+      - "./volumes/elastic/data:/usr/share/elasticsearch/data"
+      - "./volumes/elastic/logs:/usr/share/elasticsearch/logs"
 
   kibana:
-    image: kibana:7.14.2
-    restart: unless-stopped
+    image: kibana:8.4.1
+    container_name: kibana
     networks:
-    - private
+      - private
     links:
-    - elastic:elasticsearch
+      - elastic:elasticsearch
     depends_on:
-    - elastic
+      - elastic
 
   data-api:
     image: registry.docker.libis.be/archiefpunt/data

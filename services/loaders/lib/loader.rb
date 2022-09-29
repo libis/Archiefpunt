@@ -1,3 +1,7 @@
+require 'data_collector'
+
+include DataCollector::Core
+
 module LoaderHelper
   def logic_config
     Solis::ConfigFile[:services][:data_logic]
@@ -69,8 +73,24 @@ module LoaderHelper
                 t = filter(d, k)
                 t.each do |s|
                   if i.eql?('datering')
-                    gte, lte = s.split('/')
-                    nd << { index_key => { 'id' => id, i => { 'gte' => gte, 'lte' => lte } } }
+                    gte, lte = s.to_s.split('/')
+                    if s.is_a?(ISO8601::TimeInterval)
+                      gte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                      lte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+
+                      nd << { index_key => { 'id' => id, i => { 'gte' => gte, 'lte' => lte } } }
+                    elsif s.is_a?(Array)
+                      s.each do |e|
+                        gte, lte = s.to_s.split('/')
+                        if s.is_a?(ISO8601::TimeInterval)
+                          gte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                          lte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                        end
+                        nd << { index_key => { 'id' => id, i => { 'gte' => gte, 'lte' => lte } } }
+                      end
+                    else
+                      nd << { index_key => { 'id' => id, i => { 'gte' => gte, 'lte' => lte } } }
+                    end
                   else
                     nd << { index_key => { 'id' => id, i => s } }
                   end

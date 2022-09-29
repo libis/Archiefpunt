@@ -20,6 +20,12 @@
     ],
     "meemo": [
       "read-only"
+    ],
+    "meemoFM": [
+      "full-min"
+    ],
+    "superblocks": [
+      "read-only"
     ]
   },
   "roles": [
@@ -28,6 +34,25 @@
     "full-min"
   ],
   "readonlytabellen": [
-    "rechtenstatus"
+    "beschrijvingsniveaus",
+    "bereikbaarheden",
+    "aangroei",
+    "type_waarden",
+    "type_vergelijkingen",
+    "type_namen",
+    "type_identificatienummers",
+    "type_concepten",
+    "type_agenten",
+    "talen",
+    "rol_samenstellers",
+    "rol_beheerders",
+    "rechtenstatussen",
+    "raadplegingsstatussen",
+    "periodes",
+    "ordeningsstatussen",
+    "onderwerpen",
+    "materiaalsoorten",
+    "gebruiksgroepen",
+    "functies"
   ]
 }

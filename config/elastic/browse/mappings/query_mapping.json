@@ -49,9 +49,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "fiche.sayt.samensteller.naam",
-          "fiche.sayt.samensteller.naam._2gram",
-          "fiche.sayt.samensteller.naam._3gram"
+          "fiche.sayt.samensteller",
+          "fiche.sayt.samensteller._2gram",
+          "fiche.sayt.samensteller._3gram"
         ]
       }
     }
@@ -62,9 +62,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "fiche.sayt.samensteller.naam",
-          "fiche.sayt.samensteller.naam._2gram",
-          "fiche.sayt.samensteller.naam._3gram"
+          "fiche.sayt.samensteller",
+          "fiche.sayt.samensteller._2gram",
+          "fiche.sayt.samensteller._3gram"
         ]
       }
     }
@@ -75,9 +75,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "fiche.sayt.beheerder.naam",
-          "fiche.sayt.beheerder.naam._2gram",
-          "fiche.sayt.beheerder.naam._3gram"
+          "fiche.sayt.beheerder",
+          "fiche.sayt.beheerder._2gram",
+          "fiche.sayt.beheerder._3gram"
         ]
       }
     }
@@ -88,9 +88,9 @@
         "query": "{{}}",
         "type": "bool_prefix",
         "fields": [
-          "fiche.sayt.beheerder.naam",
-          "fiche.sayt.beheerder.naam._2gram",
-          "fiche.sayt.beheerder.naam._3gram"
+          "fiche.sayt.beheerder",
+          "fiche.sayt.beheerder._2gram",
+          "fiche.sayt.beheerder._3gram"
         ]
       }
     }

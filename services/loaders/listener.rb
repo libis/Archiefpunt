@@ -84,6 +84,7 @@ def add_to_elastic(data)
   true
 rescue StandardError => e
   LOGGER.error("#{__method__}: #{entity}(#{id}) -- #{e.message}")
+  raise e
   false
 else
   LOGGER.info("#{__method__}: #{entity}(#{id}) -- done")
