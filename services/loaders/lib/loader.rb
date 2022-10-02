@@ -49,6 +49,7 @@ module LoaderHelper
 
   def apply_data_to_query_list(data, entity, query_list)
     new_data = []
+    return new_data if data.nil?
     data.each do |d|
       id = filter(d, '$.id').first
 
@@ -75,16 +76,26 @@ module LoaderHelper
                   if i.eql?('datering')
                     gte, lte = s.to_s.split('/')
                     if s.is_a?(ISO8601::TimeInterval)
-                      gte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
-                      lte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                      if s.size < 0
+                        lte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                        gte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                      else
+                        gte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                        lte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                      end
 
                       nd << { index_key => { 'id' => id, i => { 'gte' => gte, 'lte' => lte } } }
                     elsif s.is_a?(Array)
                       s.each do |e|
                         gte, lte = s.to_s.split('/')
                         if s.is_a?(ISO8601::TimeInterval)
-                          gte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
-                          lte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                          if s.size < 0
+                            lte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                            gte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                          else
+                            gte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                            lte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                          end
                         end
                         nd << { index_key => { 'id' => id, i => { 'gte' => gte, 'lte' => lte } } }
                       end

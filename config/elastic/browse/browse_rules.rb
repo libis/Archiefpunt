@@ -35,13 +35,21 @@ RULES = {
       '@.hits.hits[*]._source.fiche.data' => lambda do |d, query|
 
         result = []
-        if filter(query, '$..fields').select{|s| s =~ /beheerder/}.size > 0
-          d['beheerder'].each do |beheerder|
+        if filter(query, '$..fields').select { |s| s =~ /beheerder|bewaarplaats/ }.size > 0 && filter(d, '$..id').select { |s| s =~ /beheerder/ }.size > 0
+          if d.key?('beheerder')
+            d['beheerder'].each do |beheerder|
               result << { id: beheerder['id'], waarde: beheerder['naam'] }
+            end
+          else
+            result << { id: d['id'], waarde: filter(d, '$..naam..waarde').first }
           end
-        elsif filter(query, '$..fields').select{|s| s =~ /samensteller/}.size > 0
-          d['samensteller'].each do |samensteller|
-            result << { id: samensteller['id'], waarde: samensteller['naam'] }
+        elsif filter(query, '$..fields').select { |s| s =~ /samensteller|archiefvormer/ }.size > 0 && filter(d, '$..id').select { |s| s =~ /samensteller/ }.size > 0
+          if d.key?('samensteller')
+            d['samensteller'].each do |samensteller|
+              result << { id: samensteller['id'], waarde: samensteller['naam'] }
+            end
+          else
+            result << { id: d['id'], waarde: filter(d, '$..naam..waarde').first }
           end
         end
         result

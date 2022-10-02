@@ -31,63 +31,100 @@ def is_codetabel?(entity)
                   end
 end
 
+def get_data(construct_query, entity, entity_id, id)
+  attempts ||= 0
+  data = Solis::Query.run_construct_with_file(construct_query, entity_id, entity, id)
+
+  raise Solis::Error::NotFoundError, "Construct is empty" if data.nil? || data.empty?
+  data
+rescue Solis::Error::NotFoundError => e
+  if (attempts+=1) < 5
+    puts "Retrying to load data... attempt=#{attempts}"
+    sleep 5
+    retry
+  end
+rescue StandardError => e
+  LOGGER.error(e.message)
+
+  {}
+end
+
 def add_to_elastic(data)
-  change = data['change_reason']
+  save_to_disk = elastic_config[:save_to_disk] || false
+  change = data['change_reason'].downcase
   entity = data['entity']['name']
   entity_id = "#{entity.underscore}_id"
   id = data['entity']['id']
 
-  if is_codetabel?(entity)
-    # elastic_data = {"#{entity}"}
-    #
-    # case change
-    # when 'create'
-    #   ELASTIC.index.insert(elastic_data, 'id', true)
-    # when 'update'
-    #   ELASTIC.index.delete_data(elastic_data, 'id', true)
-    #   ELASTIC.index.insert(elastic_data, 'id', true)
-    # when 'delete'
-    #   ELASTIC.index.delete_data(elastic_data, 'id', true)
-    # else
-    #   raise 'Unknown change request'
-    # end
-  else
+  # if is_codetabel?(entity)
+  #   # elastic_data = {"#{entity}"}
+  #   #
+  #   # case change
+  #   # when 'create'
+  #   #   ELASTIC.index.insert(elastic_data, 'id', true)
+  #   # when 'update'
+  #   #   ELASTIC.index.delete_data(elastic_data, 'id', true)
+  #   #   ELASTIC.index.insert(elastic_data, 'id', true)
+  #   # when 'delete'
+  #   #   ELASTIC.index.delete_data(elastic_data, 'id', true)
+  #   # else
+  #   #   raise 'Unknown change request'
+  #   # end
+  # else
     new_data = []
 
+  LOGGER.info('FLOW - 1')
     case entity
     when 'Archief'
-      elastic_data = Solis::Query.run_construct_with_file('./config/constructs/expanded_archief3.sparql', entity_id, entity, id)
+      LOGGER.info('FLOW - 2')
+      elastic_data = get_data('./config/constructs/expanded_archief3.sparql', entity, entity_id, id)
       new_data = apply_data_to_query_list(elastic_data, entity, archieven_query_list)
+      new_data.each do |fiche|
+        fiche['fiche']['data']['datering_systematisch'] = fiche['fiche']['data']['datering_systematisch'].to_s
+      end
     when 'Beheerder'
-      elastic_data = Solis::Query.run_construct_with_file('./config/constructs/expanded_beheerder.sparql', entity_id, entity, id)
+      LOGGER.info('FLOW - 3')
+      elastic_data = get_data('./config/constructs/expanded_beheerder.sparql', entity, entity_id, id)
       new_data = apply_data_to_query_list(elastic_data, entity, beheerders_query_list)
+      new_data.each do |fiche|
+        fiche['fiche']['data']['agent']['datering_systematisch'] = fiche['fiche']['data']['agent']['datering_systematisch'].to_s
+      end
     when 'Samensteller'
-      elastic_data = Solis::Query.run_construct_with_file('./config/constructs/expanded_samensteller.sparql', entity_id, entity, id)
+      LOGGER.info('FLOW - 4')
+      elastic_data = get_data('./config/constructs/expanded_samensteller.sparql', entity, entity_id, id)
       new_data = apply_data_to_query_list(elastic_data, entity, samenstellers_query_list)
     else
-      raise "#{entity} not registered for Elastic"
+      LOGGER.info('FLOW - 5')
+      raise "#{entity} not registered for Elastic -- skipping"
     end
 
+  LOGGER.info('FLOW - 6')
     case change
     when 'create'
-      ELASTIC.index.insert(new_data, 'id', true)
+      LOGGER.info('FLOW - 7')
+      ELASTIC.index.insert(new_data, 'id', save_to_disk)
     when 'update'
-      ELASTIC.index.delete_data(new_data, 'id', true)
-      ELASTIC.index.insert(new_data, 'id', true)
+      LOGGER.info('FLOW - 8')
+      ELASTIC.index.delete_data(new_data, 'id', save_to_disk)
+      ELASTIC.index.insert(new_data, 'id', save_to_disk)
     when 'delete'
-      ELASTIC.index.delete_data(new_data, 'id', true)
+      LOGGER.info('FLOW - 9')
+      ELASTIC.index.delete_data(new_data, 'id', save_to_disk)
     else
+      LOGGER.info('FLOW - 10')
       raise 'Unknown change request'
     end
-
-  end
+  LOGGER.info('FLOW - 11')
+  # end
   true
 rescue StandardError => e
+  LOGGER.info('FLOW - 12')
   LOGGER.error("#{__method__}: #{entity}(#{id}) -- #{e.message}")
   raise e
   false
 else
-  LOGGER.info("#{__method__}: #{entity}(#{id}) -- done")
+  LOGGER.info('FLOW - 13')
+  LOGGER.info("#{__method__}: #{entity}(#{id}) -- #{ELASTIC.index.name} -- done")
 end
 
 def add_to_audit(data)

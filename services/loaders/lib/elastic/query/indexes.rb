@@ -3,6 +3,7 @@ module Query
     def initialize(mappings)
       @facet_map = JSON.load(File.read(mappings[:facet]))
       @index_map = JSON.load(File.read(mappings[:index]))
+      @pipeline = ''
       @query_mapping = {}
       if mappings.has_key?(:query_mapping)
         @query_mapping = JSON.load(File.read(mappings[:query_mapping]))
@@ -24,6 +25,10 @@ module Query
 
     def query_mapping
       @query_mapping
+    end
+
+    def pipeline
+      @pipeline
     end
 
     def include?(key)

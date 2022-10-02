@@ -361,10 +361,13 @@ construct {
     #rechtenstatus_metadata
     ?archief_id abv:rechtenstatus_metadata/abv:label ?archief_rechtenstatus_metadata .
     #bronverwijzing_record
-    ?archief_id abv:bronverwijzing_record ?archief_bronverwijzing_record .
+    OPTIONAL {
+        ?archief_id abv:bronverwijzing_record ?archief_bronverwijzing_record .
+    }
     #bronverwijzing_archief
-    ?archief_id abv:bronverwijzing_archief ?archief_bronverwijzing_archief .
-
+    OPTIONAL {
+        ?archief_id abv:bronverwijzing_archief ?archief_bronverwijzing_archief .
+    }
     bind(lcase(substr(replace(?beheerder_agent_naam, '[^a-zA-Z]+',''),1,1)) as ?bewaarplaats_az) .
     bind(lcase(substr(replace(?samensteller_agent_naam, '[^a-zA-Z]+',''),1,1)) as ?archiefvormer_az) .
     bind(lcase(?samensteller_agent_naam) as ?archiefvormer) .

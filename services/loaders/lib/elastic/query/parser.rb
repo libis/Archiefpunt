@@ -79,6 +79,47 @@ module Query
 
           query_fragment = query[bool_operator] || []
 
+# usefull for queries where the term is known beforehand
+# for example -> when query is like ?any:*
+#   "any": {
+#     "*": {
+#       "match_all": {}
+#     }
+#   }
+#
+# can also be used like this:
+#   "trefwoord": {
+#     "{{}}": {
+#       "multi_match": {
+#         "query": "{{}}",
+#         "type": "bool_prefix",
+#         "fields": [
+#           "archief.auto.trefwoord",
+#           "archief.auto.trefwoord._2gram",
+#           "archief.auto.trefwoord._3gram"
+#         ]
+#       }
+#     }
+#   }
+#
+# when the first {{}} is encountered the query will be replaced with the right site of the index(trefwoord)
+#  ?trefwoord=water
+#
+#   "{{index}}": {
+#     "{{}}": {
+#       "multi_match": {
+#         "query": "{{}}",
+#         "type": "bool_prefix",
+#         "fields": [
+#           "archief.{{index}}",
+#           "archief.{{index}}._2gram",
+#           "archief.{{index}}._3gram"
+#         ]
+#       }
+#     }
+#   }
+#
+
           if @indexes.query_mapping.has_key?(index) && @indexes.query_mapping[index].has_key?(terms)
               query_fragment << @indexes.query_mapping[index][terms]
           elsif @indexes.query_mapping.has_key?(index) && @indexes.query_mapping[index].has_key?("{{}}")
@@ -87,26 +128,31 @@ module Query
             query_fragment << JSON.parse(q.to_json.gsub('{{}}', terms))
           elsif index =~ /date/
             index = @indexes.facet_map[index]
-            if terms =~ /^(-?\d{3,4}|NaN) TO (-?\d{3,4}|NaN)$/
+            #            if terms =~ /^(-?\d{3,4}|NaN) TO (-?\d{3,4}|NaN)$/
+            if terms =~ /^(-?\d{1,4}|NaN|) TO (-?\d{1,4}|NaN|)$/
               from_date = $1
               to_date = $2
 
+              from_date = '1' if from_date.eql?('0')
               from_date = '1970' unless from_date =~ /^\d+$/ && from_date.length <= 4
-              to_date = '9999' unless to_date =~ /^\d+$/ && to_date.length <= 4
-
+              from_date = "%04d" % from_date if from_date.length < 4
               from_date = "#{from_date}-01-01"
+
+              to_date = '1'   if to_date.eql?('0')
+              to_date = '9999' unless to_date =~ /^\d+$/ && to_date.length <= 4
+              to_date = "%04d" % to_date if to_date.length < 4
               to_date = "#{to_date}-12-31"
 
               #query_fragment << {'range' => {index => {'gte' => from_date, 'lte' => to_date, 'relation' => 'CONTAINS'}}}
-              #query_fragment << {'range' => {index => {'gte' => from_date, 'lte' => to_date, 'relation' => 'WITHIN'}}}
-              query_fragment << { 'range' => { index => { 'gte' => from_date, 'lte' => to_date, 'relation' => 'INTERSECTS' } } }
+              query_fragment << {'range' => {index => {'gte' => from_date, 'lte' => to_date, 'relation' => 'WITHIN'}}}
+              #query_fragment << { 'range' => { index => { 'gte' => from_date, 'lte' => to_date, 'relation' => 'INTERSECTS' } } }
             elsif terms =~ /^(-?\d{8}) TO (-?\d{8})$/
               from_date = $1
               to_date = $2
 
               #query_fragment << {'range' => {index => {'gte' => from_date, 'lte' => to_date, 'relation' => 'CONTAINS'}}}
-              #query_fragment << {'range' => {index => {'gte' => from_date, 'lte' => to_date, 'relation' => 'WITHIN'}}}
-              query_fragment << { 'range' => { index => { 'gte' => from_date, 'lte' => to_date, 'relation' => 'INTERSECTS' } } }
+              query_fragment << {'range' => {index => {'gte' => from_date, 'lte' => to_date, 'relation' => 'WITHIN'}}}
+              #query_fragment << { 'range' => { index => { 'gte' => from_date, 'lte' => to_date, 'relation' => 'INTERSECTS' } } }
             end
           elsif index =~ /^facet_/
             index = @indexes.facet_map[index]
@@ -141,7 +187,8 @@ module Query
 
             # https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#_reserved_characters
             #qs['query_string']["query"] += terms.is_a?(Array) ? terms.join(' ') : terms
-            qs['query_string']["query"] += (terms.is_a?(Array) ? terms.join(' ') : terms).gsub(/([\+\-\=\&\|\>\<\!\(\)\{\}\[\]^\"\~\*\?:\/])/, '\\\\\1')
+            qs['query_string']["query"] += (terms.is_a?(Array) ? terms.join(' ') : terms).gsub(/([\+\-\=\&\|\>\<\!\(\)\{\}\[\]^\~\*\?:\/])/, '\\\\\1')
+            #qs['query_string']["query"] += (terms.is_a?(Array) ? terms.join(' ') : terms).gsub(/([\+\-\=\&\|\>\<\!\(\)\{\}\[\]^\"\~\*\?:\/])/, '\\\\\1')
 
             qs['query_string']["query"] = qs['query_string']["query"].strip
             qs['query_string']["default_operator"] = qs_operator
