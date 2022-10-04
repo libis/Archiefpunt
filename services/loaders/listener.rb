@@ -86,13 +86,24 @@ def add_to_elastic(data)
       LOGGER.info('FLOW - 3')
       elastic_data = get_data('./config/constructs/expanded_beheerder.sparql', entity, entity_id, id)
       new_data = apply_data_to_query_list(elastic_data, entity, beheerders_query_list)
-      new_data.each do |fiche|
-        fiche['fiche']['data']['agent']['datering_systematisch'] = fiche['fiche']['data']['agent']['datering_systematisch'].to_s
-      end
+      # new_data.each do |fiche|
+      #   if fiche.key?('fiche') && fiche['fiche'].key?('data') && fiche['fiche']['data'].key?('agent')
+      #     fiche['fiche']['data']['agent'].each do |inner_fiche|
+      #       inner_fiche['datering_systematisch'] = inner_fiche['datering_systematisch'].to_s
+      #     end
+      #   end
+      # end
     when 'Samensteller'
       LOGGER.info('FLOW - 4')
       elastic_data = get_data('./config/constructs/expanded_samensteller.sparql', entity, entity_id, id)
       new_data = apply_data_to_query_list(elastic_data, entity, samenstellers_query_list)
+      # new_data.each do |fiche|
+      #   if fiche.key?('fiche') && fiche['fiche'].key?('data') && fiche['fiche']['data'].key?('agent')
+      #     fiche['fiche']['data']['agent'].each do |inner_fiche|
+      #       inner_fiche['datering_systematisch'] = inner_fiche['datering_systematisch'].to_s
+      #     end
+      #   end
+      # end
     else
       LOGGER.info('FLOW - 5')
       raise "#{entity} not registered for Elastic -- skipping"

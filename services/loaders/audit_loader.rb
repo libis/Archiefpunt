@@ -1,8 +1,13 @@
+# encoding: utf-8
 require 'solis'
 require 'hashdiff'
 require 'logger'
 require 'date'
 require 'http'
+
+
+Encoding.default_external = Encoding::UTF_8
+Encoding.default_internal = Encoding::UTF_8
 
 def audit_config
   Solis::ConfigFile[:services][:audit]
@@ -15,11 +20,15 @@ def create_audit?(soc)
     PREFIX audit: <https://data.archiefpunt.be/_audit/>
     ask { ?s audit:subject_of_change <#{soc}>; audit:change_reason 'create'})
   r = c.query(q)
+rescue Solis::Error::NotFoundError => e
+  false
 rescue StandardError => e
   LOGGER.error(e.message)
   sleep 5
   retries += 1
   retry if retries < 3
+
+  false
 end
 
 def add_to_audit(data)
