@@ -32,15 +32,15 @@ class Index
     raise "Failed to create index #{@name} \n#{response.body}"
   end
 
-  def delete
-    raise "Index #{@name} does not exist" unless exist?
+  def delete(name=@name)
+    raise "Index #{name} does not exist" unless exist?
 
-    @logger.info "Deleting index #{@name}"
-    response = HTTP.delete("#{@elastic}/#{@name}")
+    @logger.info "Deleting index #{name}"
+    response = HTTP.delete("#{@elastic}/#{name}")
 
     return true if response.code == 200
 
-    raise "Failed to delete index #{@name} \n#{response.body}"
+    raise "Failed to delete index #{name} \n#{response.body}"
   end
 
 

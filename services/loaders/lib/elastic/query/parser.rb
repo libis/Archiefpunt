@@ -129,17 +129,15 @@ module Query
           elsif index =~ /date/
             index = @indexes.facet_map[index]
             #            if terms =~ /^(-?\d{3,4}|NaN) TO (-?\d{3,4}|NaN)$/
-            if terms =~ /^(-?\d{1,4}|NaN|) TO (-?\d{1,4}|NaN|)$/
+            if terms =~ /^(-?\d{1,4}|NaN|)? ?TO ?(-?\d{1,4}|NaN|)?$/
               from_date = $1
               to_date = $2
 
-              from_date = '1' if from_date.eql?('0')
-              from_date = '1970' unless from_date =~ /^\d+$/ && from_date.length <= 4
+              from_date = '1' unless from_date =~ /^\d+$/ && from_date.length <= 4
               from_date = "%04d" % from_date if from_date.length < 4
               from_date = "#{from_date}-01-01"
 
-              to_date = '1'   if to_date.eql?('0')
-              to_date = '9999' unless to_date =~ /^\d+$/ && to_date.length <= 4
+              to_date = '9998' unless to_date =~ /^\d+$/ && to_date.length <= 4
               to_date = "%04d" % to_date if to_date.length < 4
               to_date = "#{to_date}-12-31"
 
@@ -314,7 +312,7 @@ module Query
 
     def normalize_dates(parsed)
       new_date_range = []
-      date_ranges = parsed.select { |s| s[:type].eql?('index') && s[:value] =~ /(start|end)date$/ }
+      date_ranges = parsed.select { |s| s[:type].eql?('index') && s[:value] =~ /(start|end)?date/ }
       if date_ranges.length > 0
         index = parsed.rindex(date_ranges[0])
         date_range_operator = { value: 'AND', type: 'operator', delete: false, offset: [0, 0] }
@@ -322,11 +320,13 @@ module Query
           start_index = parsed.rindex(date_range)
           end_index = find_closing_box_bracket(start_index, parsed)
           terms = parsed[start_index..end_index].select { |s| s[:type].eql?('term') }
-          if date_range[:value].eql?('enddate')
-            new_date_range << terms.first[:value]
-          else
-            new_date_range << terms.last[:value]
-          end
+          # if date_range[:value].eql?('enddate')
+          #   new_date_range << terms.first[:value]
+          # else
+          #   new_date_range << terms.last[:value]
+          # end
+
+          new_date_range << "#{terms.map{|m| m[:value]}.join('')}"
 
           until parsed[start_index][:type].eql?('operator') || start_index < 1
             start_index -= 1
@@ -337,26 +337,26 @@ module Query
         end
 
         parsed[index] = date_range_operator
-        parsed[index + 1] = { value: ' ', type: 'term', delete: false, offset: [0, 0] }
-        parsed[index + 2] = { value: 'date_range', type: 'index', delete: false, offset: [0, 0] }
-        parsed[index + 3] = { value: new_date_range.join(' TO '), type: 'date_range', delete: false, offset: [0, 0] }
+        #parsed[index + 1] = { value: ' ', type: 'term', delete: false, offset: [0, 0] }
+        #parsed[index + 2] = { value: 'date_range', type: 'index', delete: false, offset: [0, 0] }
+        parsed[index + 1] = { value: new_date_range.join(''), type: 'date_range', delete: false, offset: [0, 0] }
       end
 
       parsed.delete_if { |d| d[:delete] }
 
-      indexes = parsed.select { |s| s[:type].eql?('index') && s[:value] =~ /date/ }
-      indexes.each do |index|
-        date_ranges = parsed[parsed.index(index)..].select { |s| s[:type].eql?('open_box_bracket') }
-        date_ranges.each do |date_range|
-          start_index = parsed.index(date_range)
-          end_index = find_closing_box_bracket(start_index, parsed)
-          terms = parsed[start_index..end_index].select { |s| s[:type].eql?('term') }.map { |m| m[:value] }.join('').split(' TO ')
-
-          parsed[start_index..end_index].each { |d| d[:delete] = true }
-          parsed[start_index] = { value: terms.join(' TO '), type: 'date_range', delete: false, offset: [0, 0] }
-          parsed.delete_if { |d| d[:delete] }
-        end
-      end
+      # indexes = parsed.select { |s| s[:type].eql?('index') && s[:value] =~ /date/ }
+      # indexes.each do |index|
+      #   date_ranges = parsed[parsed.index(index)..].select { |s| s[:type].eql?('open_box_bracket') }
+      #   date_ranges.each do |date_range|
+      #     start_index = parsed.index(date_range)
+      #     end_index = find_closing_box_bracket(start_index, parsed)
+      #     terms = parsed[start_index..end_index].select { |s| s[:type].eql?('term') }.map { |m| m[:value] }.join('').split(' TO ')
+      #
+      #     parsed[start_index..end_index].each { |d| d[:delete] = true }
+      #     parsed[start_index] = { value: terms.join(' TO '), type: 'date_range', delete: false, offset: [0, 0] }
+      #     parsed.delete_if { |d| d[:delete] }
+      #   end
+      # end
 
       parsed
     end

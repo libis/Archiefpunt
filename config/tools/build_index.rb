@@ -23,7 +23,7 @@ def archief_as_jsonld(c, archief_ids)
     "@embed": "@always"
 }
                      )
-  f = File.read('/Users/mehmetc/Dropbox/AllSources/LIBIS/archiefbank_api/esbridge-api/config/constructs/expanded_archief2.sparql')
+  f = File.read('/Users/mehmetc/Dropbox/AllSources/LIBIS/archiefbank_api/esbridge-api/config/constructs/expanded_archief3.sparql')
 
   archief_ids = [archief_ids] unless archief_ids.is_a?(Array)
   archief_ids = archief_ids.map { |m| "<#{m}>" }.join(" ")

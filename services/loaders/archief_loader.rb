@@ -62,7 +62,7 @@ rescue StandardError => x
 end
 
 total_archieven = Solis::Query.run('',"SELECT (COUNT(distinct ?s) as ?count) FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Archief>.}").first[:count].to_i
-load_data(elastic, total_archieven,'./config/constructs/expanded_archief2.sparql', 'Archief', 'archief_id')
+load_data(elastic, total_archieven,'./config/constructs/expanded_archief3.sparql', 'Archief', 'archief_id')
 
 totaal_beheerders = Solis::Query.run('',"SELECT (COUNT(distinct ?s) as ?count) FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Beheerder>.}").first[:count].to_i
 load_data(elastic, totaal_beheerders,'./config/constructs/expanded_beheerder.sparql', 'Beheerder', 'beheerder_id')

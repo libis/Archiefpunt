@@ -79,9 +79,6 @@ def add_to_elastic(data)
       LOGGER.info('FLOW - 2')
       elastic_data = get_data('./config/constructs/expanded_archief3.sparql', entity, entity_id, id)
       new_data = apply_data_to_query_list(elastic_data, entity, archieven_query_list)
-      new_data.each do |fiche|
-        fiche['fiche']['data']['datering_systematisch'] = fiche['fiche']['data']['datering_systematisch'].to_s
-      end
     when 'Beheerder'
       LOGGER.info('FLOW - 3')
       elastic_data = get_data('./config/constructs/expanded_beheerder.sparql', entity, entity_id, id)

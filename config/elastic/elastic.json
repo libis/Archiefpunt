@@ -70,7 +70,7 @@
           },
           "datering": {
             "type": "date_range",
-            "format": "yyyy||yyyyMMdd||yyyy-MM-dd||epoch_millis||date_time"
+            "format": "yyyy||yyyyMMdd||yyyy-MM-dd||epoch_millis||date_time||date_time_no_millis"
           },
           "generated_date": {
             "type": "date",

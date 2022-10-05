@@ -73,15 +73,15 @@ module LoaderHelper
               else
                 t = filter(d, k)
                 t.each do |s|
-                  if i.eql?('datering')
+                  if i.eql?('datering') || i.eql?('datering_systematisch')
                     gte, lte = s.to_s.split('/')
                     if s.is_a?(ISO8601::TimeInterval)
                       if s.size < 0
-                        lte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
-                        gte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                        lte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
+                        gte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
                       else
-                        gte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
-                        lte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                        gte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
+                        lte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
                       end
 
                       nd << { index_key => { 'id' => id, i => { 'gte' => gte, 'lte' => lte } } }
@@ -90,17 +90,26 @@ module LoaderHelper
                         gte, lte = s.to_s.split('/')
                         if s.is_a?(ISO8601::TimeInterval)
                           if s.size < 0
-                            lte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
-                            gte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                            lte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
+                            gte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
                           else
-                            gte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
-                            lte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+                            gte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
+                            lte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
                           end
                         end
                         nd << { index_key => { 'id' => id, i => { 'gte' => gte, 'lte' => lte } } }
                       end
                     else
-                      nd << { index_key => { 'id' => id, i => { 'gte' => gte, 'lte' => lte } } }
+                      begin
+                        intervals = ISO8601::TimeInterval.from_datetimes(ISO8601::DateTime.new(gte), ISO8601::DateTime.new(lte))
+                        if intervals.size < 0
+                          nd << { index_key => { 'id' => id, i => { 'gte' => intervals.end_time.to_datetime.utc.iso8601, 'lte' => intervals.start_time.to_datetime.utc.iso8601 } } }
+                        else
+                          nd << { index_key => { 'id' => id, i => { 'gte' => intervals.start_time.to_datetime.utc.iso8601, 'lte' => intervals.end_time.to_datetime.utc.iso8601 } } }
+                        end
+                      rescue StandardError => e
+                        nd << { index_key => { 'id' => id, i => { 'gte' => gte, 'lte' => lte } } }
+                      end
                     end
                   else
                     nd << { index_key => { 'id' => id, i => s } }
@@ -137,6 +146,16 @@ module LoaderHelper
 
       # new_data << { "#{entity.underscore}" => d }
     end
+    new_data.each do |fiche|
+      if fiche['fiche']['data']['datering_systematisch'].is_a?(Array)
+        fiche['fiche']['data']['datering_systematisch'].each do |fiche_item|
+          fiche_item = fiche_item.to_s
+        end
+      else
+        fiche['fiche']['data']['datering_systematisch'] = fiche['fiche']['data']['datering_systematisch'].to_s
+      end
+    end
+
     new_data
   end
 
@@ -162,7 +181,7 @@ module LoaderHelper
 
   def load_archieven(elastic)
     total_archieven = Solis::Query.run('', "SELECT (COUNT(distinct ?s) as ?count) FROM <#{Solis::Options.instance.get[:graph_name]}> WHERE {?s ?p ?o ; a <#{Solis::Options.instance.get[:graph_name]}Archief>.}").first[:count].to_i
-    load_data(elastic, total_archieven, './config/constructs/expanded_archief2.sparql', 'Archief', 'archief_id') do |data, entity|
+    load_data(elastic, total_archieven, './config/constructs/expanded_archief3.sparql', 'Archief', 'archief_id') do |data, entity|
 
       new_data = apply_data_to_query_list(data, entity, archieven_query_list)
 
@@ -197,10 +216,10 @@ module LoaderHelper
   def samenstellers_query_list
     {
       'fiche' => [{ 'record_type' => '$..record_type' },
-                  { 'sayt' => { 'samensteller' => '$..agent.naam', 'agent' => '$..agent.naam', 'geografie' => "$..agent.associaties[*].plaats" } },
-                  { 'samensteller' => { 'naam' => '$..agent.naam', 'rol' => '$..agent.type' } },
-                  { 'agent' => { 'naam' => '$..agent.naam', 'record_type' => '$..record_type' } },
-                  { 'geografie' => "$..agent.associaties[*].plaats" },
+                  { 'sayt' => { 'samensteller' => '$..agent[*].naam[*].waarde', 'agent' => '$..agent[*].naam[*].waarde', 'geografie' => "$..agent[*].associaties[*].plaats" } },
+                  { 'samensteller' => { 'naam' => '$..agent[*].naam[*].waarde', 'rol' => '$..agent[*].type' } },
+                  { 'agent' => { 'naam' => '$..agent[*].naam[*].waarde', 'record_type' => '$..record_type' } },
+                  { 'geografie' => "$..agent[*].associaties[*].plaats" },
                   { 'datering' => '$..agent[*].datering_systematisch' },
                   { 'datering_text' => '$..datering_text' },
                   { 'generated_date' => '$..generated_date' },
