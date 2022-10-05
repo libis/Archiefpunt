@@ -149,10 +149,10 @@ module LoaderHelper
     new_data.each do |fiche|
       if fiche['fiche']['data']['datering_systematisch'].is_a?(Array)
         fiche['fiche']['data']['datering_systematisch'].each do |fiche_item|
-          fiche_item = fiche_item.to_s
+          fiche_item = fiche_item.to_s unless fiche_item.is_a?(String)
         end
       else
-        fiche['fiche']['data']['datering_systematisch'] = fiche['fiche']['data']['datering_systematisch'].to_s
+        fiche['fiche']['data']['datering_systematisch'] = fiche['fiche']['data']['datering_systematisch'].to_s unless fiche['fiche']['data']['datering_systematisch'].is_a?(String)
       end
     end
 
@@ -242,8 +242,11 @@ module LoaderHelper
       data = JSON.parse(response.body.to_s)
     end
 
+    plaatsen = []
     data.each do |d|
-      elastic.index.insert({ "plaats": d }, 'id', true)
+      plaatsen << { "plaats": d }
     end
+
+    elastic.index.insert(plaatsen, 'id', true)
   end
 end

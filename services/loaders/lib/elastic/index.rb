@@ -50,7 +50,8 @@ class Index
 
     data = [data] unless data.is_a?(Array)
     if save_to_disk
-      File.open("#{Time.new.to_i}-#{rand(100000)}.ndjson", "wb") do |f|
+      filename = "#{Time.new.to_i}-#{rand(100000)}"
+      File.open("./ndjson/#{filename}.ndjson", "wb") do |f|
         f.puts data.to_ndjson(@name, id, "delete", id_prefix)
       end
     end

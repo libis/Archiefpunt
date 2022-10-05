@@ -1,3 +1,21 @@
 #!/usr/bin/env bash
 cd /app
-bundle exec ruby listener.rb
+
+if [ -z "$SERVICE_ROLE" ]; then
+  echo "Please set a SERVICE_ROLE environment variable"
+  exit -1
+fi
+
+case $SERVICE_ROLE in
+listener)
+  bundle exec ruby listener.rb
+  ;;
+rebuild_index)
+  bundle exec ruby fulltext_loader.rb
+  ;;
+*)
+  echo "Unknown SERVICE_ROLE environment variable"
+  exit -2
+  ;;
+esac
+

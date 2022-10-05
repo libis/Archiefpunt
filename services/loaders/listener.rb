@@ -113,7 +113,16 @@ def add_to_elastic(data)
       ELASTIC.index.insert(new_data, 'id', save_to_disk)
     when 'update'
       LOGGER.info('FLOW - 8')
-      ELASTIC.index.delete_data(new_data, 'id', save_to_disk)
+      ids = []
+      new_data.map{|m| m['fiche']['id']}.each do |id|
+        query = { "query": { "bool": { "must": [{ "match": { "fiche.id.keyword":   "#{id}"}}]}}}
+        response = HTTP.get("#{ELASTIC.elastic}/archiefpunt/_search", json: query, headers: {'Content-Type' => 'application/json'})
+        body = JSON.parse(response.body.to_s) if response.status == 200
+        ids << filter(body, '$.._id')
+      end
+      ids = ids.flatten.map{|m| {'id' => m}}
+
+      ELASTIC.index.delete_data(ids, 'id', save_to_disk)
       ELASTIC.index.insert(new_data, 'id', save_to_disk)
     when 'delete'
       LOGGER.info('FLOW - 9')
