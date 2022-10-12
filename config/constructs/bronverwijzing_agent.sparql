@@ -27,6 +27,9 @@ construct {
         ?agent_id         abv:datering_text ?datering .
     }
 
+    optional {
+        ?agent_id         abv:datering_systematisch ?datering_systematisch .
+    }
 
     optional {
         ?identificatienummer_id abv:identificatienummer/abv:type/abv:label "persistente URI"@nl
@@ -35,16 +38,20 @@ construct {
 
     bind(lcase(replace(str(?entity_type), "https://data.archiefpunt.be/", "")) as ?short_entity_type).
 
+    bind(year(strdt(coalesce(strbefore(?datering_systematisch, '/'), '0001'),xsd:dateTime )) as ?start_datering)
+    bind(year(strdt(coalesce(strafter(?datering_systematisch, '/'), '9999') ,xsd:dateTime )) as ?eind_datering)
+    bind(concat(str(?start_datering),'-', str(?eind_datering)) as ?een_datering)
+
     bind(concat(str(?agent_naam),
                    ": ",
-                   ?datering,
+                   ?een_datering,
                    "</br>",
                    "<a href='{{LINK}}'>{{LINK}}</a>" )
         as ?bronverwijzing_archief
     ) .
 
     #"<a href='/", ?short_entity_type, "/", ?id, "'>", ?identificatienummer_waarde, "</a>" )
-    bind(concat("Archiefpunt: ", ?agent_naam, '. ', str(?datering)," In: <a href='{{LINK}}'>{{LINK}}</a>",
+    bind(concat("Archiefpunt: ", ?agent_naam, '. ', str(?een_datering)," In: <a href='{{LINK}}'>{{LINK}}</a>",
                    "</br>", "(Geraadpleegd op ",?displayDate,")" )
         as ?bronverwijzing_record
     ) .

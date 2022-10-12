@@ -11,7 +11,6 @@ construct {
 #    VALUES ?archief_id { <https://data.archiefpunt.be/archieven/1007-A944-E024-9196-98AE13348AE9>}
     ?archief_id abv:titel ?titel ;
         abv:id ?archief_id_id;
-        abv:datering_text ?datering ;
         abv:beheerder ?beheerder_id ;
         abv:identificatienummer ?identificatienummer_id ;
         abv:identificatienummer/abv:id ?id_identificatienummer_id ;
@@ -22,6 +21,14 @@ construct {
     ?beheerder_id a abv:Beheerder ;
         abv:id ?id ;
         abv:agent ?agent_id .
+
+    OPTIONAL {
+        ?archief_id abv:datering_text ?datering .
+    }
+
+   OPTIONAL {
+       ?archief_id abv:datering_systematisch ?datering_systematisch .
+   }
 
     optional {
         ?beheerder_id abv:adres ?beheerder_adres_id .
@@ -38,18 +45,22 @@ construct {
 
     bind(lcase(replace(str(?entity_type), "https://data.archiefpunt.be/", "")) as ?short_entity_type).
 
+   bind(year(strdt(coalesce(strbefore(?datering_systematisch, '/'), '0001'),xsd:dateTime )) as ?start_datering)
+   bind(year(strdt(coalesce(strafter(?datering_systematisch, '/'), '9999') ,xsd:dateTime )) as ?eind_datering)
+   bind(concat(str(?start_datering),'-', str(?eind_datering)) as ?een_datering)
+
     bind(concat(str(?beheerder_naam), ", ",
                    replace(str(?beheerder_adres_plaatsnaam), "[0-9]* (.*)", "$1"),
                    ": ",
                    ?titel,
                    ". ",
-                   ?datering,
+                   ?een_datering,
                    "\n",
                    "<a href='/", ?short_entity_type, "/", ?archief_id_id, "'>", "/", ?short_entity_type, "/", ?archief_id_id, "</a>" )
         as ?bronverwijzing_archief
     ) .
 
-    bind(concat("Archiefpunt: ", str(?titel),". ", str(?datering)," In: <a href='/", ?short_entity_type, "/",
+    bind(concat("Archiefpunt: ", str(?titel),". ", str(?een_datering)," In: <a href='/", ?short_entity_type, "/",
                    ?archief_id_id, "'>",  "/", ?short_entity_type, "/", ?archief_id_id, '.  ', "</a>", "</br>", "(Geraadpleegd op ",?displayDate,")" )
         as ?bronverwijzing_record
     ) .

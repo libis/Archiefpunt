@@ -123,7 +123,7 @@ module Logic
 
       #endpoint voor fiches die aangemaakt zijn door persoon met creator_name X, en bewerkt zijn door iemand anders tussen datum Y & datum Z (waar X,Y,Z parameters zijn)
       q=%(
-select distinct ?entity (?b_change_set_id as ?soc) from audit:
+select distinct ?entity (?b_soc as ?soc) from audit:
 where {
 
 {
@@ -139,7 +139,7 @@ where {
 }
 
 {
-    select distinct ?b_change_set_id ?persoon ?datum from audit:
+    select distinct ?b_change_set_id ?b_soc ?datum from audit:
     where{
     	?b_change_set_id  audit:created_date ?datum;
 			    audit:creator_name ?persoon;
@@ -170,7 +170,7 @@ where {
 
       #endpoint voor fiches die aangemaakt zijn door persoon met creator_name X, en bewerkt zijn door iemand anders tussen datum Y & datum Z (waar X,Y,Z parameters zijn)
       q=%(
-select distinct ?entity (?b_change_set_id as ?soc) from audit:
+select distinct ?entity (?b_soc as ?soc) from audit:
 where {
 
 {
@@ -186,7 +186,7 @@ where {
 }
 
 {
-    select distinct ?b_change_set_id ?groep ?datum from audit:
+    select distinct ?b_change_set_id ?b_soc ?datum from audit:
     where{
     	?b_change_set_id  audit:created_date ?datum;
 			    audit:creator_group ?groep;
