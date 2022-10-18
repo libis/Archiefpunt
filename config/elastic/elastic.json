@@ -1,6 +1,6 @@
 {
   "settings": {
-    "index": {"mapping": {"total_fields": {"limit": 2000}}},
+    "index": {"mapping": {"total_fields": {"limit": 4000}}},
     "number_of_shards": 2,
     "number_of_replicas": 4,
     "highlight": {

@@ -1,4 +1,4 @@
-@prefix abv:    <https://data.archiefpunt.be/> .
+@prefix abv:    <https://data.q.archiefpunt.be/> .
 @prefix owl:    <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dc:     <http://purl.org/dc/elements/1.1/> .

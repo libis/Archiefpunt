@@ -1,4 +1,4 @@
-PREFIX abv: <https://data.archiefpunt.be/>
+PREFIX abv: <https://data.q.archiefpunt.be/>
 
 construct {
     ?agent_id a abv:UiBewaarplaatsLijst;

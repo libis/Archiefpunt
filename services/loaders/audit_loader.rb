@@ -17,7 +17,7 @@ def create_audit?(soc)
   retries ||= 0
   c = Solis::Store::Sparql::Client.new(audit_config[:solis][:sparql_endpoint], audit_config[:solis][:graph_name])
   q =%(
-    PREFIX audit: <https://data.archiefpunt.be/_audit/>
+    PREFIX audit: <#{Solis::Options.instance.get[:graph_name]}>
     ask { ?s audit:subject_of_change <#{soc}>; audit:change_reason 'create'})
   r = c.query(q)
 rescue Solis::Error::NotFoundError => e

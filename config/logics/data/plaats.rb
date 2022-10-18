@@ -9,7 +9,7 @@ module Logic
     if result.nil? || result.empty? || (params.key?(:from_cache) && params[:from_cache].eql?('0'))
 
       query = %(
-prefix abv: <https://data.archiefpunt.be/>
+prefix abv: <#{Solis::Options.instance.get[:graph_name]}>
 construct {
  ?s a abv:Plaats;
     abv:label ?naam_nl.

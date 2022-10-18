@@ -78,7 +78,9 @@ module Logic
         result[az] = naam
       end
 
-      result = result.sort.to_h
+      result = result.sort.to_h.transform_values do|v|
+        v.sort_by{|s| f.filter(s.downcase.gsub(/^\W*/, ' ').strip.gsub(/[^\w|\s|[^\x00-\x7F]+\ *(?:[^\x00-\x7F]| )*]/, '').split).join(' ') }
+      end
       cache.store(key, result, expires: 86400)
     end
 

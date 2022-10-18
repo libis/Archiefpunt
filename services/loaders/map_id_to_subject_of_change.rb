@@ -9,7 +9,7 @@ def find_soc_query_arr(ids)
   %(
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX abv: <https://data.archiefpunt.be/>
+PREFIX abv: <#{Solis::Options.instance.get[:graph_name]}>
 
 select ?id ?subject_of_change where {
   ?subject_of_change ?p ?object_uri
@@ -27,7 +27,7 @@ def find_soc_query(id)
   %(
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX abv: <https://data.archiefpunt.be/>
+PREFIX abv: <#{Solis::Options.instance.get[:graph_name]}>
 
 select ?subject_of_change where {
   ?subject_of_change ?p ?object_uri

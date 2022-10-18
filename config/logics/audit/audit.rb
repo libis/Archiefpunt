@@ -112,7 +112,7 @@ module Logic
     name = params[:naam] || ''
 
     query = %(
-PREFIX audit: <https://data.archiefpunt.be/_audit/>
+PREFIX audit: <#{Solis::Options.instance.get[:graph_name]}>
 
 select ?subject_of_change ?creator_name ?reason (max(?created_date) as ?change_date)  where {
   values ?name {"#{name}"}

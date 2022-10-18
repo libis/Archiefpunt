@@ -1,5 +1,5 @@
 PREFIX audit: <https://data.archiefpunt.be/_audit/>
-PREFIX abv: <https://data.archiefpunt.be/>
+PREFIX abv: <https://data.q.archiefpunt.be/>
 
 construct {
     ?change_set a audit:Audit ;

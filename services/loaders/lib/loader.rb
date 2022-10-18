@@ -65,9 +65,31 @@ module LoaderHelper
                 k.each { |a, b|
                   t = filter(d, b)
                   t.each do |s|
-                    sout[a] = s
+                    # ss = sout.select{|s| s =~ /^#{a}/}
+                    # if ss.length > 0
+                    #   if ss.length == 1
+                    #     sd = sout.delete(a)
+                    #     sout["#{a}.#{sd.hash.abs.to_s(36)}"] = sd
+                    #   end
+                    #
+                    #   sout["#{a}.#{s.hash.abs.to_s(36)}"] = s
+                    # else
+                    #   sout[a] = s
+                    # end
+
+                    #sout["#{a}.#{s.hash.abs.to_s(36)}"] = s
+                    #sout[a] = s
+                    if sout.key?(a)
+                      sd = sout[a].is_a?(Array) ? sout[a] : [sout[a]]
+                      sd << s
+
+                      sout[a] = sd
+                    else
+                      sout[a] = s
+                    end
                   end
                 }
+                #.hash.abs.to_s(36)
 
                 nd << { index_key => { 'id' => id, i => sout } }
               else
