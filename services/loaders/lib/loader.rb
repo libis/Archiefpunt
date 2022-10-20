@@ -173,9 +173,16 @@ module LoaderHelper
         fiche['fiche']['data']['datering_systematisch'].each do |fiche_item|
           fiche_item = fiche_item.to_s unless fiche_item.is_a?(String)
         end
-      else
+      elsif fiche['fiche']['data']['datering_systematisch']
         fiche['fiche']['data']['datering_systematisch'] = fiche['fiche']['data']['datering_systematisch'].to_s unless fiche['fiche']['data']['datering_systematisch'].is_a?(String)
       end
+
+      if fiche['fiche']['data'].key?('agent') && !fiche['fiche']['data']['agent'].empty?
+        fiche['fiche']['data']['agent'].each do |agent|
+          agent['datering_systematisch'] = agent['datering_systematisch'].to_s unless agent['datering_systematisch'].is_a?(String)
+        end
+      end
+
     end
 
     new_data

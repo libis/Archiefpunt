@@ -169,10 +169,12 @@ def add_to_audit(data)
   }
   audit_url = "#{Solis::ConfigFile[:services][:audit][:host]}#{Solis::ConfigFile[:services][:audit][:base_path]}/change_sets"
   LOGGER.info(audit_url)
+  LOGGER.info(change_set.to_json)
   response = HTTP.post(audit_url, :json => change_set )
 
   if response.code == 200
     result = response.body
+    LOGGER.info(result.to_json)
     true
   else
     raise response.body.to_s
@@ -206,7 +208,7 @@ fqueue = FileQueue.new(Solis::ConfigFile[:kafka][:name], base_dir: Solis::Config
 
 LOGGER.info("Starting listener on #{fqueue.base_dir}\n\n")
 
-listener = Listen.to(fqueue.in_dir, only: /\.f$/) do |modified, added, _|
+listener = Listen.to(fqueue.in_dir, only: /\.f$/, latency: 3, wait_for_delay: 5) do |modified, added, _|
   files =  added | modified
 
   files.each do |in_filename|

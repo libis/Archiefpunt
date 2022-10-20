@@ -1,4 +1,4 @@
-PREFIX audit: <https://data.archiefpunt.be/_audit/>
+PREFIX audit: <https://data.q.archiefpunt.be/_audit/>
 PREFIX abv: <https://data.q.archiefpunt.be/>
 
 construct {

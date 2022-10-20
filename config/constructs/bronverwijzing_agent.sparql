@@ -36,7 +36,7 @@ construct {
     }
     bind (CONCAT(STR(DAY(NOW())), "/", STR(MONTH(NOW())), "/", STR(YEAR(NOW()))) as ?displayDate) .
 
-    bind(lcase(replace(str(?entity_type), "https://data.archiefpunt.be/", "")) as ?short_entity_type).
+    bind(lcase(replace(str(?entity_type), "https://data.q.archiefpunt.be/", "")) as ?short_entity_type).
 
     bind(year(strdt(coalesce(strbefore(?datering_systematisch, '/'), '0001'),xsd:dateTime )) as ?start_datering)
     bind(year(strdt(coalesce(strafter(?datering_systematisch, '/'), '9999') ,xsd:dateTime )) as ?eind_datering)
