@@ -15,7 +15,7 @@ default allow = false
 runtime = opa.runtime()
 
 allow {
-	input.method == "GET"
+	input.method in ["GET", "OPTIONS"]
 	token.valid
 	acl[token.user]
 

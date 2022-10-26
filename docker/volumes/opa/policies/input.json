@@ -1,5 +1,5 @@
 {
-    "method": "POST",
-    "path": "beschrijvingsniveaus",
-    "token": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyIjoiU1lTVEVNIiwicm9sZSI6WyJmdWxsIl19.jjX8nSg8OwAlbXHXkF5ASJMxwHDAlu0SaeHszLTSxIWvyhXzm5tYQMqHlzFP9DOrpfeN2VLF9Xw25NcoERS4GA"
+    "method": "OPTIONS",
+    "path": "archieven",
+    "token": "MY TOKEN"
 }

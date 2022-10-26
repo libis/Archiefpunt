@@ -22,7 +22,7 @@ networks:
 
 services:
   traefik:
-    image: traefik:2.8.3
+    image: traefik:2.9.1
     restart: unless-stopped
     container_name: traefik
     command:
@@ -40,7 +40,8 @@ services:
       - private
 
   virtuoso:
-    image: registry.docker.libis.be/library/virtuoso:7.2.5
+#image: registry.docker.libis.be/library/virtuoso:7.2.5
+    image: openlink/virtuoso-closedsource-7
     restart: unless-stopped
     hostname: virtuoso
     container_name: virtuoso
@@ -49,6 +50,7 @@ services:
     environment:
       SPARQL_UPDATE: 'true'
       DEFAULT_GRAPH: https://data.archiefpunt.be/
+      DBA_PASSWORD: ${DBA_PASSWORD}
     volumes:
       - "./volumes/virtuoso/data/db:/data"
     networks:
@@ -74,29 +76,29 @@ services:
     cap_add:
       - IPC_LOCK
     networks:
-      - private
+    - private
     volumes:
-      - "./volumes/elastic/data:/usr/share/elasticsearch/data"
-      - "./volumes/elastic/logs:/usr/share/elasticsearch/logs"
+    - "./volumes/elastic/data:/usr/share/elasticsearch/data"
+    - "./volumes/elastic/logs:/usr/share/elasticsearch/logs"
 
   kibana:
     image: kibana:8.4.1
     container_name: kibana
     networks:
-      - private
+    - private
     links:
-      - elastic:elasticsearch
+    - elastic:elasticsearch
     depends_on:
-      - elastic
+    - elastic
 
   data-api:
     image: registry.docker.libis.be/archiefpunt/data
     restart: unless-stopped
     environment:
       SERVICE_ROLE: data
+    hostname: data.api
     deploy:
       replicas: 3
-    hostname: data.api
     volumes:
       - "./volumes/api/config:/app/config"
       - "./volumes/api/data:/app/data"
@@ -158,7 +160,7 @@ services:
     restart: unless-stopped
     hostname: codetabel.api
     deploy:
-      replicas: 2
+      replicas: 2    
     environment:
       SERVICE_ROLE: codetable
     volumes:
@@ -245,10 +247,46 @@ services:
     networks:
       - private
 
+  rebuild-index:
+    image: registry.docker.libis.be/archiefpunt/loaders
+    container_name: rebuild.index
+    hostname: rebuild.index
+    tty: true
+    environment:
+      SERVICE_ROLE: rebuild_index
+    volumes:
+      - "./volumes/api/config:/app/config"
+      - "./volumes/api/data:/app/data"
+      - "./volumes/api/cache:/app/cache"
+    networks:
+      - private
+    restart: unless-stopped
+    links:
+      - elastic:elastic
+      - audit-api:audit-api
+
+  audit-load:
+    image: registry.docker.libis.be/archiefpunt/loaders
+    container_name: audit.load
+    hostname: audit.load
+    tty: true
+    environment:
+      SERVICE_ROLE: audit_load
+    volumes:
+      - "./volumes/api/config:/app/config"
+      - "./volumes/api/data:/app/data"
+      - "./volumes/api/cache:/app/cache"
+    networks:
+      - private
+    restart: unless-stopped
+    links:
+      - elastic:elastic
+      - audit-api:audit-api
+
   opa:
     image: openpolicyagent/opa:latest-debug
+    restart: unless-stopped      
 #    image: openpolicyagent/opa:latest-rootless
-    restart: unless-stopped
     networks:
       - private
     volumes:
@@ -256,7 +294,7 @@ services:
     depends_on:
       - opa-bundle-server
     environment:
-      SECRET: $JWT_SECRET
+      SECRET: $JWT_SECRET_PROD
     command:
       - "run"
       - "--server"
