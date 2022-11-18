@@ -580,6 +580,11 @@ abv:EntiteitBasisShape
                      sh:description "link naar audit" ;
                      sh:datatype    xsd:anyURI ;
                      sh:maxCount    1 ; ] ;
+    sh:property    [ sh:path        abv:_published ;
+                     sh:name        "_published" ;
+                     sh:description "" ;
+                     sh:datatype    xsd:boolean ;
+                     sh:maxCount    1 ; ] ;
 .
 
 abv:ErkenningShape

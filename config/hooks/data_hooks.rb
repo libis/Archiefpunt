@@ -46,7 +46,7 @@ select distinct ?id ?entity_type where {
                         link = "/#{entity_type}/#{id}"
                       end
 
-                      entity = data.find{|f| f.id.eql?(bronverwijzing['id'].split('/').last)}
+                      entity = data.find { |f| f.id.eql?(bronverwijzing['id'].split('/').last) }
 
                       #if entity.instance_variable_names.include?("@bronverwijzing_archief")
                       if entity.class.instance_methods.include?(:bronverwijzing_archief)
@@ -75,16 +75,19 @@ select distinct ?id ?entity_type where {
               end
 
               model.class.metadata[:attributes].select { |k, v| v[:node_kind].is_a?(RDF::URI) }.keys.each do |k|
-                inner_model = model.instance_variable_get(:"@#{k}")
-                if inner_model
-                  if inner_model.is_a?(Hash)
-                    unless inner_model.key?('id')
-                      inner_model['id'] = model.id
-                    end
-                    inner_model.identificatienummer = Identificatienummer.new(id: model.id, waarde: 'Archiefpunt', type: { id: '13A6-70DC-CCB6-1996-97651CTTI9A4' })
-                  else
-                    if model.class.metadata[:attributes][k][:node].is_a?(RDF::URI) && inner_model.instance_variable_get(:'@identificatienummer').nil? && inner_model.class.metadata[:attributes].key?('identificatienummer')
-                      inner_model.identificatienummer = Identificatienummer.new(id: inner_model.id, waarde: 'Archiefpunt', type: { id: '13A6-70DC-CCB6-1996-97651CTTI9A4' })
+                inner_models = model.instance_variable_get(:"@#{k}")
+                inner_models = [inner_models] unless inner_models.is_a?(Array)
+                inner_models.each do |inner_model|
+                  if inner_model
+                    if inner_model.is_a?(Hash)
+                      unless inner_model.key?('id')
+                        inner_model['id'] = model.id
+                      end
+                      inner_model.identificatienummer = Identificatienummer.new(id: model.id, waarde: 'Archiefpunt', type: { id: '13A6-70DC-CCB6-1996-97651CTTI9A4' })
+                    else
+                      if model.class.metadata[:attributes][k][:node].is_a?(RDF::URI) && inner_model.instance_variable_get(:'@identificatienummer').nil? && inner_model.class.metadata[:attributes].key?('identificatienummer')
+                        inner_model.identificatienummer = Identificatienummer.new(id: inner_model.id, waarde: 'Archiefpunt', type: { id: '13A6-70DC-CCB6-1996-97651CTTI9A4' })
+                      end
                     end
                   end
                 end

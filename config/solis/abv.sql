@@ -1,5 +1,5 @@
 --
--- Archiefbank ontology - 1.0.2 - 2022-09-20 15:05:51 +0200
+-- Archiefbank ontology - 1.0.3 - 2022-10-26 17:16:20 +0200
 -- description: Archiefbank ontology
 -- author: Archiefpunt, Meemo, KADOC, LIBIS
 --
@@ -134,7 +134,8 @@ COMMENT ON COLUMN abv.dateringen.id IS 'systeem UUID';
 
 CREATE TABLE abv.entiteit_basis(
 	id SERIAL NOT NULL PRIMARY KEY, 
-	_audit text
+	_audit text, 
+	_published bool
 );
 COMMENT ON TABLE abv.entiteit_basis 'Basis entiteit waar alle andere van overerven';
 COMMENT ON COLUMN abv.entiteit_basis.id IS 'systeem UUID';

@@ -10,10 +10,10 @@ skos:Concept a owl:Class;
 
 abv: a owl:Ontology;
   <dc11:creator> "Archiefpunt, Meemo, KADOC, LIBIS";
-  <dc11:date> "2022-09-20 15:05:50 +0200";
+  <dc11:date> "2022-10-26 17:16:20 +0200";
   <dc11:description> "Archiefbank ontology";
   <dc11:title> "Archiefbank ontology";
-  owl:versionInfo "1.0.2" .
+  owl:versionInfo "1.0.3" .
 
 abv:BibliografieArchief a owl:Class;
   rdfs:label "BibliografieArchief";
@@ -189,6 +189,12 @@ abv:_audit a rdf:Property;
   rdfs:comment "link naar audit";
   rdfs:domain abv:EntiteitBasis;
   rdfs:range xsd:anyURI .
+
+abv:_published a rdf:Property;
+  rdfs:label "_published";
+  rdfs:comment "";
+  rdfs:domain abv:EntiteitBasis;
+  rdfs:range xsd:boolean .
 
 abv:aantekening_archivaris a rdf:Property;
   rdfs:label "aantekening_archivaris";
@@ -1680,6 +1686,10 @@ abv:EntiteitBasis a owl:Class;
     a owl:Restriction;
     owl:maxCardinality 1;
     owl:onProperty abv:_audit
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty abv:_published
   ] .
 
 abv:Archief a owl:Class;

@@ -7,7 +7,7 @@ skinparam componentStyle uml2
 skinparam wrapMessageWidth 100
 skinparam ArrowColor #Maroon
 
-title Archiefbank ontology - 1.0.2 - 2022-09-20 15:05:50 +0200
+title Archiefbank ontology - 1.0.3 - 2022-10-26 17:16:20 +0200
               
 package abv {
 
@@ -182,6 +182,7 @@ Datering --|> EntiteitBasis
 class EntiteitBasis{
 	{field} xsd:string : id 
 	{field} xsd:anyURI : _audit 
+	{field} xsd:boolean : _published 
 }
 
 
