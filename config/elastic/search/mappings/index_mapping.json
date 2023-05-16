@@ -1,5 +1,5 @@
 {
-  "id": "fiche.id",
+  "id": ["fiche.id"],
   "beheerder": ["fiche.beheerder.naam"],
   "samensteller": ["fiche.samensteller.naam"],
   "onderwerp": ["fiche.trefwoord"],

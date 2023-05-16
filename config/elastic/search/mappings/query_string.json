@@ -1,8 +1,9 @@
 {
-  "simple_query_string": {
+  "query_string": {
     "query": "",
     "fields": [],
     "lenient": true,
+    "type": "cross_fields",
     "default_operator": "OR"
   }
 }
