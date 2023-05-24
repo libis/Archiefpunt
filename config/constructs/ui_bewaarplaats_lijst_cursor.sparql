@@ -1,0 +1,10 @@
+PREFIX abv: <https://data.q.archiefpunt.be/>
+
+select ?agent_id as ?s ?agent_naam as ?p ?agent_naam_az as ?o from abv:
+where {
+    ?s abv:agent/abv:naam/abv:waarde ?agent_naam;
+        abv:agent/abv:naam ?agent_id ;
+        a abv:Beheerder.
+    bind(lcase(substr(replace(?agent_naam, '[^a-zA-Z]+',''),1,1)) as ?agent_naam_az) .
+}
+limit {{limit}} offset {{offset}}

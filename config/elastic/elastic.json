@@ -12,7 +12,7 @@
           "type": "custom",
           "tokenizer": "standard",
           "filter": [
-            "lowercase"
+            "lowercase", "asciifolding"
           ]
         }
       }
@@ -25,7 +25,8 @@
           "match_mapping_type": "string",
           "match": "fulltext",
           "mapping": {
-            "type": "text"
+            "type": "text",
+            "analyzer": "startswith_analyzer"
           }
         }
       },
@@ -34,6 +35,7 @@
           "match_mapping_type": "string",
           "mapping": {
             "type": "text",
+            "analyzer": "startswith_analyzer",
             "fields": {
               "keyword": {
                 "type": "keyword",

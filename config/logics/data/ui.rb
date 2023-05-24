@@ -7,13 +7,13 @@ require 'lib/logic_helper'
 
 module Logic
   def ui_archiefvormer_lijst(params = {})
-    ui_lijst('ui_archiefvormer_lijst', params).to_json
+    ui_lijst_cursor('ui_archiefvormer_lijst', params).to_json
   rescue StandardError => e
     raise RuntimeError, "Error loading 'ui_archiefvormer_lijst'"
   end
 
   def ui_bewaarplaats_lijst(params = {})
-    ui_lijst('ui_bewaarplaats_lijst', params).to_json
+    ui_lijst_cursor('ui_bewaarplaats_lijst', params).to_json
   rescue StandardError => e
     raise RuntimeError, "Error loading 'ui_bewaarplaats_lijst'"
   end
@@ -76,6 +76,52 @@ module Logic
         naam.uniq!
         naam.compact!
         result[az] = naam
+      end
+
+      result = result.sort.to_h.transform_values do|v|
+        v.sort_by{|s| f.filter(s.downcase.gsub(/^\W*/, ' ').strip.gsub(/[^\w|\s|[^\x00-\x7F]+\ *(?:[^\x00-\x7F]| )*]/, '').split).join(' ') }
+      end
+      cache.store(key, result, expires: 86400)
+    end
+
+    result
+  rescue StandardError => e
+    puts e.message
+    {}
+  end
+
+
+  def ui_lijst_cursor(key, params)
+    result = {}
+
+    result = cache[key] if cache.key?(key)
+
+    if result.nil? || result.empty? || (params.key?(:from_cache) && params[:from_cache].eql?('0'))
+      f = Stopwords::Snowball::Filter.new "nl"
+      filename = "./config/constructs/#{key}_cursor.sparql"
+      return result unless File.exist?(filename)
+
+      limit = 1000
+      offset = 0
+
+      q_raw = File.read(filename)
+      t_eof = false
+
+      while !t_eof
+        q = q_raw.gsub('{{limit}}', limit.to_s).gsub('{{offset}}', offset.to_s)
+        c = Solis::Store::Sparql::Client.new(config[:solis][:sparql_endpoint], config[:solis][:graph_name])
+        t = c.query(q)
+
+        break if t.empty?
+
+        t.each do |s|
+          k = s.o.value
+          k = '0' if k.nil?
+          result[k] = [] unless result.key?(k)
+          result[k] << s.p.value
+          result[k] = result[k].uniq.compact
+        end
+        offset += limit
       end
 
       result = result.sort.to_h.transform_values do|v|

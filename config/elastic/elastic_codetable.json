@@ -11,7 +11,7 @@
           "type": "custom",
           "tokenizer": "standard",
           "filter": [
-            "lowercase"
+            "lowercase", "asciifolding", "apostrophe"
           ]
         }
       }
