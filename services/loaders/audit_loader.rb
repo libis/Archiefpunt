@@ -67,7 +67,8 @@ def add_to_audit(data)
   }
   audit_url = "#{Solis::ConfigFile[:services][:audit][:host]}#{Solis::ConfigFile[:services][:audit][:base_path]}/change_sets"
   LOGGER.info(audit_url)
-  response = HTTP.post(audit_url, :json => change_set )
+  cs = JSON.parse(change_set.to_json)
+  response = HTTP.post(audit_url, :json => cs )
 
   if response.code == 200
     result = JSON.parse(response.body.to_s)
@@ -154,7 +155,7 @@ DATA_SOLIS_CONF = Solis::ConfigFile[:services][:data][:solis]
 DATA_SOLIS = Solis::Graph.new(Solis::Shape::Reader::File.read(DATA_SOLIS_CONF[:shape]), DATA_SOLIS_CONF)
 
 puts "Loading stats"
-stat = JSON.parse(File.read('/Users/mehmetc/Tmp/stats.json'))
+stat = JSON.parse(File.read('./config/stats.json'))
 STAT = stat.freeze
 puts "Done loading stats"
 

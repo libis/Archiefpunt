@@ -186,6 +186,8 @@ module LoaderHelper
     end
 
     new_data
+  rescue StandardError => e
+    puts e.message
   end
 
   def archieven_query_list
@@ -216,6 +218,8 @@ module LoaderHelper
 
       elastic.index.insert(new_data, 'id', true)
     end
+  rescue StandardError => e
+    puts e.message
   end
 
   def beheerders_query_list
@@ -240,6 +244,8 @@ module LoaderHelper
       new_data = apply_data_to_query_list(data, entity, beheerders_query_list)
       elastic.index.insert(new_data, 'id', true)
     end
+  rescue StandardError => e
+    puts e.message
   end
 
   def samenstellers_query_list
@@ -262,6 +268,8 @@ module LoaderHelper
       new_data = apply_data_to_query_list(data, entity, samenstellers_query_list)
       elastic.index.insert(new_data, 'id', true)
     end
+  rescue StandardError => e
+    puts e.message
   end
 
   def load_plaatsen(elastic)
@@ -277,5 +285,7 @@ module LoaderHelper
     end
 
     elastic.index.insert(plaatsen, 'id', true)
+  rescue StandardError => e
+    puts e.message
   end
 end

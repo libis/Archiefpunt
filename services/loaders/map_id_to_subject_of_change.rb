@@ -44,7 +44,9 @@ end
 DATA_SOLIS_CONF = Solis::ConfigFile[:services][:data][:solis]
 DATA_SOLIS = Solis::Graph.new(Solis::Shape::Reader::File.read(DATA_SOLIS_CONF[:shape]), DATA_SOLIS_CONF)
 
-stat = JSON.parse(File.read('/Users/mehmetc/Tmp/stat_bw.json', :encoding => 'iso-8859-1')) + JSON.parse(File.read('/Users/mehmetc/Tmp/stat_ar.json', :encoding => 'iso-8859-1')) + JSON.parse(File.read('/Users/mehmetc/Tmp/stat_ae.json', :encoding => 'iso-8859-1'))
+BASE_DIR = '/Users/mehmetc/Desktop/stats_oldid'
+
+stat = JSON.parse(File.read("#{BASE_DIR}/bwpl_stat.json", :encoding => 'iso-8859-1')) + JSON.parse(File.read("#{BASE_DIR}/ar_stat.json", :encoding => 'iso-8859-1')) + JSON.parse(File.read("#{BASE_DIR}/ae_stat.json", :encoding => 'iso-8859-1'))
 
 
 offset=0
@@ -69,6 +71,6 @@ while offset < stat.length
   offset += limit
 end
 
-File.open('/Users/mehmetc/Tmp/stats.json', 'wb') do |f|
+File.open("#{BASE_DIR}/stats.json", 'wb') do |f|
   f.puts JSON.pretty_generate(stat)
 end

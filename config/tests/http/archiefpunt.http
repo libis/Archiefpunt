@@ -218,11 +218,11 @@ Accept: application/json
 
 {
   "agent": {
-    "type": {"id": "116cdbb4-409d-552d-9c02-3b8e4d151e63"},
+    "type": {"id": "EE86-F083-A863-2600-778110CTTA9A"},
     "naam": [
       {
         "waarde": "test samensteller",
-        "type_naam": {"id": "13FD-53B2-FDB6-1996-976512CTTN9A"}
+        "type_naam": {"id": "EE86-F083-A863-2600-778112CTTN9A", "label": "tata"}
       }
     ],
     "datering_systematisch": ["1920-08-17T11:07:14+01:00/1930-08-17T11:07:14+01:00"],

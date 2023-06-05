@@ -5,11 +5,11 @@ module Solis
         hooks: {
           read: {
             before: lambda do |scope|
-              #puts "-----------before - #{Graphiti.context[:object].query_user}"
+              # puts "-----------before - #{Graphiti.context[:object].query_user}"
               scope
             end,
             after: lambda do |data|
-              #puts "-----------after - #{Graphiti.context[:object].query_user}"
+              # puts "-----------after - #{Graphiti.context[:object].query_user}"
 
               data.map { |m| m._audit = "#{Solis::ConfigFile[:solis_data][:graph_name].gsub(/\/$/, '')}#{Solis::ConfigFile[:services][:audit_logic][:base_path]}/list?id=#{m.id}&entity=#{m.class.name.underscore}"; m }
               audit_ids = data.map { |m| m.id }
@@ -48,14 +48,14 @@ select distinct ?id ?entity_type where {
 
                       entity = data.find { |f| f.id.eql?(bronverwijzing['id'].split('/').last) }
 
-                      #if entity.instance_variable_names.include?("@bronverwijzing_archief")
+                      # if entity.instance_variable_names.include?("@bronverwijzing_archief")
                       if entity.class.instance_methods.include?(:bronverwijzing_archief)
                         bronverwijzing_archief = bronverwijzing['archiefbestand'].is_a?(Array) ? bronverwijzing['archiefbestand'].first : bronverwijzing['archiefbestand']
                         entity.bronverwijzing_archief = bronverwijzing_archief.is_a?(String) ? bronverwijzing_archief.gsub(/{{LINK}}/, link) : bronverwijzing_archief
                       end
 
                       if entity.class.instance_methods.include?(:bronverwijzing_record)
-                        #if entity.instance_variable_names.include?("@bronverwijzing_record")
+                        # if entity.instance_variable_names.include?("@bronverwijzing_record")
                         bronverwijzing_record = bronverwijzing['archiefbankrecord'].is_a?(Array) ? bronverwijzing['archiefbankrecord'].first : bronverwijzing['archiefbankrecord']
                         entity.bronverwijzing_record = bronverwijzing_record.is_a?(String) ? bronverwijzing_record.gsub(/{{LINK}}/, link) : bronverwijzing_record
                       end
@@ -70,8 +70,7 @@ select distinct ?id ?entity_type where {
             before: lambda do |model|
 
               if model.class.metadata[:attributes].keys.include?('identificatienummer') && model.identificatienummer.nil?
-                model.identificatienummer = Identificatienummer.new(id: model.id, waarde: 'Archiefpunt', type: { id: '13A6-70DC-CCB6-1996-97651CTTI9A4' })
-                #model.identificatienummer = Identificatienummer.new(id: model.id)
+                model.identificatienummer = Identificatienummer.new(id: model.id, waarde: 'Archiefpunt', type: { id: '141D-A7A8-45A3-5326-DAB01CTTI9A4' }) # persistente URI
               end
 
               model.class.metadata[:attributes].select { |k, v| v[:node_kind].is_a?(RDF::URI) }.keys.each do |k|
@@ -83,15 +82,31 @@ select distinct ?id ?entity_type where {
                       unless inner_model.key?('id')
                         inner_model['id'] = model.id
                       end
-                      inner_model.identificatienummer = Identificatienummer.new(id: model.id, waarde: 'Archiefpunt', type: { id: '13A6-70DC-CCB6-1996-97651CTTI9A4' })
+                      inner_model.identificatienummer = Identificatienummer.new(id: model.id, waarde: 'Archiefpunt', type: { id: '141D-A7A8-45A3-5326-DAB01CTTI9A4' })
                     else
                       if model.class.metadata[:attributes][k][:node].is_a?(RDF::URI) && inner_model.instance_variable_get(:'@identificatienummer').nil? && inner_model.class.metadata[:attributes].key?('identificatienummer')
-                        inner_model.identificatienummer = Identificatienummer.new(id: inner_model.id, waarde: 'Archiefpunt', type: { id: '13A6-70DC-CCB6-1996-97651CTTI9A4' })
+                        inner_model.identificatienummer = Identificatienummer.new(id: inner_model.id, waarde: 'Archiefpunt', type: { id: '141D-A7A8-45A3-5326-DAB01CTTI9A4' })
                       end
                     end
                   end
                 end
               end
+
+
+              traverse_model(model) do |m,n|
+                traverse_model(m) do |s,t|
+                  traverse_model(s) do |u,v|
+                    if codetabel_lijst.include?(u.class.name)
+                      s.instance_variable_set(:"@#{v}", u.class.new(id: u.id))
+                    end
+                  end
+                  if codetabel_lijst.include?(s.class.name)
+                    m.instance_variable_set(:"@#{t}", s.class.new(id: s.id))
+                  end
+                end
+              end
+
+              #puts model.to_ttl(true)
 
               n = properties_to_hash(model)
               n.delete("_audit") if n.key?('_audit')
@@ -170,6 +185,26 @@ select distinct ?id ?entity_type where {
         misc: Graphiti.context[:object].other_data || {},
         change_reason: reason
       }
+    end
+
+    def self.codetabel_lijst
+      c = Object.const_get('Codetabel'.to_sym)
+      c.descendants.map { |m| m.name.to_s }
+    end
+
+    def self.traverse_model(models, &block)
+      models = [models] unless models.is_a?(Array)
+      models.each do |model|
+        model.class.metadata[:attributes].select { |k, v| v[:node_kind].is_a?(RDF::URI) }.keys.each do |k|
+          inner_models = model.instance_variable_get(:"@#{k}")
+          inner_models = [inner_models] unless inner_models.is_a?(Array)
+          inner_models.each do |inner_model|
+            if inner_model
+              yield inner_model, k if block_given?
+            end
+          end
+        end
+      end
     end
   end
 end
