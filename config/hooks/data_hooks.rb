@@ -70,7 +70,8 @@ select distinct ?id ?entity_type where {
             before: lambda do |model|
 
               if model.class.metadata[:attributes].keys.include?('identificatienummer') && model.identificatienummer.nil?
-                model.identificatienummer = Identificatienummer.new(id: model.id, waarde: 'Archiefpunt', type: { id: '141D-A7A8-45A3-5326-DAB01CTTI9A4' }) # persistente URI
+                model.identificatienummer = Identificatienummer.new(id: model.id, waarde: "BE/#{model.id}", type: { id: '36E3-3A9D-FAB6-A870-5A751CTTI9A4' }) # persistente URI
+                #model.identificatienummer = Identificatienummer.new(id: model.id, waarde: "BE/#{model.id}", type: { id: '141D-A7A8-45A3-5326-DAB01CTTI9A4' }) # archiefcode
               end
 
               model.class.metadata[:attributes].select { |k, v| v[:node_kind].is_a?(RDF::URI) }.keys.each do |k|
@@ -82,10 +83,12 @@ select distinct ?id ?entity_type where {
                       unless inner_model.key?('id')
                         inner_model['id'] = model.id
                       end
-                      inner_model.identificatienummer = Identificatienummer.new(id: model.id, waarde: 'Archiefpunt', type: { id: '141D-A7A8-45A3-5326-DAB01CTTI9A4' })
+                      #inner_model.identificatienummer = Identificatienummer.new(id: model.id, waarde: 'Archiefpunt', type: { id: '141D-A7A8-45A3-5326-DAB01CTTI9A4' })
+                      inner_model.identificatienummer = Identificatienummer.new(id: model.id, waarde: "BE/#{model.id}", type: { id: '36E3-3A9D-FAB6-A870-5A751CTTI9A4' })
                     else
                       if model.class.metadata[:attributes][k][:node].is_a?(RDF::URI) && inner_model.instance_variable_get(:'@identificatienummer').nil? && inner_model.class.metadata[:attributes].key?('identificatienummer')
-                        inner_model.identificatienummer = Identificatienummer.new(id: inner_model.id, waarde: 'Archiefpunt', type: { id: '141D-A7A8-45A3-5326-DAB01CTTI9A4' })
+                        #inner_model.identificatienummer = Identificatienummer.new(id: inner_model.id, waarde: 'Archiefpunt', type: { id: '141D-A7A8-45A3-5326-DAB01CTTI9A4' })
+                        inner_model.identificatienummer = Identificatienummer.new(id: inner_model.id, waarde: "BE/#{model.id}", type: { id: '36E3-3A9D-FAB6-A870-5A751CTTI9A4' })
                       end
                     end
                   end

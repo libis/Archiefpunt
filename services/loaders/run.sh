@@ -13,6 +13,8 @@ listener)
 rebuild_index)
   bundle exec ruby fulltext_loader.rb
   ;;
+plaats)
+  bundle exec ruby plaats_loader.rb
 *)
   echo "Unknown SERVICE_ROLE environment variable"
   exit -2

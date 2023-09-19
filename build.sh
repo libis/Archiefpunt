@@ -61,7 +61,7 @@ function make_service_package {
     echo "Making $SERVICE"
     delete_service_package
     cd $PROJECT_ROOT/services/$SERVICE
-    tar --exclude="./*.iml" --exclude='./config' --exclude='./Gemfile' --exclude='./Gemfile.lock' -zcvf $PROJECT_ROOT/build/service.tgz ./*
+    tar --format=ustar --exclude="./*.iml" --exclude='./config' --exclude='./Gemfile' --exclude='./Gemfile.lock' -zcvf $PROJECT_ROOT/build/service.tgz ./*
     cd $PROJECT_ROOT
   else
       echo "$SERVICE not found"
@@ -78,7 +78,7 @@ function delete_config_package {
 
 function make_config_package {
   delete_config_package
-  tar -zcvf $PROJECT_ROOT/build/config.tgz ./config
+  tar --format=ustar -zcvf $PROJECT_ROOT/build/config.tgz ./config
 }
 
 function build {

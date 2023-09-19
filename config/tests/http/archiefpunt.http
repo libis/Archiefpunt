@@ -231,7 +231,7 @@ Accept: application/json
 }
 
 
-### verwijder een datering_systematisch
+### datering_systematisch aanpassen
 PUT {{endpoint}}archieven/A65B-FED9-ACEB-1960-D8C116263AE9
 Content-Type: application/json
 Accept: application/json
@@ -239,3 +239,8 @@ Accept: application/json
 {
 "datering_systematisch": ["0999-12-31T23:43:00.000Z/2999-12-31T23:00:00.000Z"]
 }
+
+### archief verwijderen
+DELETE {{endpoint}}archieven/A65B-FED9-ACEB-1960-D8C116263AE9
+Content-Type: application/json
+Accept: application/json
