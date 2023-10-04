@@ -40,7 +40,7 @@ Content-Type: application/json
 
 {
   "straat_en_nummer": "Debarkestraat 6-8",
-  "gemeente":{
+  "gemeente": {
     "id": "PL8E-C308-A2D9-9960-F2BF2405GM9A"
   }
 }
@@ -187,15 +187,19 @@ GET {{endpoint}}_audit/_logic/list?id=36f318a0-9d79-48fd-9555-7011f68401b2&entit
 Accept: application/json
 
 ### Specifieke versie ophalen
-GET {{endpoint}}_audit/_logic/version?id=1007-A4B8-B8EB-4196-A4134440AE9A&version_id=3ec499d8-1970-45fa-9bac-ac376d0fdcdd&entity=archieven
+GET {{endpoint}}_audit/_logic/version?id=1007-A4B8-B8EB-4196-A4134440AE9A&
+    version_id=3ec499d8-1970-45fa-9bac-ac376d0fdcdd&entity=archieven
 Accept: application/json
 
 ### Verschil ophalen tussen 2 versies
-GET {{endpoint}}_audit/_logic/diff?id=1007-A4B8-B8EB-4196-A4134440AE9A&original_version_id=136afb1a-e66d-4baf-a6c6-c3f0f3a63ca3&changed_version_id=9abfa499-3cd7-43ce-834b-0ca831994c99&entity=archief&from_cache=0
+GET {{endpoint}}_audit/_logic/diff?id=1007-A4B8-B8EB-4196-A4134440AE9A&
+    original_version_id=136afb1a-e66d-4baf-a6c6-c3f0f3a63ca3&changed_version_id=9abfa499-3cd7-43ce-834b-0ca831994c99&
+    entity=archief&from_cache=0
 Accept: application/json
 
 ### Een oude versie terugzetten
-GET {{endpoint}}_audit/_logic/revert?id=1007-A4B8-B8EB-4196-A4134440AE9A&version_id=136afb1a-e66d-4baf-a6c6-c3f0f3a63ca3&entity=archief&from_cache=0
+GET {{endpoint}}_audit/_logic/revert?id=1007-A4B8-B8EB-4196-A4134440AE9A&
+    version_id=136afb1a-e66d-4baf-a6c6-c3f0f3a63ca3&entity=archief&from_cache=0
 Accept: application/json
 
 # AUDIT api
@@ -218,14 +222,21 @@ Accept: application/json
 
 {
   "agent": {
-    "type": {"id": "EE86-F083-A863-2600-778110CTTA9A"},
+    "type": {
+      "id": "EE86-F083-A863-2600-778110CTTA9A"
+    },
     "naam": [
       {
         "waarde": "test samensteller",
-        "type_naam": {"id": "EE86-F083-A863-2600-778112CTTN9A", "label": "tata"}
+        "type_naam": {
+          "id": "EE86-F083-A863-2600-778112CTTN9A",
+          "label": "tata"
+        }
       }
     ],
-    "datering_systematisch": ["1920-08-17T11:07:14+01:00/1930-08-17T11:07:14+01:00"],
+    "datering_systematisch": [
+      "1920-08-17T11:07:14+01:00/1930-08-17T11:07:14+01:00"
+    ],
     "datering_text": null
   }
 }
@@ -237,10 +248,64 @@ Content-Type: application/json
 Accept: application/json
 
 {
-"datering_systematisch": ["0999-12-31T23:43:00.000Z/2999-12-31T23:00:00.000Z"]
+  "datering_systematisch": [
+    "0999-12-31T23:43:00.000Z/2999-12-31T23:00:00.000Z"
+  ]
 }
 
 ### archief verwijderen
 DELETE {{endpoint}}archieven/A65B-FED9-ACEB-1960-D8C116263AE9
 Content-Type: application/json
 Accept: application/json
+
+
+### archief aanmaken
+# wanneer er geen identificatienummer wordt meegegeven wordt deze default op 'archiefpunt' gezet
+POST {{endpoint}}archieven
+Content-Type: application/json
+Accept: application/json
+
+{
+  "identificatienummer": {
+    "waarde": "BE/1234/56789",
+    "type": {
+      "id": "36E3-3A9D-FAB6-A870-5A756CTTI9A4"
+    },
+    "bron": {
+      "id": "3C4F-6801-0AB6-A870-5A7528CTRB9A"
+    }
+  },
+  "titel": "Huisarchief van het Sint-Hermeshof in Russignies, pachthoeve van het kapittel van Ronse",
+  "datering_systematisch": "1813-10-03T11:56:04+00:17/1814-10-03T11:56:04+00:17",
+  "beschrijvingsniveau": {
+    "id": "4164-B28D-E9B6-A870-5A7542CTBN9A"
+  },
+  "samensteller": {
+    "id": "3C4F-6801-0AB6-A870-5A7528CTRB9A"
+  },
+  "rol_samensteller": {
+    "id": "3C4F-6801-0AB6-A870-5A7524CTRS9A"
+  },
+  "beheerder": {
+    "id": "BH01-9BE7-0CF3-9960-1F11297BW9A4"
+  },
+  "rol_beheerder": {
+    "id": "3C4F-6801-0AB6-A870-5A7528CTRB9A"
+  },
+  "juridische_beperking": {
+    "privacy_gevoelig": false,
+    "contractuele_beperking": false,
+    "gevoelig_voor_auteursrechtelijkebescherming": false
+  },
+  "raadplegingsvoorwaarde": {
+    "tekst": "Vrij raadpleegbaar",
+    "raadplegingsstatus": {
+      "id": "4164-B28D-E9B6-A870-5A7556CTRA9A"
+    }
+  },
+  "rechtenstatus_metadata": {
+    "id": "3C4F-6801-0AB6-A870-5A7531CTRE9A"
+  },
+  "bronverwijzing_record": "",
+  "bronverwijzing_archief": ""
+}

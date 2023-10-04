@@ -1,5 +1,14 @@
 {
   "acl": {
+    "ganesh": [
+      "full"
+    ],
+    "jelle": [
+      "full"
+    ],
+    "yvonne": [
+      "full"
+    ],
     "antenna": [
       "full"
     ],
