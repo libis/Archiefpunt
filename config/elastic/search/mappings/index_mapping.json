@@ -1,11 +1,13 @@
 {
-  "id": ["fiche.id"],
+  "id": ["fiche.id","fiche.data.id","fiche.data.rid"],
   "beheerder": ["fiche.beheerder.naam"],
   "samensteller": ["fiche.samensteller.naam"],
+  "identificatienummer": ["fiche.data.identificatienummer.waarde"],
   "onderwerp": ["fiche.trefwoord"],
   "titel": ["fiche.titel"],
   "any": [
     "fiche.id",
+    "fiche.data.rid",
     "fiche.titel",
     "fiche.beheerder.naam",
     "fiche.samensteller.naam",
@@ -25,5 +27,5 @@
   "geografie": ["fiche.geografie"],
   "beschrijvingsniveau": ["fiche.data.archief.beschrijvingsniveau"],
   "materiaal": ["fiche.materiaal_type"],
-  "record_type": "fiche.record_type"
+  "record_type": ["fiche.record_type"]
 }

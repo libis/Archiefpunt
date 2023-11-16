@@ -3,7 +3,7 @@ cd /app
 
 if [ -z "$SERVICE_ROLE" ]; then
   echo "Please set a SERVICE_ROLE environment variable"
-  exit -1
+  exit 255
 fi
 
 case $SERVICE_ROLE in
@@ -15,9 +15,13 @@ rebuild_index)
   ;;
 plaats)
   bundle exec ruby plaats_loader.rb
+  ;;
+codetabel)
+  bundle exec ruby codetabel_loader.rb
+  ;;
 *)
   echo "Unknown SERVICE_ROLE environment variable"
-  exit -2
+  exit 254
   ;;
 esac
 

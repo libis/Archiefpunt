@@ -3,10 +3,10 @@ require 'http'
 require 'json'
 require 'solis'
 require 'lib/elastic'
-require 'data_collector'
+#require 'data_collector'
 require 'lib/loader'
 
-include DataCollector::Core
+#include DataCollector::Core
 include LoaderHelper
 
 SOLIS_CONF = Solis::ConfigFile[:services][:data][:solis]

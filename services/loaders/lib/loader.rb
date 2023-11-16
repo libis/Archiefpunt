@@ -108,15 +108,16 @@ module LoaderHelper
 
                       nd << { index_key => { 'id' => id, i => { 'gte' => gte, 'lte' => lte } } }
                     elsif s.is_a?(Array)
+                      s.uniq!
                       s.each do |e|
-                        gte, lte = s.to_s.split('/')
-                        if s.is_a?(ISO8601::TimeInterval)
-                          if s.size < 0
-                            lte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
-                            gte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
+                        gte, lte = e.to_s.split('/')
+                        if e.is_a?(ISO8601::TimeInterval)
+                          if e.size < 0
+                            lte = e.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
+                            gte = e.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
                           else
-                            gte = s.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
-                            lte = s.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
+                            gte = e.start_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
+                            lte = e.end_time.strftime('%Y-%m-%dT%H:%M:%S.%L%z').to_datetime.utc.iso8601
                           end
                         end
                         nd << { index_key => { 'id' => id, i => { 'gte' => gte, 'lte' => lte } } }
