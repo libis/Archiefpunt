@@ -15,7 +15,7 @@ module Solis
               audit_ids = data.map { |m| m.id }
 
               unless audit_ids.nil? || audit_ids.empty?
-                if File.exists?("./config/constructs/bronverwijzing_#{data.first.class.name.underscore}.sparql")
+                if File.exist?("./config/constructs/bronverwijzing_#{data.first.class.name.underscore}.sparql")
                   bronverwijzingen = Solis::Query.run_construct_with_file("./config/constructs/bronverwijzing_#{data.first.class.name.underscore}.sparql", "#{data.first.class.name.underscore}_id", data.first.class.name, audit_ids)
 
                   if data && bronverwijzingen && !bronverwijzingen.empty?
@@ -68,10 +68,12 @@ select distinct ?id ?entity_type where {
           },
           create: {
             before: lambda do |model|
-
+              if model.class.ancestors.include?(Codetabel)
+                model = model.query.filter({ language: nil, filters: { id: [model.id] } }).find_all.map { |m| m }&.first
+              end
               if model.class.metadata[:attributes].keys.include?('identificatienummer') && model.identificatienummer.nil?
                 model.identificatienummer = Identificatienummer.new(id: model.id, waarde: "BE/#{model.id}", type: { id: '36E3-3A9D-FAB6-A870-5A751CTTI9A4' }) # persistente URI
-                #model.identificatienummer = Identificatienummer.new(id: model.id, waarde: "BE/#{model.id}", type: { id: '141D-A7A8-45A3-5326-DAB01CTTI9A4' }) # archiefcode
+                #model.save
               end
 
               model.class.metadata[:attributes].select { |k, v| v[:node_kind].is_a?(RDF::URI) }.keys.each do |k|
@@ -83,12 +85,17 @@ select distinct ?id ?entity_type where {
                       unless inner_model.key?('id')
                         inner_model['id'] = model.id
                       end
-                      #inner_model.identificatienummer = Identificatienummer.new(id: model.id, waarde: 'Archiefpunt', type: { id: '141D-A7A8-45A3-5326-DAB01CTTI9A4' })
-                      inner_model.identificatienummer = Identificatienummer.new(id: model.id, waarde: "BE/#{model.id}", type: { id: '36E3-3A9D-FAB6-A870-5A751CTTI9A4' })
+                      inner_model.identificatienummer = Identificatienummer.new(id: inner_model.id, waarde: "BE/#{inner_model.id}", type: { id: '36E3-3A9D-FAB6-A870-5A751CTTI9A4' })
+                        # next if (inner_model.instance_values.keys - ["model_name", "model_plural_name", "language"]).eql?(["id"])
                     else
+                      if inner_model.class.ancestors.include?(Codetabel)
+                        inner_model = inner_model.query.filter({ language: nil, filters: { id: [inner_model.id] } }).find_all.map { |m| m }&.first
+                        model.instance_variable_set(:"@#{k}", inner_model)
+                      end
+
                       if model.class.metadata[:attributes][k][:node].is_a?(RDF::URI) && inner_model.instance_variable_get(:'@identificatienummer').nil? && inner_model.class.metadata[:attributes].key?('identificatienummer')
-                        #inner_model.identificatienummer = Identificatienummer.new(id: inner_model.id, waarde: 'Archiefpunt', type: { id: '141D-A7A8-45A3-5326-DAB01CTTI9A4' })
-                        inner_model.identificatienummer = Identificatienummer.new(id: inner_model.id, waarde: "BE/#{model.id}", type: { id: '36E3-3A9D-FAB6-A870-5A751CTTI9A4' })
+                        #next if (inner_model.instance_values.keys - ["model_name", "model_plural_name", "language"]).eql?(["id"])
+                          inner_model.identificatienummer = Identificatienummer.new(id: inner_model.id, waarde: "BE/#{inner_model.id}", type: { id: '36E3-3A9D-FAB6-A870-5A751CTTI9A4' })
                       end
                     end
                   end
@@ -125,6 +132,11 @@ select distinct ?id ?entity_type where {
           },
           update: {
             before: lambda do |model, updated_model|
+              if model.class.metadata[:attributes].keys.include?('identificatienummer') && updated_model.identificatienummer.nil?
+                updated_model.identificatienummer = Identificatienummer.new(id: updated_model.id, waarde: "BE/#{updated_model.id}", type: { id: '36E3-3A9D-FAB6-A870-5A751CTTI9A4' }) # persistente URI
+                model.identificatienummer = Identificatienummer.new(id: model.id, waarde: "BE/#{model.id}", type: { id: '36E3-3A9D-FAB6-A870-5A751CTTI9A4' }) # persistente URI
+              end
+
               n = properties_to_hash(model)
               o = properties_to_hash(updated_model)
               n.delete("_audit") if n.key?('_audit')

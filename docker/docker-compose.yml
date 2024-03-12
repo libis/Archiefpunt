@@ -49,7 +49,7 @@ services:
     mem_reservation: 3g
     environment:
       SPARQL_UPDATE: 'true'
-      DEFAULT_GRAPH: https://data.archiefpunt.be/
+      DEFAULT_GRAPH: https://data.q.archiefpunt.be/
       DBA_PASSWORD: ${DBA_PASSWORD}
     volumes:
       - "./volumes/virtuoso/data/db:/data"

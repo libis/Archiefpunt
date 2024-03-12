@@ -8,7 +8,7 @@ construct {
         abv:archiefbankrecord ?bronverwijzing_record .
 } where {
     {{VALUES}}
-#    VALUES ?beheerder_id { <https://data.archiefpunt.be/beheerders/BH11-3935-CD11-C926-D0406305BW9A> }
+#    VALUES ?beheerder_id { <https://data.q.archiefpunt.be/beheerders/BH11-3935-CD11-C926-D0406305BW9A> }
     ?beheerder_id abv:id ?id.
     ?beheerder_id rdf:type ?entity_type.
     ?beheerder_id a abv:Beheerder ;

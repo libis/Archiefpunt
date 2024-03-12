@@ -159,7 +159,7 @@ construct {
 
 } WHERE {
     { { VALUES } }
-    #values ?archief_id {<https://data.archiefpunt.be/archieven/1007-A944-E024-9196-98AE13348AE9>}
+    #values ?archief_id {<https://data.q.archiefpunt.be/archieven/1007-A944-E024-9196-98AE13348AE9>}
     {
         ?archief_id abv:id ?id ;
             abv:identificatienummer ?archief_identificatienummer ;

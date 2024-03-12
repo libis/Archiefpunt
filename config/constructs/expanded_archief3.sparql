@@ -124,6 +124,7 @@ construct {
 } WHERE {
     { { VALUES } }
     #values ?archief_id {<https://data.q.archiefpunt.be/archieven/1007-A4B8-B8EB-4196-A4134443AE9A>}
+    #values ?archief_id {<https://data.q.archiefpunt.be/archieven/04c607af-3e4f-4adc-8214-8230838e544b>}
     {
         ?archief_id abv:id ?id ;
             abv:identificatienummer ?archief_identificatienummer ;
@@ -166,7 +167,7 @@ construct {
             optional {
                 ?archief_identificatienummer_bron abv:associaties ?bron_associaties .
                 optional {
-                    ?bron_associaties abv:plaats/abv:plaatsnaam ?associatie_plaats .
+                    ?bron_associaties abv:plaats/abv:plaatsnaam/abv:waarde ?associatie_plaats .
                 }
                 optional {
                     ?bron_associaties abv:agent ?associatie_agent .

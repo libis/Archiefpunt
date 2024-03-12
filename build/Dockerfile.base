@@ -1,7 +1,7 @@
 FROM ruby:3.2.2-alpine
 #FROM ruby:2.7.8-alpine
 
-ARG SOLIS_VERSION=0.70.1
+ARG SOLIS_VERSION=0.72.0
 RUN echo "Solis v$SOLIS_VERSION"
 
 RUN bundle config --global frozen 1
@@ -40,4 +40,4 @@ LABEL org.opencontainers.image.vendor="KULeuven/LIBIS" \
 	org.opencontainers.image.title="Archiefpunt base image" \
 	org.opencontainers.image.description="A base image to build upon" \
 	org.opencontainers.image.version="v0.1" \
-	org.opencontainers.image.documentation="https://data.archiefpunt.be/_doc"
+	org.opencontainers.image.documentation="https://data.q.archiefpunt.be/_doc"

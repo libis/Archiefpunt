@@ -38,9 +38,9 @@ CONSTRUCT {
        abv:onderwerp ?agent_associcatie_onderwerp.
 }
 WHERE {
-    {{VALUES}}
+#    {{VALUES}}
 
-#    values ?samensteller_id {<https://data.archiefpunt.be/samenstellers/6acaeeff-907d-4c24-be38-243c5c6f4ba8>}
+    values ?samensteller_id {<https://data.q.archiefpunt.be/samenstellers/b11f14e9-c463-4307-9560-62680ff5290c>}
 
     ?samensteller_id a abv:Samensteller ;
         abv:id ?id;
@@ -91,7 +91,7 @@ WHERE {
     optional {
         ?agent_id abv:associaties ?agent_associaties .
         optional {
-            ?agent_associaties abv:plaats/abv:plaatsnaam ?agent_associatie_plaats .
+            ?agent_associaties abv:plaats/abv:plaatsnaam/abv:waarde ?agent_associatie_plaats .
         }
         optional {
             ?agent_associaties abv:agent ?agent_associatie_agent .

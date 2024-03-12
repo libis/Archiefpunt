@@ -8,7 +8,7 @@ construct {
         abv:archiefbankrecord ?bronverwijzing_record .
 } where {
    {{VALUES}}
-#    VALUES ?archief_id { <https://data.archiefpunt.be/archieven/1007-A944-E024-9196-98AE13348AE9>}
+#    VALUES ?archief_id { <https://data.q.archiefpunt.be/archieven/1007-A944-E024-9196-98AE13348AE9>}
     ?archief_id abv:titel ?titel ;
         abv:id ?archief_id_id;
         abv:beheerder ?beheerder_id ;

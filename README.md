@@ -30,19 +30,19 @@ Is build using ```Dockerfile.service```
 # Stack
 ## CONFIG
 ## DATA API
-### https://data.archiefpunt.be/
-### https://data.archiefpunt.be/_vandal
-### https://data.archiefpunt.be/_yas
-### https://data.archiefpunt.be/_sparql
-### https://data.archiefpunt.be/_doc
+### https://data.q.archiefpunt.be/
+### https://data.q.archiefpunt.be/_vandal
+### https://data.q.archiefpunt.be/_yas
+### https://data.q.archiefpunt.be/_sparql
+### https://data.q.archiefpunt.be/_doc
 ## LOGIC API
-### https://data.archiefpunt.be/_logic
+### https://data.q.archiefpunt.be/_logic
 ## AUDIT API
-### https://data.archiefpunt.be/_audit
+### https://data.q.archiefpunt.be/_audit
 ## SEARCH API
-### https://data.archiefpunt.be/_search
+### https://data.q.archiefpunt.be/_search
 ## BROWSE API
-### https://data.archiefpunt.be/_browse
+### https://data.q.archiefpunt.be/_browse
 ## PING API
-### https://data.archiefpunt.be/ping
+### https://data.q.archiefpunt.be/ping
 ## EVENT LISTENER

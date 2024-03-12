@@ -8,8 +8,8 @@ construct {
         abv:archiefbankrecord ?bronverwijzing_record .
 } where {
     {{VALUES}}
-    #    VALUES ?archief_id { <https://data.archiefpunt.be/archieven/1007-A944-E024-9196-98AE13348AE9>}
-    #VALUES ?agent_id { <https://data.archiefpunt.be/agenten/ABDA-E68D-0AF3-9960-1F11534BW9A4> }
+    #    VALUES ?archief_id { <https://data.q.archiefpunt.be/archieven/1007-A944-E024-9196-98AE13348AE9>}
+    #VALUES ?agent_id { <https://data.q.archiefpunt.be/agenten/ABDA-E68D-0AF3-9960-1F11534BW9A4> }
     ?agent_id abv:id ?id;
         abv:identificatienummer ?identificatienummer_id ;
         abv:identificatienummer/abv:id ?id_identificatienummer_id ;

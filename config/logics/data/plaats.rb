@@ -3,6 +3,11 @@ require 'solis/options'
 require 'active_support/all'
 
 module Logic
+  def plaats_via_naam(params = {})
+    required_parameters(params, [:naam])
+
+  end
+
   def plaats(params = {})
     result = cache['plaats'] || nil
 

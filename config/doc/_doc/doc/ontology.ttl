@@ -1,0 +1,2302 @@
+@prefix : <https://data.q.archiefpunt.be/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://data.q.archiefpunt.be/> .
+
+<https://data.q.archiefpunt.be/> rdf:type owl:Ontology ;
+                                <dc11:creator> "Archiefpunt, Meemo, KADOC, LIBIS" ;
+                                <dc11:date> "2022-10-26 17:16:20 +0200" ;
+                                <dc11:description> "Archiefbank ontology" ;
+                                <dc11:title> "Archiefbank ontology" ;
+                                owl:versionInfo "1.0.3" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  dc11:creator
+<dc11:creator> rdf:type owl:AnnotationProperty .
+
+
+###  dc11:date
+<dc11:date> rdf:type owl:AnnotationProperty .
+
+
+###  dc11:description
+<dc11:description> rdf:type owl:AnnotationProperty .
+
+
+###  dc11:title
+<dc11:title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#duration
+xsd:duration rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#time
+xsd:time rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://data.q.archiefpunt.be/aangroei
+:aangroei rdf:type owl:ObjectProperty ;
+          rdfs:domain :Archief ;
+          rdfs:range :Aangroei ;
+          rdfs:comment "Aangroei toont status van het archief aan: statisch, dynamisch of is de status onbekend." ;
+          rdfs:label "aangroei" .
+
+
+###  https://data.q.archiefpunt.be/adres
+:adres rdf:type owl:ObjectProperty ;
+       rdfs:domain :Beheerder ;
+       rdfs:range :Adres ;
+       rdfs:comment "Adres van bewaarplaats." ;
+       rdfs:label "adres" .
+
+
+###  https://data.q.archiefpunt.be/agent
+:agent rdf:type owl:ObjectProperty ;
+       rdfs:domain :Associatie ,
+                   :Beheerder ,
+                   :Samensteller ;
+       rdfs:range :Agent ;
+       rdfs:comment "Link met 'agent'" ;
+       rdfs:label "agent" .
+
+
+###  https://data.q.archiefpunt.be/associatie
+:associatie rdf:type owl:ObjectProperty ;
+            rdfs:domain :Archief ;
+            rdfs:range :Associatie ;
+            rdfs:comment "Trefwoordenveld. Kan gelinkt worden met een onderwerp, agent, plaats en een periode." ;
+            rdfs:label "associatie" .
+
+
+###  https://data.q.archiefpunt.be/associaties
+:associaties rdf:type owl:ObjectProperty ;
+             rdfs:domain :Agent ;
+             rdfs:range :Associatie ;
+             rdfs:comment "Plaats, Periode, Onderwerp of agent gelinkt aan de agent. " ;
+             rdfs:label "associaties" .
+
+
+###  https://data.q.archiefpunt.be/auteur
+:auteur rdf:type owl:ObjectProperty ;
+        rdfs:domain :Publicatie ;
+        rdfs:range :Naam ;
+        rdfs:comment "auteur van de publicatie" ;
+        rdfs:label "auteur" .
+
+
+###  https://data.q.archiefpunt.be/beheerder
+:beheerder rdf:type owl:ObjectProperty ;
+           rdfs:domain :Archief ;
+           rdfs:range :Beheerder ;
+           rdfs:comment """persoon of organisatie die het archief of de collectie vandaag beheerd.
+link naar wat voorheen de ‘bewaarplaats’ was. 
+Nu expliciet gemaakt als een Agent, die verbonden is aan een bepaalde Plaats. """ ;
+           rdfs:label "beheerder" .
+
+
+###  https://data.q.archiefpunt.be/bereikbaarheid
+:bereikbaarheid rdf:type owl:ObjectProperty ;
+                rdfs:domain :Beheerder ;
+                rdfs:range :Bereikbaarheid ;
+                rdfs:comment "Indien list: Rolstoeltoegankelijk, Aangepast sanitair, Parkeergelegenheid" ;
+                rdfs:label "bereikbaarheid" .
+
+
+###  https://data.q.archiefpunt.be/beschrijvingsniveau
+:beschrijvingsniveau rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Archief ;
+                     rdfs:range :Beschrijvingsniveau ;
+                     rdfs:comment "Beschrijvingsniveau van het archief. Keuze uit archief, fonds, serie, collectie, virtuele collectie." ;
+                     rdfs:label "beschrijvingsniveau" .
+
+
+###  https://data.q.archiefpunt.be/bron
+:bron rdf:type owl:ObjectProperty ;
+      rdfs:domain :Identificatienummer ;
+      rdfs:range :Agent ;
+      rdfs:comment "Verwijzing naar agent die identificatie aanmaakt." ;
+      rdfs:label "bron" .
+
+
+###  https://data.q.archiefpunt.be/datering_systematisch
+:datering_systematisch rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Agent ,
+                                   :Archief ;
+                       rdfs:range <http://www.w3.org/2000/10/swap/time#DateTimeInterval> ;
+                       rdfs:comment "Jaartallen van bereik van het archief: uit welke periode stammen de documenten." ;
+                       rdfs:label "datering_systematisch" .
+
+
+###  https://data.q.archiefpunt.be/erkenning
+:erkenning rdf:type owl:ObjectProperty ;
+           rdfs:domain :Beheerder ;
+           rdfs:range :Erkenning ;
+           rdfs:comment "Categorie enkel geldig wanneer agent een bewaarplaats is. Erkenningniveaus zijn: landelijk, regionaal, lokaal en [none]." ;
+           rdfs:label "erkenning" .
+
+
+###  https://data.q.archiefpunt.be/functie_beroep_activiteit
+:functie_beroep_activiteit rdf:type owl:ObjectProperty ;
+                           rdfs:domain :Samensteller ;
+                           rdfs:range :Functie ;
+                           rdfs:comment "Functie, beroep of activiteiten waarin agent " ;
+                           rdfs:label "functie_beroep_activiteit" .
+
+
+###  https://data.q.archiefpunt.be/gemeente
+:gemeente rdf:type owl:ObjectProperty ;
+          rdfs:domain :Adres ;
+          rdfs:range :Plaats ;
+          rdfs:comment "" ;
+          rdfs:label "gemeente" .
+
+
+###  https://data.q.archiefpunt.be/identificatienummer
+:identificatienummer rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Agent ,
+                                 :Archief ,
+                                 :Concept ,
+                                 :Plaats ,
+                                 :Publicatie ;
+                     rdfs:range :Identificatienummer ;
+                     rdfs:comment "Identificatienummer voor de publicatie" ;
+                     rdfs:label "identificatienummer" .
+
+
+###  https://data.q.archiefpunt.be/is_onderdeel_van
+:is_onderdeel_van rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Archief ;
+                  rdfs:range :Archief ;
+                  rdfs:comment "Alleen gebruik maken wanneer een archiefbestanddeel deel uitmaakt van een groter archiefbestanddeel" ;
+                  rdfs:label "is_onderdeel_van" .
+
+
+###  https://data.q.archiefpunt.be/json_dt
+:json_dt rdf:type owl:ObjectProperty ;
+         rdfs:domain :Test ;
+         rdfs:range rdf:JSON ;
+         rdfs:comment "" ;
+         rdfs:label "json_dt" .
+
+
+###  https://data.q.archiefpunt.be/juridische_beperking
+:juridische_beperking rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Archief ;
+                      rdfs:range :JuridischeBeperking ;
+                      rdfs:comment "bevat het archief/collectie materiaal dat mogelijk veel persoonsgegevens bevat, bevat het archief/collectie materiaal dat mogelijk veel persoonsgegevens bevat, bevat het archief/collectie materiaal dat mogelijk auteursrechtelijk beschermd " ;
+                      rdfs:label "juridische_beperking" .
+
+
+###  https://data.q.archiefpunt.be/naam
+:naam rdf:type owl:ObjectProperty ;
+      rdfs:domain :Agent ;
+      rdfs:range :Naam ;
+      rdfs:comment "Herhaalbaar om naamsvarianten te documenteren." ;
+      rdfs:label "naam" .
+
+
+###  https://data.q.archiefpunt.be/omvang
+:omvang rdf:type owl:ObjectProperty ;
+        rdfs:domain :Archief ;
+        rdfs:range :Omvang ;
+        rdfs:comment "vrije tekst beschrijving van de dimensies en materiaalsoorten waaruit het archiefbestand bestaat" ;
+        rdfs:label "omvang" .
+
+
+###  https://data.q.archiefpunt.be/onderwerp
+:onderwerp rdf:type owl:ObjectProperty ;
+           rdfs:domain :Associatie ;
+           rdfs:range :Onderwerp ;
+           rdfs:comment "Onderwerp trefwoorden die geassocieerd kunnen worden met archief." ;
+           rdfs:label "onderwerp" .
+
+
+###  https://data.q.archiefpunt.be/ordening
+:ordening rdf:type owl:ObjectProperty ;
+          rdfs:domain :Archief ;
+          rdfs:range :Ordening ;
+          rdfs:comment "Toont de ordeningsstatus aan van het archief:geordend, niet geordend of onbekend." ;
+          rdfs:label "ordening" .
+
+
+###  https://data.q.archiefpunt.be/periode
+:periode rdf:type owl:ObjectProperty ;
+         rdfs:domain :Associatie ;
+         rdfs:range :Periode ;
+         rdfs:comment "Tijdsperiode waarmee archief gelinkt kan worden." ;
+         rdfs:label "periode" .
+
+
+###  https://data.q.archiefpunt.be/plaats
+:plaats rdf:type owl:ObjectProperty ;
+        rdfs:domain :Associatie ;
+        rdfs:range :Plaats ;
+        rdfs:comment "Plaats geassocieerd met het archief." ;
+        rdfs:label "plaats" .
+
+
+###  https://data.q.archiefpunt.be/plaatsnaam
+:plaatsnaam rdf:type owl:ObjectProperty ;
+            rdfs:domain :Plaats ;
+            rdfs:range :Naam ;
+            rdfs:comment "" ;
+            rdfs:label "plaatsnaam" .
+
+
+###  https://data.q.archiefpunt.be/raadplegingsstatus
+:raadplegingsstatus rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Raadplegingsvoorwaarde ;
+                    rdfs:range :Raadplegingsstatus ;
+                    rdfs:comment "" ;
+                    rdfs:label "raadplegingsstatus" .
+
+
+###  https://data.q.archiefpunt.be/raadplegingsvoorwaarde
+:raadplegingsvoorwaarde rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Archief ;
+                        rdfs:range :Raadplegingsvoorwaarde ;
+                        rdfs:comment "vrije tekst omschrijving van de concrete voorwaarden die verbonden zijn aan de toegang tot het archief/collectie" ;
+                        rdfs:label "raadplegingsvoorwaarde" .
+
+
+###  https://data.q.archiefpunt.be/rechtenstatus_metadata
+:rechtenstatus_metadata rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Archief ;
+                        rdfs:range :Rechtenstatus ;
+                        rdfs:comment "Geeft weer onder welke licentievoorwaarden de metadata gepubliceerd kunnen worden." ;
+                        rdfs:label "rechtenstatus_metadata" .
+
+
+###  https://data.q.archiefpunt.be/rol_beheerder
+:rol_beheerder rdf:type owl:ObjectProperty ;
+               rdfs:domain :Archief ;
+               rdfs:range :RolBeheerder ;
+               rdfs:comment "" ;
+               rdfs:label "rol_beheerder" .
+
+
+###  https://data.q.archiefpunt.be/rol_samensteller
+:rol_samensteller rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Archief ;
+                  rdfs:range :RolSamensteller ;
+                  rdfs:comment "" ;
+                  rdfs:label "rol_samensteller" .
+
+
+###  https://data.q.archiefpunt.be/samensteller
+:samensteller rdf:type owl:ObjectProperty ;
+              rdfs:domain :Archief ;
+              rdfs:range :Samensteller ;
+              rdfs:comment "nieuwe overkoepelende term voor zowel archiefvormers, verzamelaars als documentalisten. herhaalbaar om verschillende samenstellers en hun verschillende rollen te kunnen documenteren" ;
+              rdfs:label "samensteller" .
+
+
+###  https://data.q.archiefpunt.be/selectie
+:selectie rdf:type owl:ObjectProperty ;
+          rdfs:domain :Archief ;
+          rdfs:range :Waardering ;
+          rdfs:comment "selectie" ;
+          rdfs:label "selectie" .
+
+
+###  https://data.q.archiefpunt.be/taal
+:taal rdf:type owl:ObjectProperty ;
+      rdfs:domain :Agent ,
+                  :Archief ;
+      rdfs:range :Taal ;
+      rdfs:comment "trefwoord dat aangeeft welke taal gebruikt wordt in het archief" ;
+      rdfs:label "taal" .
+
+
+###  https://data.q.archiefpunt.be/trefwoord
+:trefwoord rdf:type owl:ObjectProperty ;
+           rdfs:domain :Omvang ,
+                       :Ordening ;
+           rdfs:range :Ordeningsstatus ;
+           rdfs:comment "" ;
+           rdfs:label "trefwoord" .
+
+
+###  https://data.q.archiefpunt.be/type
+:type rdf:type owl:ObjectProperty ;
+      rdfs:domain :Agent ,
+                  :Concept ,
+                  :Identificatienummer ;
+      rdfs:range :TypeIdentificatienummer ;
+      rdfs:comment "" ;
+      rdfs:label "type" .
+
+
+###  https://data.q.archiefpunt.be/type_naam
+:type_naam rdf:type owl:ObjectProperty ;
+           rdfs:domain :Naam ;
+           rdfs:range :TypeNaam ;
+           rdfs:comment "" ;
+           rdfs:label "type_naam" .
+
+
+###  https://data.q.archiefpunt.be/type_vergelijking
+:type_vergelijking rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Vergelijking ;
+                   rdfs:range :TypeVergelijking ;
+                   rdfs:comment "" ;
+                   rdfs:label "type_vergelijking" .
+
+
+###  https://data.q.archiefpunt.be/type_waarde
+:type_waarde rdf:type owl:ObjectProperty ;
+             rdfs:domain :Waarde ;
+             rdfs:range :TypeWaarde ;
+             rdfs:comment "" ;
+             rdfs:label "type_waarde" .
+
+
+###  https://data.q.archiefpunt.be/vergelijking
+:vergelijking rdf:type owl:ObjectProperty ;
+              rdfs:domain :Waardering ;
+              rdfs:range :Vergelijking ;
+              rdfs:comment "Omschrijving hoe het archiefbestand zich voor een specifiek aspect verhoudt tot andere archiefbestanden." ;
+              rdfs:label "vergelijking" .
+
+
+###  https://data.q.archiefpunt.be/waarde
+:waarde rdf:type owl:ObjectProperty ;
+        rdfs:domain :Identificatienummer ,
+                    :Naam ,
+                    :Omvang ,
+                    :Ordening ,
+                    :Vergelijking ,
+                    :Waarde ,
+                    :Waardering ;
+        rdfs:range :Waarde ;
+        rdfs:comment "Omschrijving van een specifieke erfgoedwaarde die aan het archiefbestand wordt toegekend" ;
+        rdfs:label "waarde" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://data.q.archiefpunt.be/_audit
+:_audit rdf:type owl:DatatypeProperty ;
+        rdfs:domain :EntiteitBasis ;
+        rdfs:range xsd:anyURI ;
+        rdfs:comment "link naar audit" ;
+        rdfs:label "_audit" .
+
+
+###  https://data.q.archiefpunt.be/_published
+:_published rdf:type owl:DatatypeProperty ;
+            rdfs:domain :EntiteitBasis ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "" ;
+            rdfs:label "_published" .
+
+
+###  https://data.q.archiefpunt.be/aangroei_text
+:aangroei_text rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Archief ;
+               rdfs:range xsd:string ;
+               rdfs:comment "oud aangroei veld" ;
+               rdfs:label "aangroei_text" .
+
+
+###  https://data.q.archiefpunt.be/aantekening_archivaris
+:aantekening_archivaris rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Archief ;
+                        rdfs:range xsd:string ;
+                        rdfs:comment "Dit veld zal alle aantekeningen bundelen die voordien in de velden “aantekening”, “werknotities” en “aantekening archivaris” stonden." ;
+                        rdfs:label "aantekening_archivaris" .
+
+
+###  https://data.q.archiefpunt.be/bibliografie_agent
+:bibliografie_agent rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Agent ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Bronnen gebruikt om agentbeschrijving op te stellen." ;
+                    rdfs:label "bibliografie_agent" .
+
+
+###  https://data.q.archiefpunt.be/bibliografie_archief
+:bibliografie_archief rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Archief ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "bibliografie werken gebaseerd op of gerelateerd aan het archief/de collectie" ;
+                      rdfs:label "bibliografie_archief" .
+
+
+###  https://data.q.archiefpunt.be/bibliografische_verwijzing
+:bibliografische_verwijzing rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :Publicatie ;
+                            rdfs:range xsd:string ;
+                            rdfs:comment "volledige bibliografische verwijzing naar de publicatie" ;
+                            rdfs:label "bibliografische_verwijzing" .
+
+
+###  https://data.q.archiefpunt.be/bijdragers
+:bijdragers rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Waardering ;
+            rdfs:range xsd:string ;
+            rdfs:comment "De namen van personen en organisaties die een bijdrage leverden aan deze waardering" ;
+            rdfs:label "bijdragers" .
+
+
+###  https://data.q.archiefpunt.be/boolean_dt
+:boolean_dt rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Test ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "" ;
+            rdfs:label "boolean_dt" .
+
+
+###  https://data.q.archiefpunt.be/bron_waardering
+:bron_waardering rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Waardering ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Verwijzing naar een publicatie die als bron werd gebruikt voor deze waardering. " ;
+                 rdfs:label "bron_waardering" .
+
+
+###  https://data.q.archiefpunt.be/bronnen_agent
+:bronnen_agent rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Agent ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Bronnen die gebruik maakten van de agent" ;
+               rdfs:label "bronnen_agent" .
+
+
+###  https://data.q.archiefpunt.be/bronnen_archief
+:bronnen_archief rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Archief ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "bibliografie werken gebruikt voor het opstellen van de beschrijving" ;
+                 rdfs:label "bronnen_archief" .
+
+
+###  https://data.q.archiefpunt.be/bronverwijzing_archief
+:bronverwijzing_archief rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Archief ;
+                        rdfs:range xsd:string ;
+                        rdfs:comment "Correcte verwijzing naar het archief in de Chicagostijl." ;
+                        rdfs:label "bronverwijzing_archief" .
+
+
+###  https://data.q.archiefpunt.be/bronverwijzing_record
+:bronverwijzing_record rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Agent ,
+                                   :Archief ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "Correcte verwijzing naar het record in de Chicagostijl." ;
+                       rdfs:label "bronverwijzing_record" .
+
+
+###  https://data.q.archiefpunt.be/contractuele_beperking
+:contractuele_beperking rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :JuridischeBeperking ;
+                        rdfs:range xsd:boolean ;
+                        rdfs:comment "" ;
+                        rdfs:label "contractuele_beperking" .
+
+
+###  https://data.q.archiefpunt.be/date_dt
+:date_dt rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Test ;
+         rdfs:range xsd:date ;
+         rdfs:comment "a date time type" ;
+         rdfs:label "date_dt" .
+
+
+###  https://data.q.archiefpunt.be/datering_text
+:datering_text rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Agent ,
+                           :Archief ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Woordelijke uitleg bij datering_systematisch, initiëel ook voor legacy data." ;
+               rdfs:label "datering_text" .
+
+
+###  https://data.q.archiefpunt.be/datetime_dt
+:datetime_dt rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Test ;
+             rdfs:range xsd:dateTime ;
+             rdfs:comment "" ;
+             rdfs:label "datetime_dt" .
+
+
+###  https://data.q.archiefpunt.be/datum_uitgave
+:datum_uitgave rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Publicatie ;
+               rdfs:range xsd:date ;
+               rdfs:comment "datum van uitgave" ;
+               rdfs:label "datum_uitgave" .
+
+
+###  https://data.q.archiefpunt.be/datum_waardering
+:datum_waardering rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Waardering ;
+                  rdfs:range xsd:date ;
+                  rdfs:comment "datum waarop de waardering gemaakt werd" ;
+                  rdfs:label "datum_waardering" .
+
+
+###  https://data.q.archiefpunt.be/definitie
+:definitie rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Concept ;
+           rdfs:range rdf:langString ;
+           rdfs:comment "Definitie van het Concept" ;
+           rdfs:label "definitie" .
+
+
+###  https://data.q.archiefpunt.be/double_dt
+:double_dt rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Test ;
+           rdfs:range xsd:double ;
+           rdfs:comment "" ;
+           rdfs:label "double_dt" .
+
+
+###  https://data.q.archiefpunt.be/duration_dt
+:duration_dt rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Test ;
+             rdfs:range xsd:duration ;
+             rdfs:comment "" ;
+             rdfs:label "duration_dt" .
+
+
+###  https://data.q.archiefpunt.be/email
+:email rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Beheerder ;
+       rdfs:range xsd:string ;
+       rdfs:comment "Emailadres van bewaarplaats." ;
+       rdfs:label "email" .
+
+
+###  https://data.q.archiefpunt.be/float_dt
+:float_dt rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Test ;
+          rdfs:range xsd:float ;
+          rdfs:comment "" ;
+          rdfs:label "float_dt" .
+
+
+###  https://data.q.archiefpunt.be/gebouw
+:gebouw rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Beheerder ;
+        rdfs:range xsd:string ;
+        rdfs:comment "Verwijzing naar de bewaarplaatsen die verbonden zijn aan de Agent" ;
+        rdfs:label "gebouw" .
+
+
+###  https://data.q.archiefpunt.be/geschiedenis_agent
+:geschiedenis_agent rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Agent ;
+                    rdfs:range rdf:langString ;
+                    rdfs:comment "Biografische geschiedenis van de agent." ;
+                    rdfs:label "geschiedenis_agent" .
+
+
+###  https://data.q.archiefpunt.be/geschiedenis_archief
+:geschiedenis_archief rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Archief ;
+                      rdfs:range rdf:langString ;
+                      rdfs:comment "Geschiedenis van het archief." ;
+                      rdfs:label "geschiedenis_archief" .
+
+
+###  https://data.q.archiefpunt.be/gevoelig_voor_auteursrechtelijkebescherming
+:gevoelig_voor_auteursrechtelijkebescherming rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain :JuridischeBeperking ;
+                                             rdfs:range xsd:boolean ;
+                                             rdfs:comment "" ;
+                                             rdfs:label "gevoelig_voor_auteursrechtelijkebescherming" .
+
+
+###  https://data.q.archiefpunt.be/id
+:id rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Aangroei ,
+                :Bereikbaarheid ,
+                :Beschrijvingsniveau ,
+                :BibliografieArchief ,
+                :Bronbeschrijving ,
+                :Bronverwijzing ,
+                :Codetabel ,
+                :Datering ,
+                :EntiteitBasis ,
+                :Erkenning ,
+                :Functie ,
+                :FunctieBeroepActiviteit ,
+                :Gebruiksgroep ,
+                :Materiaalsoort ,
+                :Onderwerp ,
+                :Ordeningsstatus ,
+                :Periode ,
+                :Raadplegingsstatus ,
+                :Rechtenstatus ,
+                :Rol ,
+                :RolBeheerder ,
+                :RolSamensteller ,
+                :Soort ,
+                :Taal ,
+                :Term ,
+                :Test ,
+                :Toegang ,
+                :TypeAgent ,
+                :TypeConcept ,
+                :TypeIdentificatienummer ,
+                :TypeNaam ,
+                :TypeVergelijking ,
+                :TypeWaarde ,
+                :Waarde ;
+    rdfs:range xsd:string ;
+    rdfs:comment "unique record identifier" ;
+    rdfs:label "id" .
+
+
+###  https://data.q.archiefpunt.be/inhoud_en_bereik
+:inhoud_en_bereik rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Archief ;
+                  rdfs:range rdf:langString ;
+                  rdfs:comment "Inhoud van archief." ;
+                  rdfs:label "inhoud_en_bereik" .
+
+
+###  https://data.q.archiefpunt.be/integer_dt
+:integer_dt rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Test ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "an integer value" ;
+            rdfs:label "integer_dt" .
+
+
+###  https://data.q.archiefpunt.be/label
+:label rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Concept ;
+       rdfs:range rdf:langString ;
+       rdfs:comment "Naam voor het Concept" ;
+       rdfs:label "label" .
+
+
+###  https://data.q.archiefpunt.be/lang_string_array_dt
+:lang_string_array_dt rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Test ;
+                      rdfs:range rdf:langString ;
+                      rdfs:comment "" ;
+                      rdfs:label "lang_string_array_dt" .
+
+
+###  https://data.q.archiefpunt.be/lang_string_dt
+:lang_string_dt rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Test ;
+                rdfs:range rdf:langString ;
+                rdfs:comment "" ;
+                rdfs:label "lang_string_dt" .
+
+
+###  https://data.q.archiefpunt.be/openingsuren
+:openingsuren rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Beheerder ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Openingsuren waarop de Agent bereikbaar/toegankelijk is" ;
+              rdfs:label "openingsuren" .
+
+
+###  https://data.q.archiefpunt.be/opmerking
+:opmerking rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Agent ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Vrij opmerkingen veld." ;
+           rdfs:label "opmerking" .
+
+
+###  https://data.q.archiefpunt.be/opmerkingen
+:opmerkingen rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Waardering ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Vrij notitieveld bij deze waardering" ;
+             rdfs:label "opmerkingen" .
+
+
+###  https://data.q.archiefpunt.be/ordening_text
+:ordening_text rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Archief ;
+               rdfs:range xsd:string ;
+               rdfs:comment "oud ordening veld" ;
+               rdfs:label "ordening_text" .
+
+
+###  https://data.q.archiefpunt.be/plaats_van_uitgave
+:plaats_van_uitgave rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Publicatie ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "naam van de plaats van uitgave" ;
+                    rdfs:label "plaats_van_uitgave" .
+
+
+###  https://data.q.archiefpunt.be/privacy_gevoelig
+:privacy_gevoelig rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :JuridischeBeperking ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:comment "" ;
+                  rdfs:label "privacy_gevoelig" .
+
+
+###  https://data.q.archiefpunt.be/reeks
+:reeks rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Publicatie ;
+       rdfs:range xsd:string ;
+       rdfs:comment "titel van de reeks waarin de publicatie verschijnt" ;
+       rdfs:label "reeks" .
+
+
+###  https://data.q.archiefpunt.be/reeksnummer
+:reeksnummer rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Publicatie ;
+             rdfs:range xsd:string ;
+             rdfs:comment "rangnummer van de publicatie binnen de reeks" ;
+             rdfs:label "reeksnummer" .
+
+
+###  https://data.q.archiefpunt.be/straat_en_nummer
+:straat_en_nummer rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Adres ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "" ;
+                  rdfs:label "straat_en_nummer" .
+
+
+###  https://data.q.archiefpunt.be/string_dt
+:string_dt rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Test ;
+           rdfs:range xsd:string ;
+           rdfs:comment "a string value NO language specified" ;
+           rdfs:label "string_dt" .
+
+
+###  https://data.q.archiefpunt.be/taal_text
+:taal_text rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Archief ;
+           rdfs:range xsd:string ;
+           rdfs:comment "oude taal veld" ;
+           rdfs:label "taal_text" .
+
+
+###  https://data.q.archiefpunt.be/tekst
+:tekst rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Raadplegingsvoorwaarde ;
+       rdfs:range rdf:langString ;
+       rdfs:comment "" ;
+       rdfs:label "tekst" .
+
+
+###  https://data.q.archiefpunt.be/telefoon
+:telefoon rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Beheerder ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Telefoonnummer van bewaarplaats." ;
+          rdfs:label "telefoon" .
+
+
+###  https://data.q.archiefpunt.be/time_dt
+:time_dt rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Test ;
+         rdfs:range xsd:time ;
+         rdfs:comment "" ;
+         rdfs:label "time_dt" .
+
+
+###  https://data.q.archiefpunt.be/titel
+:titel rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Archief ,
+                   :Publicatie ;
+       rdfs:range rdf:langString ;
+       rdfs:comment "titel van de publicatie" ;
+       rdfs:label "titel" .
+
+
+###  https://data.q.archiefpunt.be/toegang
+:toegang rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Archief ,
+                     :Beheerder ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Verwijzing naar de toegang voor de archieven/collecties die de Agent bewaard." ;
+         rdfs:label "toegang" .
+
+
+###  https://data.q.archiefpunt.be/toegangsvoorwaarden
+:toegangsvoorwaarden rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Beheerder ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Voorwaarden om toegang te krijgen tot archieven/collecties die door de Agent worden bewaard." ;
+                     rdfs:label "toegangsvoorwaarden" .
+
+
+###  https://data.q.archiefpunt.be/uitgever
+:uitgever rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Publicatie ;
+          rdfs:range xsd:string ;
+          rdfs:comment "naam van de uitgever van de publicatie" ;
+          rdfs:label "uitgever" .
+
+
+###  https://data.q.archiefpunt.be/uri_dt
+:uri_dt rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Test ;
+        rdfs:range xsd:anyURI ;
+        rdfs:comment "" ;
+        rdfs:label "uri_dt" .
+
+
+###  https://data.q.archiefpunt.be/url
+:url rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Publicatie ;
+     rdfs:range xsd:anyURI ;
+     rdfs:comment "URL die verwijst naar een digitale versie van de publicatie" ;
+     rdfs:label "url" .
+
+
+###  https://data.q.archiefpunt.be/verwerving
+:verwerving rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Archief ;
+            rdfs:range rdf:langString ;
+            rdfs:comment "Uitleg hoe archief verworven werd door bewaarinstelling." ;
+            rdfs:label "verwerving" .
+
+
+###  https://data.q.archiefpunt.be/waardestelling
+:waardestelling rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Waardering ;
+                rdfs:range rdf:langString ;
+                rdfs:comment "Omvattende verklaring van de erfgoedwaarde die een archiefbestand vertegenwoordigt." ;
+                rdfs:label "waardestelling" .
+
+
+###  https://data.q.archiefpunt.be/website
+:website rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Beheerder ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Website bewaarinstelling." ;
+         rdfs:label "website" .
+
+
+###  https://data.q.archiefpunt.be/year_dt
+:year_dt rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Test ;
+         rdfs:range xsd:gYear ;
+         rdfs:comment "just a year of a date" ;
+         rdfs:label "year_dt" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON
+rdf:JSON rdf:type owl:Class .
+
+
+###  http://www.w3.org/2000/10/swap/time#DateTimeInterval
+<http://www.w3.org/2000/10/swap/time#DateTimeInterval> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+###  https://data.q.archiefpunt.be/Aangroei
+:Aangroei rdf:type owl:Class ;
+          rdfs:subClassOf :Codetabel ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :id ;
+                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :id ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          rdfs:comment "" ;
+          rdfs:label "Aangroei" .
+
+
+###  https://data.q.archiefpunt.be/Adres
+:Adres rdf:type owl:Class ;
+       rdfs:subClassOf :EntiteitBasis ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :gemeente ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :gemeente ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :straat_en_nummer ;
+                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :straat_en_nummer ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ;
+       rdfs:comment "" ;
+       rdfs:label "Adres" .
+
+
+###  https://data.q.archiefpunt.be/Agent
+:Agent rdf:type owl:Class ;
+       rdfs:subClassOf :EntiteitBasis ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :associaties ;
+                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :datering_systematisch ;
+                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :identificatienummer ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :naam ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :taal ;
+                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :type ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :associaties ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :type ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :bibliografie_agent ;
+                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :bronnen_agent ;
+                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :bronverwijzing_record ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :datering_text ;
+                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :geschiedenis_agent ;
+                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :opmerking ;
+                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :bronverwijzing_record ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :datering_text ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ;
+       rdfs:comment "beperkt beschrijvingsmodel. doel: enkel relateren van agents aan archieven en waarderingen. geen afzonderlijke biografische databank (dus geen familierelaties bvb) Gebruik daarvoor een externe bron." ;
+       rdfs:label "Agent" .
+
+
+###  https://data.q.archiefpunt.be/Archief
+:Archief rdf:type owl:Class ;
+         rdfs:subClassOf :EntiteitBasis ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :aangroei ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :associatie ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :beheerder ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :beschrijvingsniveau ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :datering_systematisch ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :identificatienummer ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :is_onderdeel_van ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :juridische_beperking ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :omvang ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :ordening ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :raadplegingsvoorwaarde ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :rechtenstatus_metadata ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :rol_beheerder ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :rol_samensteller ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :samensteller ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :selectie ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :taal ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :aangroei ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :associatie ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :beschrijvingsniveau ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :is_onderdeel_van ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :juridische_beperking ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :ordening ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :rechtenstatus_metadata ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :rol_beheerder ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :rol_samensteller ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :aangroei_text ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :aantekening_archivaris ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :bibliografie_archief ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :bronnen_archief ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :bronverwijzing_archief ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :bronverwijzing_record ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :datering_text ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :geschiedenis_archief ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :inhoud_en_bereik ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :ordening_text ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :taal_text ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :titel ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :toegang ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :verwerving ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :aangroei_text ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :bronverwijzing_archief ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :bronverwijzing_record ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :datering_text ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :ordening_text ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         rdfs:comment "" ;
+         rdfs:label "Archief" .
+
+
+###  https://data.q.archiefpunt.be/Associatie
+:Associatie rdf:type owl:Class ;
+            rdfs:subClassOf :EntiteitBasis ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :agent ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :onderwerp ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :periode ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :plaats ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ;
+            rdfs:comment "" ;
+            rdfs:label "Associatie" .
+
+
+###  https://data.q.archiefpunt.be/Beheerder
+:Beheerder rdf:type owl:Class ;
+           rdfs:subClassOf :EntiteitBasis ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :adres ;
+                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :agent ;
+                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :bereikbaarheid ;
+                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :erkenning ;
+                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :agent ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :erkenning ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :email ;
+                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :gebouw ;
+                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :openingsuren ;
+                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :telefoon ;
+                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :toegang ;
+                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :toegangsvoorwaarden ;
+                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :website ;
+                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :openingsuren ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :toegangsvoorwaarden ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
+           rdfs:comment "" ;
+           rdfs:label "Beheerder" .
+
+
+###  https://data.q.archiefpunt.be/Bereikbaarheid
+:Bereikbaarheid rdf:type owl:Class ;
+                rdfs:subClassOf :Codetabel ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :id ;
+                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :id ;
+                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
+                rdfs:comment "" ;
+                rdfs:label "Bereikbaarheid" .
+
+
+###  https://data.q.archiefpunt.be/Beschrijvingsniveau
+:Beschrijvingsniveau rdf:type owl:Class ;
+                     rdfs:subClassOf :Codetabel ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :id ;
+                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :id ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ;
+                     rdfs:comment "" ;
+                     rdfs:label "Beschrijvingsniveau" .
+
+
+###  https://data.q.archiefpunt.be/BibliografieArchief
+:BibliografieArchief rdf:type owl:Class ;
+                     rdfs:subClassOf :Concept ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :id ;
+                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :id ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ;
+                     rdfs:comment "" ;
+                     rdfs:label "BibliografieArchief" .
+
+
+###  https://data.q.archiefpunt.be/Bronbeschrijving
+:Bronbeschrijving rdf:type owl:Class ;
+                  rdfs:subClassOf :Concept ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :id ;
+                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :id ;
+                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
+                  rdfs:comment "" ;
+                  rdfs:label "Bronbeschrijving" .
+
+
+###  https://data.q.archiefpunt.be/Bronverwijzing
+:Bronverwijzing rdf:type owl:Class ;
+                rdfs:subClassOf :EntiteitBasis ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :id ;
+                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :id ;
+                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
+                rdfs:comment "" ;
+                rdfs:label "Bronverwijzing" .
+
+
+###  https://data.q.archiefpunt.be/Codetabel
+:Codetabel rdf:type owl:Class ;
+           rdfs:subClassOf :Concept ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :id ;
+                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :id ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
+           rdfs:comment "" ;
+           rdfs:label "Codetabel" .
+
+
+###  https://data.q.archiefpunt.be/Concept
+:Concept rdf:type owl:Class ;
+         rdfs:subClassOf :EntiteitBasis ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :identificatienummer ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :type ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :definitie ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :label ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] .
+
+
+###  https://data.q.archiefpunt.be/Datering
+:Datering rdf:type owl:Class ;
+          rdfs:subClassOf :EntiteitBasis ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :id ;
+                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :id ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          rdfs:comment "" ;
+          rdfs:label "Datering" .
+
+
+###  https://data.q.archiefpunt.be/EntiteitBasis
+:EntiteitBasis rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty :id ;
+                                 owl:minCardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :_audit ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :_published ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :id ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+               rdfs:comment "Basis entiteit waar alle andere van overerven" ;
+               rdfs:label "EntiteitBasis" .
+
+
+###  https://data.q.archiefpunt.be/Erkenning
+:Erkenning rdf:type owl:Class ;
+           rdfs:subClassOf :Concept ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :id ;
+                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :id ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
+           rdfs:comment "" ;
+           rdfs:label "Erkenning" .
+
+
+###  https://data.q.archiefpunt.be/Functie
+:Functie rdf:type owl:Class ;
+         rdfs:subClassOf :Codetabel ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :id ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :id ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         rdfs:comment "" ;
+         rdfs:label "Functie" .
+
+
+###  https://data.q.archiefpunt.be/FunctieBeroepActiviteit
+:FunctieBeroepActiviteit rdf:type owl:Class ;
+                         rdfs:subClassOf :Concept ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :id ;
+                                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :id ;
+                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                         ] ;
+                         rdfs:comment "" ;
+                         rdfs:label "FunctieBeroepActiviteit" .
+
+
+###  https://data.q.archiefpunt.be/Gebruiksgroep
+:Gebruiksgroep rdf:type owl:Class ;
+               rdfs:subClassOf :Codetabel ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :id ;
+                                 owl:minCardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :id ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+               rdfs:comment "Lijst van groepen waartoe een gebruiker kan toe behoren" ;
+               rdfs:label "Gebruiksgroep" .
+
+
+###  https://data.q.archiefpunt.be/Identificatienummer
+:Identificatienummer rdf:type owl:Class ;
+                     rdfs:subClassOf :EntiteitBasis ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :bron ;
+                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :type ;
+                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :waarde ;
+                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :bron ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :type ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :waarde ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ;
+                     rdfs:comment "" ;
+                     rdfs:label "Identificatienummer" .
+
+
+###  https://data.q.archiefpunt.be/JuridischeBeperking
+:JuridischeBeperking rdf:type owl:Class ;
+                     rdfs:subClassOf :EntiteitBasis ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :contractuele_beperking ;
+                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :gevoelig_voor_auteursrechtelijkebescherming ;
+                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :privacy_gevoelig ;
+                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :contractuele_beperking ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :gevoelig_voor_auteursrechtelijkebescherming ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :privacy_gevoelig ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ;
+                     rdfs:comment "" ;
+                     rdfs:label "JuridischeBeperking" .
+
+
+###  https://data.q.archiefpunt.be/Materiaalsoort
+:Materiaalsoort rdf:type owl:Class ;
+                rdfs:subClassOf :Codetabel ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :id ;
+                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :id ;
+                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
+                rdfs:comment "" ;
+                rdfs:label "Materiaalsoort" .
+
+
+###  https://data.q.archiefpunt.be/Naam
+:Naam rdf:type owl:Class ;
+      rdfs:subClassOf :EntiteitBasis ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :type_naam ;
+                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :waarde ;
+                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :type_naam ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :waarde ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ;
+      rdfs:comment "" ;
+      rdfs:label "Naam" .
+
+
+###  https://data.q.archiefpunt.be/Omvang
+:Omvang rdf:type owl:Class ;
+        rdfs:subClassOf :EntiteitBasis ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :trefwoord ;
+                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :waarde ;
+                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :waarde ;
+                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                        ] ;
+        rdfs:comment "" ;
+        rdfs:label "Omvang" .
+
+
+###  https://data.q.archiefpunt.be/Onderwerp
+:Onderwerp rdf:type owl:Class ;
+           rdfs:subClassOf :Codetabel ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :id ;
+                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :id ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
+           rdfs:comment "" ;
+           rdfs:label "Onderwerp" .
+
+
+###  https://data.q.archiefpunt.be/Ordening
+:Ordening rdf:type owl:Class ;
+          rdfs:subClassOf :EntiteitBasis ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :trefwoord ;
+                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :waarde ;
+                            owl:minCardinality "0"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :trefwoord ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :waarde ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          rdfs:comment "" ;
+          rdfs:label "Ordening" .
+
+
+###  https://data.q.archiefpunt.be/Ordeningsstatus
+:Ordeningsstatus rdf:type owl:Class ;
+                 rdfs:subClassOf :Codetabel ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :id ;
+                                   owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :id ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ;
+                 rdfs:comment "" ;
+                 rdfs:label "Ordeningsstatus" .
+
+
+###  https://data.q.archiefpunt.be/Periode
+:Periode rdf:type owl:Class ;
+         rdfs:subClassOf :Codetabel ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :id ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :id ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         rdfs:comment "" ;
+         rdfs:label "Periode" .
+
+
+###  https://data.q.archiefpunt.be/Plaats
+:Plaats rdf:type owl:Class ;
+        rdfs:subClassOf :EntiteitBasis ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :identificatienummer ;
+                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :plaatsnaam ;
+                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                        ] ;
+        rdfs:comment "capteert informatie over geografische locaties. Verwijzingen naar externe geografische thesauri is sterk aanbevolen. De beschrijving is uiterst beperkt gehouden, in de veronderstelling dat rijkere metadata, zoals historische namen, taalvarianten, maar ook coördinaten eenvoudig aan externe geografische thesauri ontleend kunnen worden. " ;
+        rdfs:label "Plaats" .
+
+
+###  https://data.q.archiefpunt.be/Publicatie
+:Publicatie rdf:type owl:Class ;
+            rdfs:subClassOf :EntiteitBasis ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :auteur ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :identificatienummer ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :bibliografische_verwijzing ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :datum_uitgave ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :plaats_van_uitgave ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :reeks ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :reeksnummer ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :titel ;
+                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :uitgever ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :url ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :bibliografische_verwijzing ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :datum_uitgave ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :reeks ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :reeksnummer ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :titel ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            rdfs:comment "bibliografische informatie voor publicaties die een toegang op een archiefbestand vormen, over het archiefbestand gaan of de directe informatiebron zijn voor de archiefbeschrijving. sterk aanbevolen om zoveel mogelijk externe identificatienummers voor de publicatie op te nemen. mogelijkheid om ofwel een tekststring met een volledige bibliografische referentie op te nemen, ofwel een gestructureerde beschrijving van de publicatie. de gestructureerde beschrijving maakt publicaties beter doorzoekbaar binnen archiefbank." ;
+            rdfs:label "Publicatie" .
+
+
+###  https://data.q.archiefpunt.be/Raadplegingsstatus
+:Raadplegingsstatus rdf:type owl:Class ;
+                    rdfs:subClassOf :Codetabel ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :id ;
+                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :id ;
+                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                    ] ;
+                    rdfs:comment "" ;
+                    rdfs:label "Raadplegingsstatus" .
+
+
+###  https://data.q.archiefpunt.be/Raadplegingsvoorwaarde
+:Raadplegingsvoorwaarde rdf:type owl:Class ;
+                        rdfs:subClassOf :EntiteitBasis ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :raadplegingsstatus ;
+                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :raadplegingsstatus ;
+                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :tekst ;
+                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :tekst ;
+                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                        ] ;
+                        rdfs:comment "" ;
+                        rdfs:label "Raadplegingsvoorwaarde" .
+
+
+###  https://data.q.archiefpunt.be/Rechtenstatus
+:Rechtenstatus rdf:type owl:Class ;
+               rdfs:subClassOf :Codetabel ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :id ;
+                                 owl:minCardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :id ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+               rdfs:comment "" ;
+               rdfs:label "Rechtenstatus" .
+
+
+###  https://data.q.archiefpunt.be/Rol
+:Rol rdf:type owl:Class ;
+     rdfs:subClassOf :Concept ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :id ;
+                       owl:minCardinality "1"^^xsd:nonNegativeInteger
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :id ;
+                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                     ] ;
+     rdfs:comment "" ;
+     rdfs:label "Rol" .
+
+
+###  https://data.q.archiefpunt.be/RolBeheerder
+:RolBeheerder rdf:type owl:Class ;
+              rdfs:subClassOf :Codetabel ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :id ;
+                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :id ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] ;
+              rdfs:comment "" ;
+              rdfs:label "RolBeheerder" .
+
+
+###  https://data.q.archiefpunt.be/RolSamensteller
+:RolSamensteller rdf:type owl:Class ;
+                 rdfs:subClassOf :Codetabel ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :id ;
+                                   owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :id ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ;
+                 rdfs:comment "" ;
+                 rdfs:label "RolSamensteller" .
+
+
+###  https://data.q.archiefpunt.be/Samensteller
+:Samensteller rdf:type owl:Class ;
+              rdfs:subClassOf :EntiteitBasis ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :agent ;
+                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :functie_beroep_activiteit ;
+                                owl:minCardinality "0"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :agent ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] ;
+              rdfs:comment "" ;
+              rdfs:label "Samensteller" .
+
+
+###  https://data.q.archiefpunt.be/Soort
+:Soort rdf:type owl:Class ;
+       rdfs:subClassOf :Concept ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :id ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :id ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ;
+       rdfs:comment "" ;
+       rdfs:label "Soort" .
+
+
+###  https://data.q.archiefpunt.be/Taal
+:Taal rdf:type owl:Class ;
+      rdfs:subClassOf :Codetabel ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :id ;
+                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :id ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ;
+      rdfs:comment "" ;
+      rdfs:label "Taal" .
+
+
+###  https://data.q.archiefpunt.be/Term
+:Term rdf:type owl:Class ;
+      rdfs:subClassOf :EntiteitBasis ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :id ;
+                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :id ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ;
+      rdfs:comment "" ;
+      rdfs:label "Term" .
+
+
+###  https://data.q.archiefpunt.be/Test
+:Test rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :json_dt ;
+                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :json_dt ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :boolean_dt ;
+                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :date_dt ;
+                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :datetime_dt ;
+                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :double_dt ;
+                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :duration_dt ;
+                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :float_dt ;
+                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :id ;
+                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :integer_dt ;
+                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :lang_string_array_dt ;
+                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :lang_string_dt ;
+                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :string_dt ;
+                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :time_dt ;
+                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :uri_dt ;
+                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :year_dt ;
+                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :boolean_dt ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :date_dt ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :datetime_dt ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :double_dt ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :duration_dt ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :float_dt ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :id ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :integer_dt ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :lang_string_dt ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :string_dt ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :time_dt ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :uri_dt ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :year_dt ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ;
+      rdfs:comment "Dit is een test construct mag weg bij productie overgang" ;
+      rdfs:label "Test" .
+
+
+###  https://data.q.archiefpunt.be/Toegang
+:Toegang rdf:type owl:Class ;
+         rdfs:subClassOf :EntiteitBasis ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :id ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :id ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         rdfs:comment "" ;
+         rdfs:label "Toegang" .
+
+
+###  https://data.q.archiefpunt.be/TypeAgent
+:TypeAgent rdf:type owl:Class ;
+           rdfs:subClassOf :Codetabel ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :id ;
+                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :id ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
+           rdfs:comment "" ;
+           rdfs:label "TypeAgent" .
+
+
+###  https://data.q.archiefpunt.be/TypeConcept
+:TypeConcept rdf:type owl:Class ;
+             rdfs:subClassOf :Codetabel ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :id ;
+                               owl:minCardinality "1"^^xsd:nonNegativeInteger
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :id ;
+                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                             ] ;
+             rdfs:comment "" ;
+             rdfs:label "TypeConcept" .
+
+
+###  https://data.q.archiefpunt.be/TypeIdentificatienummer
+:TypeIdentificatienummer rdf:type owl:Class ;
+                         rdfs:subClassOf :Codetabel ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :id ;
+                                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :id ;
+                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                         ] ;
+                         rdfs:comment "" ;
+                         rdfs:label "TypeIdentificatienummer" .
+
+
+###  https://data.q.archiefpunt.be/TypeNaam
+:TypeNaam rdf:type owl:Class ;
+          rdfs:subClassOf :Codetabel ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :id ;
+                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :id ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          rdfs:comment "" ;
+          rdfs:label "TypeNaam" .
+
+
+###  https://data.q.archiefpunt.be/TypeVergelijking
+:TypeVergelijking rdf:type owl:Class ;
+                  rdfs:subClassOf :Codetabel ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :id ;
+                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :id ;
+                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
+                  rdfs:comment "" ;
+                  rdfs:label "TypeVergelijking" .
+
+
+###  https://data.q.archiefpunt.be/TypeWaarde
+:TypeWaarde rdf:type owl:Class ;
+            rdfs:subClassOf :Codetabel ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :id ;
+                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :id ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            rdfs:comment "" ;
+            rdfs:label "TypeWaarde" .
+
+
+###  https://data.q.archiefpunt.be/Vergelijking
+:Vergelijking rdf:type owl:Class ;
+              rdfs:subClassOf :EntiteitBasis ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :type_vergelijking ;
+                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :waarde ;
+                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :type_vergelijking ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :waarde ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] ;
+              rdfs:comment "" ;
+              rdfs:label "Vergelijking" .
+
+
+###  https://data.q.archiefpunt.be/Waarde
+:Waarde rdf:type owl:Class ;
+        rdfs:subClassOf :EntiteitBasis ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :type_waarde ;
+                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :waarde ;
+                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :type_waarde ;
+                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :waarde ;
+                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :id ;
+                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :id ;
+                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                        ] ;
+        rdfs:comment "" ;
+        rdfs:label "Waarde" .
+
+
+###  https://data.q.archiefpunt.be/Waardering
+:Waardering rdf:type owl:Class ;
+            rdfs:subClassOf :EntiteitBasis ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :vergelijking ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :waarde ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :bijdragers ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :bron_waardering ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :datum_waardering ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :opmerkingen ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :waardestelling ;
+                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :datum_waardering ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :waardestelling ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            rdfs:comment "capteert informatie over de intrinsieke en comparatieve erfgoedwaarde van het archiefbestand" ;
+            rdfs:label "Waardering" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:NamedIndividual ;
+                                              owl:sameAs :Concept .
+
+
+###  https://data.q.archiefpunt.be/Concept
+:Concept rdf:type owl:NamedIndividual .
+
+
+###  https://data.q.archiefpunt.be/Concept
+:Concept rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Concept rdfs:comment "" ;
+         rdfs:label "Concept" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

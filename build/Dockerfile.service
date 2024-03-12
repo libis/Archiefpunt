@@ -14,4 +14,4 @@ LABEL org.opencontainers.image.vendor="KULeuven/LIBIS" \
 	org.opencontainers.image.title="Archiefpunt $SERVICE image" \
 	org.opencontainers.image.description="Archiefpunt $SERVICE image" \
 	org.opencontainers.image.version="v$VERSION" \
-	org.opencontainers.image.documentation="https://data.archiefpunt.be/_doc"
+	org.opencontainers.image.documentation="https://data.q.archiefpunt.be/_doc"

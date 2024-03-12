@@ -1,20 +1,24 @@
 source "https://rubygems.org"
 
-gem "activesupport", "= 7.0.8"
+gem "activesupport"
+
+# gem "rack"
+# gem "rackup"
 
 gem "json"
 gem 'puma'
 
-gem 'data_collector', '0.35.0'
+gem 'data_collector', '0.49.0'
 gem 'hashdiff'
 gem 'connection_pool'
 gem 'http'
 gem 'http-accept'
 gem 'rack-cors'
+gem 'rack-contrib'
 gem 'parallel'
 gem 'redis'
-gem 'sinatra'
-gem 'sinatra-contrib'
+gem 'sinatra', '3.2.0'
+gem 'sinatra-contrib', '3.2.0'
 gem 'uuidtools'
 gem 'moneta'
 

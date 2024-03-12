@@ -6,7 +6,7 @@
 :solis_data: &SOLIS_DATA
   :cache: ./cache
   :cache_expire: 86400
-  :graph_name: https://data.archiefpunt.be/
+  :graph_name: https://data.q.archiefpunt.be/
   :graph_prefix: abv
   :sparql_endpoint: http://virtuoso:8890/sparql
   :inflections: ./config/solis/abv.json
@@ -16,7 +16,7 @@
 
 :solis_audit: &SOLIS_AUDIT
   :cache: ./cache
-  :graph_name: https://data.archiefpunt.be/_audit/
+  :graph_name: https://data.q.archiefpunt.be/_audit/
   :graph_prefix: audit
   :sparql_endpoint: http://virtuoso:8890/sparql
   :inflections: ./config/solis/audit.json

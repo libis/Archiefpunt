@@ -49,7 +49,7 @@ CONSTRUCT {
 }
 WHERE {
     {{VALUES}}
-    #VALUES ?beheerder_id {<https://abv.libis.be/beheerders/BH01-9BE7-0CF3-9960-1F11277BW9A4>}
+    #VALUES ?beheerder_id {<https://data.q.archiefpunt.be/beheerders/BH80-23F7-1DF3-9960-1F11233BW9A4>}
 
     ?beheerder_id a abv:Beheerder ;
         abv:id ?id;

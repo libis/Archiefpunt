@@ -1,0 +1,3605 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://data.archiefpunt.be", "http://www.w3.org/2000/10/swap/time", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "http://www.w3.org/2004/02/skos/core" ],
+    "title" : {
+      "undefined" : "Archiefbank ontology"
+    },
+    "iri" : "https://data.q.archiefpunt.be/",
+    "version" : "1.0.3",
+    "author" : [ "Archiefpunt, Meemo, KADOC, LIBIS" ],
+    "description" : {
+      "undefined" : "Archiefbank ontology"
+    },
+    "other" : {
+      "date" : [ {
+        "identifier" : "date",
+        "language" : "undefined",
+        "value" : "2022-10-26 17:16:20 +0200",
+        "type" : "label"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Archiefpunt, Meemo, KADOC, LIBIS",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0.3",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "Archiefbank ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "40",
+    "type" : "owl:Class"
+  }, {
+    "id" : "59",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "96",
+    "type" : "owl:Class"
+  }, {
+    "id" : "38",
+    "type" : "owl:Class"
+  }, {
+    "id" : "46",
+    "type" : "owl:Class"
+  }, {
+    "id" : "71",
+    "type" : "owl:Class"
+  }, {
+    "id" : "84",
+    "type" : "owl:Class"
+  }, {
+    "id" : "90",
+    "type" : "owl:Class"
+  }, {
+    "id" : "55",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "owl:Class"
+  }, {
+    "id" : "65",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "98",
+    "type" : "owl:Class"
+  }, {
+    "id" : "121",
+    "type" : "owl:Class"
+  }, {
+    "id" : "101",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "51",
+    "type" : "owl:Class"
+  }, {
+    "id" : "69",
+    "type" : "owl:Class"
+  }, {
+    "id" : "49",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "80",
+    "type" : "owl:Class"
+  }, {
+    "id" : "82",
+    "type" : "owl:Class"
+  }, {
+    "id" : "33",
+    "type" : "owl:Class"
+  }, {
+    "id" : "97",
+    "type" : "owl:Class"
+  }, {
+    "id" : "148",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "161",
+    "type" : "owl:Class"
+  }, {
+    "id" : "67",
+    "type" : "owl:Class"
+  }, {
+    "id" : "166",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "167",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "168",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "94",
+    "type" : "owl:Class"
+  }, {
+    "id" : "169",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "76",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "163",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "78",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "177",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "178",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "123",
+    "type" : "owl:Class"
+  }, {
+    "id" : "186",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "189",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "185",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "118",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "114",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "174",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "190",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "193",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "195",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "182",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "157",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "53",
+    "type" : "owl:Class"
+  }, {
+    "id" : "150",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "152",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "122",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "146",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "200",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "87",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "201",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "95",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "160",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "125",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "36",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "140",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "107",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "207",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "208",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "133",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "137",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "43",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "103",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "211",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "31",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "176",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "156",
+    "type" : "owl:Class"
+  }, {
+    "id" : "42",
+    "type" : "owl:Class"
+  }, {
+    "id" : "100",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "220",
+    "type" : "owl:Class"
+  }, {
+    "id" : "221",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "102",
+    "type" : "owl:Class"
+  }, {
+    "id" : "129",
+    "type" : "owl:Class"
+  }, {
+    "id" : "223",
+    "type" : "owl:Class"
+  }, {
+    "id" : "142",
+    "type" : "owl:Class"
+  }, {
+    "id" : "224",
+    "type" : "owl:Class"
+  }, {
+    "id" : "86",
+    "type" : "owl:Class"
+  }, {
+    "id" : "173",
+    "type" : "owl:Class"
+  }, {
+    "id" : "113",
+    "type" : "owl:Class"
+  }, {
+    "id" : "109",
+    "type" : "owl:Class"
+  }, {
+    "id" : "63",
+    "type" : "owl:Class"
+  }, {
+    "id" : "143",
+    "type" : "owl:Class"
+  }, {
+    "id" : "105",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "188",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "171",
+    "type" : "owl:Class"
+  }, {
+    "id" : "204",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "206",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "127",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "238",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "57",
+    "type" : "owl:Class"
+  }, {
+    "id" : "73",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "180",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "192",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "249",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "75",
+    "type" : "owl:Class"
+  }, {
+    "id" : "165",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "92",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "231",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "45",
+    "type" : "owl:Class"
+  }, {
+    "id" : "99",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "226",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "39",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "234",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://data.q.archiefpunt.be/Bronbeschrijving",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Bronbeschrijving",
+      "undefined" : "Bronbeschrijving"
+    },
+    "comment" : { },
+    "id" : "28",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Raadplegingsvoorwaarde",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Raadplegingsvoorwaarde",
+      "undefined" : "Raadplegingsvoorwaarde"
+    },
+    "comment" : { },
+    "id" : "40",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/TypeAgent",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TypeAgent",
+      "undefined" : "TypeAgent"
+    },
+    "comment" : { },
+    "id" : "59",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Naam",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Naam",
+      "undefined" : "Naam"
+    },
+    "comment" : { },
+    "id" : "9",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Vergelijking",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Vergelijking",
+      "undefined" : "Vergelijking"
+    },
+    "comment" : { },
+    "id" : "96",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/EntiteitBasis",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EntiteitBasis",
+      "undefined" : "EntiteitBasis"
+    },
+    "subClasses" : [ "24", "33", "9", "25", "96", "80", "75", "45", "69", "71", "97", "19", "98", "99", "42", "40", "100", "8", "101", "94", "102", "103" ],
+    "comment" : {
+      "undefined" : "Basis entiteit waar alle andere van overerven"
+    },
+    "id" : "38"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Bereikbaarheid",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Bereikbaarheid",
+      "undefined" : "Bereikbaarheid"
+    },
+    "comment" : { },
+    "id" : "46",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Waarde",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Waarde",
+      "undefined" : "Waarde"
+    },
+    "comment" : { },
+    "id" : "71",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/FunctieBeroepActiviteit",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FunctieBeroepActiviteit",
+      "undefined" : "FunctieBeroepActiviteit"
+    },
+    "comment" : { },
+    "id" : "84",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Functie",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Functie",
+      "undefined" : "Functie"
+    },
+    "comment" : { },
+    "id" : "90",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Taal",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Taal",
+      "undefined" : "Taal"
+    },
+    "comment" : { },
+    "id" : "55",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Gebruiksgroep",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Gebruiksgroep",
+      "undefined" : "Gebruiksgroep"
+    },
+    "comment" : {
+      "undefined" : "Lijst van groepen waartoe een gebruiker kan toe behoren"
+    },
+    "id" : "61",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Ordeningsstatus",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Ordeningsstatus",
+      "undefined" : "Ordeningsstatus"
+    },
+    "comment" : { },
+    "id" : "65",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Concept",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concept",
+      "undefined" : "Concept"
+    },
+    "subClasses" : [ "2", "121", "122", "123", "84", "82", "28" ],
+    "comment" : { },
+    "id" : "19",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Identificatienummer",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Identificatienummer",
+      "undefined" : "Identificatienummer"
+    },
+    "comment" : { },
+    "id" : "98",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/BibliografieArchief",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BibliografieArchief",
+      "undefined" : "BibliografieArchief"
+    },
+    "comment" : { },
+    "id" : "121",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Datering",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Datering",
+      "undefined" : "Datering"
+    },
+    "comment" : { },
+    "id" : "101",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/TypeWaarde",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TypeWaarde",
+      "undefined" : "TypeWaarde"
+    },
+    "comment" : { },
+    "id" : "22",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Beschrijvingsniveau",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Beschrijvingsniveau",
+      "undefined" : "Beschrijvingsniveau"
+    },
+    "comment" : { },
+    "id" : "51",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Samensteller",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Samensteller",
+      "undefined" : "Samensteller"
+    },
+    "comment" : { },
+    "id" : "69",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Materiaalsoort",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Materiaalsoort",
+      "undefined" : "Materiaalsoort"
+    },
+    "comment" : { },
+    "id" : "49",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Aangroei",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Aangroei",
+      "undefined" : "Aangroei"
+    },
+    "comment" : { },
+    "id" : "4",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Ordening",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Ordening",
+      "undefined" : "Ordening"
+    },
+    "comment" : { },
+    "id" : "25",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Omvang",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Omvang",
+      "undefined" : "Omvang"
+    },
+    "comment" : { },
+    "id" : "80",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Soort",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Soort",
+      "undefined" : "Soort"
+    },
+    "comment" : { },
+    "id" : "82",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/JuridischeBeperking",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "JuridischeBeperking",
+      "undefined" : "JuridischeBeperking"
+    },
+    "comment" : { },
+    "id" : "33",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Associatie",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Associatie",
+      "undefined" : "Associatie"
+    },
+    "comment" : { },
+    "id" : "97",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "id" : "148",
+    "label" : {
+      "IRI-based" : "langString"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#Concept",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concept"
+    },
+    "attributes" : [ "external" ],
+    "id" : "161"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Periode",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Periode",
+      "undefined" : "Periode"
+    },
+    "comment" : { },
+    "id" : "67",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "166",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "34",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "167",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "168",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Adres",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Adres",
+      "undefined" : "Adres"
+    },
+    "comment" : { },
+    "id" : "94",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "id" : "169",
+    "label" : {
+      "IRI-based" : "langString"
+    }
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "id" : "76",
+    "label" : {
+      "IRI-based" : "langString"
+    }
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/RolSamensteller",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RolSamensteller",
+      "undefined" : "RolSamensteller"
+    },
+    "comment" : { },
+    "id" : "13",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#double",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "163",
+    "label" : {
+      "IRI-based" : "double"
+    }
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "id" : "78",
+    "label" : {
+      "IRI-based" : "langString"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "177",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#duration",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "178",
+    "label" : {
+      "IRI-based" : "duration"
+    }
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Archief",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Archief",
+      "undefined" : "Archief"
+    },
+    "comment" : { },
+    "id" : "24",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Rol",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Rol",
+      "undefined" : "Rol"
+    },
+    "comment" : { },
+    "id" : "123",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "186",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "189",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "185",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "118",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "114",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "174",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "190",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "193",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "195",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "182",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "157",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/TypeNaam",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TypeNaam",
+      "undefined" : "TypeNaam"
+    },
+    "comment" : { },
+    "id" : "53",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "150",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "152",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Erkenning",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Erkenning",
+      "undefined" : "Erkenning"
+    },
+    "comment" : { },
+    "id" : "122",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Codetabel",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Codetabel",
+      "undefined" : "Codetabel"
+    },
+    "subClasses" : [ "90", "51", "53", "55", "57", "59", "61", "63", "65", "67", "46", "49", "1", "4", "6", "11", "13", "15", "17", "22" ],
+    "comment" : { },
+    "id" : "2",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "146",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "id" : "200",
+    "label" : {
+      "IRI-based" : "langString"
+    }
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "id" : "87",
+    "label" : {
+      "IRI-based" : "langString"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#time",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "201",
+    "label" : {
+      "IRI-based" : "time"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "95",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "160",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "125",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "36",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "140",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "107",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "207",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "208",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "133",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "137",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "43",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Plaats",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Plaats",
+      "undefined" : "Plaats"
+    },
+    "comment" : {
+      "undefined" : "capteert informatie over geografische locaties. Verwijzingen naar externe geografische thesauri is sterk aanbevolen. De beschrijving is uiterst beperkt gehouden, in de veronderstelling dat rijkere metadata, zoals historische namen, taalvarianten, maar ook coördinaten eenvoudig aan externe geografische thesauri ontleend kunnen worden. "
+    },
+    "id" : "103",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "id" : "20",
+    "label" : {
+      "IRI-based" : "langString"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "211",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "id" : "31",
+    "label" : {
+      "IRI-based" : "langString"
+    }
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "id" : "176",
+    "label" : {
+      "IRI-based" : "langString"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "45", "24" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "156"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Waardering",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Waardering",
+      "undefined" : "Waardering"
+    },
+    "comment" : {
+      "undefined" : "capteert informatie over de intrinsieke en comparatieve erfgoedwaarde van het archiefbestand"
+    },
+    "id" : "42",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Term",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Term",
+      "undefined" : "Term"
+    },
+    "comment" : { },
+    "id" : "100",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Publicatie",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Publicatie",
+      "undefined" : "Publicatie"
+    },
+    "comment" : {
+      "undefined" : "bibliografische informatie voor publicaties die een toegang op een archiefbestand vormen, over het archiefbestand gaan of de directe informatiebron zijn voor de archiefbeschrijving. sterk aanbevolen om zoveel mogelijk externe identificatienummers voor de publicatie op te nemen. mogelijkheid om ofwel een tekststring met een volledige bibliografische referentie op te nemen, ofwel een gestructureerde beschrijving van de publicatie. de gestructureerde beschrijving maakt publicaties beter doorzoekbaar binnen archiefbank."
+    },
+    "id" : "8",
+    "superClasses" : [ "38" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "71", "98", "42", "96", "25", "9", "80" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "220"
+  }, {
+    "instances" : 0,
+    "union" : [ "24", "19", "8", "103", "75" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "221"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Rechtenstatus",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Rechtenstatus",
+      "undefined" : "Rechtenstatus"
+    },
+    "comment" : { },
+    "id" : "6",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Bronverwijzing",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Bronverwijzing",
+      "undefined" : "Bronverwijzing"
+    },
+    "comment" : { },
+    "id" : "102",
+    "superClasses" : [ "38" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "24", "75" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "129"
+  }, {
+    "instances" : 0,
+    "union" : [ "45", "69", "97" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "223"
+  }, {
+    "instances" : 0,
+    "union" : [ "24", "75" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "142"
+  }, {
+    "instances" : 0,
+    "union" : [ "90", "53", "55", "57", "59", "38", "61", "122", "67", "65", "28", "1", "99", "2", "100", "121", "101", "6", "102", "82", "13", "22", "51", "63", "123", "46", "71", "49", "30", "4", "11", "15", "84", "17" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "224"
+  }, {
+    "instances" : 0,
+    "union" : [ "24", "8" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "86"
+  }, {
+    "instances" : 0,
+    "union" : [ "24", "75" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "173"
+  }, {
+    "instances" : 0,
+    "union" : [ "24", "75" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "113"
+  }, {
+    "instances" : 0,
+    "union" : [ "19", "98", "75" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "109"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Raadplegingsstatus",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Raadplegingsstatus",
+      "undefined" : "Raadplegingsstatus"
+    },
+    "comment" : { },
+    "id" : "63",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/10/swap/time#DateTimeInterval",
+    "baseIri" : "http://www.w3.org/2000/10/swap/time",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DateTimeInterval"
+    },
+    "attributes" : [ "external" ],
+    "id" : "143"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#gYear",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "105",
+    "label" : {
+      "IRI-based" : "gYear"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "188",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/TypeConcept",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TypeConcept",
+      "undefined" : "TypeConcept"
+    },
+    "comment" : { },
+    "id" : "11",
+    "superClasses" : [ "2" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "25", "80" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "171"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "204",
+    "label" : {
+      "IRI-based" : "anyURI"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "206",
+    "label" : {
+      "IRI-based" : "anyURI"
+    }
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "id" : "127",
+    "label" : {
+      "IRI-based" : "langString"
+    }
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/TypeIdentificatienummer",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TypeIdentificatienummer",
+      "undefined" : "TypeIdentificatienummer"
+    },
+    "comment" : { },
+    "id" : "17",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "id" : "238",
+    "label" : {
+      "IRI-based" : "langString"
+    }
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Onderwerp",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Onderwerp",
+      "undefined" : "Onderwerp"
+    },
+    "comment" : { },
+    "id" : "57",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "73",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "180",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "192",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "249",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "27",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Agent",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Agent",
+      "undefined" : "Agent"
+    },
+    "comment" : {
+      "undefined" : "beperkt beschrijvingsmodel. doel: enkel relateren van agents aan archieven en waarderingen. geen afzonderlijke biografische databank (dus geen familierelaties bvb) Gebruik daarvoor een externe bron."
+    },
+    "id" : "75",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "165",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "92",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "231",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Beheerder",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Beheerder",
+      "undefined" : "Beheerder"
+    },
+    "comment" : { },
+    "id" : "45",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Toegang",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Toegang",
+      "undefined" : "Toegang"
+    },
+    "comment" : { },
+    "id" : "99",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/RolBeheerder",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RolBeheerder",
+      "undefined" : "RolBeheerder"
+    },
+    "comment" : { },
+    "id" : "1",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "226",
+    "label" : {
+      "IRI-based" : "anyURI"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "39",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON",
+    "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "JSON"
+    },
+    "attributes" : [ "external" ],
+    "id" : "234"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/Test",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Test",
+      "undefined" : "Test"
+    },
+    "comment" : {
+      "undefined" : "Dit is een test construct mag weg bij productie overgang"
+    },
+    "id" : "30"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/TypeVergelijking",
+    "baseIri" : "https://data.archiefpunt.be",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TypeVergelijking",
+      "undefined" : "TypeVergelijking"
+    },
+    "comment" : { },
+    "id" : "15",
+    "superClasses" : [ "2" ]
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "3",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "5",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "7",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "10",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "12",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "14",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "16",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "18",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "21",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "23",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "35",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "37",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "41",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "44",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "47",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "48",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "50",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "52",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "54",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "56",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "58",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "60",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "62",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "64",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "66",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "68",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "70",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "72",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "74",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "77",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "79",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "81",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "83",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "85",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "88",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "89",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "91",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "93",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "104",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "106",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "108",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "110",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "111",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "112",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "115",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "116",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "117",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "119",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "120",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "124",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "126",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "128",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "130",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "131",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "132",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "134",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "135",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "136",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "138",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "139",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "141",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "144",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "145",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "147",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "149",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "151",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "153",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "154",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "155",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "158",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "159",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "162",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "164",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "170",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "172",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "175",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "179",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "181",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "183",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "184",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "187",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "191",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "194",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "196",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "197",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "198",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "199",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "202",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "203",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "205",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "209",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "210",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "212",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "213",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "214",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "215",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "216",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "217",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "218",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "219",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "222",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "225",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "227",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "228",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "229",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "230",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "232",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "233",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "235",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "236",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "237",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "239",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "240",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "241",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "242",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "243",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "244",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "245",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "246",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "247",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "248",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "250",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "251",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "252",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "253",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "254",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "255",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "256",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "257",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "258",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "259",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "260",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "261",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "262",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "263",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "264",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "265",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "266",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "267",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "268",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "269",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "270",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "271",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "272",
+    "type" : "rdfs:SubClassOf"
+  } ],
+  "propertyAttribute" : [ {
+    "range" : "2",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "0"
+  }, {
+    "range" : "2",
+    "domain" : "4",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "3"
+  }, {
+    "range" : "2",
+    "domain" : "6",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "5"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/auteur",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "auteur",
+      "undefined" : "auteur"
+    },
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "auteur van de publicatie"
+    },
+    "attributes" : [ "object" ],
+    "id" : "7"
+  }, {
+    "range" : "2",
+    "domain" : "11",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "10"
+  }, {
+    "range" : "2",
+    "domain" : "13",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "12"
+  }, {
+    "range" : "2",
+    "domain" : "15",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "14"
+  }, {
+    "range" : "2",
+    "domain" : "17",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "16"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/label",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "label",
+      "undefined" : "label"
+    },
+    "minCardinality" : "1",
+    "domain" : "19",
+    "comment" : {
+      "undefined" : "Naam voor het Concept"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "18"
+  }, {
+    "range" : "2",
+    "domain" : "22",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "21"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/ordening",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "ordening",
+      "undefined" : "ordening"
+    },
+    "maxCardinality" : "1",
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "Toont de ordeningsstatus aan van het archief:geordend, niet geordend of onbekend."
+    },
+    "attributes" : [ "object" ],
+    "id" : "23"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/bibliografische_verwijzing",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "bibliografische_verwijzing",
+      "undefined" : "bibliografische_verwijzing"
+    },
+    "maxCardinality" : "1",
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "volledige bibliografische verwijzing naar de publicatie"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "26"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/lang_string_dt",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "31",
+    "label" : {
+      "IRI-based" : "lang_string_dt",
+      "undefined" : "lang_string_dt"
+    },
+    "maxCardinality" : "1",
+    "domain" : "30",
+    "comment" : { },
+    "attributes" : [ "datatype" ],
+    "id" : "29"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/gevoelig_voor_auteursrechtelijkebescherming",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "34",
+    "label" : {
+      "IRI-based" : "gevoelig_voor_auteursrechtelijkebescherming",
+      "undefined" : "gevoelig_voor_auteursrechtelijkebescherming"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "33",
+    "comment" : { },
+    "attributes" : [ "datatype" ],
+    "id" : "32"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/string_dt",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "36",
+    "label" : {
+      "IRI-based" : "string_dt",
+      "undefined" : "string_dt"
+    },
+    "maxCardinality" : "1",
+    "domain" : "30",
+    "comment" : {
+      "undefined" : "a string value NO language specified"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "35"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/_published",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "39",
+    "label" : {
+      "IRI-based" : "_published",
+      "undefined" : "_published"
+    },
+    "maxCardinality" : "1",
+    "domain" : "38",
+    "comment" : { },
+    "attributes" : [ "datatype" ],
+    "id" : "37"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/opmerkingen",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "43",
+    "label" : {
+      "IRI-based" : "opmerkingen",
+      "undefined" : "opmerkingen"
+    },
+    "domain" : "42",
+    "comment" : {
+      "undefined" : "Vrij notitieveld bij deze waardering"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "41"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/bereikbaarheid",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "46",
+    "label" : {
+      "IRI-based" : "bereikbaarheid",
+      "undefined" : "bereikbaarheid"
+    },
+    "domain" : "45",
+    "comment" : {
+      "undefined" : "Indien list: Rolstoeltoegankelijk, Aangepast sanitair, Parkeergelegenheid"
+    },
+    "attributes" : [ "object" ],
+    "id" : "44"
+  }, {
+    "range" : "2",
+    "domain" : "46",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "47"
+  }, {
+    "range" : "2",
+    "domain" : "49",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "48"
+  }, {
+    "range" : "2",
+    "domain" : "51",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "50"
+  }, {
+    "range" : "2",
+    "domain" : "53",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "52"
+  }, {
+    "range" : "2",
+    "domain" : "55",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "54"
+  }, {
+    "range" : "2",
+    "domain" : "57",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "56"
+  }, {
+    "range" : "2",
+    "domain" : "59",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "58"
+  }, {
+    "range" : "2",
+    "domain" : "61",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "60"
+  }, {
+    "range" : "2",
+    "domain" : "63",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "62"
+  }, {
+    "range" : "2",
+    "domain" : "65",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "64"
+  }, {
+    "range" : "2",
+    "domain" : "67",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "66"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/samensteller",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "69",
+    "label" : {
+      "IRI-based" : "samensteller",
+      "undefined" : "samensteller"
+    },
+    "minCardinality" : "1",
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "nieuwe overkoepelende term voor zowel archiefvormers, verzamelaars als documentalisten. herhaalbaar om verschillende samenstellers en hun verschillende rollen te kunnen documenteren"
+    },
+    "attributes" : [ "object" ],
+    "id" : "68"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/type_waarde",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "22",
+    "label" : {
+      "IRI-based" : "type_waarde",
+      "undefined" : "type_waarde"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "71",
+    "comment" : { },
+    "attributes" : [ "object" ],
+    "id" : "70"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/aangroei_text",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "73",
+    "label" : {
+      "IRI-based" : "aangroei_text",
+      "undefined" : "aangroei_text"
+    },
+    "maxCardinality" : "1",
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "oud aangroei veld"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "72"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/geschiedenis_agent",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "76",
+    "label" : {
+      "IRI-based" : "geschiedenis_agent",
+      "undefined" : "geschiedenis_agent"
+    },
+    "domain" : "75",
+    "comment" : {
+      "undefined" : "Biografische geschiedenis van de agent."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "74"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/definitie",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "78",
+    "label" : {
+      "IRI-based" : "definitie",
+      "undefined" : "definitie"
+    },
+    "domain" : "19",
+    "comment" : {
+      "undefined" : "Definitie van het Concept"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "77"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/omvang",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "80",
+    "label" : {
+      "IRI-based" : "omvang",
+      "undefined" : "omvang"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "vrije tekst beschrijving van de dimensies en materiaalsoorten waaruit het archiefbestand bestaat"
+    },
+    "attributes" : [ "object" ],
+    "id" : "79"
+  }, {
+    "range" : "19",
+    "domain" : "82",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "81"
+  }, {
+    "range" : "19",
+    "domain" : "84",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "83"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/titel",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "87",
+    "label" : {
+      "IRI-based" : "titel",
+      "undefined" : "titel"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "86",
+    "comment" : {
+      "undefined" : "titel van de publicatie"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "85"
+  }, {
+    "range" : "19",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "88"
+  }, {
+    "range" : "2",
+    "domain" : "90",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "89"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/boolean_dt",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "92",
+    "label" : {
+      "IRI-based" : "boolean_dt",
+      "undefined" : "boolean_dt"
+    },
+    "maxCardinality" : "1",
+    "domain" : "30",
+    "comment" : { },
+    "attributes" : [ "datatype" ],
+    "id" : "91"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/straat_en_nummer",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "95",
+    "label" : {
+      "IRI-based" : "straat_en_nummer",
+      "undefined" : "straat_en_nummer"
+    },
+    "maxCardinality" : "1",
+    "domain" : "94",
+    "comment" : { },
+    "attributes" : [ "datatype" ],
+    "id" : "93"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/year_dt",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "105",
+    "label" : {
+      "IRI-based" : "year_dt",
+      "undefined" : "year_dt"
+    },
+    "maxCardinality" : "1",
+    "domain" : "30",
+    "comment" : {
+      "undefined" : "just a year of a date"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "104"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/privacy_gevoelig",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "107",
+    "label" : {
+      "IRI-based" : "privacy_gevoelig",
+      "undefined" : "privacy_gevoelig"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "33",
+    "comment" : { },
+    "attributes" : [ "datatype" ],
+    "id" : "106"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/type",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "17",
+    "label" : {
+      "IRI-based" : "type",
+      "undefined" : "type"
+    },
+    "maxCardinality" : "1",
+    "domain" : "109",
+    "comment" : { },
+    "attributes" : [ "object" ],
+    "id" : "108"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/raadplegingsstatus",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "63",
+    "label" : {
+      "IRI-based" : "raadplegingsstatus",
+      "undefined" : "raadplegingsstatus"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "40",
+    "comment" : { },
+    "attributes" : [ "object" ],
+    "id" : "110"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/type_vergelijking",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "type_vergelijking",
+      "undefined" : "type_vergelijking"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "96",
+    "comment" : { },
+    "attributes" : [ "object" ],
+    "id" : "111"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/bronverwijzing_record",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "114",
+    "label" : {
+      "IRI-based" : "bronverwijzing_record",
+      "undefined" : "bronverwijzing_record"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "113",
+    "comment" : {
+      "undefined" : "Correcte verwijzing naar het record in de Chicagostijl."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "112"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/plaatsnaam",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "plaatsnaam",
+      "undefined" : "plaatsnaam"
+    },
+    "minCardinality" : "1",
+    "domain" : "103",
+    "comment" : { },
+    "attributes" : [ "object" ],
+    "id" : "115"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/naam",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "naam",
+      "undefined" : "naam"
+    },
+    "minCardinality" : "1",
+    "domain" : "75",
+    "comment" : {
+      "undefined" : "Herhaalbaar om naamsvarianten te documenteren."
+    },
+    "attributes" : [ "object" ],
+    "id" : "116"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/contractuele_beperking",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "118",
+    "label" : {
+      "IRI-based" : "contractuele_beperking",
+      "undefined" : "contractuele_beperking"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "33",
+    "comment" : { },
+    "attributes" : [ "datatype" ],
+    "id" : "117"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/periode",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "67",
+    "label" : {
+      "IRI-based" : "periode",
+      "undefined" : "periode"
+    },
+    "domain" : "97",
+    "comment" : {
+      "undefined" : "Tijdsperiode waarmee archief gelinkt kan worden."
+    },
+    "attributes" : [ "object" ],
+    "id" : "119"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/functie_beroep_activiteit",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "90",
+    "label" : {
+      "IRI-based" : "functie_beroep_activiteit",
+      "undefined" : "functie_beroep_activiteit"
+    },
+    "domain" : "69",
+    "comment" : {
+      "undefined" : "Functie, beroep of activiteiten waarin agent "
+    },
+    "attributes" : [ "object" ],
+    "id" : "120"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/taal_text",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "125",
+    "label" : {
+      "IRI-based" : "taal_text",
+      "undefined" : "taal_text"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "oude taal veld"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "124"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/waardestelling",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "127",
+    "label" : {
+      "IRI-based" : "waardestelling",
+      "undefined" : "waardestelling"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "42",
+    "comment" : {
+      "undefined" : "Omvattende verklaring van de erfgoedwaarde die een archiefbestand vertegenwoordigt."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "126"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/taal",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "55",
+    "label" : {
+      "IRI-based" : "taal",
+      "undefined" : "taal"
+    },
+    "domain" : "129",
+    "comment" : {
+      "undefined" : "trefwoord dat aangeeft welke taal gebruikt wordt in het archief"
+    },
+    "attributes" : [ "object" ],
+    "id" : "128"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/onderwerp",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "57",
+    "label" : {
+      "IRI-based" : "onderwerp",
+      "undefined" : "onderwerp"
+    },
+    "domain" : "97",
+    "comment" : {
+      "undefined" : "Onderwerp trefwoorden die geassocieerd kunnen worden met archief."
+    },
+    "attributes" : [ "object" ],
+    "id" : "130"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/associaties",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "97",
+    "label" : {
+      "IRI-based" : "associaties",
+      "undefined" : "associaties"
+    },
+    "maxCardinality" : "1",
+    "domain" : "75",
+    "comment" : {
+      "undefined" : "Plaats, Periode, Onderwerp of agent gelinkt aan de agent. "
+    },
+    "attributes" : [ "object" ],
+    "id" : "131"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/openingsuren",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "133",
+    "label" : {
+      "IRI-based" : "openingsuren",
+      "undefined" : "openingsuren"
+    },
+    "maxCardinality" : "1",
+    "domain" : "45",
+    "comment" : {
+      "undefined" : "Openingsuren waarop de Agent bereikbaar/toegankelijk is"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "132"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/rol_samensteller",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "rol_samensteller",
+      "undefined" : "rol_samensteller"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "24",
+    "comment" : { },
+    "attributes" : [ "object" ],
+    "id" : "134"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/type_naam",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "53",
+    "label" : {
+      "IRI-based" : "type_naam",
+      "undefined" : "type_naam"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "9",
+    "comment" : { },
+    "attributes" : [ "object" ],
+    "id" : "135"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/ordening_text",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "137",
+    "label" : {
+      "IRI-based" : "ordening_text",
+      "undefined" : "ordening_text"
+    },
+    "maxCardinality" : "1",
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "oud ordening veld"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "136"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/juridische_beperking",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "33",
+    "label" : {
+      "IRI-based" : "juridische_beperking",
+      "undefined" : "juridische_beperking"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "bevat het archief/collectie materiaal dat mogelijk veel persoonsgegevens bevat, bevat het archief/collectie materiaal dat mogelijk veel persoonsgegevens bevat, bevat het archief/collectie materiaal dat mogelijk auteursrechtelijk beschermd "
+    },
+    "attributes" : [ "object" ],
+    "id" : "138"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/reeks",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "140",
+    "label" : {
+      "IRI-based" : "reeks",
+      "undefined" : "reeks"
+    },
+    "maxCardinality" : "1",
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "titel van de reeks waarin de publicatie verschijnt"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "139"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/datering_systematisch",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "143",
+    "label" : {
+      "IRI-based" : "datering_systematisch",
+      "undefined" : "datering_systematisch"
+    },
+    "domain" : "142",
+    "comment" : {
+      "undefined" : "Jaartallen van bereik van het archief: uit welke periode stammen de documenten."
+    },
+    "attributes" : [ "object" ],
+    "id" : "141"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/rechtenstatus_metadata",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "rechtenstatus_metadata",
+      "undefined" : "rechtenstatus_metadata"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "Geeft weer onder welke licentievoorwaarden de metadata gepubliceerd kunnen worden."
+    },
+    "attributes" : [ "object" ],
+    "id" : "144"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/telefoon",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "146",
+    "label" : {
+      "IRI-based" : "telefoon",
+      "undefined" : "telefoon"
+    },
+    "domain" : "45",
+    "comment" : {
+      "undefined" : "Telefoonnummer van bewaarplaats."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "145"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/inhoud_en_bereik",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "148",
+    "label" : {
+      "IRI-based" : "inhoud_en_bereik",
+      "undefined" : "inhoud_en_bereik"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "Inhoud van archief."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "147"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/uitgever",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "150",
+    "label" : {
+      "IRI-based" : "uitgever",
+      "undefined" : "uitgever"
+    },
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "naam van de uitgever van de publicatie"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "149"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/toegangsvoorwaarden",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "152",
+    "label" : {
+      "IRI-based" : "toegangsvoorwaarden",
+      "undefined" : "toegangsvoorwaarden"
+    },
+    "maxCardinality" : "1",
+    "domain" : "45",
+    "comment" : {
+      "undefined" : "Voorwaarden om toegang te krijgen tot archieven/collecties die door de Agent worden bewaard."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "151"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/erkenning",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "122",
+    "label" : {
+      "IRI-based" : "erkenning",
+      "undefined" : "erkenning"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "45",
+    "comment" : {
+      "undefined" : "Categorie enkel geldig wanneer agent een bewaarplaats is. Erkenningniveaus zijn: landelijk, regionaal, lokaal en [none]."
+    },
+    "attributes" : [ "object" ],
+    "id" : "153"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/plaats",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "103",
+    "label" : {
+      "IRI-based" : "plaats",
+      "undefined" : "plaats"
+    },
+    "domain" : "97",
+    "comment" : {
+      "undefined" : "Plaats geassocieerd met het archief."
+    },
+    "attributes" : [ "object" ],
+    "id" : "154"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/toegang",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "157",
+    "label" : {
+      "IRI-based" : "toegang",
+      "undefined" : "toegang"
+    },
+    "domain" : "156",
+    "comment" : {
+      "undefined" : "Verwijzing naar de toegang voor de archieven/collecties die de Agent bewaard."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "155"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/aangroei",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "aangroei",
+      "undefined" : "aangroei"
+    },
+    "maxCardinality" : "1",
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "Aangroei toont status van het archief aan: statisch, dynamisch of is de status onbekend."
+    },
+    "attributes" : [ "object" ],
+    "id" : "158"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/reeksnummer",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "160",
+    "label" : {
+      "IRI-based" : "reeksnummer",
+      "undefined" : "reeksnummer"
+    },
+    "maxCardinality" : "1",
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "rangnummer van de publicatie binnen de reeks"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "159"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/double_dt",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "163",
+    "label" : {
+      "IRI-based" : "double_dt",
+      "undefined" : "double_dt"
+    },
+    "maxCardinality" : "1",
+    "domain" : "30",
+    "comment" : { },
+    "attributes" : [ "datatype" ],
+    "id" : "162"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/bijdragers",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "165",
+    "label" : {
+      "IRI-based" : "bijdragers",
+      "undefined" : "bijdragers"
+    },
+    "domain" : "42",
+    "comment" : {
+      "undefined" : "De namen van personen en organisaties die een bijdrage leverden aan deze waardering"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "164"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/trefwoord",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "65",
+    "label" : {
+      "IRI-based" : "trefwoord",
+      "undefined" : "trefwoord"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "171",
+    "comment" : { },
+    "attributes" : [ "object" ],
+    "id" : "170"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/datering_text",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "174",
+    "label" : {
+      "IRI-based" : "datering_text",
+      "undefined" : "datering_text"
+    },
+    "maxCardinality" : "1",
+    "domain" : "173",
+    "comment" : {
+      "undefined" : "Woordelijke uitleg bij datering_systematisch, initiëel ook voor legacy data."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "172"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/lang_string_array_dt",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "176",
+    "label" : {
+      "IRI-based" : "lang_string_array_dt",
+      "undefined" : "lang_string_array_dt"
+    },
+    "minCardinality" : "1",
+    "domain" : "30",
+    "comment" : { },
+    "attributes" : [ "datatype" ],
+    "id" : "175"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/aantekening_archivaris",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "180",
+    "label" : {
+      "IRI-based" : "aantekening_archivaris",
+      "undefined" : "aantekening_archivaris"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "Dit veld zal alle aantekeningen bundelen die voordien in de velden “aantekening”, “werknotities” en “aantekening archivaris” stonden."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "179"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/bronnen_archief",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "182",
+    "label" : {
+      "IRI-based" : "bronnen_archief",
+      "undefined" : "bronnen_archief"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "bibliografie werken gebruikt voor het opstellen van de beschrijving"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "181"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/is_onderdeel_van",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "is_onderdeel_van",
+      "undefined" : "is_onderdeel_van"
+    },
+    "maxCardinality" : "1",
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "Alleen gebruik maken wanneer een archiefbestanddeel deel uitmaakt van een groter archiefbestanddeel"
+    },
+    "attributes" : [ "object" ],
+    "id" : "183"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/datum_waardering",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "185",
+    "label" : {
+      "IRI-based" : "datum_waardering",
+      "undefined" : "datum_waardering"
+    },
+    "maxCardinality" : "1",
+    "domain" : "42",
+    "comment" : {
+      "undefined" : "datum waarop de waardering gemaakt werd"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "184"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/website",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "188",
+    "label" : {
+      "IRI-based" : "website",
+      "undefined" : "website"
+    },
+    "domain" : "45",
+    "comment" : {
+      "undefined" : "Website bewaarinstelling."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "187"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/bibliografie_agent",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "192",
+    "label" : {
+      "IRI-based" : "bibliografie_agent",
+      "undefined" : "bibliografie_agent"
+    },
+    "domain" : "75",
+    "comment" : {
+      "undefined" : "Bronnen gebruikt om agentbeschrijving op te stellen."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "191"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/duration_dt",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "178",
+    "label" : {
+      "IRI-based" : "duration_dt",
+      "undefined" : "duration_dt"
+    },
+    "maxCardinality" : "1",
+    "domain" : "30",
+    "comment" : { },
+    "attributes" : [ "datatype" ],
+    "id" : "194"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/selectie",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "42",
+    "label" : {
+      "IRI-based" : "selectie",
+      "undefined" : "selectie"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "selectie"
+    },
+    "attributes" : [ "object" ],
+    "id" : "196"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/adres",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "94",
+    "label" : {
+      "IRI-based" : "adres",
+      "undefined" : "adres"
+    },
+    "domain" : "45",
+    "comment" : {
+      "undefined" : "Adres van bewaarplaats."
+    },
+    "attributes" : [ "object" ],
+    "id" : "197"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/beheerder",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "45",
+    "label" : {
+      "IRI-based" : "beheerder",
+      "undefined" : "beheerder"
+    },
+    "minCardinality" : "1",
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "persoon of organisatie die het archief of de collectie vandaag beheerd.\nlink naar wat voorheen de ‘bewaarplaats’ was. \nNu expliciet gemaakt als een Agent, die verbonden is aan een bepaalde Plaats. "
+    },
+    "attributes" : [ "object" ],
+    "id" : "198"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/datetime_dt",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "189",
+    "label" : {
+      "IRI-based" : "datetime_dt",
+      "undefined" : "datetime_dt"
+    },
+    "maxCardinality" : "1",
+    "domain" : "30",
+    "comment" : { },
+    "attributes" : [ "datatype" ],
+    "id" : "199"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/vergelijking",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "96",
+    "label" : {
+      "IRI-based" : "vergelijking",
+      "undefined" : "vergelijking"
+    },
+    "domain" : "42",
+    "comment" : {
+      "undefined" : "Omschrijving hoe het archiefbestand zich voor een specifiek aspect verhoudt tot andere archiefbestanden."
+    },
+    "attributes" : [ "object" ],
+    "id" : "202"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/url",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "204",
+    "label" : {
+      "IRI-based" : "url",
+      "undefined" : "url"
+    },
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "URL die verwijst naar een digitale versie van de publicatie"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "203"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/uri_dt",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "206",
+    "label" : {
+      "IRI-based" : "uri_dt",
+      "undefined" : "uri_dt"
+    },
+    "maxCardinality" : "1",
+    "domain" : "30",
+    "comment" : { },
+    "attributes" : [ "datatype" ],
+    "id" : "205"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/email",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "177",
+    "label" : {
+      "IRI-based" : "email",
+      "undefined" : "email"
+    },
+    "domain" : "45",
+    "comment" : {
+      "undefined" : "Emailadres van bewaarplaats."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "209"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/bron",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "75",
+    "label" : {
+      "IRI-based" : "bron",
+      "undefined" : "bron"
+    },
+    "maxCardinality" : "1",
+    "domain" : "98",
+    "comment" : {
+      "undefined" : "Verwijzing naar agent die identificatie aanmaakt."
+    },
+    "attributes" : [ "object" ],
+    "id" : "210"
+  }, {
+    "range" : "38",
+    "domain" : "33",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "212"
+  }, {
+    "range" : "38",
+    "domain" : "24",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "213"
+  }, {
+    "range" : "38",
+    "domain" : "25",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "214"
+  }, {
+    "range" : "38",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "215"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/plaats_van_uitgave",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "207",
+    "label" : {
+      "IRI-based" : "plaats_van_uitgave",
+      "undefined" : "plaats_van_uitgave"
+    },
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "naam van de plaats van uitgave"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "216"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/geschiedenis_archief",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "169",
+    "label" : {
+      "IRI-based" : "geschiedenis_archief",
+      "undefined" : "geschiedenis_archief"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "Geschiedenis van het archief."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "217"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/datum_uitgave",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "186",
+    "label" : {
+      "IRI-based" : "datum_uitgave",
+      "undefined" : "datum_uitgave"
+    },
+    "maxCardinality" : "1",
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "datum van uitgave"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "218"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/beschrijvingsniveau",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "51",
+    "label" : {
+      "IRI-based" : "beschrijvingsniveau",
+      "undefined" : "beschrijvingsniveau"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "Beschrijvingsniveau van het archief. Keuze uit archief, fonds, serie, collectie, virtuele collectie."
+    },
+    "attributes" : [ "object" ],
+    "id" : "219"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/opmerking",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "208",
+    "label" : {
+      "IRI-based" : "opmerking",
+      "undefined" : "opmerking"
+    },
+    "domain" : "75",
+    "comment" : {
+      "undefined" : "Vrij opmerkingen veld."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "222"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/_audit",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "226",
+    "label" : {
+      "IRI-based" : "_audit",
+      "undefined" : "_audit"
+    },
+    "maxCardinality" : "1",
+    "domain" : "38",
+    "comment" : {
+      "undefined" : "link naar audit"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "225"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/bronverwijzing_archief",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "195",
+    "label" : {
+      "IRI-based" : "bronverwijzing_archief",
+      "undefined" : "bronverwijzing_archief"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "Correcte verwijzing naar het archief in de Chicagostijl."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "227"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/tekst",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "200",
+    "label" : {
+      "IRI-based" : "tekst",
+      "undefined" : "tekst"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "40",
+    "comment" : { },
+    "attributes" : [ "datatype" ],
+    "id" : "228"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/agent",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "75",
+    "label" : {
+      "IRI-based" : "agent",
+      "undefined" : "agent"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "223",
+    "comment" : {
+      "undefined" : "Link met 'agent'"
+    },
+    "attributes" : [ "object" ],
+    "id" : "229"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/bron_waardering",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "231",
+    "label" : {
+      "IRI-based" : "bron_waardering",
+      "undefined" : "bron_waardering"
+    },
+    "domain" : "42",
+    "comment" : {
+      "undefined" : "Verwijzing naar een publicatie die als bron werd gebruikt voor deze waardering. "
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "230"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/integer_dt",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "211",
+    "label" : {
+      "IRI-based" : "integer_dt",
+      "undefined" : "integer_dt"
+    },
+    "maxCardinality" : "1",
+    "domain" : "30",
+    "comment" : {
+      "undefined" : "an integer value"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "232"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/json_dt",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "234",
+    "label" : {
+      "IRI-based" : "json_dt",
+      "undefined" : "json_dt"
+    },
+    "maxCardinality" : "1",
+    "domain" : "30",
+    "comment" : { },
+    "attributes" : [ "object" ],
+    "id" : "233"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/float_dt",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "168",
+    "label" : {
+      "IRI-based" : "float_dt",
+      "undefined" : "float_dt"
+    },
+    "maxCardinality" : "1",
+    "domain" : "30",
+    "comment" : { },
+    "attributes" : [ "datatype" ],
+    "id" : "235"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/rol_beheerder",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "rol_beheerder",
+      "undefined" : "rol_beheerder"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "24",
+    "comment" : { },
+    "attributes" : [ "object" ],
+    "id" : "236"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/id",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "166",
+    "label" : {
+      "IRI-based" : "id",
+      "undefined" : "id"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "224",
+    "comment" : {
+      "undefined" : "unique record identifier"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "237"
+  }, {
+    "range" : "19",
+    "domain" : "121",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "239"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/time_dt",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "201",
+    "label" : {
+      "IRI-based" : "time_dt",
+      "undefined" : "time_dt"
+    },
+    "maxCardinality" : "1",
+    "domain" : "30",
+    "comment" : { },
+    "attributes" : [ "datatype" ],
+    "id" : "240"
+  }, {
+    "range" : "19",
+    "domain" : "2",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "241"
+  }, {
+    "range" : "19",
+    "domain" : "123",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "242"
+  }, {
+    "range" : "19",
+    "domain" : "122",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "243"
+  }, {
+    "range" : "38",
+    "domain" : "94",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "244"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/associatie",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "97",
+    "label" : {
+      "IRI-based" : "associatie",
+      "undefined" : "associatie"
+    },
+    "maxCardinality" : "1",
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "Trefwoordenveld. Kan gelinkt worden met een onderwerp, agent, plaats en een periode."
+    },
+    "attributes" : [ "object" ],
+    "id" : "245"
+  }, {
+    "range" : "38",
+    "domain" : "103",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "246"
+  }, {
+    "range" : "38",
+    "domain" : "102",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "247"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/gebouw",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "167",
+    "label" : {
+      "IRI-based" : "gebouw",
+      "undefined" : "gebouw"
+    },
+    "domain" : "45",
+    "comment" : {
+      "undefined" : "Verwijzing naar de bewaarplaatsen die verbonden zijn aan de Agent"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "248"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/verwerving",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "238",
+    "label" : {
+      "IRI-based" : "verwerving",
+      "undefined" : "verwerving"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "Uitleg hoe archief verworven werd door bewaarinstelling."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "250"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/gemeente",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "103",
+    "label" : {
+      "IRI-based" : "gemeente",
+      "undefined" : "gemeente"
+    },
+    "maxCardinality" : "1",
+    "minCardinality" : "1",
+    "domain" : "94",
+    "comment" : { },
+    "attributes" : [ "object" ],
+    "id" : "251"
+  }, {
+    "range" : "38",
+    "domain" : "100",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "252"
+  }, {
+    "range" : "38",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "253"
+  }, {
+    "range" : "38",
+    "domain" : "101",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "254"
+  }, {
+    "range" : "38",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "255"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/identificatienummer",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "98",
+    "label" : {
+      "IRI-based" : "identificatienummer",
+      "undefined" : "identificatienummer"
+    },
+    "domain" : "221",
+    "comment" : {
+      "undefined" : "Identificatienummer voor de publicatie"
+    },
+    "attributes" : [ "object" ],
+    "id" : "256"
+  }, {
+    "range" : "38",
+    "domain" : "98",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "257"
+  }, {
+    "range" : "38",
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "258"
+  }, {
+    "range" : "38",
+    "domain" : "42",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "259"
+  }, {
+    "range" : "38",
+    "domain" : "99",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "260"
+  }, {
+    "range" : "38",
+    "domain" : "97",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "261"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/bibliografie_archief",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "249",
+    "label" : {
+      "IRI-based" : "bibliografie_archief",
+      "undefined" : "bibliografie_archief"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "bibliografie werken gebaseerd op of gerelateerd aan het archief/de collectie"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "262"
+  }, {
+    "range" : "38",
+    "domain" : "71",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "263"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/date_dt",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "190",
+    "label" : {
+      "IRI-based" : "date_dt",
+      "undefined" : "date_dt"
+    },
+    "maxCardinality" : "1",
+    "domain" : "30",
+    "comment" : {
+      "undefined" : "a date time type"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "264"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/raadplegingsvoorwaarde",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "40",
+    "label" : {
+      "IRI-based" : "raadplegingsvoorwaarde",
+      "undefined" : "raadplegingsvoorwaarde"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "vrije tekst omschrijving van de concrete voorwaarden die verbonden zijn aan de toegang tot het archief/collectie"
+    },
+    "attributes" : [ "object" ],
+    "id" : "265"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/bronnen_agent",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "193",
+    "label" : {
+      "IRI-based" : "bronnen_agent",
+      "undefined" : "bronnen_agent"
+    },
+    "domain" : "75",
+    "comment" : {
+      "undefined" : "Bronnen die gebruik maakten van de agent"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "266"
+  }, {
+    "iri" : "https://data.q.archiefpunt.be/waarde",
+    "baseIri" : "https://data.archiefpunt.be",
+    "range" : "71",
+    "label" : {
+      "IRI-based" : "waarde",
+      "undefined" : "waarde"
+    },
+    "maxCardinality" : "1",
+    "domain" : "220",
+    "comment" : {
+      "undefined" : "Omschrijving van een specifieke erfgoedwaarde die aan het archiefbestand wordt toegekend"
+    },
+    "attributes" : [ "object" ],
+    "id" : "267"
+  }, {
+    "range" : "38",
+    "domain" : "69",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "268"
+  }, {
+    "range" : "38",
+    "domain" : "80",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "269"
+  }, {
+    "range" : "38",
+    "domain" : "96",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "270"
+  }, {
+    "range" : "38",
+    "domain" : "45",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "271"
+  }, {
+    "range" : "38",
+    "domain" : "75",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "272"
+  } ]
+}
