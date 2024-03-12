@@ -11,4 +11,4 @@ build/gems
 data/*
 *.iml
 .DS_Store
-export
+export/*
