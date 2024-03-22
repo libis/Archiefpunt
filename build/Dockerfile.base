@@ -1,7 +1,7 @@
 FROM ruby:3.2.2-alpine
 #FROM ruby:2.7.8-alpine
 
-ARG SOLIS_VERSION=0.72.0
+ARG SOLIS_VERSION=0.74.0
 RUN echo "Solis v$SOLIS_VERSION"
 
 RUN bundle config --global frozen 1
