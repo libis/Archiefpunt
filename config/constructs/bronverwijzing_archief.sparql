@@ -1,4 +1,5 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX abv: <https://data.q.archiefpunt.be/>
 
@@ -45,8 +46,12 @@ construct {
 
     bind(lcase(replace(str(?entity_type), "https://data.q.archiefpunt.be/", "")) as ?short_entity_type).
 
-   bind(year(strdt(coalesce(strbefore(?datering_systematisch, '/'), '0001'),xsd:dateTime )) as ?start_datering)
-   bind(year(strdt(coalesce(strafter(?datering_systematisch, '/'), '9999') ,xsd:dateTime )) as ?eind_datering)
+# year gives issues
+#   bind(year(strdt(coalesce(strbefore(?datering_systematisch, '/'), '0001'),xsd:dateTime )) as ?start_datering)
+#   bind(year(strdt(coalesce(strafter(?datering_systematisch, '/'), '9999') ,xsd:dateTime )) as ?eind_datering)
+
+   bind(strdt(strbefore(coalesce(strbefore(str(?datering_systematisch), '/'), '0001'), '-'), xsd:string) as ?start_datering)
+   bind(strdt(strbefore(coalesce(strafter(str(?datering_systematisch), '/'), '9999'), '-'), xsd:string) as ?eind_datering)
    bind(concat(str(?start_datering),'-', str(?eind_datering)) as ?een_datering)
 
     bind(concat(str(?beheerder_naam), ", ",

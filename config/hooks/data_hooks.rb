@@ -89,8 +89,11 @@ select distinct ?id ?entity_type where {
                         # next if (inner_model.instance_values.keys - ["model_name", "model_plural_name", "language"]).eql?(["id"])
                     else
                       if inner_model.class.ancestors.include?(Codetabel)
-                        inner_model = inner_model.query.filter({ language: nil, filters: { id: [inner_model.id] } }).find_all.map { |m| m }&.first
-                        model.instance_variable_set(:"@#{k}", inner_model)
+                        existing_inner_model = inner_model.query.filter({ language: nil, filters: { id: [inner_model.id] } }).find_all.map { |m| m }&.first
+                        unless existing_inner_model.nil?
+                          inner_model = existing_inner_model
+                          model.instance_variable_set(:"@#{k}", inner_model)
+                        end
                       end
 
                       if model.class.metadata[:attributes][k][:node].is_a?(RDF::URI) && inner_model.instance_variable_get(:'@identificatienummer').nil? && inner_model.class.metadata[:attributes].key?('identificatienummer')
