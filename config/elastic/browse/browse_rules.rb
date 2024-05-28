@@ -10,6 +10,8 @@ RULES = {
           rules_ng.run(RULES['browse_bewaarplaats_archiefvormer'], d, out, query)
         elsif filter(query, '$..fields').include?('plaats.label')
           rules_ng.run(RULES['browse_plaats'], d, out, query)
+        elsif filter(query, '$..fields').grep(/sayt.titel/)
+          rules_ng.run(RULES['browse_archief_titel'], d, out, query)
         else
           rules_ng.run(RULES['browse'], d, out, query)
         end
@@ -74,6 +76,33 @@ RULES = {
           i = [i] unless i.is_a?(Array)
 
           i&.grep(/#{browse}/i) | filter(m, "$..#{findex.join('..')}")&.grep(/#{browse}/i)
+        end
+
+        candidates = [candidates] unless candidates.is_a?(Array)
+        candidates
+      end
+    }
+  },
+  'browse_archief_titel' => {
+    'data' => {
+      '@.hits.hits[*]._source.fiche' => lambda do |d, query|
+        browse = filter(query, '$..bool..query')
+        index = filter(query, '$..fields[0]')
+
+        browse = browse.first unless browse.nil? || browse.empty?
+        index = (index.first unless index.nil? || index.empty?)&.gsub(/^fiche\./, '')
+
+        return d if (browse.nil? || browse.empty?) || (index.nil? || index.empty?) && d.include?(index)
+        findex = index.split('.')
+
+        # candidates = [d].map{|m| m[index]&.grep(/#{browse}/i) || filter(m, "$..#{findex[0]}[?(@['#{findex[1]}'] =~ /#{browse}/i)]")}
+        candidates = [d].map do |m|
+          i = m[index]
+          i = [i] unless i.is_a?(Array)
+
+          waarde = i&.grep(/#{browse}/i) | filter(m, "$..#{findex.join('..')}")&.grep(/#{browse}/i)
+          waarde = [waarde] unless waarde.is_a?(Array)
+          { id: d['id'], waarde: waarde.first }
         end
 
         candidates = [candidates] unless candidates.is_a?(Array)

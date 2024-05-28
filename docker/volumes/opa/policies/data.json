@@ -35,6 +35,12 @@
     ],
     "superblocks": [
       "read-only"
+    ],
+    "Datable": [
+      "read-only"
+    ],
+    "Cemper": [
+      "read-only"
     ]
   },
   "roles": [
