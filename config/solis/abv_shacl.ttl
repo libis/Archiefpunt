@@ -591,7 +591,7 @@ abv:ErkenningShape
     a              sh:NodeShape ;
     sh:description "" ;
     sh:targetClass abv:Erkenning ;
-    sh:node        abv:ConceptShape ;
+    sh:node        abv:CodetabelShape ;
     sh:name        "Erkenning" ;
     sh:property    [ sh:path        abv:id ;
                      sh:name        "id" ;
@@ -819,20 +819,15 @@ abv:PlaatsShape
     a              sh:NodeShape ;
     sh:description "" ;
     sh:targetClass abv:Plaats ;
-    sh:node        abv:EntiteitBasisShape ;
+    sh:node        abv:CodetabelShape ;
     sh:name        "Plaats" ;
-    sh:property    [ sh:path        abv:identificatienummer ;
-                     sh:name        "identificatienummer" ;
-                     sh:description "Identificatienummer voor de publicatie" ;
-                     sh:nodeKind    sh:IRI ;
-                     sh:class       abv:Identificatienummer ;
-                     sh:minCount    0 ; ] ;
-    sh:property    [ sh:path        abv:plaatsnaam ;
-                     sh:name        "plaatsnaam" ;
+    sh:property    [ sh:path        abv:type ;
+                     sh:name        "type" ;
                      sh:description "" ;
                      sh:nodeKind    sh:IRI ;
-                     sh:class       abv:Naam ;
-                     sh:minCount    1 ; ] ;
+                     sh:class       abv:TypeNaam ;
+                     sh:minCount    1 ;
+                     sh:maxCount    1 ; ] ;
 .
 
 abv:PublicatieShape

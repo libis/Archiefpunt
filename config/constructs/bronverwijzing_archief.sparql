@@ -33,7 +33,7 @@ construct {
 
     optional {
         ?beheerder_id abv:adres ?beheerder_adres_id .
-        ?beheerder_adres_id abv:gemeente/abv:plaatsnaam/abv:waarde ?beheerder_adres_plaatsnaam .
+        ?beheerder_adres_id abv:gemeente/abv:label ?beheerder_adres_plaatsnaam .
     }
 
     ?agent_id abv:naam ?agent_naam_id .

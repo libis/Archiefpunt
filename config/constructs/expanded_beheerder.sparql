@@ -61,8 +61,8 @@ WHERE {
         optional {
             ?beheerder_adres_id abv:straat_en_nummer ?beheerder_adres_straat_en_nummer .
         }
-        ?beheerder_adres_id abv:gemeente/abv:plaatsnaam/abv:waarde ?beheerder_gemeente .
-        ?beheerder_adres_id abv:gemeente/abv:plaatsnaam/abv:type_naam/abv:label ?beheerder_gemeente_type .
+        ?beheerder_adres_id abv:gemeente/abv:label ?beheerder_gemeente .
+        ?beheerder_adres_id abv:gemeente/abv:type/abv:label ?beheerder_gemeente_type .
     }
 
     optional {
@@ -145,7 +145,7 @@ WHERE {
     optional {
         ?agent_id abv:associaties ?agent_associaties .
         optional {
-            ?agent_associaties abv:plaats/abv:plaatsnaam ?agent_associatie_plaats .
+            ?agent_associaties abv:plaats/abv:label ?agent_associatie_plaats .
         }
         optional {
             ?agent_associaties abv:agent ?agent_associatie_agent .

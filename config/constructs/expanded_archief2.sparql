@@ -197,7 +197,7 @@ construct {
             optional {
                 ?archief_identificatienummer_bron abv:associaties ?bron_associaties .
                 optional {
-                    ?bron_associaties abv:plaats/abv:plaatsnaam ?associatie_plaats .
+                    ?bron_associaties abv:plaats/abv:label ?associatie_plaats .
                 }
                 optional {
                     ?bron_associaties abv:agent ?associatie_agent .
@@ -257,8 +257,8 @@ construct {
             optional {
                 ?beheerder_adres_id abv:straat_en_nummer ?beheerder_adres_straat_en_nummer .
             }
-            ?beheerder_adres_id abv:gemeente/abv:plaatsnaam/abv:waarde ?beheerder_gemeente .
-            ?beheerder_adres_id abv:gemeente/abv:plaatsnaam/abv:type_naam/abv:label ?beheerder_gemeente_type .
+            ?beheerder_adres_id abv:gemeente/abv:label ?beheerder_gemeente .
+            ?beheerder_adres_id abv:gemeente/abv:type/abv:label ?beheerder_gemeente_type .
         }
         optional {
             ?archief_beheerder_id abv:telefoon ?beheerder_telefoon .
@@ -382,7 +382,7 @@ construct {
     optional {
         ?archief_id abv:associatie ?archief_associatie_id .
         optional {
-            ?archief_associatie_id abv:plaats/abv:plaatsnaam/abv:waarde ?archief_associatie_plaats .
+            ?archief_associatie_id abv:plaats/abv:label ?archief_associatie_plaats .
         }
         optional {
             ?archief_associatie_id abv:agent/abv:naam/abv:waarde ?archief_associatie_agent .

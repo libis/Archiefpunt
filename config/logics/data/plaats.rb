@@ -21,14 +21,11 @@ construct {
 }
 where {
   ?s ?p ?o ;
+    abv:label ?label;
     a abv:Plaats.
 
-  optional{
-    ?s abv:plaatsnaam/abv:waarde ?naam.
-  }
-
-  FILTER (lang(?naam) = 'nl')
-  bind(str(?naam) as ?naam_nl)
+  FILTER (lang(?label) = 'nl')
+  bind(str(?label) as ?naam_nl)
 }
       )
 

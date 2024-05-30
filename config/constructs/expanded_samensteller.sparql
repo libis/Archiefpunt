@@ -91,7 +91,7 @@ WHERE {
     optional {
         ?agent_id abv:associaties ?agent_associaties .
         optional {
-            ?agent_associaties abv:plaats/abv:plaatsnaam/abv:waarde ?agent_associatie_plaats .
+            ?agent_associaties abv:plaats/abv:label ?agent_associatie_plaats .
         }
         optional {
             ?agent_associaties abv:agent ?agent_associatie_agent .
