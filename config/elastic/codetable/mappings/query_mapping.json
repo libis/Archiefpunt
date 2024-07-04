@@ -263,5 +263,18 @@
         ]
       }
     }
+  },
+  "plaats": {
+    "{{}}": {
+      "multi_match": {
+        "query": "{{}}",
+        "type": "bool_prefix",
+        "fields": [
+          "plaats.label",
+          "plaats.label._2gram",
+          "plaats.label._3gram"
+        ]
+      }
+    }
   }
 }

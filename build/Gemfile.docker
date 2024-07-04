@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem "activesupport", "= 7.0.8"
 gem "json"
 gem 'puma'
-gem 'data_collector', '0.35.0'
+gem 'data_collector', '0.52.0'
 gem 'hashdiff'
 gem 'connection_pool'
 gem 'http'

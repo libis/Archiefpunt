@@ -35,7 +35,8 @@ CONSTRUCT {
        abv:agent ?agent_associatie_agent;
        abv:plaats ?agent_associatie_plaats;
        abv:periode ?agent_associatie_periode;
-       abv:onderwerp ?agent_associcatie_onderwerp.
+       abv:onderwerp ?agent_associatie_onderwerp;
+       abv:archief ?agent_associatie_archief.
 }
 WHERE {
 #    {{VALUES}}
@@ -100,7 +101,10 @@ WHERE {
             ?agent_associaties abv:periode/abv:label ?agent_associatie_periode .
         }
         optional {
-            ?agent_associaties abv:onderwerp/abv:label ?agent_associcatie_onderwerp .
+            ?agent_associaties abv:onderwerp/abv:label ?agent_associatie_onderwerp .
+        }
+        optional {
+            ?agent_associaties abv:archief/abv:titel ?agent_associatie_archief.
         }
     }
     optional {

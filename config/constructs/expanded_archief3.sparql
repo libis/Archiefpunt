@@ -119,7 +119,8 @@ construct {
         abv:plaatsnaam ?archief_associatie_plaats ;
         abv:agentnaam ?archief_associatie_agent ;
         abv:periode ?archief_associatie_periode ;
-        abv:onderwerp ?archief_associatie_onderwerp .
+        abv:onderwerp ?archief_associatie_onderwerp ;
+        abv:archief ?archief_associatie_archief.
 
 } WHERE {
     { { VALUES } }
@@ -362,6 +363,9 @@ construct {
         }
         optional {
             ?archief_associatie_id abv:onderwerp/abv:label ?archief_associatie_onderwerp .
+        }
+        optional {
+            ?archief_associatie_id abv:archief/abv:titel ?archief_associatie_archief.
         }
     }
     #rechtenstatus_metadata

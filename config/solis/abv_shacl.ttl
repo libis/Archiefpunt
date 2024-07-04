@@ -359,6 +359,12 @@ abv:AssociatieShape
                      sh:nodeKind    sh:IRI ;
                      sh:class       abv:Onderwerp ;
                      sh:minCount    0 ; ] ;
+    sh:property    [ sh:path        abv:archief ;
+                     sh:name        "archief" ;
+                     sh:description "associatie met andere archieven" ;
+                     sh:nodeKind    sh:IRI ;
+                     sh:class       abv:Archief ;
+                     sh:minCount    0 ; ] ;
 .
 
 abv:BeheerderShape

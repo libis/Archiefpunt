@@ -1,14 +1,10 @@
 source "https://rubygems.org"
 
 gem "activesupport"
-
-# gem "rack"
-# gem "rackup"
-
 gem "json"
 gem 'puma'
 
-gem 'data_collector', '0.49.0'
+gem 'data_collector', '0.52.0'
 gem 'hashdiff'
 gem 'connection_pool'
 gem 'http'
