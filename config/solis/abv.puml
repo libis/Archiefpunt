@@ -7,7 +7,7 @@ skinparam componentStyle uml2
 skinparam wrapMessageWidth 100
 skinparam ArrowColor #Maroon
 
-title Archiefbank ontology - 1.0.7 - 2024-05-30 08:11:47 +0200
+title Archiefbank ontology - 1.0.7 - 2024-11-07 16:04:59 +0100
               
 package abv {
 

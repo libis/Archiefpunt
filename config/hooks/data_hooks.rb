@@ -69,8 +69,10 @@ select distinct ?id ?entity_type where {
           create: {
             before: lambda do |model|
               if model.class.ancestors.include?(Codetabel)
-                model = model.query.filter({ language: nil, filters: { id: [model.id] } }).find_all.map { |m| m }&.first
+                existing_model = model.query.filter({ language: nil, filters: { id: [model.id] } }).find_all.map { |m| m }&.first
+                model = existing_model if existing_model
               end
+
               if model.class.metadata[:attributes].keys.include?('identificatienummer') && model.identificatienummer.nil?
                 model.identificatienummer = Identificatienummer.new(id: model.id, waarde: "BE/#{model.id}", type: { id: '36E3-3A9D-FAB6-A870-5A751CTTI9A4' }) # persistente URI
                 #model.save
@@ -79,7 +81,7 @@ select distinct ?id ?entity_type where {
               model.class.metadata[:attributes].select { |k, v| v[:node_kind].is_a?(RDF::URI) }.keys.each do |k|
                 inner_models = model.instance_variable_get(:"@#{k}")
                 inner_models = [inner_models] unless inner_models.is_a?(Array)
-                inner_models.each do |inner_model|
+                inner_models.each_with_index do |inner_model, i|
                   if inner_model
                     if inner_model.is_a?(Hash)
                       unless inner_model.key?('id')
@@ -92,7 +94,7 @@ select distinct ?id ?entity_type where {
                         existing_inner_model = inner_model.query.filter({ language: nil, filters: { id: [inner_model.id] } }).find_all.map { |m| m }&.first
                         unless existing_inner_model.nil?
                           inner_model = existing_inner_model
-                          model.instance_variable_set(:"@#{k}", inner_model)
+                          #model.instance_variable_set(:"@#{k}", inner_model)
                         end
                       end
 

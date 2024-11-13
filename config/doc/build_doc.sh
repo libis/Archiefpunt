@@ -1,5 +1,5 @@
 #!/bin/bash
-java -jar ./widoco-1.4.16-jar-with-dependencies.jar \
+java -jar ./widoco-1.4.25-jar-with-dependencies.jar \
      -confFile ./build_doc.properties \
      -includeImportedOntologies \
      -rewriteAll \

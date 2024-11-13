@@ -1,4 +1,4 @@
-@prefix audit: <https://data.q.archiefpunt.be/_audit/> .
+@prefix audit: <https://data.archiefpunt.be/_audit/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -6,7 +6,7 @@
 
 audit: a owl:Ontology;
   <dc11:creator> "LIBIS";
-  <dc11:date> "2022-09-20 15:04:20 +0200";
+  <dc11:date> "2024-11-07 16:19:35 +0100";
   <dc11:description> "";
   <dc11:title> "AUDIT ontology";
   owl:versionInfo 0.2 .
@@ -15,13 +15,15 @@ audit:change_reason a rdf:Property;
   rdfs:label "change_reason";
   rdfs:comment "a short, human readable description of the purpose for the changeset";
   rdfs:domain audit:ChangeSet;
-  rdfs:range xsd:string .
+  rdfs:range xsd:string;
+  owl:sameAs <cs:changeReason> .
 
 audit:created_date a rdf:Property;
   rdfs:label "created_date";
   rdfs:comment "the date that the changeset was created. The date should be in W3CDTF format ";
   rdfs:domain audit:ChangeSet;
-  rdfs:range xsd:dateTime .
+  rdfs:range xsd:dateTime;
+  owl:sameAs <cs:createdDate> .
 
 audit:creator_group a rdf:Property;
   rdfs:label "creator_group";
@@ -33,7 +35,8 @@ audit:creator_name a rdf:Property;
   rdfs:label "creator_name";
   rdfs:comment "the name of the entity responsible for creating the changeset";
   rdfs:domain audit:ChangeSet;
-  rdfs:range xsd:string .
+  rdfs:range xsd:string;
+  owl:sameAs <cs:creatorName> .
 
 audit:other_data a rdf:Property;
   rdfs:label "other_data";
@@ -45,13 +48,15 @@ audit:preceding_change_set a rdf:Property;
   rdfs:label "preceding_change_set";
   rdfs:comment "This property can be used to build a history of changes to a particular resource description";
   rdfs:domain audit:ChangeSet;
-  rdfs:range audit:ChangeSet .
+  rdfs:range audit:ChangeSet;
+  owl:sameAs <cs:precedingChangeSet> .
 
 audit:subject_of_change a rdf:Property;
   rdfs:label "subject_of_change";
   rdfs:comment "the resource to which this set of changes applies";
   rdfs:domain audit:ChangeSet;
-  rdfs:range xsd:anyURI .
+  rdfs:range xsd:anyURI;
+  owl:sameAs <cs:subjectOfChange> .
 
 audit:diff a rdf:Property;
   rdfs:label "diff";

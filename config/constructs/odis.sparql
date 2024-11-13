@@ -1,0 +1,88 @@
+PREFIX od: <http://purl.org/twc/vocab/opendap#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX abv: <https://data.q.archiefpunt.be/>
+PREFIX odis: <https://odis.q.libis.be/>
+
+construct {
+    ?bewaarplaats_id a odis:Bewaarplaats ;
+        odis:parallel_id ?id ;
+        odis:odiscode false ;
+        odis:controle '' ;
+        odis:naam ?naam ;
+        odis:datering_tekst ?datering_text ;
+        odis:datering_systematisch ?datering_systematisch ;
+        odis:profielschets '' ;
+        odis:historische_schets ?historische_schets ;
+        odis:externe_catalogi '' ;
+        odis:verwantschap '' ;
+        odis:bron ?bron ;
+        odis:opmerking ?opmerking ;
+        odis:trefwoord '' ;
+        odis:geografische_trefwoorden '' ;
+        odis:online_bijlagen '' ;
+        odis:illustratie '' ;
+        odis:auteur '' ;
+        odis:werknotitie '' ;
+        odis:werknotitie_invoerdersgroep '' ;
+        odis:verwijzing_steekkaart ?verwijzing_steekkaart ;
+        odis:type_bewaarplaats ?type_bewaarplaats ;
+        odis:bewaarplaatscode '' ;
+        odis:contact ?contact_id ;
+        odis:taal ?taal ;
+        odis:erkenning ?erkenning ;
+        odis:gebouw ?gebouw ;
+        odis:openingsuren ?openingsuren ;
+        odis:toegang ?toegang ;
+        odis:toegangsvoorwaarden ?gebruiksvoorwaarden ;
+        odis:bereikbaarheid ?bereikbaarheid .
+
+    ?contact_id a odis:Contact ;
+        odis:straat_en_nummer ?contact_straat_en_nummer ;
+        odis:gemeente '' ;
+        odis:telefoon ?contact_telefoon ;
+        odis:email ?contact_email ;
+        odis:website ?contact_website .
+}
+where {
+    { { VALUES } }
+    #values ?beheerder_id { <https://data.q.archiefpunt.be/beheerders/BH6D-D7D7-6744-9960-87FB1859BW9A>}
+    ?beheerder_id a abv:Beheerder;
+        abv:agent ?agent_id;
+        abv:id ?id ;
+        abv:agent/abv:naam ?naam .
+    optional {
+        ?beheerder_id abv:type ?type_bewaarplaats .
+    }
+
+    optional {
+        ?beheerder_id abv:agent/abv:datering_systematisch ?datering_systematisch ;
+            abv:agent/abv:datering_text ?datering_text ;
+            abv:agent/abv:geschiedenis_agent ?historische_schets .
+    }
+    OPTIONAL {
+        ?beheerder_id abv:agent/abv:taal ?taal
+    }
+    OPTIONAL {
+        ?beheerder_id abv:agent/abv:bibliografie_agent ?bron ;
+            abv:agent/abv:bronverwijzing_record ?verwijzing_steekkaart ;
+            abv:agent/abv:opmerking ?opmerking .
+    }
+
+    OPTIONAL {
+        ?beheerder_id abv:erkenning ?erkenning ;
+            abv:adres ?contact_straat_en_nummer ;
+            abv:telefoon ?contact_telefoon ;
+            abv:email ?contact_email ;
+            abv:website ?contact_website ;
+            abv:gebouw ?gebouw ;
+            abv:toegang ?toegang ;
+            abv:openingsuren ?openingsuren ;
+            abv:toegangsvoorwaarden ?gebruiksvoorwaarden ;
+            abv:bereikbaarheid ?bereikbaarheid .
+    }
+    bind(uri(concat('odis:contacten/exc-',str(?id))) as ?contact_id)
+    bind(uri(concat('odis:bewaarplaatsen/exb-',str(?id))) as ?bewaarplaats_id)
+}
+
+limit 100

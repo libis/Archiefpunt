@@ -10,7 +10,7 @@ skos:Concept a owl:Class;
 
 abv: a owl:Ontology;
   <dc11:creator> "Archiefpunt, Meemo, KADOC, LIBIS";
-  <dc11:date> "2024-05-30 08:11:47 +0200";
+  <dc11:date> "2024-11-07 16:04:59 +0100";
   <dc11:description> "Archiefbank ontology";
   <dc11:title> "Archiefbank ontology";
   owl:versionInfo "1.0.7" .

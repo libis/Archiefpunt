@@ -41,6 +41,9 @@
     ],
     "Cemper": [
       "read-only"
+    ],
+    "EHRI": [
+      "full-min"
     ]
   },
   "roles": [

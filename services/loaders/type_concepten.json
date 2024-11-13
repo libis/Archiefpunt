@@ -1,0 +1,65 @@
+[
+  {
+    "identificatienummer": {
+      "waarde": "historisch",
+      "type": {
+        "id": "36E3-3A9D-FAB6-A870-5A751CTTI9A4"
+      }
+    },
+    "label": "historisch"
+  },
+  {
+    "identificatienummer": {
+      "waarde": "migratie",
+      "type": {
+        "id": "36E3-3A9D-FAB6-A870-5A751CTTI9A4"
+      }
+    },
+    "label": "migratie"
+  },
+  {
+    "identificatienummer": {
+      "waarde": "varia",
+      "type": {
+        "id": "36E3-3A9D-FAB6-A870-5A751CTTI9A4"
+      }
+    },
+    "label": "varia"
+  },
+  {
+    "identificatienummer": {
+      "waarde": "religieus",
+      "type": {
+        "id": "36E3-3A9D-FAB6-A870-5A751CTTI9A4"
+      }
+    },
+    "label": "religieus"
+  },
+  {
+    "identificatienummer": {
+      "waarde": "Europees, > 500 duizend of officieel",
+      "type": {
+        "id": "36E3-3A9D-FAB6-A870-5A751CTTI9A4"
+      }
+    },
+    "label": "Europees, > 500 duizend of officieel"
+  },
+  {
+    "identificatienummer": {
+      "waarde": "ex-kolonies",
+      "type": {
+        "id": "36E3-3A9D-FAB6-A870-5A751CTTI9A4"
+      }
+    },
+    "label": "ex-kolonies"
+  },
+  {
+    "identificatienummer": {
+      "waarde": "top 100, < 20 mil",
+      "type": {
+        "id": "36E3-3A9D-FAB6-A870-5A751CTTI9A4"
+      }
+    },
+    "label": "top 100, < 20 mil"
+  }
+]

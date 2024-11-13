@@ -1,0 +1,276 @@
+@prefix oai: <https://data.archiefpunt.be/_oai/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+oai: a owl:Ontology;
+  <dc11:creator> "LIBIS";
+  <dc11:date> "2024-11-07 16:20:18 +0100";
+  <dc11:description> "Archiefpunt OAI-PMH ontology";
+  <dc11:title> "OAI-PMH ontology";
+  owl:versionInfo 0.1 .
+
+oai:Base a owl:Class;
+  rdfs:label "Base";
+  rdfs:comment "This is a base entity with common properties";
+  rdfs:subClassOf [
+    a owl:Restriction;
+    owl:minCardinality 1;
+    owl:onProperty oai:id
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:id
+  ] .
+
+oai:schedule a rdf:Property;
+  rdfs:label "schedule";
+  rdfs:comment "When to schedule a harvest";
+  rdfs:domain oai:Repository;
+  rdfs:range oai:Schedule .
+
+oai:CodeTable a owl:Class;
+  rdfs:label "CodeTable";
+  rdfs:comment "";
+  rdfs:subClassOf [
+    a owl:Restriction;
+    owl:minCardinality 1;
+    owl:onProperty oai:key
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:key
+  ], [
+    a owl:Restriction;
+    owl:minCardinality 1;
+    owl:onProperty oai:value
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:value
+  ] .
+
+oai:TransformerType a owl:Class;
+  rdfs:label "TransformerType";
+  rdfs:comment "Type of transformer to run";
+  rdfs:subClassOf [
+    a owl:Restriction;
+    owl:minCardinality 1;
+    owl:onProperty oai:id
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:id
+  ] .
+
+oai:day a rdf:Property;
+  rdfs:label "day";
+  rdfs:comment "Day number";
+  rdfs:domain oai:Schedule;
+  rdfs:range xsd:integer;
+  owl:sameAs <schema:byMonthDay> .
+
+oai:from a rdf:Property;
+  rdfs:label "from";
+  rdfs:comment "Start loading set from a date";
+  rdfs:domain oai:Repository;
+  rdfs:range xsd:dateTime .
+
+oai:identify a rdf:Property;
+  rdfs:label "identify";
+  rdfs:comment "Information about a repository";
+  rdfs:domain oai:Repository;
+  rdfs:range rdf:JSON .
+
+oai:key a rdf:Property;
+  rdfs:label "key";
+  rdfs:comment "Key value of the code table";
+  rdfs:domain oai:CodeTable;
+  rdfs:range xsd:string .
+
+oai:metadata_format a rdf:Property;
+  rdfs:label "metadata_format";
+  rdfs:comment "Format to retrieve data in";
+  rdfs:domain oai:Repository;
+  rdfs:range xsd:string .
+
+oai:month a rdf:Property;
+  rdfs:label "month";
+  rdfs:comment "Month number";
+  rdfs:domain oai:Schedule;
+  rdfs:range xsd:integer;
+  owl:sameAs <schema:byMonth> .
+
+oai:name a rdf:Property;
+  rdfs:label "name";
+  rdfs:comment "Name of the transformer";
+  rdfs:domain oai:Transformer;
+  rdfs:range xsd:string .
+
+oai:set a rdf:Property;
+  rdfs:label "set";
+  rdfs:comment "Name of the set to query";
+  rdfs:domain oai:Repository;
+  rdfs:range xsd:string .
+
+oai:start_time a rdf:Property;
+  rdfs:label "start_time";
+  rdfs:comment "Time to start";
+  rdfs:domain oai:Schedule;
+  rdfs:range xsd:dateTime;
+  owl:sameAs <schema:startTime> .
+
+oai:transformer a rdf:Property;
+  rdfs:label "transformer";
+  rdfs:comment "Script to transform data";
+  rdfs:domain oai:Repository;
+  rdfs:range oai:Transformer .
+
+oai:type a rdf:Property;
+  rdfs:label "type";
+  rdfs:comment "Transformer type data_collector, Datalog, ...";
+  rdfs:domain oai:Transformer;
+  rdfs:range oai:TransformerType .
+
+oai:uri a rdf:Property;
+  rdfs:label "uri";
+  rdfs:comment "Repository internal id";
+  rdfs:domain oai:Repository;
+  rdfs:range xsd:anyURI;
+  owl:sameAs <schema:identifier> .
+
+oai:value a rdf:Property;
+  rdfs:label "value";
+  rdfs:comment "Value of the code table";
+  rdfs:domain oai:CodeTable;
+  rdfs:range xsd:string .
+
+oai:week_day a rdf:Property;
+  rdfs:label "week_day";
+  rdfs:comment "Day of the week";
+  rdfs:domain oai:Schedule;
+  rdfs:range xsd:integer;
+  owl:sameAs <schema:byDay> .
+
+oai:Transformer a owl:Class;
+  rdfs:label "Transformer";
+  rdfs:comment "Map incoming data to model";
+  rdfs:subClassOf [
+    a owl:Restriction;
+    owl:minCardinality 1;
+    owl:onProperty oai:name
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:name
+  ], [
+    a owl:Restriction;
+    owl:minCardinality 1;
+    owl:onProperty oai:type
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:type
+  ] .
+
+oai:id a rdf:Property;
+  rdfs:label "id";
+  rdfs:comment "systeem UUID";
+  rdfs:domain oai:Base,
+    oai:TransformerType;
+  rdfs:range xsd:string .
+
+oai:Schedule a owl:Class;
+  rdfs:label "Schedule";
+  rdfs:comment "When to start harvesting";
+  rdfs:subClassOf <schema:schedule>, [
+    a owl:Restriction;
+    owl:minCardinality 0;
+    owl:onProperty oai:start_time
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:start_time
+  ], [
+    a owl:Restriction;
+    owl:minCardinality 0;
+    owl:onProperty oai:day
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:day
+  ], [
+    a owl:Restriction;
+    owl:minCardinality 0;
+    owl:onProperty oai:month
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:month
+  ], [
+    a owl:Restriction;
+    owl:minCardinality 0;
+    owl:onProperty oai:week_day
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:week_day
+  ] .
+
+oai:Repository a owl:Class;
+  rdfs:label "Repository";
+  rdfs:comment "A repository is a network accessible server that can process the 6 OAI-PMH requests";
+  rdfs:subClassOf [
+    a owl:Restriction;
+    owl:minCardinality 1;
+    owl:onProperty oai:uri
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:uri
+  ], [
+    a owl:Restriction;
+    owl:minCardinality 1;
+    owl:onProperty oai:set
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:set
+  ], [
+    a owl:Restriction;
+    owl:minCardinality 0;
+    owl:onProperty oai:identify
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:identify
+  ], [
+    a owl:Restriction;
+    owl:minCardinality 1;
+    owl:onProperty oai:metadata_format
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:metadata_format
+  ], [
+    a owl:Restriction;
+    owl:minCardinality 1;
+    owl:onProperty oai:from
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:from
+  ], [
+    a owl:Restriction;
+    owl:minCardinality 0;
+    owl:onProperty oai:schedule
+  ], [
+    a owl:Restriction;
+    owl:minCardinality 1;
+    owl:onProperty oai:transformer
+  ], [
+    a owl:Restriction;
+    owl:maxCardinality 1;
+    owl:onProperty oai:transformer
+  ] .

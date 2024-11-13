@@ -1,7 +1,10 @@
 FROM ruby:3.2.3-alpine
 #FROM ruby:2.7.8-alpine
 
-ARG SOLIS_VERSION=0.76.0
+ARG SOLIS_VERSION
+ARG SERVICE
+ARG VERSION
+
 RUN echo "Solis v$SOLIS_VERSION"
 
 RUN bundle config --global frozen 1
@@ -31,7 +34,7 @@ EXPOSE 9292
 EXPOSE 1234:1234
 EXPOSE 26162:26162
 
-ENV LANG C.UTF-8
+ENV LANG=C.UTF-8
 CMD /app/run.sh
 
 # Metadata
@@ -39,5 +42,5 @@ LABEL org.opencontainers.image.vendor="KULeuven/LIBIS" \
 	org.opencontainers.image.url="https://www.libis.be" \
 	org.opencontainers.image.title="Archiefpunt base image" \
 	org.opencontainers.image.description="A base image to build upon" \
-	org.opencontainers.image.version="v0.1" \
-	org.opencontainers.image.documentation="https://data.q.archiefpunt.be/_doc"
+	org.opencontainers.image.version="v$VERSION" \
+	org.opencontainers.image.documentation="https://data.archiefpunt.be/_doc"

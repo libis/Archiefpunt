@@ -123,6 +123,28 @@ services:
     links:
       - virtuoso:virtuoso
 
+  oaipmh-api:
+    image: registry.docker.libis.be/archiefpunt/data:20240716.1
+    restart: unless-stopped
+    environment:
+      SERVICE_ROLE: oaipmh
+    hostname: oaipmh.api
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 4g
+        reservations:
+          memory: 750m
+    volumes:
+      - "./volumes/api/config:/app/config"
+      - "./volumes/api/data:/app/data"
+      - "./volumes/api/cache:/app/cache"
+    networks:
+      - private
+    links:
+      - virtuoso:virtuoso
+
   search-api:
     image: registry.docker.libis.be/archiefpunt/search
     restart: unless-stopped

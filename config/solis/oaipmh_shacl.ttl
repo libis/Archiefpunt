@@ -1,0 +1,180 @@
+@prefix oai: <https://data.archiefpunt.be/_oai/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc11: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix time: <https://w3c.github.io/sdw/time/> .
+
+                oai:BaseShape
+    a               sh:NodeShape ;
+    sh:description "" ;
+    sh:targetClass  oai:Base ;
+    sh:node         oai:Base ;
+                sh:name         "Base" ;
+    sh:property [sh:path oai:id ;
+                 sh:name "id";
+                 sh:description "Repository internal id" ;
+                 sh:datatype xsd:string ;
+                 sh:minCount 1 ;
+                 sh:maxCount 1 ;
+    ] ;
+.
+
+                oai:CodeTableShape
+    a               sh:NodeShape ;
+    sh:description "" ;
+    sh:targetClass  oai:CodeTable ;
+    sh:node         oai:CodeTable ;
+                sh:name         "CodeTable" ;
+    sh:property [sh:path oai:key ;
+                 sh:name "key";
+                 sh:description "Key value of the code table" ;
+                 sh:datatype xsd:string ;
+                 sh:minCount 1 ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path oai:value ;
+                 sh:name "value";
+                 sh:description "Value of the code table" ;
+                 sh:datatype xsd:string ;
+                 sh:minCount 1 ;
+                 sh:maxCount 1 ;
+    ] ;
+.
+
+                oai:RepositoryShape
+    a               sh:NodeShape ;
+    sh:description "" ;
+    sh:targetClass  oai:Repository ;
+    sh:node         oai:Repository ;
+                sh:name         "Repository" ;
+    sh:property [sh:path oai:uri ;
+                 sh:name "uri";
+                 sh:description "Repository internal id" ;
+                 sh:datatype xsd:anyURI ;
+                 sh:minCount 1 ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path oai:set ;
+                 sh:name "set";
+                 sh:description "Name of the set to query" ;
+                 sh:datatype xsd:string ;
+                 sh:minCount 1 ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path oai:identify ;
+                 sh:name "identify";
+                 sh:description "Information about a repository" ;
+                 sh:datatype rdf:JSON ;
+                 sh:minCount 0 ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path oai:metadata_format ;
+                 sh:name "metadata_format";
+                 sh:description "Format to retrieve data in" ;
+                 sh:datatype xsd:string ;
+                 sh:minCount 1 ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path oai:from ;
+                 sh:name "from";
+                 sh:description "Start loading set from a date" ;
+                 sh:datatype xsd:dateTime ;
+                 sh:minCount 1 ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path oai:schedule ;
+                 sh:name "schedule" ;
+                 sh:description "When to schedule a harvest" ;
+                 sh:nodeKind sh:IRI ;
+                 sh:class    oai:Schedule ;
+                 sh:minCount 0 ;
+    ] ;
+    sh:property [sh:path oai:transformer ;
+                 sh:name "transformer" ;
+                 sh:description "Script to transform data" ;
+                 sh:nodeKind sh:IRI ;
+                 sh:class    oai:Transformer ;
+                 sh:minCount 1 ;
+                 sh:maxCount 1 ;
+    ] ;
+.
+
+                oai:ScheduleShape
+    a               sh:NodeShape ;
+    sh:description "" ;
+    sh:targetClass  oai:Schedule ;
+    sh:node         schema:scheduleShape ;
+                sh:name         "Schedule" ;
+    sh:property [sh:path oai:start_time ;
+                 sh:name "start_time";
+                 sh:description "Time to start" ;
+                 sh:datatype xsd:dateTime ;
+                 sh:minCount 0 ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path oai:day ;
+                 sh:name "day";
+                 sh:description "Day number" ;
+                 sh:datatype xsd:integer ;
+                 sh:minCount 0 ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path oai:month ;
+                 sh:name "month";
+                 sh:description "Month number" ;
+                 sh:datatype xsd:integer ;
+                 sh:minCount 0 ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path oai:week_day ;
+                 sh:name "week_day";
+                 sh:description "Day of the week" ;
+                 sh:datatype xsd:integer ;
+                 sh:minCount 0 ;
+                 sh:maxCount 1 ;
+    ] ;
+.
+
+                oai:TransformerShape
+    a               sh:NodeShape ;
+    sh:description "" ;
+    sh:targetClass  oai:Transformer ;
+    sh:node         oai:Transformer ;
+                sh:name         "Transformer" ;
+    sh:property [sh:path oai:name ;
+                 sh:name "name";
+                 sh:description "Name of the transformer" ;
+                 sh:datatype xsd:string ;
+                 sh:minCount 1 ;
+                 sh:maxCount 1 ;
+    ] ;
+    sh:property [sh:path oai:type ;
+                 sh:name "type" ;
+                 sh:description "Transformer type data_collector, Datalog, ..." ;
+                 sh:nodeKind sh:IRI ;
+                 sh:class    oai:TransformerType ;
+                 sh:minCount 1 ;
+                 sh:maxCount 1 ;
+    ] ;
+.
+
+                oai:TransformerTypeShape
+    a               sh:NodeShape ;
+    sh:description "" ;
+    sh:targetClass  oai:TransformerType ;
+    sh:node         oai:TransformerType ;
+                sh:name         "TransformerType" ;
+    sh:property [sh:path oai:id ;
+                 sh:name "id";
+                 sh:description "systeem UUID" ;
+                 sh:datatype xsd:string ;
+                 sh:minCount 1 ;
+                 sh:maxCount 1 ;
+    ] ;
+.

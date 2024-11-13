@@ -1,0 +1,66 @@
+@startuml
+!pragma layout elk
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam groupInheritance 1
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+skinparam ArrowColor #Maroon
+
+title OAI-PMH ontology - 0.1 - 2024-11-07 16:20:18 +0100
+              
+package oai {
+
+class Base{
+	{field} xsd:string : id 
+}
+
+
+class CodeTable{
+	{field} xsd:string : key 
+	{field} xsd:string : value 
+}
+
+
+class Repository{
+	{field} xsd:anyURI : uri 
+	{field} xsd:string : set 
+	{field} rdf:JSON : identify 
+	{field} xsd:string : metadata_format 
+	{field} xsd:dateTime : from 
+	{field} oai:Schedule : schedule 
+	{field} oai:Transformer : transformer 
+}
+Schedule -  Repository : schedule >
+Transformer - "1" Repository : transformer >
+
+class Schedule{
+	{field} xsd:dateTime : start_time 
+	{field} xsd:integer : day 
+	{field} xsd:integer : month 
+	{field} xsd:integer : week_day 
+}
+
+
+
+class Transformer{
+	{field} xsd:string : name 
+	{field} oai:TransformerType : type 
+}
+TransformerType - "1" Transformer : type >
+
+class TransformerType{
+	{field} xsd:string : id 
+}
+
+class TransformerType extends CodeTable
+class CodeTable extends Base
+class Repository extends Base
+class Schedule extends Base
+class Transformer extends Base
+
+hide circle
+hide methods
+hide empty members
+@enduml
+          
