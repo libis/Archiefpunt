@@ -8,5 +8,6 @@
   "facet_archiefvormer": "fiche.samensteller.naam.keyword",
   "facet_bewaarplaats": "fiche.beheerder.naam.keyword",
   "datering_systematisch": "fiche.datering",
-  "facet_materiaal": "fiche.materiaal_type.keyword"
+  "facet_materiaal": "fiche.materiaal_type.keyword",
+  "facet_periode": "fiche.data.associatie.periode.keyword"
 }

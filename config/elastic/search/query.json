@@ -40,6 +40,12 @@
         "field": "fiche.trefwoord.keyword",
         "size": 10
       }
+    },
+    "facet_periode": {
+      "terms": {
+        "field": "fiche.data.associatie.periode.keyword",
+        "size": 10
+      }
     }
   }
 }

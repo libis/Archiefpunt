@@ -26,6 +26,7 @@ ADD config.tgz ./
 RUN mkdir cache && chmod a+x cache && chown -R abv:abv /app
 USER abv:abv
 RUN gem install gems/solis-$SOLIS_VERSION.gem
+RUN gem install gems/stopwords-filter-0.7.1.gem
 RUN bundle install
 #RUN gem cleanup minitest
 

@@ -25,7 +25,7 @@ def all_codetables
 end
 
 def load_codetabel(codetabel)
-  response = HTTP.get("#{logic_config[:host]}/#{logic_config[:base_path]}/codetabel?naam=#{codetabel}")
+  response = HTTP.get("#{logic_config[:host]}/#{logic_config[:base_path]}/codetabel?naam=#{codetabel}&from_cache=0")
   if response.status == 200
     return JSON.parse(response.body.to_s)
   end
@@ -49,11 +49,18 @@ query_mapping = {
 }
 
 all_codetables.each do |codetabel|
+  puts codetabel
   data = load_codetabel(codetabel)
+  puts "\t #{data.length}"
 
-  data.each do |d|
-    elastic.index.insert({ "#{codetabel}": d }, 'id', true)
-  end
+  # when inserting an array the search result will be an array
+  #  elastic.index.insert({ "#{codetabel}": data }, 'id', true)
+  insert_data = data.map{|m| { "#{codetabel}": m } }
+  elastic.index.insert(insert_data, 'id', true)
+
+  # data.each do |d|
+  #   elastic.index.insert({ "#{codetabel}": d }, 'id', true)
+  # end
   query_mapping[codetabel] =
     {
       "{{}}": {
